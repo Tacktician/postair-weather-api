@@ -1,0 +1,131 @@
+[
+  {
+    "country": "United States",
+    "airports": [
+      { "code": "ATL", "city": "Atlanta", "name": "Hartsfield-Jackson Atlanta International Airport", "latitude": 33.6407, "longitude": -84.4277 },
+      { "code": "LAX", "city": "Los Angeles", "name": "Los Angeles International Airport", "latitude": 33.9416, "longitude": -118.4085 },
+      { "code": "ORD", "city": "Chicago", "name": "O'Hare International Airport", "latitude": 41.9742, "longitude": -87.9073 },
+      { "code": "DFW", "city": "Dallas/Fort Worth", "name": "Dallas/Fort Worth International Airport", "latitude": 32.8998, "longitude": -97.0403 },
+      { "code": "DEN", "city": "Denver", "name": "Denver International Airport", "latitude": 39.8561, "longitude": -104.6737 },
+      { "code": "JFK", "city": "New York City", "name": "John F. Kennedy International Airport", "latitude": 40.6413, "longitude": -73.7781 },
+      { "code": "MIA", "city": "Miami", "name": "Miami International Airport", "latitude": 25.7617, "longitude": -80.1918 },
+      { "code": "LGA", "city": "New York City", "name": "LaGuardia Airport", "latitude": 40.7776, "longitude": -73.8726 },
+      { "code": "EWR", "city": "New York City", "name": "Newark Liberty International Airport", "latitude": 40.7357, "longitude": -74.1724 },
+      { "code": "SFO", "city": "San Francisco", "name": "San Francisco International Airport", "latitude": 37.7749, "longitude": -122.4194 },
+      { "code": "SEA", "city": "Seattle", "name": "Seattle-Tacoma International Airport", "latitude": 47.6062, "longitude": -122.3321 },
+      { "code": "LAS", "city": "Las Vegas", "name": "Harry Reid International Airport", "latitude": 36.0840, "longitude": -115.1537 },
+      { "code": "MCO", "city": "Orlando", "name": "Orlando International Airport", "latitude": 28.4312, "longitude": -81.3081 }
+    ]
+  },
+  {
+    "country": "France",
+    "airports": [
+      { "code": "CDG", "city": "Paris", "name": "Charles de Gaulle Airport", "latitude": 49.0097, "longitude": 2.5479 },
+      { "code": "ORY", "city": "Paris", "name": "Orly Airport", "latitude": 48.7262, "longitude": 2.3652 },
+      { "code": "NCE", "city": "Nice", "name": "Nice Côte d'Azur Airport", "latitude": 43.6584, "longitude": 7.2159 },
+      { "code": "LYS", "city": "Lyon", "name": "Lyon-Saint Exupéry Airport", "latitude": 45.7256, "longitude": 5.0811 },
+      { "code": "MRS", "city": "Marseille", "name": "Marseille Provence Airport", "latitude": 43.4367, "longitude": 5.2150 },
+      { "code": "TLS", "city": "Toulouse", "name": "Toulouse-Blagnac Airport", "latitude": 43.6293, "longitude": 1.3646 },
+      { "code": "BOD", "city": "Bordeaux", "name": "Bordeaux-Mérignac Airport", "latitude": 44.8283, "longitude": -0.7156 },
+      { "code": "NTE", "city": "Nantes", "name": "Nantes Atlantique Airport", "latitude": 47.1532, "longitude": -1.6107 },
+      { "code": "LIL", "city": "Lille", "name": "Lille Airport", "latitude": 50.5619, "longitude": 3.0894 },
+      { "code": "SXB", "city": "Strasbourg", "name": "Strasbourg Airport", "latitude": 48.5383, "longitude": 7.6282 }
+    ]
+  },
+  {
+    "country": "United Kingdom",
+    "airports": [
+      { "code": "LHR", "city": "London", "name": "Heathrow Airport", "latitude": 51.4700, "longitude": -0.4543 },
+      { "code": "LGW", "city": "London", "name": "Gatwick Airport", "latitude": 51.1537, "longitude": -0.1821 },
+      { "code": "MAN", "city": "Manchester", "name": "Manchester Airport", "latitude": 53.3650, "longitude": -2.2728 },
+      { "code": "STN", "city": "London", "name": "Stansted Airport", "latitude": 51.8894, "longitude": 0.2622 },
+      { "code": "LTN", "city": "London", "name": "Luton Airport", "latitude": 51.8747, "longitude": -0.3683 },
+      { "code": "EDI", "city": "Edinburgh", "name": "Edinburgh Airport", "latitude": 55.9500, "longitude": -3.3725 },
+      { "code": "BHX", "city": "Birmingham", "name": "Birmingham Airport", "latitude": 52.4539, "longitude": -1.7480 },
+      { "code": "GLA", "city": "Glasgow", "name": "Glasgow Airport", "latitude": 55.8719, "longitude": -4.4331 },
+      { "code": "BRS", "city": "Bristol", "name": "Bristol Airport", "latitude": 51.3827, "longitude": -2.7191 },
+      { "code": "NCL", "city": "Newcastle", "name": "Newcastle Airport", "latitude": 55.0375, "longitude": -1.6917 }
+    ]
+  },
+  {
+    "country": "Spain",
+    "airports": [
+      { "code": "MAD", "city": "Madrid", "name": "Adolfo Suárez Madrid–Barajas Airport", "latitude": 40.4893, "longitude": -3.6827 },
+      { "code": "BCN", "city": "Barcelona", "name": "Josep Tarradellas Barcelona–El Prat Airport", "latitude": 41.2974, "longitude": 2.0833 },
+      { "code": "PMI", "city": "Palma de Mallorca", "name": "Palma de Mallorca Airport", "latitude": 39.5517, "longitude": 2.7388 },
+      { "code": "AGP", "city": "Málaga", "name": "Málaga-Costa del Sol Airport", "latitude": 36.6749, "longitude": -4.4991 },
+      { "code": "ALC", "city": "Alicante", "name": "Alicante–Elche Airport", "latitude": 38.2822, "longitude": -0.5582 },
+      { "code": "LPA", "city": "Gran Canaria", "name": "Gran Canaria Airport", "latitude": 27.9319, "longitude": -15.3866 },
+      { "code": "TFS", "city": "Tenerife", "name": "Tenerife South Airport", "latitude": 28.0445, "longitude": -16.5725 },
+      { "code": "VLC", "city": "Valencia", "name": "Valencia Airport", "latitude": 39.4893, "longitude": -0.4816 },
+      { "code": "SVQ", "city": "Seville", "name": "Seville Airport", "latitude": 37.4180, "longitude": -5.8931 },
+      { "code": "BIO", "city": "Bilbao", "name": "Bilbao Airport", "latitude": 43.3011, "longitude": -2.9106 }
+    ]
+  },
+  {
+    "country": "India",
+    "airports": [
+      { "code": "DEL", "city": "Delhi", "name": "Indira Gandhi International Airport", "latitude": 28.5562, "longitude": 77.1000 },
+      { "code": "BOM", "city": "Mumbai", "name": "Chhatrapati Shivaji Maharaj International Airport", "latitude": 19.0896, "longitude": 72.8656 },
+      { "code": "BLR", "city": "Bengaluru", "name": "Kempegowda International Airport", "latitude": 13.1986, "longitude": 77.7066 },
+      { "code": "HYD", "city": "Hyderabad", "name": "Rajiv Gandhi International Airport", "latitude": 17.2403, "longitude": 78.4294 },
+      { "code": "MAA", "city": "Chennai", "name": "Chennai International Airport", "latitude": 12.9941, "longitude": 80.1709 },
+      { "code": "CCU", "city": "Kolkata", "name": "Netaji Subhas Chandra Bose International Airport", "latitude": 22.6547, "longitude": 88.4467 },
+      { "code": "COK", "city": "Kochi", "name": "Cochin International Airport", "latitude": 10.1510, "longitude": 76.4019 },
+      { "code": "PNQ", "city": "Pune", "name": "Pune Airport", "latitude": 18.5826, "longitude": 73.9199 },
+      { "code": "GOI", "city": "Goa", "name": "Goa International Airport", "latitude": 15.3800, "longitude": 73.8310 },
+      { "code": "AMD", "city": "Ahmedabad", "name": "Sardar Vallabhbhai Patel International Airport", "latitude": 23.0734, "longitude": 72.6347 }
+    ]
+  },
+  {
+    "country": "Japan",
+    "airports": [
+      { "code": "HND", "city": "Tokyo", "name": "Tokyo Haneda Airport", "latitude": 35.5494, "longitude": 139.7798 },
+      { "code": "NRT", "city": "Tokyo", "name": "Narita International Airport", "latitude": 35.7647, "longitude": 140.3864 },
+      { "code": "KIX", "city": "Osaka", "name": "Kansai International Airport", "latitude": 34.4347, "longitude": 135.2442 },
+      { "code": "FUK", "city": "Fukuoka", "name": "Fukuoka Airport", "latitude": 33.5859, "longitude": 130.4500 },
+      { "code": "CTS", "city": "Sapporo", "name": "New Chitose Airport", "latitude": 42.7752, "longitude": 141.6923 },
+      { "code": "NGO", "city": "Nagoya", "name": "Chubu Centrair International Airport", "latitude": 34.8584, "longitude": 136.8044 },
+      { "code": "OKA", "city": "Okinawa", "name": "Naha Airport", "latitude": 26.1958, "longitude": 127.6460 },
+      { "code": "KOJ", "city": "Kagoshima", "name": "Kagoshima Airport", "latitude": 31.8034, "longitude": 130.7194 },
+      { "code": "HIJ", "city": "Hiroshima", "name": "Hiroshima Airport", "latitude": 34.4361, "longitude": 132.9194 },
+      { "code": "SDJ", "city": "Sendai", "name": "Sendai Airport", "latitude": 38.1397, "longitude": 140.9176 }
+    ]
+  },
+  {
+    "country": "Brazil",
+    "airports": [
+      { "code": "GRU", "city": "São Paulo", "name": "São Paulo/Guarulhos–Governador André Franco Montoro International Airport", "latitude": -23.4356, "longitude": -46.4731 },
+      { "code": "CGH", "city": "São Paulo", "name": "Congonhas-São Paulo Airport", "latitude": -23.6261, "longitude": -46.6564 },
+      { "code": "BSB", "city": "Brasília", "name": "Brasília International Airport", "latitude": -15.8697, "longitude": -47.9208 },
+      { "code": "GIG", "city": "Rio de Janeiro", "name": "Rio de Janeiro/Galeão–Antonio Carlos Jobim International Airport", "latitude": -22.8090, "longitude": -43.2506 },
+      { "code": "CNF", "city": "Belo Horizonte", "name": "Tancredo Neves International Airport", "latitude": -19.6244, "longitude": -43.9719 },
+      { "code": "SSA", "city": "Salvador", "name": "Deputado Luís Eduardo Magalhães International Airport", "latitude": -12.9086, "longitude": -38.3225 },
+      { "code": "REC", "city": "Recife", "name": "Recife/Guararapes–Gilberto Freyre International Airport", "latitude": -8.1265, "longitude": -34.9236 },
+      { "code": "FOR", "city": "Fortaleza", "name": "Pinto Martins – Fortaleza International Airport", "latitude": -3.7763, "longitude": -38.5326 },
+      { "code": "CWB", "city": "Curitiba", "name": "Afonso Pena International Airport", "latitude": -25.5285, "longitude": -49.1758 },
+      { "code": "POA", "city": "Porto Alegre", "name": "Salgado Filho International Airport", "latitude": -29.9939, "longitude": -51.1714 }
+    ]
+  },
+  {
+    "country": "Mexico",
+    "airports": [
+      { "code": "MEX", "city": "Mexico City", "name": "Mexico City International Airport", "latitude": 19.4363, "longitude": -99.0721 },
+      { "code": "CUN", "city": "Cancún", "name": "Cancún International Airport", "latitude": 21.0365, "longitude": -86.8771 },
+      { "code": "GDL", "city": "Guadalajara", "name": "Miguel Hidalgo y Costilla Guadalajara International Airport", "latitude": 20.5218, "longitude": -103.3112 },
+      { "code": "MTY", "city": "Monterrey", "name": "Monterrey International Airport", "latitude": 25.7785, "longitude": -100.1071 },
+      { "code": "TIJ", "city": "Tijuana", "name": "Tijuana International Airport", "latitude": 32.5411, "longitude": -116.9702 },
+      { "code": "SJD", "city": "Los Cabos", "name": "Los Cabos International Airport", "latitude": 23.1518, "longitude": -109.7210 },
+      { "code": "PVR", "city": "Puerto Vallarta", "name": "Licenciado Gustavo Díaz Ordaz International Airport", "latitude": 20.6801, "longitude": -105.2534 },
+      { "code": "MID", "city": "Mérida", "name": "Manuel Crescencio Rejón International Airport", "latitude": 20.9370, "longitude": -89.6577 },
+      { "code": "BJX", "city": "León", "name": "Del Bajío International Airport", "latitude": 20.9935, "longitude": -101.4805 },
+      { "code": "CUL", "city": "Culiacán", "name": "Bachigualato Federal International Airport", "latitude": 24.7645, "longitude": -107.4747 },
+      { "code": "CJS", "city": "Ciudad Juárez", "name": "Abraham González International Airport", "latitude": 31.6361, "longitude": -106.4299 },
+      { "code": "HMO", "city": "Hermosillo", "name": "General Ignacio Pesqueira García International Airport", "latitude": 29.0959, "longitude": -111.0479 },
+      { "code": "CUU", "city": "Chihuahua", "name": "General Roberto Fierro Villalobos International Airport", "latitude": 28.7020, "longitude": -105.9646 },
+      { "code": "TGZ", "city": "Tuxtla Gutiérrez", "name": "Ángel Albino Corzo International Airport", "latitude": 16.5636, "longitude": -93.0225 },
+      { "code": "MZT", "city": "Mazatlán", "name": "General Rafael Buelna International Airport", "latitude": 23.1614, "longitude": -106.2661 },
+      { "code": "VER", "city": "Veracruz", "name": "General Heriberto Jara International Airport", "latitude": 19.1459, "longitude": -96.1870 }
+    ]
+  }
+]

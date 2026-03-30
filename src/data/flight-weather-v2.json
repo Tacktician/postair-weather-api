@@ -1,0 +1,2627 @@
+[
+  {
+    "id": "d07bdab9-637e-4d2e-a962-12683c5d768f",
+    "city": "Ocala",
+    "country": "United States",
+    "humidity": 84.6,
+    "windSpeed": [
+      {
+        "Speed": 40,
+        "unit": "mph",
+        "direction": "SE"
+      }
+    ],
+    "weatherCondition": "Fog",
+    "sunriseTime": "11:57 AM",
+    "sunsetTime": "1:56 PM",
+    "visibility": 4.84,
+    "airPressure": 1028.22,
+    "temperature": [
+      {
+        "temperature": 0.7,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Medium(M)"
+  },
+  {
+    "id": "46f5b6fa-8040-44f9-8e8b-3b2b773578e2",
+    "city": "Edosaki",
+    "country": "Japan",
+    "humidity": 45.7,
+    "windSpeed": [
+      {
+        "Speed": 15,
+        "unit": "mph",
+        "direction": "S"
+      }
+    ],
+    "weatherCondition": "Fog",
+    "sunriseTime": "8:07 AM",
+    "sunsetTime": "5:10 AM",
+    "visibility": 9.92,
+    "airPressure": 1040.08,
+    "temperature": [
+      {
+        "temperature": -30.7,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Light(L)"
+  },
+  {
+    "id": "fe3ef270-2588-4265-bbd7-35f316fc7e20",
+    "city": "Springfield",
+    "country": "United States",
+    "humidity": 91.0,
+    "windSpeed": [
+      {
+        "Speed": 6,
+        "unit": "mph",
+        "direction": "E"
+      }
+    ],
+    "weatherCondition": "Lightning",
+    "sunriseTime": "7:00 PM",
+    "sunsetTime": "2:46 AM",
+    "visibility": 5.83,
+    "airPressure": 1080.08,
+    "temperature": [
+      {
+        "temperature": -39.1,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Heavy(H)"
+  },
+  {
+    "id": "bdc60679-7122-49d1-b1d7-401ec056253b",
+    "city": "Miyata",
+    "country": "Japan",
+    "humidity": 50.0,
+    "windSpeed": [
+      {
+        "Speed": 41,
+        "unit": "mph",
+        "direction": "NE"
+      }
+    ],
+    "weatherCondition": "Frost",
+    "sunriseTime": "2:37 PM",
+    "sunsetTime": "9:20 PM",
+    "visibility": 0.56,
+    "airPressure": 1078.3,
+    "temperature": [
+      {
+        "temperature": 45.2,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Heavy(H)"
+  },
+  {
+    "id": "d588784c-4ea6-4589-aa74-eeae8f33557e",
+    "city": "El Porvenir",
+    "country": "Mexico",
+    "humidity": 98.7,
+    "windSpeed": [
+      {
+        "Speed": 19,
+        "unit": "mph",
+        "direction": "NW"
+      }
+    ],
+    "weatherCondition": "Sandstorm",
+    "sunriseTime": "4:18 AM",
+    "sunsetTime": "7:32 PM",
+    "visibility": 1.41,
+    "airPressure": 918.42,
+    "temperature": [
+      {
+        "temperature": -24.0,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Super(S)"
+  },
+  {
+    "id": "67fce1ac-9d7f-4a1b-8dff-7f00a6823f1c",
+    "city": "Matelândia",
+    "country": "Brazil",
+    "humidity": 41.4,
+    "windSpeed": [
+      {
+        "Speed": 48,
+        "unit": "mph",
+        "direction": "NE"
+      }
+    ],
+    "weatherCondition": "Overcast and windy",
+    "sunriseTime": "11:52 PM",
+    "sunsetTime": "10:06 AM",
+    "visibility": 6.42,
+    "airPressure": 1058.53,
+    "temperature": [
+      {
+        "temperature": -13.5,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": null
+  },
+  {
+    "id": "bf1058e3-7aa8-4c33-be0d-2e1755fc28fe",
+    "city": "João Pessoa",
+    "country": "Brazil",
+    "humidity": 0.7,
+    "windSpeed": [
+      {
+        "Speed": 21,
+        "unit": "mph",
+        "direction": "NW"
+      }
+    ],
+    "weatherCondition": "Tornado",
+    "sunriseTime": "3:21 AM",
+    "sunsetTime": "2:54 AM",
+    "visibility": 8.71,
+    "airPressure": 944.62,
+    "temperature": [
+      {
+        "temperature": -25.0,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Heavy(H)"
+  },
+  {
+    "id": "dcb47649-910b-4bc2-a65b-147b1f3f2204",
+    "city": "Cordeiro",
+    "country": "Brazil",
+    "humidity": 52.7,
+    "windSpeed": [
+      {
+        "Speed": 6,
+        "unit": "mph",
+        "direction": "E"
+      }
+    ],
+    "weatherCondition": "Snow",
+    "sunriseTime": "1:12 AM",
+    "sunsetTime": "12:51 AM",
+    "visibility": 6.93,
+    "airPressure": 1086.71,
+    "temperature": [
+      {
+        "temperature": 43.8,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Medium(M)"
+  },
+  {
+    "id": "61e6f307-35b3-44da-9eb8-f77735e4189b",
+    "city": "Alagoa Grande",
+    "country": "Brazil",
+    "humidity": 35.6,
+    "windSpeed": [
+      {
+        "Speed": 6,
+        "unit": "mph",
+        "direction": "NE"
+      }
+    ],
+    "weatherCondition": "A few clouds and windy",
+    "sunriseTime": "10:33 PM",
+    "sunsetTime": "1:29 AM",
+    "visibility": 2.46,
+    "airPressure": 940.18,
+    "temperature": [
+      {
+        "temperature": -36.0,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Super(S)"
+  },
+  {
+    "id": "21fc0e8e-5eff-4506-808b-ab1aa979ac8b",
+    "city": "Columbus",
+    "country": "United States",
+    "humidity": 23.6,
+    "windSpeed": [
+      {
+        "Speed": 18,
+        "unit": "mph",
+        "direction": "S"
+      }
+    ],
+    "weatherCondition": "Cloudy",
+    "sunriseTime": "3:02 AM",
+    "sunsetTime": "4:33 AM",
+    "visibility": 7.29,
+    "airPressure": 985.17,
+    "temperature": [
+      {
+        "temperature": 47.7,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Heavy(H)"
+  },
+  {
+    "id": "9258c17e-4709-4409-9413-f30c51260f06",
+    "city": "Ajaccio",
+    "country": "France",
+    "humidity": 38.0,
+    "windSpeed": [
+      {
+        "Speed": 30,
+        "unit": "mph",
+        "direction": "W"
+      }
+    ],
+    "weatherCondition": "Frost",
+    "sunriseTime": "5:25 AM",
+    "sunsetTime": "6:03 PM",
+    "visibility": 0.67,
+    "airPressure": 925.96,
+    "temperature": [
+      {
+        "temperature": 41.0,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Super(S)"
+  },
+  {
+    "id": "9c0e3365-45e5-41d6-929a-5353c4eae8e1",
+    "city": "Abaetetuba",
+    "country": "Brazil",
+    "humidity": 67.5,
+    "windSpeed": [
+      {
+        "Speed": 45,
+        "unit": "mph",
+        "direction": "W"
+      }
+    ],
+    "weatherCondition": "Tornado",
+    "sunriseTime": "5:33 AM",
+    "sunsetTime": "10:43 AM",
+    "visibility": 0.17,
+    "airPressure": 954.97,
+    "temperature": [
+      {
+        "temperature": -42.9,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Medium(M)"
+  },
+  {
+    "id": "fef5aef9-54cb-4257-8049-c6cb9435b5f2",
+    "city": "Évry",
+    "country": "France",
+    "humidity": 37.6,
+    "windSpeed": [
+      {
+        "Speed": 8,
+        "unit": "mph",
+        "direction": "W"
+      }
+    ],
+    "weatherCondition": "Windy",
+    "sunriseTime": "5:21 PM",
+    "sunsetTime": "5:30 AM",
+    "visibility": 4.05,
+    "airPressure": 934.1,
+    "temperature": [
+      {
+        "temperature": -21.0,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Heavy(H)"
+  },
+  {
+    "id": "49a1c232-2124-41c1-8c2e-83262ae7fb21",
+    "city": "Atlanta",
+    "country": "United States",
+    "humidity": 80.3,
+    "windSpeed": [
+      {
+        "Speed": 22,
+        "unit": "mph",
+        "direction": "N"
+      }
+    ],
+    "weatherCondition": "Partially Cloudy",
+    "sunriseTime": "7:44 AM",
+    "sunsetTime": "8:46 PM",
+    "visibility": 3.44,
+    "airPressure": 1082.38,
+    "temperature": [
+      {
+        "temperature": 27.0,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Light(L)"
+  },
+  {
+    "id": "39a1c222-2524-43c1-9c2e-85762ae7fa22",
+    "city": "Cincinnati",
+    "country": "United States",
+    "humidity": 67.3,
+    "windSpeed": [
+      {
+        "Speed": 42,
+        "unit": "mph",
+        "direction": "S"
+      }
+    ],
+    "weatherCondition": "Hail",
+    "sunriseTime": "1:44 PM",
+    "sunsetTime": "2:46 PM",
+    "visibility": 3.44,
+    "airPressure": 1082.38,
+    "temperature": [
+      {
+        "temperature": 27.0,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Medium(M)"
+  },
+  {
+    "id": "83841760-fe29-442d-8e87-8e4555f2d952",
+    "city": "San Isidro",
+    "country": "Mexico",
+    "humidity": 29.8,
+    "windSpeed": [
+      {
+        "Speed": 5,
+        "unit": "mph",
+        "direction": "S"
+      }
+    ],
+    "weatherCondition": "Dust Storm",
+    "sunriseTime": "7:49 AM",
+    "sunsetTime": "11:15 PM",
+    "visibility": 9.87,
+    "airPressure": 965.12,
+    "temperature": [
+      {
+        "temperature": -5.7,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Heavy(H)"
+  },
+  {
+    "id": "940f58a4-da5c-4d00-b095-d08ac4e2f1ad",
+    "city": "Tsukuba",
+    "country": "Japan",
+    "humidity": 12.7,
+    "windSpeed": [
+      {
+        "Speed": 39,
+        "unit": "mph",
+        "direction": "N"
+      }
+    ],
+    "weatherCondition": "Tornado",
+    "sunriseTime": "9:59 PM",
+    "sunsetTime": "11:54 AM",
+    "visibility": 5.09,
+    "airPressure": 950.65,
+    "temperature": [
+      {
+        "temperature": 15.6,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Medium(M)"
+  },
+  {
+    "id": "4bfc3d86-ee9f-4996-8f33-f262281bb362",
+    "city": "Vancouver",
+    "country": "United States",
+    "humidity": 78.8,
+    "windSpeed": [
+      {
+        "Speed": 5,
+        "unit": "mph",
+        "direction": "SE"
+      }
+    ],
+    "weatherCondition": "A few clouds and windy",
+    "sunriseTime": "3:23 AM",
+    "sunsetTime": "5:23 PM",
+    "visibility": 0.52,
+    "airPressure": 1062.71,
+    "temperature": [
+      {
+        "temperature": 6.1,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Super(S)"
+  },
+  {
+    "id": "54eab8b3-c0b0-4e0a-a904-35a59d53c37c",
+    "city": "Schroeder",
+    "country": "Brazil",
+    "humidity": 94.9,
+    "windSpeed": [
+      {
+        "Speed": 9,
+        "unit": "mph",
+        "direction": "W"
+      }
+    ],
+    "weatherCondition": "Tornado",
+    "sunriseTime": "5:49 AM",
+    "sunsetTime": "3:58 AM",
+    "visibility": 1.38,
+    "airPressure": 977.84,
+    "temperature": [
+      {
+        "temperature": -47.9,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Light(L)"
+  },
+  {
+    "id": "10a4a9b4-9c62-4840-9dff-1ed645f24faa",
+    "city": "Le Bourget-du-Lac",
+    "country": "France",
+    "humidity": 13.5,
+    "windSpeed": [
+      {
+        "Speed": 14,
+        "unit": "mph",
+        "direction": "N"
+      }
+    ],
+    "weatherCondition": "Drizzle",
+    "sunriseTime": "11:23 AM",
+    "sunsetTime": "10:02 AM",
+    "visibility": 9.41,
+    "airPressure": 918.47,
+    "temperature": [
+      {
+        "temperature": -9.1,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Super(S)"
+  },
+  {
+    "id": "802bfffd-4251-4628-bd76-c7ca9c198f7c",
+    "city": "Fort Worth",
+    "country": "United States",
+    "humidity": 98.6,
+    "windSpeed": [
+      {
+        "Speed": 30,
+        "unit": "mph",
+        "direction": "N"
+      }
+    ],
+    "weatherCondition": "Dust Storm",
+    "sunriseTime": "8:19 AM",
+    "sunsetTime": "6:27 PM",
+    "visibility": 3.75,
+    "airPressure": 1038.21,
+    "temperature": [
+      {
+        "temperature": -0.2,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Light(L)"
+  },
+  {
+    "id": "c6d90f15-e05d-40ae-bab3-a733b20ebd15",
+    "city": "Itaparica",
+    "country": "Brazil",
+    "humidity": 50.3,
+    "windSpeed": [
+      {
+        "Speed": 45,
+        "unit": "mph",
+        "direction": "S"
+      }
+    ],
+    "weatherCondition": "Sandstorm",
+    "sunriseTime": "12:27 AM",
+    "sunsetTime": "7:57 PM",
+    "visibility": 6.22,
+    "airPressure": 956.74,
+    "temperature": [
+      {
+        "temperature": 14.0,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Light(L)"
+  },
+  {
+    "id": "9d5363ec-f5d1-4c02-87e2-418ad02d03e5",
+    "city": "Niihama",
+    "country": "Japan",
+    "humidity": 87.9,
+    "windSpeed": [
+      {
+        "Speed": 10,
+        "unit": "mph",
+        "direction": "NE"
+      }
+    ],
+    "weatherCondition": "Drizzle",
+    "sunriseTime": "12:43 PM",
+    "sunsetTime": "10:07 AM",
+    "visibility": 6.95,
+    "airPressure": 1026.0,
+    "temperature": [
+      {
+        "temperature": -16.4,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Super(S)"
+  },
+  {
+    "id": "29d75ebb-f7d1-4d64-ba68-4d0a1bafb8b3",
+    "city": "Teófilo Otoni",
+    "country": "Brazil",
+    "humidity": 30.8,
+    "windSpeed": [
+      {
+        "Speed": 23,
+        "unit": "mph",
+        "direction": "E"
+      }
+    ],
+    "weatherCondition": "Typhoon",
+    "sunriseTime": "10:36 AM",
+    "sunsetTime": "12:06 PM",
+    "visibility": 5.19,
+    "airPressure": 927.67,
+    "temperature": [
+      {
+        "temperature": 22.6,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": null
+  },
+  {
+    "id": "567fb30b-a8e4-461c-89b7-003e84265047",
+    "city": "Barra de São Francisco",
+    "country": "Brazil",
+    "humidity": 81.3,
+    "windSpeed": [
+      {
+        "Speed": 32,
+        "unit": "mph",
+        "direction": "NE"
+      }
+    ],
+    "weatherCondition": "Mist",
+    "sunriseTime": "4:53 PM",
+    "sunsetTime": "10:46 AM",
+    "visibility": 8.73,
+    "airPressure": 1058.8,
+    "temperature": [
+      {
+        "temperature": -18.0,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Medium(M)"
+  },
+  {
+    "id": "36e8482e-50b1-41b6-9828-c46363d893a5",
+    "city": "Les Clayes-sous-Bois",
+    "country": "France",
+    "humidity": 13.7,
+    "windSpeed": [
+      {
+        "Speed": 50,
+        "unit": "mph",
+        "direction": "NE"
+      }
+    ],
+    "weatherCondition": "Overcast and windy",
+    "sunriseTime": "12:14 PM",
+    "sunsetTime": "12:17 PM",
+    "visibility": 1.3,
+    "airPressure": 1017.07,
+    "temperature": [
+      {
+        "temperature": -41.4,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Heavy(H)"
+  },
+  {
+    "id": "e878832e-6a3d-4c6c-95f0-3819e26fe88e",
+    "city": "São José dos Campos",
+    "country": "Brazil",
+    "humidity": 54.9,
+    "windSpeed": [
+      {
+        "Speed": 28,
+        "unit": "mph",
+        "direction": "N"
+      }
+    ],
+    "weatherCondition": "Hail",
+    "sunriseTime": "10:04 PM",
+    "sunsetTime": "8:11 PM",
+    "visibility": 8.19,
+    "airPressure": 978.33,
+    "temperature": [
+      {
+        "temperature": -24.8,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Super(S)"
+  },
+  {
+    "id": "99c93d50-9261-4735-a1ce-6e3a49665664",
+    "city": "Candelária",
+    "country": "Brazil",
+    "humidity": 41.4,
+    "windSpeed": [
+      {
+        "Speed": 14,
+        "unit": "mph",
+        "direction": "E"
+      }
+    ],
+    "weatherCondition": "Snow",
+    "sunriseTime": "12:03 PM",
+    "sunsetTime": "11:16 AM",
+    "visibility": 8.68,
+    "airPressure": 926.71,
+    "temperature": [
+      {
+        "temperature": -43.5,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Light(L)"
+  },
+  {
+    "id": "a222137f-3787-4e46-bf89-2c8538ee4248",
+    "city": "Muramatsu",
+    "country": "Japan",
+    "humidity": 18.4,
+    "windSpeed": [
+      {
+        "Speed": 21,
+        "unit": "mph",
+        "direction": "NW"
+      }
+    ],
+    "weatherCondition": "A few clouds and windy",
+    "sunriseTime": "2:16 PM",
+    "sunsetTime": "7:47 AM",
+    "visibility": 9.5,
+    "airPressure": 956.74,
+    "temperature": [
+      {
+        "temperature": 42.2,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Light(L)"
+  },
+  {
+    "id": "fdb5b8e3-829d-498d-b4b1-f7d8a673a052",
+    "city": "Aisai",
+    "country": "Japan",
+    "humidity": 78.3,
+    "windSpeed": [
+      {
+        "Speed": 12,
+        "unit": "mph",
+        "direction": "NE"
+      }
+    ],
+    "weatherCondition": "A few clouds and windy",
+    "sunriseTime": "3:12 PM",
+    "sunsetTime": "10:20 PM",
+    "visibility": 1.42,
+    "airPressure": 1064.24,
+    "temperature": [
+      {
+        "temperature": -8.4,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Super(S)"
+  },
+  {
+    "id": "854d304d-95e3-4bf5-823a-b53b138d821c",
+    "city": "Lazaro Cardenas",
+    "country": "Mexico",
+    "humidity": 26.9,
+    "windSpeed": [
+      {
+        "Speed": 14,
+        "unit": "mph",
+        "direction": "N"
+      }
+    ],
+    "weatherCondition": "Frost",
+    "sunriseTime": "2:30 PM",
+    "sunsetTime": "7:02 AM",
+    "visibility": 5.26,
+    "airPressure": 929.87,
+    "temperature": [
+      {
+        "temperature": -26.0,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Heavy(H)"
+  },
+  {
+    "id": "4ecfba46-98be-401e-97f8-d708a9ff7224",
+    "city": "Roissy Charles-de-Gaulle",
+    "country": "France",
+    "humidity": 0.7,
+    "windSpeed": [
+      {
+        "Speed": 36,
+        "unit": "mph",
+        "direction": "S"
+      }
+    ],
+    "weatherCondition": "Sandstorm",
+    "sunriseTime": "4:55 PM",
+    "sunsetTime": "9:42 AM",
+    "visibility": 9.87,
+    "airPressure": 962.84,
+    "temperature": [
+      {
+        "temperature": -20.3,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Heavy(H)"
+  },
+  {
+    "id": "2f77f8e0-2956-4e37-9911-7c829fc7dae6",
+    "city": "Ino",
+    "country": "Japan",
+    "humidity": 54.7,
+    "windSpeed": [
+      {
+        "Speed": 43,
+        "unit": "mph",
+        "direction": "N"
+      }
+    ],
+    "weatherCondition": "Blizzard",
+    "sunriseTime": "3:48 PM",
+    "sunsetTime": "10:16 AM",
+    "visibility": 1.86,
+    "airPressure": 927.79,
+    "temperature": [
+      {
+        "temperature": -44.3,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Super(S)"
+  },
+  {
+    "id": "ab26739e-986f-4d4d-925e-640dbdb1a4b8",
+    "city": "Paris",
+    "country": "France",
+    "humidity": 75.3,
+    "windSpeed": [
+      {
+        "Speed": 40,
+        "unit": "mph",
+        "direction": "NW"
+      }
+    ],
+    "weatherCondition": "Drizzle",
+    "sunriseTime": "10:11 PM",
+    "sunsetTime": "5:46 AM",
+    "visibility": 0.02,
+    "airPressure": 990.69,
+    "temperature": [
+      {
+        "temperature": 42.6,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Heavy(H)"
+  },
+  {
+    "id": "0473dd67-c513-480e-b8ac-2b4c050765ac",
+    "city": "Richmond",
+    "country": "United States",
+    "humidity": 33.5,
+    "windSpeed": [
+      {
+        "Speed": 42,
+        "unit": "mph",
+        "direction": "NW"
+      }
+    ],
+    "weatherCondition": "Lightning",
+    "sunriseTime": "3:50 AM",
+    "sunsetTime": "7:13 PM",
+    "visibility": 8.57,
+    "airPressure": 916.8,
+    "temperature": [
+      {
+        "temperature": 35.2,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": null
+  },
+  {
+    "id": "8661fbad-521b-449c-bb6c-09a0de6737d0",
+    "city": "Clearwater",
+    "country": "United States",
+    "humidity": 80.3,
+    "windSpeed": [
+      {
+        "Speed": 48,
+        "unit": "mph",
+        "direction": "NW"
+      }
+    ],
+    "weatherCondition": "Partially Cloudy",
+    "sunriseTime": "2:12 PM",
+    "sunsetTime": "5:30 AM",
+    "visibility": 9.55,
+    "airPressure": 938.82,
+    "temperature": [
+      {
+        "temperature": -7.0,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Super(S)"
+  },
+  {
+    "id": "cdf70e79-3d20-4fc9-8350-4ec73ef27e1b",
+    "city": "Marseille",
+    "country": "France",
+    "humidity": 30.6,
+    "windSpeed": [
+      {
+        "Speed": 13,
+        "unit": "mph",
+        "direction": "N"
+      }
+    ],
+    "weatherCondition": "Mist",
+    "sunriseTime": "3:10 AM",
+    "sunsetTime": "11:58 AM",
+    "visibility": 0.73,
+    "airPressure": 974.39,
+    "temperature": [
+      {
+        "temperature": 17.5,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Medium(M)"
+  },
+  {
+    "id": "901c6454-efbb-4612-91ef-310addcec871",
+    "city": "Saint-Étienne",
+    "country": "France",
+    "humidity": 5.6,
+    "windSpeed": [
+      {
+        "Speed": 11,
+        "unit": "mph",
+        "direction": "NE"
+      }
+    ],
+    "weatherCondition": "Sleet",
+    "sunriseTime": "9:35 PM",
+    "sunsetTime": "8:11 PM",
+    "visibility": 4.98,
+    "airPressure": 1087.74,
+    "temperature": [
+      {
+        "temperature": 2.2,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Medium(M)"
+  },
+  {
+    "id": "fa2c2ebe-633d-4ab5-a517-5ece5cb025ce",
+    "city": "Illkirch-Graffenstaden",
+    "country": "France",
+    "humidity": 85.5,
+    "windSpeed": [
+      {
+        "Speed": 48,
+        "unit": "mph",
+        "direction": "SE"
+      }
+    ],
+    "weatherCondition": "Overcast and windy",
+    "sunriseTime": "12:19 PM",
+    "sunsetTime": "10:36 PM",
+    "visibility": 4.01,
+    "airPressure": 983.76,
+    "temperature": [
+      {
+        "temperature": -45.2,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Light(L)"
+  },
+  {
+    "id": "9458d148-89d0-4cfa-ad3e-37ee49e621bd",
+    "city": "Trenton",
+    "country": "United States",
+    "humidity": 65.0,
+    "windSpeed": [
+      {
+        "Speed": 27,
+        "unit": "mph",
+        "direction": "SE"
+      }
+    ],
+    "weatherCondition": "Frost",
+    "sunriseTime": "2:35 PM",
+    "sunsetTime": "8:05 PM",
+    "visibility": 6.54,
+    "airPressure": 1049.61,
+    "temperature": [
+      {
+        "temperature": -23.7,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Light(L)"
+  },
+  {
+    "id": "e22fc348-1a18-4fae-84cf-053ebb618210",
+    "city": "Viseu",
+    "country": "Brazil",
+    "humidity": 94.3,
+    "windSpeed": [
+      {
+        "Speed": 46,
+        "unit": "mph",
+        "direction": "NE"
+      }
+    ],
+    "weatherCondition": "Tornado",
+    "sunriseTime": "7:22 AM",
+    "sunsetTime": "8:49 PM",
+    "visibility": 8.87,
+    "airPressure": 962.11,
+    "temperature": [
+      {
+        "temperature": 20.1,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Medium(M)"
+  },
+  {
+    "id": "71412bdc-03cb-4687-93b9-3702cb39be85",
+    "city": "Minneapolis",
+    "country": "United States",
+    "humidity": 43.0,
+    "windSpeed": [
+      {
+        "Speed": 39,
+        "unit": "mph",
+        "direction": "N"
+      }
+    ],
+    "weatherCondition": "Drizzle",
+    "sunriseTime": "12:40 PM",
+    "sunsetTime": "10:44 PM",
+    "visibility": 9.0,
+    "airPressure": 993.94,
+    "temperature": [
+      {
+        "temperature": -27.2,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Super(S)"
+  },
+  {
+    "id": "f7f466ef-2c9c-450c-8ec7-3fc3cea12f32",
+    "city": "Regente Feijó",
+    "country": "Brazil",
+    "humidity": 86.7,
+    "windSpeed": [
+      {
+        "Speed": 42,
+        "unit": "mph",
+        "direction": "S"
+      }
+    ],
+    "weatherCondition": "Sandstorm",
+    "sunriseTime": "8:31 AM",
+    "sunsetTime": "1:34 PM",
+    "visibility": 6.39,
+    "airPressure": 1069.23,
+    "temperature": [
+      {
+        "temperature": -4.8,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Medium(M)"
+  },
+  {
+    "id": "3c2a8b56-1bde-4573-ab04-991af39cb3af",
+    "city": "Kaminokawa",
+    "country": "Japan",
+    "humidity": 29.1,
+    "windSpeed": [
+      {
+        "Speed": 21,
+        "unit": "mph",
+        "direction": "NE"
+      }
+    ],
+    "weatherCondition": "Sandstorm",
+    "sunriseTime": "4:29 PM",
+    "sunsetTime": "1:38 AM",
+    "visibility": 2.59,
+    "airPressure": 1083.35,
+    "temperature": [
+      {
+        "temperature": -32.3,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Medium(M)"
+  },
+  {
+    "id": "c8b19401-97db-412a-9674-2aaae3e15fde",
+    "city": "Bebedouro",
+    "country": "Brazil",
+    "humidity": 93.5,
+    "windSpeed": [
+      {
+        "Speed": 42,
+        "unit": "mph",
+        "direction": "E"
+      }
+    ],
+    "weatherCondition": "Typhoon",
+    "sunriseTime": "5:06 PM",
+    "sunsetTime": "6:28 PM",
+    "visibility": 5.33,
+    "airPressure": 910.03,
+    "temperature": [
+      {
+        "temperature": 40.9,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Medium(M)"
+  },
+  {
+    "id": "0baf77bd-38bf-43c7-81d0-de4a74b9f6f4",
+    "city": "Charlotte",
+    "country": "United States",
+    "humidity": 83.1,
+    "windSpeed": [
+      {
+        "Speed": 10,
+        "unit": "mph",
+        "direction": "SE"
+      }
+    ],
+    "weatherCondition": "Overcast",
+    "sunriseTime": "7:39 AM",
+    "sunsetTime": "4:37 PM",
+    "visibility": 1.34,
+    "airPressure": 1005.06,
+    "temperature": [
+      {
+        "temperature": -25.5,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Heavy(H)"
+  },
+  {
+    "id": "14f07052-d6e3-427d-b429-97b9a9421761",
+    "city": "Annecy",
+    "country": "France",
+    "humidity": 41.9,
+    "windSpeed": [
+      {
+        "Speed": 35,
+        "unit": "mph",
+        "direction": "W"
+      }
+    ],
+    "weatherCondition": "Mist",
+    "sunriseTime": "2:24 PM",
+    "sunsetTime": "2:37 AM",
+    "visibility": 3.04,
+    "airPressure": 973.1,
+    "temperature": [
+      {
+        "temperature": -36.3,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Heavy(H)"
+  },
+  {
+    "id": "67294cf2-7f12-423d-8935-2e2c05ee32a0",
+    "city": "Katori-shi",
+    "country": "Japan",
+    "humidity": 8.8,
+    "windSpeed": [
+      {
+        "Speed": 12,
+        "unit": "mph",
+        "direction": "S"
+      }
+    ],
+    "weatherCondition": "Lightning",
+    "sunriseTime": "4:45 PM",
+    "sunsetTime": "2:47 AM",
+    "visibility": 5.68,
+    "airPressure": 981.58,
+    "temperature": [
+      {
+        "temperature": 21.7,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": null
+  },
+  {
+    "id": "a78f0ea6-11b3-4098-9620-668f2c529d19",
+    "city": "Tucson",
+    "country": "United States",
+    "humidity": 27.9,
+    "windSpeed": [
+      {
+        "Speed": 14,
+        "unit": "mph",
+        "direction": "N"
+      }
+    ],
+    "weatherCondition": "Fog",
+    "sunriseTime": "6:52 AM",
+    "sunsetTime": "3:36 PM",
+    "visibility": 1.09,
+    "airPressure": 1083.01,
+    "temperature": [
+      {
+        "temperature": 35.1,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Heavy(H)"
+  },
+  {
+    "id": "bc3e58f1-800f-41f7-8ccc-c4c2dfdf832f",
+    "city": "Betim",
+    "country": "Brazil",
+    "humidity": 60.0,
+    "windSpeed": [
+      {
+        "Speed": 8,
+        "unit": "mph",
+        "direction": "W"
+      }
+    ],
+    "weatherCondition": "Dust Storm",
+    "sunriseTime": "10:52 AM",
+    "sunsetTime": "5:08 PM",
+    "visibility": 8.86,
+    "airPressure": 1095.05,
+    "temperature": [
+      {
+        "temperature": -24.3,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Super(S)"
+  },
+  {
+    "id": "354ae257-7cf9-4fc2-8b83-1815f10e166e",
+    "city": "Villeneuve-d'Ascq",
+    "country": "France",
+    "humidity": 97.9,
+    "windSpeed": [
+      {
+        "Speed": 22,
+        "unit": "mph",
+        "direction": "SE"
+      }
+    ],
+    "weatherCondition": "Lightning",
+    "sunriseTime": "9:09 PM",
+    "sunsetTime": "8:59 AM",
+    "visibility": 5.81,
+    "airPressure": 1042.31,
+    "temperature": [
+      {
+        "temperature": 29.9,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": null
+  },
+  {
+    "id": "b271163b-0727-49ca-b1c6-c91154b7cbd2",
+    "city": "Bloomington",
+    "country": "United States",
+    "humidity": 11.7,
+    "windSpeed": [
+      {
+        "Speed": 35,
+        "unit": "mph",
+        "direction": "S"
+      }
+    ],
+    "weatherCondition": "Overcast and windy",
+    "sunriseTime": "11:41 PM",
+    "sunsetTime": "12:19 PM",
+    "visibility": 3.82,
+    "airPressure": 957.11,
+    "temperature": [
+      {
+        "temperature": -47.9,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Light(L)"
+  },
+  {
+    "id": "520aaf48-18fd-40f4-8c4c-d12a7afc3729",
+    "city": "Montceau-les-Mines",
+    "country": "France",
+    "humidity": 85.4,
+    "windSpeed": [
+      {
+        "Speed": 6,
+        "unit": "mph",
+        "direction": "S"
+      }
+    ],
+    "weatherCondition": "Rain",
+    "sunriseTime": "2:10 PM",
+    "sunsetTime": "11:06 PM",
+    "visibility": 1.16,
+    "airPressure": 901.12,
+    "temperature": [
+      {
+        "temperature": 44.5,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Super(S)"
+  },
+  {
+    "id": "03578ae7-6d0b-4910-8da2-2c4ad01a11d6",
+    "city": "Philadelphia",
+    "country": "United States",
+    "humidity": 11.2,
+    "windSpeed": [
+      {
+        "Speed": 35,
+        "unit": "mph",
+        "direction": "W"
+      }
+    ],
+    "weatherCondition": "Dust Storm",
+    "sunriseTime": "7:13 PM",
+    "sunsetTime": "2:37 AM",
+    "visibility": 2.27,
+    "airPressure": 1025.96,
+    "temperature": [
+      {
+        "temperature": 43.6,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": null
+  },
+  {
+    "id": "87b7b6ae-1937-48c5-81f6-6a768c6fc86d",
+    "city": "Gamagōri",
+    "country": "Japan",
+    "humidity": 93.3,
+    "windSpeed": [
+      {
+        "Speed": 11,
+        "unit": "mph",
+        "direction": "E"
+      }
+    ],
+    "weatherCondition": "Typhoon",
+    "sunriseTime": "10:30 AM",
+    "sunsetTime": "7:13 AM",
+    "visibility": 1.27,
+    "airPressure": 983.35,
+    "temperature": [
+      {
+        "temperature": 13.4,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Super(S)"
+  },
+  {
+    "id": "d8567698-28e8-4c70-b415-be08e1595c7b",
+    "city": "Ōmiya",
+    "country": "Japan",
+    "humidity": 10.3,
+    "windSpeed": [
+      {
+        "Speed": 28,
+        "unit": "mph",
+        "direction": "W"
+      }
+    ],
+    "weatherCondition": "A few clouds and windy",
+    "sunriseTime": "12:34 AM",
+    "sunsetTime": "2:28 PM",
+    "visibility": 9.58,
+    "airPressure": 963.11,
+    "temperature": [
+      {
+        "temperature": -46.3,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Heavy(H)"
+  },
+  {
+    "id": "59f4290e-f904-456c-9fdf-56ab79084a65",
+    "city": "San Diego",
+    "country": "United States",
+    "humidity": 45.1,
+    "windSpeed": [
+      {
+        "Speed": 50,
+        "unit": "mph",
+        "direction": "NE"
+      }
+    ],
+    "weatherCondition": "Thunderstorm",
+    "sunriseTime": "5:13 AM",
+    "sunsetTime": "11:19 AM",
+    "visibility": 4.01,
+    "airPressure": 1024.82,
+    "temperature": [
+      {
+        "temperature": 12.8,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Light(L)"
+  },
+  {
+    "id": "6b0693ca-4f7d-4017-bc2e-cafa1f147312",
+    "city": "Quatro Barras",
+    "country": "Brazil",
+    "humidity": 96.6,
+    "windSpeed": [
+      {
+        "Speed": 26,
+        "unit": "mph",
+        "direction": "W"
+      }
+    ],
+    "weatherCondition": "Hurricane",
+    "sunriseTime": "10:50 AM",
+    "sunsetTime": "6:37 PM",
+    "visibility": 3.25,
+    "airPressure": 1006.84,
+    "temperature": [
+      {
+        "temperature": 24.6,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Super(S)"
+  },
+  {
+    "id": "59547f59-e786-4734-a43b-1f76cf934554",
+    "city": "Tournan-en-Brie",
+    "country": "France",
+    "humidity": 78.3,
+    "windSpeed": [
+      {
+        "Speed": 40,
+        "unit": "mph",
+        "direction": "S"
+      }
+    ],
+    "weatherCondition": "Sunny",
+    "sunriseTime": "1:38 AM",
+    "sunsetTime": "2:42 AM",
+    "visibility": 2.45,
+    "airPressure": 954.21,
+    "temperature": [
+      {
+        "temperature": 9.3,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": null
+  },
+  {
+    "id": "9209d41e-ab6a-40e5-9354-8e0295626247",
+    "city": "Visconde do Rio Branco",
+    "country": "Brazil",
+    "humidity": 77.1,
+    "windSpeed": [
+      {
+        "Speed": 15,
+        "unit": "mph",
+        "direction": "SW"
+      }
+    ],
+    "weatherCondition": "Overcast and windy",
+    "sunriseTime": "7:17 AM",
+    "sunsetTime": "7:29 PM",
+    "visibility": 7.09,
+    "airPressure": 1065.92,
+    "temperature": [
+      {
+        "temperature": 15.3,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Medium(M)"
+  },
+  {
+    "id": "191ab7b8-77bc-409e-b0cd-3ac15cff8185",
+    "city": "Birmingham",
+    "country": "United States",
+    "humidity": 22.9,
+    "windSpeed": [
+      {
+        "Speed": 27,
+        "unit": "mph",
+        "direction": "W"
+      }
+    ],
+    "weatherCondition": "Windy",
+    "sunriseTime": "11:38 AM",
+    "sunsetTime": "6:34 AM",
+    "visibility": 5.7,
+    "airPressure": 935.51,
+    "temperature": [
+      {
+        "temperature": -10.4,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Heavy(H)"
+  },
+  {
+    "id": "297e85ad-eae3-4cbc-aa2f-f5765eddc8be",
+    "city": "Paty do Alferes",
+    "country": "Brazil",
+    "humidity": 28.7,
+    "windSpeed": [
+      {
+        "Speed": 40,
+        "unit": "mph",
+        "direction": "NW"
+      }
+    ],
+    "weatherCondition": "Typhoon",
+    "sunriseTime": "3:47 PM",
+    "sunsetTime": "4:27 AM",
+    "visibility": 1.85,
+    "airPressure": 987.84,
+    "temperature": [
+      {
+        "temperature": -41.9,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Medium(M)"
+  },
+  {
+    "id": "ab92bfa6-a314-4411-befb-47e7e70e64e4",
+    "city": "Mombaça",
+    "country": "Brazil",
+    "humidity": 2.8,
+    "windSpeed": [
+      {
+        "Speed": 29,
+        "unit": "mph",
+        "direction": "N"
+      }
+    ],
+    "weatherCondition": "Drizzle",
+    "sunriseTime": "2:45 AM",
+    "sunsetTime": "2:01 AM",
+    "visibility": 4.74,
+    "airPressure": 1084.23,
+    "temperature": [
+      {
+        "temperature": 49.0,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Heavy(H)"
+  },
+  {
+    "id": "02240243-4f79-42b2-b6a0-764654f17dba",
+    "city": "Extrema",
+    "country": "Brazil",
+    "humidity": 99.2,
+    "windSpeed": [
+      {
+        "Speed": 27,
+        "unit": "mph",
+        "direction": "E"
+      }
+    ],
+    "weatherCondition": "Frost",
+    "sunriseTime": "6:50 PM",
+    "sunsetTime": "1:50 PM",
+    "visibility": 1.49,
+    "airPressure": 932.28,
+    "temperature": [
+      {
+        "temperature": 28.9,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Light(L)"
+  },
+  {
+    "id": "82f3c393-5e16-49b2-afe0-ac9c494fad77",
+    "city": "Sueyoshichō-ninokata",
+    "country": "Japan",
+    "humidity": 29.2,
+    "windSpeed": [
+      {
+        "Speed": 15,
+        "unit": "mph",
+        "direction": "S"
+      }
+    ],
+    "weatherCondition": "Fog",
+    "sunriseTime": "10:51 AM",
+    "sunsetTime": "7:49 AM",
+    "visibility": 0.54,
+    "airPressure": 996.89,
+    "temperature": [
+      {
+        "temperature": 46.1,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Super(S)"
+  },
+  {
+    "id": "2cb1a490-470f-4572-8eeb-382fb8834a28",
+    "city": "Créteil",
+    "country": "France",
+    "humidity": 83.7,
+    "windSpeed": [
+      {
+        "Speed": 16,
+        "unit": "mph",
+        "direction": "N"
+      }
+    ],
+    "weatherCondition": "Thunderstorm",
+    "sunriseTime": "6:31 PM",
+    "sunsetTime": "1:45 PM",
+    "visibility": 9.3,
+    "airPressure": 998.03,
+    "temperature": [
+      {
+        "temperature": 1.1,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": null
+  },
+  {
+    "id": "b9bcfaae-6b4c-4342-9655-a42abbd67a0f",
+    "city": "Cachoeiro de Itapemirim",
+    "country": "Brazil",
+    "humidity": 84.1,
+    "windSpeed": [
+      {
+        "Speed": 43,
+        "unit": "mph",
+        "direction": "E"
+      }
+    ],
+    "weatherCondition": "Cloudy",
+    "sunriseTime": "5:12 PM",
+    "sunsetTime": "12:19 AM",
+    "visibility": 3.33,
+    "airPressure": 973.68,
+    "temperature": [
+      {
+        "temperature": -16.4,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Heavy(H)"
+  },
+  {
+    "id": "0bbf07f7-126d-4c10-ad1c-9c56e9d4ab1c",
+    "city": "Valence",
+    "country": "France",
+    "humidity": 60.3,
+    "windSpeed": [
+      {
+        "Speed": 45,
+        "unit": "mph",
+        "direction": "E"
+      }
+    ],
+    "weatherCondition": "Dust Storm",
+    "sunriseTime": "4:55 PM",
+    "sunsetTime": "3:49 AM",
+    "visibility": 8.2,
+    "airPressure": 1040.17,
+    "temperature": [
+      {
+        "temperature": -14.7,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Super(S)"
+  },
+  {
+    "id": "806e7756-b65e-4f99-84f1-14894ae10bc8",
+    "city": "Oriximiná",
+    "country": "Brazil",
+    "humidity": 52.8,
+    "windSpeed": [
+      {
+        "Speed": 15,
+        "unit": "mph",
+        "direction": "SE"
+      }
+    ],
+    "weatherCondition": "Sleet",
+    "sunriseTime": "6:14 AM",
+    "sunsetTime": "4:36 AM",
+    "visibility": 7.96,
+    "airPressure": 994.81,
+    "temperature": [
+      {
+        "temperature": 22.5,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Heavy(H)"
+  },
+  {
+    "id": "131d7ebf-2a5f-43e6-8492-724f59130d4d",
+    "city": "Takedamachi",
+    "country": "Japan",
+    "humidity": 82.4,
+    "windSpeed": [
+      {
+        "Speed": 41,
+        "unit": "mph",
+        "direction": "SE"
+      }
+    ],
+    "weatherCondition": "Sleet",
+    "sunriseTime": "2:40 PM",
+    "sunsetTime": "7:50 AM",
+    "visibility": 4.79,
+    "airPressure": 919.68,
+    "temperature": [
+      {
+        "temperature": -23.1,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Medium(M)"
+  },
+  {
+    "id": "97d65d04-4046-487e-891d-f0520329ded9",
+    "city": "Charenton-le-Pont",
+    "country": "France",
+    "humidity": 50.3,
+    "windSpeed": [
+      {
+        "Speed": 26,
+        "unit": "mph",
+        "direction": "NE"
+      }
+    ],
+    "weatherCondition": "Snow",
+    "sunriseTime": "7:55 PM",
+    "sunsetTime": "1:55 PM",
+    "visibility": 6.13,
+    "airPressure": 941.13,
+    "temperature": [
+      {
+        "temperature": -29.1,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": null
+  },
+  {
+    "id": "f192eed2-46ef-4b05-b268-658f74248f4c",
+    "city": "Toledo",
+    "country": "United States",
+    "humidity": 25.4,
+    "windSpeed": [
+      {
+        "Speed": 46,
+        "unit": "mph",
+        "direction": "S"
+      }
+    ],
+    "weatherCondition": "Tornado",
+    "sunriseTime": "1:02 AM",
+    "sunsetTime": "5:25 AM",
+    "visibility": 4.63,
+    "airPressure": 1084.07,
+    "temperature": [
+      {
+        "temperature": -21.1,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": null
+  },
+  {
+    "id": "d4d92f77-6547-4780-b110-1bfbe4c3fea1",
+    "city": "Uruaçu",
+    "country": "Brazil",
+    "humidity": 50.3,
+    "windSpeed": [
+      {
+        "Speed": 17,
+        "unit": "mph",
+        "direction": "S"
+      }
+    ],
+    "weatherCondition": "Thunderstorm",
+    "sunriseTime": "3:46 PM",
+    "sunsetTime": "1:57 AM",
+    "visibility": 5.3,
+    "airPressure": 924.28,
+    "temperature": [
+      {
+        "temperature": 36.6,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Light(L)"
+  },
+  {
+    "id": "29a5b652-bbdf-44ad-a6c3-627961b3f5dd",
+    "city": "Angoulême",
+    "country": "France",
+    "humidity": 87.3,
+    "windSpeed": [
+      {
+        "Speed": 6,
+        "unit": "mph",
+        "direction": "NE"
+      }
+    ],
+    "weatherCondition": "Tornado",
+    "sunriseTime": "9:16 PM",
+    "sunsetTime": "3:16 AM",
+    "visibility": 7.56,
+    "airPressure": 1030.61,
+    "temperature": [
+      {
+        "temperature": 37.8,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Medium(M)"
+  },
+  {
+    "id": "fb683894-ce5a-4c0e-b6df-8777f3283ed9",
+    "city": "Uberaba",
+    "country": "Brazil",
+    "humidity": 37.6,
+    "windSpeed": [
+      {
+        "Speed": 45,
+        "unit": "mph",
+        "direction": "N"
+      }
+    ],
+    "weatherCondition": "Typhoon",
+    "sunriseTime": "1:57 AM",
+    "sunsetTime": "4:43 PM",
+    "visibility": 8.42,
+    "airPressure": 928.12,
+    "temperature": [
+      {
+        "temperature": 45.3,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Medium(M)"
+  },
+  {
+    "id": "5f02b419-2f57-439f-ba5a-47b09cc616a2",
+    "city": "Torres",
+    "country": "Brazil",
+    "humidity": 43.2,
+    "windSpeed": [
+      {
+        "Speed": 29,
+        "unit": "mph",
+        "direction": "N"
+      }
+    ],
+    "weatherCondition": "Sunny",
+    "sunriseTime": "12:15 AM",
+    "sunsetTime": "4:43 PM",
+    "visibility": 9.49,
+    "airPressure": 927.12,
+    "temperature": [
+      {
+        "temperature": 16.7,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": null
+  },
+  {
+    "id": "4a3bf4e4-1a69-4214-bd92-fcb891088fba",
+    "city": "Shiki",
+    "country": "Japan",
+    "humidity": 10.3,
+    "windSpeed": [
+      {
+        "Speed": 17,
+        "unit": "mph",
+        "direction": "SW"
+      }
+    ],
+    "weatherCondition": "Overcast",
+    "sunriseTime": "7:15 AM",
+    "sunsetTime": "10:38 PM",
+    "visibility": 8.02,
+    "airPressure": 979.36,
+    "temperature": [
+      {
+        "temperature": -7.5,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Medium(M)"
+  },
+  {
+    "id": "bb6b8677-3551-47ed-8e42-f8f5d9704abb",
+    "city": "Lille",
+    "country": "France",
+    "humidity": 8.6,
+    "windSpeed": [
+      {
+        "Speed": 19,
+        "unit": "mph",
+        "direction": "SW"
+      }
+    ],
+    "weatherCondition": "Hurricane",
+    "sunriseTime": "3:04 PM",
+    "sunsetTime": "6:18 AM",
+    "visibility": 6.75,
+    "airPressure": 911.15,
+    "temperature": [
+      {
+        "temperature": -29.8,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Medium(M)"
+  },
+  {
+    "id": "eff8ac65-afbb-4597-b067-b01cf67522e3",
+    "city": "Lancaster",
+    "country": "United States",
+    "humidity": 28.1,
+    "windSpeed": [
+      {
+        "Speed": 7,
+        "unit": "mph",
+        "direction": "N"
+      }
+    ],
+    "weatherCondition": "Tornado",
+    "sunriseTime": "10:18 AM",
+    "sunsetTime": "2:24 AM",
+    "visibility": 1.89,
+    "airPressure": 951.33,
+    "temperature": [
+      {
+        "temperature": -24.8,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": null
+  },
+  {
+    "id": "a8211f22-b2a9-4e04-bcb7-86df0a7aaa15",
+    "city": "Los Angeles",
+    "country": "United States",
+    "humidity": 5.9,
+    "windSpeed": [
+      {
+        "Speed": 17,
+        "unit": "mph",
+        "direction": "SW"
+      }
+    ],
+    "weatherCondition": "Windy",
+    "sunriseTime": "2:13 AM",
+    "sunsetTime": "9:02 AM",
+    "visibility": 1.98,
+    "airPressure": 984.3,
+    "temperature": [
+      {
+        "temperature": -41.0,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Medium(M)"
+  },
+  {
+    "id": "e18cb02a-ccb8-425c-8647-b8c94b76e069",
+    "city": "Hidalgo",
+    "country": "Mexico",
+    "humidity": 13.6,
+    "windSpeed": [
+      {
+        "Speed": 13,
+        "unit": "mph",
+        "direction": "E"
+      }
+    ],
+    "weatherCondition": "Blizzard",
+    "sunriseTime": "12:34 PM",
+    "sunsetTime": "12:39 AM",
+    "visibility": 2.51,
+    "airPressure": 1030.45,
+    "temperature": [
+      {
+        "temperature": -11.1,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Light(L)"
+  },
+  {
+    "id": "f2f8b7d9-736f-47de-b3ce-8bfc7cc0574a",
+    "city": "Pensacola",
+    "country": "United States",
+    "humidity": 18.3,
+    "windSpeed": [
+      {
+        "Speed": 47,
+        "unit": "mph",
+        "direction": "S"
+      }
+    ],
+    "weatherCondition": "Partly cloudy and windy",
+    "sunriseTime": "1:23 PM",
+    "sunsetTime": "1:40 PM",
+    "visibility": 6.33,
+    "airPressure": 956.09,
+    "temperature": [
+      {
+        "temperature": -22.4,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Light(L)"
+  },
+  {
+    "id": "ab110d41-0e79-4880-9432-d46a0d6f3934",
+    "city": "Xanxerê",
+    "country": "Brazil",
+    "humidity": 69.8,
+    "windSpeed": [
+      {
+        "Speed": 23,
+        "unit": "mph",
+        "direction": "N"
+      }
+    ],
+    "weatherCondition": "Windy",
+    "sunriseTime": "12:36 PM",
+    "sunsetTime": "10:54 AM",
+    "visibility": 7.34,
+    "airPressure": 986.55,
+    "temperature": [
+      {
+        "temperature": 36.8,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Medium(M)"
+  },
+  {
+    "id": "2d16e411-faa4-4da9-87e8-578baf348866",
+    "city": "Bobigny",
+    "country": "France",
+    "humidity": 27.8,
+    "windSpeed": [
+      {
+        "Speed": 11,
+        "unit": "mph",
+        "direction": "S"
+      }
+    ],
+    "weatherCondition": "Frost",
+    "sunriseTime": "9:50 AM",
+    "sunsetTime": "4:17 AM",
+    "visibility": 8.4,
+    "airPressure": 1000.14,
+    "temperature": [
+      {
+        "temperature": 5.0,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Heavy(H)"
+  },
+  {
+    "id": "d70f02b8-9558-4a6e-8c2e-05a0c2037553",
+    "city": "Lagoa Seca",
+    "country": "Brazil",
+    "humidity": 6.6,
+    "windSpeed": [
+      {
+        "Speed": 30,
+        "unit": "mph",
+        "direction": "NE"
+      }
+    ],
+    "weatherCondition": "Rain",
+    "sunriseTime": "1:59 PM",
+    "sunsetTime": "10:18 AM",
+    "visibility": 5.95,
+    "airPressure": 1055.51,
+    "temperature": [
+      {
+        "temperature": -25.2,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Medium(M)"
+  },
+  {
+    "id": "7078985d-6e21-47b6-b200-f1e4504d1058",
+    "city": "Bonneuil-sur-Marne",
+    "country": "France",
+    "humidity": 9.4,
+    "windSpeed": [
+      {
+        "Speed": 6,
+        "unit": "mph",
+        "direction": "SW"
+      }
+    ],
+    "weatherCondition": "Snow",
+    "sunriseTime": "1:51 AM",
+    "sunsetTime": "3:02 PM",
+    "visibility": 5.67,
+    "airPressure": 1018.96,
+    "temperature": [
+      {
+        "temperature": 25.2,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Heavy(H)"
+  },
+  {
+    "id": "1247499a-4791-488b-b98c-4b425af7087d",
+    "city": "Kitsuki",
+    "country": "Japan",
+    "humidity": 7.8,
+    "windSpeed": [
+      {
+        "Speed": 37,
+        "unit": "mph",
+        "direction": "S"
+      }
+    ],
+    "weatherCondition": "Snow",
+    "sunriseTime": "11:38 PM",
+    "sunsetTime": "6:33 PM",
+    "visibility": 5.62,
+    "airPressure": 1087.46,
+    "temperature": [
+      {
+        "temperature": 42.3,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Light(L)"
+  },
+  {
+    "id": "b8739d3d-1511-47d4-8498-673060d89eca",
+    "city": "San Isidro",
+    "country": "Mexico",
+    "humidity": 84.8,
+    "windSpeed": [
+      {
+        "Speed": 19,
+        "unit": "mph",
+        "direction": "E"
+      }
+    ],
+    "weatherCondition": "Tornado",
+    "sunriseTime": "10:43 AM",
+    "sunsetTime": "5:14 AM",
+    "visibility": 7.52,
+    "airPressure": 1037.84,
+    "temperature": [
+      {
+        "temperature": -25.9,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Heavy(H)"
+  },
+  {
+    "id": "bf0f5669-7781-4808-96f9-d9993130cd4f",
+    "city": "Anniston",
+    "country": "United States",
+    "humidity": 21.8,
+    "windSpeed": [
+      {
+        "Speed": 9,
+        "unit": "mph",
+        "direction": "N"
+      }
+    ],
+    "weatherCondition": "Fog",
+    "sunriseTime": "4:52 PM",
+    "sunsetTime": "7:15 PM",
+    "visibility": 8.66,
+    "airPressure": 977.16,
+    "temperature": [
+      {
+        "temperature": -38.4,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Medium(M)"
+  },
+  {
+    "id": "50e36a12-3f98-473e-8c77-af382a0b660a",
+    "city": "Santo Antônio do Monte",
+    "country": "Brazil",
+    "humidity": 55.8,
+    "windSpeed": [
+      {
+        "Speed": 28,
+        "unit": "mph",
+        "direction": "N"
+      }
+    ],
+    "weatherCondition": "Typhoon",
+    "sunriseTime": "4:25 PM",
+    "sunsetTime": "2:19 AM",
+    "visibility": 7.13,
+    "airPressure": 1058.17,
+    "temperature": [
+      {
+        "temperature": 37.6,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Heavy(H)"
+  },
+  {
+    "id": "7b2a9964-2a48-40ce-bc1b-858251c463bc",
+    "city": "Fuji",
+    "country": "Japan",
+    "humidity": 6.1,
+    "windSpeed": [
+      {
+        "Speed": 10,
+        "unit": "mph",
+        "direction": "S"
+      }
+    ],
+    "weatherCondition": "Sunny",
+    "sunriseTime": "12:29 AM",
+    "sunsetTime": "3:25 AM",
+    "visibility": 7.49,
+    "airPressure": 1063.6,
+    "temperature": [
+      {
+        "temperature": -5.9,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Super(S)"
+  },
+  {
+    "id": "24b52226-5e05-4e14-8d16-3e8eda76c871",
+    "city": "Fécamp",
+    "country": "France",
+    "humidity": 69.3,
+    "windSpeed": [
+      {
+        "Speed": 21,
+        "unit": "mph",
+        "direction": "NE"
+      }
+    ],
+    "weatherCondition": "Typhoon",
+    "sunriseTime": "9:07 PM",
+    "sunsetTime": "8:59 PM",
+    "visibility": 3.48,
+    "airPressure": 928.92,
+    "temperature": [
+      {
+        "temperature": -5.7,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Medium(M)"
+  },
+  {
+    "id": "01d8a035-d398-4014-a29d-818c4f97c2f3",
+    "city": "Cabrobó",
+    "country": "Brazil",
+    "humidity": 93.3,
+    "windSpeed": [
+      {
+        "Speed": 45,
+        "unit": "mph",
+        "direction": "W"
+      }
+    ],
+    "weatherCondition": "Fog",
+    "sunriseTime": "3:06 AM",
+    "sunsetTime": "2:20 PM",
+    "visibility": 0.05,
+    "airPressure": 1093.58,
+    "temperature": [
+      {
+        "temperature": -14.3,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Heavy(H)"
+  },
+  {
+    "id": "8b5fde82-4739-4638-9b54-5fd0f8cce5ca",
+    "city": "Round Rock",
+    "country": "United States",
+    "humidity": 61.6,
+    "windSpeed": [
+      {
+        "Speed": 14,
+        "unit": "mph",
+        "direction": "SE"
+      }
+    ],
+    "weatherCondition": "Frost",
+    "sunriseTime": "7:16 PM",
+    "sunsetTime": "6:52 AM",
+    "visibility": 6.01,
+    "airPressure": 1033.25,
+    "temperature": [
+      {
+        "temperature": -32.7,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Medium(M)"
+  },
+  {
+    "id": "d17b6f4a-125f-44d9-a929-43f474fb0e9b",
+    "city": "Ajaccio",
+    "country": "France",
+    "humidity": 6.6,
+    "windSpeed": [
+      {
+        "Speed": 40,
+        "unit": "mph",
+        "direction": "SW"
+      }
+    ],
+    "weatherCondition": "Sandstorm",
+    "sunriseTime": "5:39 AM",
+    "sunsetTime": "8:46 AM",
+    "visibility": 4.03,
+    "airPressure": 1037.07,
+    "temperature": [
+      {
+        "temperature": 45.6,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": null
+  },
+  {
+    "id": "1179c96e-a31e-4eb9-a695-747018d29627",
+    "city": "Marne-la-Vallée",
+    "country": "France",
+    "humidity": 11.7,
+    "windSpeed": [
+      {
+        "Speed": 42,
+        "unit": "mph",
+        "direction": "NE"
+      }
+    ],
+    "weatherCondition": "Frost",
+    "sunriseTime": "4:54 PM",
+    "sunsetTime": "7:38 AM",
+    "visibility": 7.69,
+    "airPressure": 908.61,
+    "temperature": [
+      {
+        "temperature": 22.6,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Light(L)"
+  },
+  {
+    "id": "d446c05e-bc52-4c5b-8531-b5b8f55d7a5b",
+    "city": "La Esperanza",
+    "country": "Mexico",
+    "humidity": 92.3,
+    "windSpeed": [
+      {
+        "Speed": 5,
+        "unit": "mph",
+        "direction": "NE"
+      }
+    ],
+    "weatherCondition": "Snow",
+    "sunriseTime": "3:05 AM",
+    "sunsetTime": "9:13 PM",
+    "visibility": 1.08,
+    "airPressure": 981.63,
+    "temperature": [
+      {
+        "temperature": -17.0,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Light(L)"
+  },
+  {
+    "id": "79e3bdeb-497e-4635-b2ee-7c28ecfca476",
+    "city": "Emiliano Zapata",
+    "country": "Mexico",
+    "humidity": 88.4,
+    "windSpeed": [
+      {
+        "Speed": 32,
+        "unit": "mph",
+        "direction": "NE"
+      }
+    ],
+    "weatherCondition": "Rain",
+    "sunriseTime": "5:41 PM",
+    "sunsetTime": "8:01 AM",
+    "visibility": 3.0,
+    "airPressure": 1074.56,
+    "temperature": [
+      {
+        "temperature": -35.7,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Light(L)"
+  },
+  {
+    "id": "ff0290e1-7980-44d9-8a6d-4c5d9cc9bd7d",
+    "city": "Creil",
+    "country": "France",
+    "humidity": 55.2,
+    "windSpeed": [
+      {
+        "Speed": 20,
+        "unit": "mph",
+        "direction": "NW"
+      }
+    ],
+    "weatherCondition": "Drizzle",
+    "sunriseTime": "11:16 AM",
+    "sunsetTime": "10:56 PM",
+    "visibility": 6.17,
+    "airPressure": 1037.11,
+    "temperature": [
+      {
+        "temperature": 11.9,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Heavy(H)"
+  },
+  {
+    "id": "d471ecca-62de-449b-9a0f-3634f27cca56",
+    "city": "Serrana",
+    "country": "Brazil",
+    "humidity": 64.4,
+    "windSpeed": [
+      {
+        "Speed": 40,
+        "unit": "mph",
+        "direction": "E"
+      }
+    ],
+    "weatherCondition": "Fog",
+    "sunriseTime": "5:20 PM",
+    "sunsetTime": "1:12 AM",
+    "visibility": 6.57,
+    "airPressure": 1013.51,
+    "temperature": [
+      {
+        "temperature": 46.2,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Heavy(H)"
+  },
+  {
+    "id": "f5a1d9ab-6374-46f3-9be0-3922a70f4970",
+    "city": "New York",
+    "country": "United States",
+    "humidity": 72.3,
+    "windSpeed": [
+      {
+        "Speed": 49,
+        "unit": "mph",
+        "direction": "SE"
+      }
+    ],
+    "weatherCondition": "Overcast and windy",
+    "sunriseTime": "7:19 PM",
+    "sunsetTime": "1:50 PM",
+    "visibility": 2.89,
+    "airPressure": 913.6,
+    "temperature": [
+      {
+        "temperature": 12.7,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Heavy(H)"
+  },
+  {
+    "id": "2e5a628a-324d-44be-afe7-916e308667c9",
+    "city": "Orlando",
+    "country": "United States",
+    "humidity": 64.8,
+    "windSpeed": [
+      {
+        "Speed": 41,
+        "unit": "mph",
+        "direction": "SE"
+      }
+    ],
+    "weatherCondition": "Sunny",
+    "sunriseTime": "9:57 PM",
+    "sunsetTime": "6:35 PM",
+    "visibility": 5.74,
+    "airPressure": 973.46,
+    "temperature": [
+      {
+        "temperature": 9.2,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Medium(M)"
+  },
+  {
+    "id": "25361500-5ad9-4aa7-beac-4c3ddf92d860",
+    "city": "Miami",
+    "country": "United States",
+    "humidity": 91.5,
+    "windSpeed": [
+      {
+        "Speed": 39,
+        "unit": "mph",
+        "direction": "NE"
+      }
+    ],
+    "weatherCondition": "Sunny",
+    "sunriseTime": "12:45 AM",
+    "sunsetTime": "5:25 PM",
+    "visibility": 5.52,
+    "airPressure": 902.57,
+    "temperature": [
+      {
+        "temperature": -8.1,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Heavy(H)"
+  },
+  {
+    "id": "cd5f5494-2bc3-4947-8eac-beb732160de4",
+    "city": "Seattle",
+    "country": "United States",
+    "humidity": 67.6,
+    "windSpeed": [
+      {
+        "Speed": 13,
+        "unit": "mph",
+        "direction": "SE"
+      }
+    ],
+    "weatherCondition": "Rain",
+    "sunriseTime": "12:25 PM",
+    "sunsetTime": "3:50 AM",
+    "visibility": 4.48,
+    "airPressure": 982.8,
+    "temperature": [
+      {
+        "temperature": 45.6,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Medium(M)"
+  },
+  {
+    "id": "f23d19ec-bd54-47de-b117-d47a0134987a",
+    "city": "Las Vegas",
+    "country": "United States",
+    "humidity": 30.8,
+    "windSpeed": [
+      {
+        "Speed": 44,
+        "unit": "mph",
+        "direction": "S"
+      }
+    ],
+    "weatherCondition": "Overcast",
+    "sunriseTime": "4:18 PM",
+    "sunsetTime": "6:17 PM",
+    "visibility": 5.81,
+    "airPressure": 1010.64,
+    "temperature": [
+      {
+        "temperature": 40.3,
+        "temperatureUnit": "F"
+      }
+    ],
+    "turbulenceLevel": "Super(S)"
+  }
+]

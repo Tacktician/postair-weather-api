@@ -1,0 +1,735 @@
+openapi: 3.1.0
+info:
+  title: 'PostAir Weather API'
+  description: 'PostAir Weather API'
+  version: 1.0.0
+
+
+tags:
+  - name: Airports
+  - name: Turbulence
+  - name: Forecast
+  - name: Metars
+    description: |
+      [METAR](https://en.wikipedia.org/wiki/METAR) reports 
+
+paths:
+  /airports:
+    get:
+      security:
+        - apiKey: []
+      tags:
+        - Airports
+      parameters:
+        - $ref: '#/components/parameters/countryNameParam'
+        - $ref: '#/components/parameters/airportCodeParam'
+
+      summary: 'Retrieve airport codes'
+      description: 'Returns a list of airport codes'
+      responses:
+        200:
+          description: 'A list of airports'
+          headers:
+            x-correlation-id:
+              $ref: '#/components/headers/CorrelationId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/airportList'
+              examples:
+                airportListExample:
+                  $ref: '#/components/examples/airportListExample'
+        404:
+          description: 'Not found'
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/problemDetail'
+              examples:
+                notFoundExample:
+                  $ref: '#/components/examples/notFoundExample'
+        401:
+          description: 'Unauthorized'
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/problemDetail'
+              examples:
+                401httpExample:
+                  $ref: '#/components/examples/401http'
+
+        403:
+          description: 'Forbidden'
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/problemDetail'
+              examples:
+                401httpExample:
+                  $ref: '#/components/examples/403http'
+
+        500:
+          description: 'Internal Server Error'
+          headers:
+            Content-Type:
+              $ref: '#/components/headers/problemDetailHeader'
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/problemDetail'
+              examples:
+                505httpExample:
+                  $ref: '#/components/examples/500http'
+  /turbulence:
+    get:
+      tags:
+        - Turbulence
+      parameters:
+        - $ref: '#/components/parameters/airportCodeParam'
+      summary: 'Retrieve turbulence report'
+      description: 'Returns a list of turbulence reports'
+      responses:
+        200:
+          description: 'Retrieve a turbulence report'
+          headers:
+            x-correlation-id:
+              $ref: '#/components/headers/CorrelationId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TurbulenceReportList'
+        404:
+          description: 'Not found'
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/problemDetail'
+              examples:
+                notFoundExample:
+                  $ref: '#/components/examples/notFoundExample'
+        401:
+          description: 'Unauthorized'
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/problemDetail'
+              examples:
+                401httpExample:
+                  $ref: '#/components/examples/401http'
+
+        403:
+          description: 'Forbidden'
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/problemDetail'
+              examples:
+                401httpExample:
+                  $ref: '#/components/examples/403http'
+
+        500:
+          description: 'Internal Server Error'
+          headers:
+            Content-Type:
+              $ref: '#/components/headers/problemDetailHeader'
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/problemDetail'
+              examples:
+                505httpExample:
+                  $ref: '#/components/examples/500http'
+  /forecast:
+    get:
+      tags:
+        - Forecast
+      parameters:
+        - $ref: '#/components/parameters/forecastCity'
+      summary: 'Retrieve forecast'
+      description: 'Returns a list of forecasts'
+      responses:
+        200:
+          description: 'Retrieve a forecast report'
+          headers:
+            x-correlation-id:
+              $ref: '#/components/headers/CorrelationId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/forecastWeatherDataList'
+              examples:
+                forecastListExample:
+                  $ref: '#/components/examples/forecastListExample'
+        404:
+          description: 'Not found'
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/problemDetail'
+              examples:
+                notFoundExample:
+                  $ref: '#/components/examples/notFoundExample'
+        401:
+          description: 'Unauthorized'
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/problemDetail'
+              examples:
+                401httpExample:
+                  $ref: '#/components/examples/401http'
+
+        403:
+          description: 'Forbidden'
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/problemDetail'
+              examples:
+                401httpExample:
+                  $ref: '#/components/examples/403http'
+
+        500:
+          description: 'Internal Server Error'
+          headers:
+            Content-Type:
+              $ref: '#/components/headers/problemDetailHeader'
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/problemDetail'
+              examples:
+                505httpExample:
+                  $ref: '#/components/examples/500http'
+
+  /metars:
+    get:
+      tags:
+        - Metars
+      parameters:
+        - $ref: '#/components/parameters/airportCodeParam'
+      summary: 'Retrieve METAR report'
+      description: 'Returns a list of METAR reports'
+      responses:
+        200:
+          description: 'Retrieve METAR reports'
+          headers:
+            x-correlation-id:
+              $ref: '#/components/headers/CorrelationId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/metarAirportWeatherList'
+              examples:
+                metarListExample:
+                  $ref: '#/components/examples/metarListExample'
+        404:
+          description: 'Not found'
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/problemDetail'
+              examples:
+                notFoundExample:
+                  $ref: '#/components/examples/notFoundExample'
+        401:
+          description: 'Unauthorized'
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/problemDetail'
+              examples:
+                401httpExample:
+                  $ref: '#/components/examples/401http'
+
+        403:
+          description: 'Forbidden'
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/problemDetail'
+              examples:
+                401httpExample:
+                  $ref: '#/components/examples/403http'
+
+        500:
+          description: 'Internal Server Error'
+          headers:
+            Content-Type:
+              $ref: '#/components/headers/problemDetailHeader'
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/problemDetail'
+              examples:
+                505httpExample:
+                  $ref: '#/components/examples/500http'
+components:
+
+  headers:
+    problemDetailHeader:
+      description: application/problem+json
+      schema:
+        type: string
+        default: application/problem+json
+
+    CorrelationId:
+      description: "A unique identifier for the request, used for debugging purposes"
+      schema:
+        type: string
+
+  parameters:
+    countryNameParam:
+      name: countryName
+      in: query
+      required: false
+      schema:
+        type: string
+        default: United States
+
+    airportCodeParam:
+      name: airportCode
+      description: airport code
+      in: query
+      schema:
+        type: string
+        default: ATL
+        minLength: 3   # IATA codes are 3 letters
+        maxLength: 4  # ICAO codes are 4 letters
+        pattern: "^[A-Z]{3,4}$"  # Only uppercase letters
+
+
+    forecastCity:
+      name: forecastCity
+      in: query
+      required: false
+      schema:
+        type: string
+
+
+  schemas:
+
+    Airport:
+      type: object
+      properties:
+        code:
+          type: string
+          description: Airport IATA code (e.g., "ATL", "LAX")
+        city:
+          type: string
+          description: City where the airport is located
+        name:
+          type: string
+          description: Full name of the airport
+        latitude:
+          type: number
+          format: float
+          description: Geographic latitude of the airport
+        longitude:
+          type: number
+          format: float
+          description: Geographic longitude of the airport
+
+    airportMeta:
+      type: object
+      properties:
+        country:
+          type: string
+          description: Name of country
+        airports:
+          type: array
+          items:
+            $ref: '#/components/schemas/Airport'
+
+    airportList:
+      type: array
+      items:
+        $ref: '#/components/schemas/airportMeta'
+
+    airportCodes:
+      type: array
+      properties:
+        list:
+          type: array
+          items:
+            $ref: '#/components/schemas/airportList'
+
+    airportCode:
+      type: object
+      properties:
+        code:
+          type: string
+          examples: [AMD]
+
+    Altitude:
+      type: object
+      properties:
+        feet:
+          type: integer
+        meters:
+          type: integer
+
+    Center:
+      type: object
+      properties:
+        latitude:
+          type: number
+        longitude:
+          type: number
+
+    AffectedArea:
+      type: object
+      properties:
+        radiusNm:
+          type: integer
+        center:
+          $ref: '#/components/schemas/Center'
+
+    WindSpeed:
+      type: object
+      properties:
+        knots:
+          type: integer
+        mph:
+          type: number
+
+    WeatherConditions:
+      type: object
+      properties:
+        temperatureCelsius:
+          type: integer
+        visibilityKm:
+          type: number
+        cloudCover:
+          type: string
+
+    TurbulenceReport:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+        severity:
+          type: string
+          enum: [light, moderate, severe, extreme]
+        #airportCode:
+        #  $ref: '#/components/schemas/airportCode'
+        altitude:
+          $ref: '#/components/schemas/Altitude'
+        durationMinutes:
+          type: integer
+        affectedArea:
+          $ref: '#/components/schemas/AffectedArea'
+        windSpeed:
+          $ref: '#/components/schemas/WindSpeed'
+        pilotReport:
+          type: string
+        weatherConditions:
+          $ref: '#/components/schemas/WeatherConditions'
+
+    turbulenceMeta:
+      type: object
+      properties:
+        airport:
+          $ref: '#/components/schemas/airportCode'
+        turbulenceReport:
+          $ref: '#/components/schemas/TurbulenceReport'
+
+    TurbulenceReportList:
+      type: array
+      items:
+        $ref: '#/components/schemas/turbulenceMeta'
+
+
+    forecastWindSpeed:
+      type: object
+      properties:
+        Speed:
+          type: number
+          format: float  # Assuming speeds can be fractional
+        unit:
+          type: string
+          enum: [mph, km/h, m/s]  # Or any other relevant units
+        direction:
+          type: string
+
+    Temperature:
+      type: object
+      properties:
+        temperature:
+          type: number
+          format: float
+        temperatureUnit:
+          type: string
+          enum: [F, C, K]  # Fahrenheit, Celsius, Kelvin
+
+    forecastWeatherData:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        city:
+          type: string
+        country:
+          type: string
+        humidity:
+          type: number
+          format: float
+        windSpeed:
+          type: array
+          items:
+            $ref: '#/components/schemas/forecastWindSpeed'
+        weatherCondition:
+          type: string
+        sunriseTime:
+          type: string
+          format: time
+        sunsetTime:  # Note the typo in your sample data
+          type: string
+          format: time
+        visibility:
+          type: number
+          format: float
+        airPressure:
+          type: number
+          format: float
+        temperature:
+          type: array
+          items:
+            $ref: '#/components/schemas/Temperature'
+        turbulenceLevel:
+          type: string
+
+
+    forecastWeatherDataList:
+      type: array
+      items:
+        $ref: '#/components/schemas/forecastWeatherData'
+
+
+    Metar:
+      type: object
+      properties:
+        raw:
+          type: string
+          description: Raw METAR string
+        time:
+          type: string
+          description: Observation time (UTC)
+        wind:
+          $ref: '#/components/schemas/metarWind'
+        visibility:
+          type: string
+          description: Visibility in statute miles (SM)
+        clouds:
+          type: array
+          items:
+            $ref: '#/components/schemas/metarCloud'
+        temperature:
+          type: integer
+          description: Temperature in Celsius
+        dewpoint:
+          type: integer
+          description: Dewpoint in Celsius
+        altimeter:
+          type: number
+          description: Altimeter setting in inches of Mercury (inHg)
+
+    metarWind:
+      type: object
+      properties:
+        direction:
+          type: integer
+          description: Wind direction in degrees
+        speed:
+          type: integer
+          description: Wind speed in knots
+
+    metarCloud:
+      type: object
+      properties:
+        type:
+          type: string
+          description: Cloud type (e.g., BKN)
+        height:
+          type: integer
+          description: Cloud base height in feet above ground level (AGL)
+
+    metarAirport:
+      type: object
+      properties:
+        code:
+          type: string
+          description: Airport code (IATA)
+        name:
+          type: string
+          description: Airport name
+        metar:
+          $ref: '#/components/schemas/Metar'
+
+    metarAirportWeatherList:
+      type: array
+      items:
+        $ref: '#/components/schemas/metarAirport'
+
+
+    problemDetail:
+      required:
+        - type
+        - title
+        - status
+        - detail
+        - instance
+        - correlationId
+      type: object
+      properties:
+        type:
+          type: string
+          description: "A URI reference (RFC 3986) that identifies the problem type. This is only an identifier and is not necessarily a resolvable URL."
+          format: uri
+          default: 'about:blank'
+          examples: ['urn:api:UnexpectedProblem']
+        title:
+          type: string
+          description: 'A short, human-readable summary of the problem type.'
+          examples: ['Unexpected Problem']
+        status:
+          maximum: 999
+          minimum: 100
+          type: number
+          description: "The HTTP status code (RFC 7231, Section 6) generated by the origin server for this occurrence of the problem.\n"
+          examples: [500]
+        detail:
+          type: string
+          description: 'A human-readable explanation specific to this occurrence of the problem.'
+          examples: ['An unexpected problem has occurred.']
+        instance:
+          type: string
+          description: "A URI reference (RFC 3986) that identifies the specific occurrence of the problem. This is only an identifier and is not necessarily a resolvable URL."
+          format: uri
+          examples: ['urn:api:request:493c3a1d-f87e-407f-ae2c-24483f5aab63']
+        correlationId:
+          type: string
+          description: "A unique identifier for the request, used for debugging purposes. Please include this identifier with any correspondence to help us investigate your issue."
+          examples: [493c3a1d-f87e-407f-ae2c-24483f5aab63]
+      description: 'Detail about an error. This document conforms to RFC 7807 (Problem Details for HTTP APIs).'
+
+
+  examples:
+
+    notFoundExample:
+      summary: Example 404 response
+      value:
+        type: "https://en.wikipedia.org/wiki/HTTP_404"
+        title: "Not Found"
+        status: 404
+        detail: "The requested resource was not found."
+        instance: "urn:api:request:example-404"
+        correlationId: "example-correlation-id"
+
+    401http:
+      summary: Example 401 response
+      value:
+        type: "https://en.wikipedia.org/wiki/HTTP_401"
+        title: "Unauthorized"
+        status: 401
+        detail: "Invalid or missing authentication credentials"
+        instance: "urn:api:request:example-401"
+        correlationId: "example-correlation-id"
+
+    403http:
+      summary: Example 403 response
+      value:
+        type: "https://en.wikipedia.org/wiki/HTTP_403"
+        title: "Forbidden"
+        status: 403
+        detail: "Missing persmissions to access this resource"
+        instance: "urn:api:request:example-403"
+        correlationId: "example-correlation-id"
+
+    500http:
+      summary: Example 500 response
+      value:
+        type: "https://en.wikipedia.org/wiki/HTTP_500"
+        title: "Internal Server Error"
+        status: 500
+        detail: "Internal Server Error"
+        instance: "urn:api:request:example-500"
+        correlationId: "example-correlation-id"
+
+    airportListExample:
+      summary: Example 200 response
+      value:
+        - country: "United States"
+          airports:
+            - code: "ATL"
+              city: "Atlanta"
+              name: "Hartsfield-Jackson Atlanta International Airport"
+              latitude: 33.6407
+              longitude: -84.4277
+            - code: "LAX"
+              city: "Los Angeles"
+              name: "Los Angeles International Airport"
+              latitude: 33.9416
+              longitude: -118.4085
+        - country: "Spain"
+          airports:
+            - code: "BCN"
+              city: "Barcelona"
+              name: "Josep Tarradellas Barcelona–El Prat Airport"
+              latitude: 41.2974
+              longitude: 2.0833
+            - code: "MAD"
+              city: "Madrid"
+              name: "Adolfo Suárez Madrid–Barajas Airport"
+              latitude: 40.4893
+              longitude: -3.6827
+
+    forecastListExample:
+      value:
+        - id: d07bdab9-637e-4d2e-a962-12683c5d768f
+          city: Ocala
+          country: United States
+          humidity: 84.6
+          windSpeed:
+            - Speed: 40
+              unit: mph
+              direction: SE
+          weatherCondition: Fog
+          sunriseTime: "11:57 AM"
+          sunseTtime: "1:56 PM"
+          visibility: 4.84
+          airPressure: 1028.22
+          temperature:
+            - temperature: 0.7
+              temperatureUnit: F
+          turbulenceLevel: Medium(M)
+
+    metarListExample:
+      value:
+        - code: ATL
+          name: Hartsfield-Jackson Atlanta International Airport
+          metar:
+            raw: KATL 251800Z 31006KT 8SM BKN025 22/14 A2998 RMK AO2 SLP145
+            time: 251800Z
+            wind:
+              direction: 310
+              speed: 6
+            visibility: 8SM
+            clouds:
+              - type: BKN
+                height: 2500
+            temperature: 22
+            dewpoint: 14
+            altimeter: 29.98
+
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      description: "We require that all consumers of the API include x-api-key header"
+      name: x-api-key
+      in: header
+security:
+  -
+    apiKey: []

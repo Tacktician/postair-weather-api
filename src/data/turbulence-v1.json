@@ -1,0 +1,3102 @@
+[
+  {
+    "airport": {
+      "code": "AMD"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-06-13T01:05:39Z",
+      "severity": "severe",
+      "altitude": {
+        "feet": 15553,
+        "meters": 9206
+      },
+      "durationMinutes": 1,
+      "affectedArea": {
+        "radiusNm": 8,
+        "center": {
+          "latitude": 43.4433559,
+          "longitude": 16.6929175
+        }
+      },
+      "windSpeed": {
+        "knots": 53,
+        "mph": 70.7
+      },
+      "pilotReport": "Light chop during approach",
+      "weatherConditions": {
+        "temperatureCelsius": 18,
+        "visibilityKm": 12.2,
+        "cloudCover": "clear"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "CCU"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-11-13T05:57:05Z",
+      "severity": "moderate",
+      "altitude": {
+        "feet": 28495,
+        "meters": 6080
+      },
+      "durationMinutes": 34,
+      "affectedArea": {
+        "radiusNm": 1,
+        "center": {
+          "latitude": 34.751868,
+          "longitude": 107.035769
+        }
+      },
+      "windSpeed": {
+        "knots": 43,
+        "mph": 53.2
+      },
+      "pilotReport": "Moderate chop encountered",
+      "weatherConditions": {
+        "temperatureCelsius": -40,
+        "visibilityKm": 38.0,
+        "cloudCover": "partly cloudy"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "MAN"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-11-24T16:44:38Z",
+      "severity": "moderate",
+      "altitude": {
+        "feet": 38762,
+        "meters": 1773
+      },
+      "durationMinutes": 18,
+      "affectedArea": {
+        "radiusNm": 49,
+        "center": {
+          "latitude": 44.6658941,
+          "longitude": 20.9335169
+        }
+      },
+      "windSpeed": {
+        "knots": 59,
+        "mph": 73.0
+      },
+      "pilotReport": "Moderate chop encountered",
+      "weatherConditions": {
+        "temperatureCelsius": 37,
+        "visibilityKm": 38.8,
+        "cloudCover": "scattered"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "BCN"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-02-05T16:37:33Z",
+      "severity": "severe",
+      "altitude": {
+        "feet": 46606,
+        "meters": 3532
+      },
+      "durationMinutes": 35,
+      "affectedArea": {
+        "radiusNm": 11,
+        "center": {
+          "latitude": 35.7412836,
+          "longitude": 140.5951813
+        }
+      },
+      "windSpeed": {
+        "knots": 5,
+        "mph": 3.7
+      },
+      "pilotReport": "Light chop during approach",
+      "weatherConditions": {
+        "temperatureCelsius": -17,
+        "visibilityKm": 13.0,
+        "cloudCover": "overcast"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "PNQ"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-08-27T16:15:09Z",
+      "severity": "severe",
+      "altitude": {
+        "feet": 18770,
+        "meters": 9054
+      },
+      "durationMinutes": 49,
+      "affectedArea": {
+        "radiusNm": 4,
+        "center": {
+          "latitude": 53.719155,
+          "longitude": -6.3422325
+        }
+      },
+      "windSpeed": {
+        "knots": 85,
+        "mph": 46.7
+      },
+      "pilotReport": "Severe turbulence encountered",
+      "weatherConditions": {
+        "temperatureCelsius": 14,
+        "visibilityKm": 12.2,
+        "cloudCover": "clear"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "PVR"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-08-14T01:04:03Z",
+      "severity": "severe",
+      "altitude": {
+        "feet": 46516,
+        "meters": 2305
+      },
+      "durationMinutes": 33,
+      "affectedArea": {
+        "radiusNm": 0,
+        "center": {
+          "latitude": 52.5871233,
+          "longitude": 33.7634935
+        }
+      },
+      "windSpeed": {
+        "knots": 10,
+        "mph": 85.3
+      },
+      "pilotReport": "Light chop during approach",
+      "weatherConditions": {
+        "temperatureCelsius": -47,
+        "visibilityKm": 9.2,
+        "cloudCover": "clear"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "MAD"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-07-11T22:29:06Z",
+      "severity": "moderate",
+      "altitude": {
+        "feet": 4784,
+        "meters": 1602
+      },
+      "durationMinutes": 55,
+      "affectedArea": {
+        "radiusNm": 14,
+        "center": {
+          "latitude": 49.67403,
+          "longitude": 20.07982
+        }
+      },
+      "windSpeed": {
+        "knots": 52,
+        "mph": 16.8
+      },
+      "pilotReport": "Severe turbulence encountered",
+      "weatherConditions": {
+        "temperatureCelsius": -21,
+        "visibilityKm": 7.3,
+        "cloudCover": "overcast"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "VLC"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-08-16T15:25:57Z",
+      "severity": "mild",
+      "altitude": {
+        "feet": 25073,
+        "meters": 9849
+      },
+      "durationMinutes": 50,
+      "affectedArea": {
+        "radiusNm": 3,
+        "center": {
+          "latitude": 50.4848926,
+          "longitude": 14.0286944
+        }
+      },
+      "windSpeed": {
+        "knots": 7,
+        "mph": 46.0
+      },
+      "pilotReport": "Moderate turbulence",
+      "weatherConditions": {
+        "temperatureCelsius": -40,
+        "visibilityKm": 20.6,
+        "cloudCover": "partly cloudy"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "COK"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-10-24T12:30:38Z",
+      "severity": "moderate",
+      "altitude": {
+        "feet": 25834,
+        "meters": 5185
+      },
+      "durationMinutes": 24,
+      "affectedArea": {
+        "radiusNm": 0,
+        "center": {
+          "latitude": 33.404544,
+          "longitude": 114.418181
+        }
+      },
+      "windSpeed": {
+        "knots": 69,
+        "mph": 39.4
+      },
+      "pilotReport": "Light chop during approach",
+      "weatherConditions": {
+        "temperatureCelsius": -34,
+        "visibilityKm": 15.4,
+        "cloudCover": "scattered"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "LAS"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-10-11T17:32:24Z",
+      "severity": "mild",
+      "altitude": {
+        "feet": 26793,
+        "meters": 8301
+      },
+      "durationMinutes": 30,
+      "affectedArea": {
+        "radiusNm": 10,
+        "center": {
+          "latitude": 7.91667,
+          "longitude": 123.75
+        }
+      },
+      "windSpeed": {
+        "knots": 100,
+        "mph": 71.9
+      },
+      "pilotReport": "Moderate turbulence",
+      "weatherConditions": {
+        "temperatureCelsius": 31,
+        "visibilityKm": 30.5,
+        "cloudCover": "partly cloudy"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "LAX"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-01-19T08:29:05Z",
+      "severity": "mild",
+      "altitude": {
+        "feet": 46220,
+        "meters": 3578
+      },
+      "durationMinutes": 21,
+      "affectedArea": {
+        "radiusNm": 45,
+        "center": {
+          "latitude": 42.4476716,
+          "longitude": 47.6625008
+        }
+      },
+      "windSpeed": {
+        "knots": 96,
+        "mph": 91.6
+      },
+      "pilotReport": "Severe turbulence encountered",
+      "weatherConditions": {
+        "temperatureCelsius": -9,
+        "visibilityKm": 33.0,
+        "cloudCover": "scattered"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "BOD"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-10-24T11:56:19Z",
+      "severity": "moderate",
+      "altitude": {
+        "feet": 14997,
+        "meters": 2921
+      },
+      "durationMinutes": 35,
+      "affectedArea": {
+        "radiusNm": 36,
+        "center": {
+          "latitude": 1.2061176,
+          "longitude": 31.8164031
+        }
+      },
+      "windSpeed": {
+        "knots": 83,
+        "mph": 93.7
+      },
+      "pilotReport": "Light chop during approach",
+      "weatherConditions": {
+        "temperatureCelsius": 21,
+        "visibilityKm": 12.3,
+        "cloudCover": "scattered"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "LIL"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-07-24T08:15:07Z",
+      "severity": "mild",
+      "altitude": {
+        "feet": 27908,
+        "meters": 254
+      },
+      "durationMinutes": 0,
+      "affectedArea": {
+        "radiusNm": 8,
+        "center": {
+          "latitude": 40.5353559,
+          "longitude": 44.7695698
+        }
+      },
+      "windSpeed": {
+        "knots": 66,
+        "mph": 97.1
+      },
+      "pilotReport": "Severe turbulence encountered",
+      "weatherConditions": {
+        "temperatureCelsius": -39,
+        "visibilityKm": 43.1,
+        "cloudCover": "partly cloudy"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "CUL"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-07-29T05:29:52Z",
+      "severity": "mild",
+      "altitude": {
+        "feet": 31898,
+        "meters": 1946
+      },
+      "durationMinutes": 39,
+      "affectedArea": {
+        "radiusNm": 27,
+        "center": {
+          "latitude": 49.6470903,
+          "longitude": 18.1621577
+        }
+      },
+      "windSpeed": {
+        "knots": 15,
+        "mph": 82.3
+      },
+      "pilotReport": "Severe turbulence encountered",
+      "weatherConditions": {
+        "temperatureCelsius": -8,
+        "visibilityKm": 34.4,
+        "cloudCover": "partly cloudy"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "ORD"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-08-26T20:55:20Z",
+      "severity": "severe",
+      "altitude": {
+        "feet": 25057,
+        "meters": 1602
+      },
+      "durationMinutes": 0,
+      "affectedArea": {
+        "radiusNm": 33,
+        "center": {
+          "latitude": 29.099294,
+          "longitude": 119.692696
+        }
+      },
+      "windSpeed": {
+        "knots": 11,
+        "mph": 98.3
+      },
+      "pilotReport": "Severe turbulence encountered",
+      "weatherConditions": {
+        "temperatureCelsius": -43,
+        "visibilityKm": 31.5,
+        "cloudCover": "clear"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "NCL"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-07-17T22:39:34Z",
+      "severity": "moderate",
+      "altitude": {
+        "feet": 27756,
+        "meters": 6905
+      },
+      "durationMinutes": 18,
+      "affectedArea": {
+        "radiusNm": 44,
+        "center": {
+          "latitude": 22.8109535,
+          "longitude": 91.8696765
+        }
+      },
+      "windSpeed": {
+        "knots": 46,
+        "mph": 65.6
+      },
+      "pilotReport": "Light chop during approach",
+      "weatherConditions": {
+        "temperatureCelsius": -26,
+        "visibilityKm": 14.9,
+        "cloudCover": "scattered"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "NTE"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-06-17T06:24:07Z",
+      "severity": "mild",
+      "altitude": {
+        "feet": 44099,
+        "meters": 501
+      },
+      "durationMinutes": 31,
+      "affectedArea": {
+        "radiusNm": 34,
+        "center": {
+          "latitude": 14.570684,
+          "longitude": 120.992642
+        }
+      },
+      "windSpeed": {
+        "knots": 72,
+        "mph": 75.3
+      },
+      "pilotReport": "Light chop during approach",
+      "weatherConditions": {
+        "temperatureCelsius": -35,
+        "visibilityKm": 14.3,
+        "cloudCover": "scattered"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "STN"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-10-14T00:48:01Z",
+      "severity": "moderate",
+      "altitude": {
+        "feet": 46836,
+        "meters": 2769
+      },
+      "durationMinutes": 15,
+      "affectedArea": {
+        "radiusNm": 46,
+        "center": {
+          "latitude": 54.0852394,
+          "longitude": -4.7544671
+        }
+      },
+      "windSpeed": {
+        "knots": 73,
+        "mph": 43.5
+      },
+      "pilotReport": "Moderate turbulence",
+      "weatherConditions": {
+        "temperatureCelsius": -30,
+        "visibilityKm": 40.8,
+        "cloudCover": "clear"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "ATL"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-08-09T06:45:41Z",
+      "severity": "moderate",
+      "altitude": {
+        "feet": 29325,
+        "meters": 9276
+      },
+      "durationMinutes": 12,
+      "affectedArea": {
+        "radiusNm": 43,
+        "center": {
+          "latitude": 49.1931313,
+          "longitude": -0.3907558
+        }
+      },
+      "windSpeed": {
+        "knots": 5,
+        "mph": 25.9
+      },
+      "pilotReport": "Light chop during approach",
+      "weatherConditions": {
+        "temperatureCelsius": -20,
+        "visibilityKm": 41.0,
+        "cloudCover": "scattered"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "COK"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-08-20T18:25:40Z",
+      "severity": "moderate",
+      "altitude": {
+        "feet": 656,
+        "meters": 2663
+      },
+      "durationMinutes": 39,
+      "affectedArea": {
+        "radiusNm": 1,
+        "center": {
+          "latitude": 4.8087174,
+          "longitude": -75.690601
+        }
+      },
+      "windSpeed": {
+        "knots": 50,
+        "mph": 89.8
+      },
+      "pilotReport": "Moderate turbulence",
+      "weatherConditions": {
+        "temperatureCelsius": 23,
+        "visibilityKm": 3.8,
+        "cloudCover": "scattered"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "POA"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-02-11T03:30:36Z",
+      "severity": "severe",
+      "altitude": {
+        "feet": 31916,
+        "meters": 5718
+      },
+      "durationMinutes": 11,
+      "affectedArea": {
+        "radiusNm": 25,
+        "center": {
+          "latitude": -7.3038456,
+          "longitude": 108.2185534
+        }
+      },
+      "windSpeed": {
+        "knots": 62,
+        "mph": 1.6
+      },
+      "pilotReport": "Moderate chop encountered",
+      "weatherConditions": {
+        "temperatureCelsius": -11,
+        "visibilityKm": 47.1,
+        "cloudCover": "scattered"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "HIJ"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-12-22T08:29:33Z",
+      "severity": "moderate",
+      "altitude": {
+        "feet": 2713,
+        "meters": 8315
+      },
+      "durationMinutes": 9,
+      "affectedArea": {
+        "radiusNm": 6,
+        "center": {
+          "latitude": -39.4886902,
+          "longitude": 176.9054195
+        }
+      },
+      "windSpeed": {
+        "knots": 48,
+        "mph": 21.9
+      },
+      "pilotReport": "Moderate chop encountered",
+      "weatherConditions": {
+        "temperatureCelsius": 24,
+        "visibilityKm": 15.5,
+        "cloudCover": "clear"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "GIG"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-10-15T14:06:27Z",
+      "severity": "mild",
+      "altitude": {
+        "feet": 47696,
+        "meters": 4428
+      },
+      "durationMinutes": 48,
+      "affectedArea": {
+        "radiusNm": 21,
+        "center": {
+          "latitude": 50.4919489,
+          "longitude": 13.2886723
+        }
+      },
+      "windSpeed": {
+        "knots": 38,
+        "mph": 31.3
+      },
+      "pilotReport": "Severe turbulence encountered",
+      "weatherConditions": {
+        "temperatureCelsius": 50,
+        "visibilityKm": 23.9,
+        "cloudCover": "overcast"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "BRS"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-08-08T06:04:17Z",
+      "severity": "moderate",
+      "altitude": {
+        "feet": 25266,
+        "meters": 1669
+      },
+      "durationMinutes": 39,
+      "affectedArea": {
+        "radiusNm": 22,
+        "center": {
+          "latitude": 35.408609,
+          "longitude": 117.146885
+        }
+      },
+      "windSpeed": {
+        "knots": 44,
+        "mph": 44.9
+      },
+      "pilotReport": "Moderate turbulence",
+      "weatherConditions": {
+        "temperatureCelsius": 29,
+        "visibilityKm": 24.0,
+        "cloudCover": "scattered"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "MAA"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-05-26T01:22:41Z",
+      "severity": "moderate",
+      "altitude": {
+        "feet": 13850,
+        "meters": 5791
+      },
+      "durationMinutes": 56,
+      "affectedArea": {
+        "radiusNm": 0,
+        "center": {
+          "latitude": 60.3588201,
+          "longitude": 22.2240066
+        }
+      },
+      "windSpeed": {
+        "knots": 66,
+        "mph": 16.3
+      },
+      "pilotReport": "Light chop during approach",
+      "weatherConditions": {
+        "temperatureCelsius": 14,
+        "visibilityKm": 47.1,
+        "cloudCover": "scattered"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "CUU"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-09-13T06:45:46Z",
+      "severity": "moderate",
+      "altitude": {
+        "feet": 14544,
+        "meters": 3382
+      },
+      "durationMinutes": 12,
+      "affectedArea": {
+        "radiusNm": 32,
+        "center": {
+          "latitude": 55.6830117,
+          "longitude": 37.3439888
+        }
+      },
+      "windSpeed": {
+        "knots": 78,
+        "mph": 22.2
+      },
+      "pilotReport": "Light chop during approach",
+      "weatherConditions": {
+        "temperatureCelsius": -28,
+        "visibilityKm": 35.5,
+        "cloudCover": "clear"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "POA"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-11-06T15:13:30Z",
+      "severity": "severe",
+      "altitude": {
+        "feet": 44194,
+        "meters": 5503
+      },
+      "durationMinutes": 11,
+      "affectedArea": {
+        "radiusNm": 29,
+        "center": {
+          "latitude": 48.8048649,
+          "longitude": 2.1203554
+        }
+      },
+      "windSpeed": {
+        "knots": 53,
+        "mph": 46.2
+      },
+      "pilotReport": "Moderate chop encountered",
+      "weatherConditions": {
+        "temperatureCelsius": -15,
+        "visibilityKm": 26.0,
+        "cloudCover": "overcast"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "MAA"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-11-20T02:43:30Z",
+      "severity": "moderate",
+      "altitude": {
+        "feet": 15313,
+        "meters": 6139
+      },
+      "durationMinutes": 24,
+      "affectedArea": {
+        "radiusNm": 12,
+        "center": {
+          "latitude": 56.0467533,
+          "longitude": 28.1582288
+        }
+      },
+      "windSpeed": {
+        "knots": 6,
+        "mph": 91.4
+      },
+      "pilotReport": "Light chop during approach",
+      "weatherConditions": {
+        "temperatureCelsius": -15,
+        "visibilityKm": 44.0,
+        "cloudCover": "overcast"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "AGP"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-02-29T09:22:53Z",
+      "severity": "severe",
+      "altitude": {
+        "feet": 28066,
+        "meters": 6520
+      },
+      "durationMinutes": 40,
+      "affectedArea": {
+        "radiusNm": 30,
+        "center": {
+          "latitude": 54.3418823,
+          "longitude": 10.1150681
+        }
+      },
+      "windSpeed": {
+        "knots": 56,
+        "mph": 97.3
+      },
+      "pilotReport": "Moderate chop encountered",
+      "weatherConditions": {
+        "temperatureCelsius": -41,
+        "visibilityKm": 46.6,
+        "cloudCover": "scattered"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "BOM"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-04-30T12:42:39Z",
+      "severity": "severe",
+      "altitude": {
+        "feet": 41055,
+        "meters": 437
+      },
+      "durationMinutes": 48,
+      "affectedArea": {
+        "radiusNm": 19,
+        "center": {
+          "latitude": 12.3576715,
+          "longitude": 29.2378899
+        }
+      },
+      "windSpeed": {
+        "knots": 25,
+        "mph": 56.0
+      },
+      "pilotReport": "Moderate chop encountered",
+      "weatherConditions": {
+        "temperatureCelsius": -46,
+        "visibilityKm": 19.1,
+        "cloudCover": "overcast"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "MZT"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-02-16T20:02:51Z",
+      "severity": "moderate",
+      "altitude": {
+        "feet": 27631,
+        "meters": 661
+      },
+      "durationMinutes": 34,
+      "affectedArea": {
+        "radiusNm": 32,
+        "center": {
+          "latitude": -15.2122806,
+          "longitude": -72.8901725
+        }
+      },
+      "windSpeed": {
+        "knots": 27,
+        "mph": 13.4
+      },
+      "pilotReport": "Severe turbulence encountered",
+      "weatherConditions": {
+        "temperatureCelsius": -12,
+        "visibilityKm": 16.1,
+        "cloudCover": "clear"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "MRS"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-01-12T03:50:58Z",
+      "severity": "mild",
+      "altitude": {
+        "feet": 45281,
+        "meters": 381
+      },
+      "durationMinutes": 56,
+      "affectedArea": {
+        "radiusNm": 28,
+        "center": {
+          "latitude": 55.7742636,
+          "longitude": 37.5884971
+        }
+      },
+      "windSpeed": {
+        "knots": 8,
+        "mph": 74.9
+      },
+      "pilotReport": "Light chop during approach",
+      "weatherConditions": {
+        "temperatureCelsius": -23,
+        "visibilityKm": 1.0,
+        "cloudCover": "partly cloudy"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "LAX"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-03-25T06:20:16Z",
+      "severity": "mild",
+      "altitude": {
+        "feet": 20494,
+        "meters": 3496
+      },
+      "durationMinutes": 44,
+      "affectedArea": {
+        "radiusNm": 13,
+        "center": {
+          "latitude": 45.0084341,
+          "longitude": 15.9561975
+        }
+      },
+      "windSpeed": {
+        "knots": 6,
+        "mph": 43.0
+      },
+      "pilotReport": "Light chop during approach",
+      "weatherConditions": {
+        "temperatureCelsius": 47,
+        "visibilityKm": 32.2,
+        "cloudCover": "overcast"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "BHX"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-10-11T19:27:17Z",
+      "severity": "moderate",
+      "altitude": {
+        "feet": 38747,
+        "meters": 657
+      },
+      "durationMinutes": 47,
+      "affectedArea": {
+        "radiusNm": 21,
+        "center": {
+          "latitude": 54.256793,
+          "longitude": -1.90546
+        }
+      },
+      "windSpeed": {
+        "knots": 79,
+        "mph": 95.6
+      },
+      "pilotReport": "Severe turbulence encountered",
+      "weatherConditions": {
+        "temperatureCelsius": -4,
+        "visibilityKm": 43.4,
+        "cloudCover": "overcast"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "ORD"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-04-26T12:18:43Z",
+      "severity": "moderate",
+      "altitude": {
+        "feet": 22430,
+        "meters": 628
+      },
+      "durationMinutes": 55,
+      "affectedArea": {
+        "radiusNm": 47,
+        "center": {
+          "latitude": -4,
+          "longitude": 33.7
+        }
+      },
+      "windSpeed": {
+        "knots": 52,
+        "mph": 15.7
+      },
+      "pilotReport": "Moderate turbulence",
+      "weatherConditions": {
+        "temperatureCelsius": 40,
+        "visibilityKm": 13.9,
+        "cloudCover": "partly cloudy"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "NGO"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-01-31T18:37:55Z",
+      "severity": "severe",
+      "altitude": {
+        "feet": 35266,
+        "meters": 1216
+      },
+      "durationMinutes": 46,
+      "affectedArea": {
+        "radiusNm": 43,
+        "center": {
+          "latitude": 21.694896,
+          "longitude": 110.307347
+        }
+      },
+      "windSpeed": {
+        "knots": 18,
+        "mph": 85.1
+      },
+      "pilotReport": "Severe turbulence encountered",
+      "weatherConditions": {
+        "temperatureCelsius": 30,
+        "visibilityKm": 48.9,
+        "cloudCover": "overcast"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "KOJ"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-01-05T01:44:59Z",
+      "severity": "moderate",
+      "altitude": {
+        "feet": 23452,
+        "meters": 8159
+      },
+      "durationMinutes": 50,
+      "affectedArea": {
+        "radiusNm": 38,
+        "center": {
+          "latitude": 25.329044,
+          "longitude": 118.270238
+        }
+      },
+      "windSpeed": {
+        "knots": 45,
+        "mph": 79.9
+      },
+      "pilotReport": "Moderate turbulence",
+      "weatherConditions": {
+        "temperatureCelsius": -27,
+        "visibilityKm": 34.4,
+        "cloudCover": "overcast"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "CDG"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-08-30T08:04:29Z",
+      "severity": "severe",
+      "altitude": {
+        "feet": 47564,
+        "meters": 3743
+      },
+      "durationMinutes": 55,
+      "affectedArea": {
+        "radiusNm": 13,
+        "center": {
+          "latitude": 44.9532375,
+          "longitude": 17.3583673
+        }
+      },
+      "windSpeed": {
+        "knots": 78,
+        "mph": 90.8
+      },
+      "pilotReport": "Light chop during approach",
+      "weatherConditions": {
+        "temperatureCelsius": 31,
+        "visibilityKm": 27.9,
+        "cloudCover": "scattered"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "LTN"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-11-08T18:43:52Z",
+      "severity": "mild",
+      "altitude": {
+        "feet": 29597,
+        "meters": 5947
+      },
+      "durationMinutes": 34,
+      "affectedArea": {
+        "radiusNm": 14,
+        "center": {
+          "latitude": -5.1119324,
+          "longitude": -39.6043575
+        }
+      },
+      "windSpeed": {
+        "knots": 24,
+        "mph": 76.3
+      },
+      "pilotReport": "Severe turbulence encountered",
+      "weatherConditions": {
+        "temperatureCelsius": -8,
+        "visibilityKm": 30.2,
+        "cloudCover": "clear"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "BCN"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-12-22T09:25:18Z",
+      "severity": "mild",
+      "altitude": {
+        "feet": 20237,
+        "meters": 1385
+      },
+      "durationMinutes": 10,
+      "affectedArea": {
+        "radiusNm": 28,
+        "center": {
+          "latitude": 39.7343087,
+          "longitude": -8.9156201
+        }
+      },
+      "windSpeed": {
+        "knots": 69,
+        "mph": 67.8
+      },
+      "pilotReport": "Severe turbulence encountered",
+      "weatherConditions": {
+        "temperatureCelsius": -17,
+        "visibilityKm": 45.2,
+        "cloudCover": "partly cloudy"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "NTE"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-01-20T12:15:45Z",
+      "severity": "mild",
+      "altitude": {
+        "feet": 44209,
+        "meters": 9133
+      },
+      "durationMinutes": 24,
+      "affectedArea": {
+        "radiusNm": 13,
+        "center": {
+          "latitude": 50.9359639,
+          "longitude": -113.8998131
+        }
+      },
+      "windSpeed": {
+        "knots": 83,
+        "mph": 90.6
+      },
+      "pilotReport": "Light chop during approach",
+      "weatherConditions": {
+        "temperatureCelsius": 13,
+        "visibilityKm": 14.0,
+        "cloudCover": "overcast"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "MCO"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-10-15T19:30:17Z",
+      "severity": "mild",
+      "altitude": {
+        "feet": 16930,
+        "meters": 7683
+      },
+      "durationMinutes": 15,
+      "affectedArea": {
+        "radiusNm": 20,
+        "center": {
+          "latitude": 25.58038,
+          "longitude": 111.947363
+        }
+      },
+      "windSpeed": {
+        "knots": 46,
+        "mph": 96.4
+      },
+      "pilotReport": "Moderate chop encountered",
+      "weatherConditions": {
+        "temperatureCelsius": -46,
+        "visibilityKm": 6.1,
+        "cloudCover": "partly cloudy"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "SDJ"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-04-23T19:45:37Z",
+      "severity": "mild",
+      "altitude": {
+        "feet": 18361,
+        "meters": 1671
+      },
+      "durationMinutes": 43,
+      "affectedArea": {
+        "radiusNm": 25,
+        "center": {
+          "latitude": 26.015959,
+          "longitude": 116.602435
+        }
+      },
+      "windSpeed": {
+        "knots": 90,
+        "mph": 64.6
+      },
+      "pilotReport": "Moderate chop encountered",
+      "weatherConditions": {
+        "temperatureCelsius": -37,
+        "visibilityKm": 25.6,
+        "cloudCover": "overcast"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "SJD"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-09-25T21:34:19Z",
+      "severity": "moderate",
+      "altitude": {
+        "feet": 27092,
+        "meters": 4073
+      },
+      "durationMinutes": 14,
+      "affectedArea": {
+        "radiusNm": 4,
+        "center": {
+          "latitude": 28.5417016,
+          "longitude": -81.2408689
+        }
+      },
+      "windSpeed": {
+        "knots": 79,
+        "mph": 91.4
+      },
+      "pilotReport": "Moderate chop encountered",
+      "weatherConditions": {
+        "temperatureCelsius": 29,
+        "visibilityKm": 43.3,
+        "cloudCover": "overcast"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "MAD"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-11-13T00:32:16Z",
+      "severity": "mild",
+      "altitude": {
+        "feet": 14523,
+        "meters": 3945
+      },
+      "durationMinutes": 45,
+      "affectedArea": {
+        "radiusNm": 21,
+        "center": {
+          "latitude": 48.0288905,
+          "longitude": 123.0199373
+        }
+      },
+      "windSpeed": {
+        "knots": 55,
+        "mph": 66.4
+      },
+      "pilotReport": "Moderate chop encountered",
+      "weatherConditions": {
+        "temperatureCelsius": -27,
+        "visibilityKm": 48.1,
+        "cloudCover": "clear"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "PMI"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-10-17T14:16:02Z",
+      "severity": "severe",
+      "altitude": {
+        "feet": 23920,
+        "meters": 3710
+      },
+      "durationMinutes": 57,
+      "affectedArea": {
+        "radiusNm": 48,
+        "center": {
+          "latitude": -10.2017376,
+          "longitude": 123.4327468
+        }
+      },
+      "windSpeed": {
+        "knots": 25,
+        "mph": 68.6
+      },
+      "pilotReport": "Severe turbulence encountered",
+      "weatherConditions": {
+        "temperatureCelsius": -5,
+        "visibilityKm": 11.6,
+        "cloudCover": "overcast"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "TFS"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-11-11T22:57:20Z",
+      "severity": "mild",
+      "altitude": {
+        "feet": 1532,
+        "meters": 5773
+      },
+      "durationMinutes": 37,
+      "affectedArea": {
+        "radiusNm": 12,
+        "center": {
+          "latitude": 45.0244716,
+          "longitude": 20.056916
+        }
+      },
+      "windSpeed": {
+        "knots": 15,
+        "mph": 42.4
+      },
+      "pilotReport": "Moderate turbulence",
+      "weatherConditions": {
+        "temperatureCelsius": -37,
+        "visibilityKm": 48.1,
+        "cloudCover": "overcast"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "JFK"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-05-04T13:37:29Z",
+      "severity": "mild",
+      "altitude": {
+        "feet": 27779,
+        "meters": 348
+      },
+      "durationMinutes": 18,
+      "affectedArea": {
+        "radiusNm": 34,
+        "center": {
+          "latitude": 12.16219,
+          "longitude": -68.2713254
+        }
+      },
+      "windSpeed": {
+        "knots": 22,
+        "mph": 53.6
+      },
+      "pilotReport": "Moderate chop encountered",
+      "weatherConditions": {
+        "temperatureCelsius": 44,
+        "visibilityKm": 48.5,
+        "cloudCover": "clear"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "STN"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-02-27T20:59:43Z",
+      "severity": "mild",
+      "altitude": {
+        "feet": 33661,
+        "meters": 4084
+      },
+      "durationMinutes": 53,
+      "affectedArea": {
+        "radiusNm": 43,
+        "center": {
+          "latitude": 56.7012772,
+          "longitude": 104.2143124
+        }
+      },
+      "windSpeed": {
+        "knots": 54,
+        "mph": 47.4
+      },
+      "pilotReport": "Moderate chop encountered",
+      "weatherConditions": {
+        "temperatureCelsius": 0,
+        "visibilityKm": 0.7,
+        "cloudCover": "scattered"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "BSB"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-03-23T20:50:53Z",
+      "severity": "severe",
+      "altitude": {
+        "feet": 30479,
+        "meters": 9668
+      },
+      "durationMinutes": 57,
+      "affectedArea": {
+        "radiusNm": 6,
+        "center": {
+          "latitude": -13.9932843,
+          "longitude": 34.5112934
+        }
+      },
+      "windSpeed": {
+        "knots": 74,
+        "mph": 34.5
+      },
+      "pilotReport": "Light chop during approach",
+      "weatherConditions": {
+        "temperatureCelsius": -14,
+        "visibilityKm": 26.4,
+        "cloudCover": "overcast"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "BLR"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-04-27T14:36:14Z",
+      "severity": "severe",
+      "altitude": {
+        "feet": 39932,
+        "meters": 2535
+      },
+      "durationMinutes": 48,
+      "affectedArea": {
+        "radiusNm": 14,
+        "center": {
+          "latitude": 59.2154931,
+          "longitude": 11.0101588
+        }
+      },
+      "windSpeed": {
+        "knots": 12,
+        "mph": 79.9
+      },
+      "pilotReport": "Moderate chop encountered",
+      "weatherConditions": {
+        "temperatureCelsius": -4,
+        "visibilityKm": 19.7,
+        "cloudCover": "scattered"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "CWB"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-09-10T01:22:44Z",
+      "severity": "severe",
+      "altitude": {
+        "feet": 11300,
+        "meters": 6422
+      },
+      "durationMinutes": 4,
+      "affectedArea": {
+        "radiusNm": 26,
+        "center": {
+          "latitude": 11.6497994,
+          "longitude": 4.0644352
+        }
+      },
+      "windSpeed": {
+        "knots": 68,
+        "mph": 64.8
+      },
+      "pilotReport": "Moderate turbulence",
+      "weatherConditions": {
+        "temperatureCelsius": -45,
+        "visibilityKm": 35.3,
+        "cloudCover": "scattered"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "CWB"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-06-27T17:47:08Z",
+      "severity": "mild",
+      "altitude": {
+        "feet": 33026,
+        "meters": 464
+      },
+      "durationMinutes": 36,
+      "affectedArea": {
+        "radiusNm": 12,
+        "center": {
+          "latitude": -27.4249796,
+          "longitude": 30.8190797
+        }
+      },
+      "windSpeed": {
+        "knots": 54,
+        "mph": 53.6
+      },
+      "pilotReport": "Moderate chop encountered",
+      "weatherConditions": {
+        "temperatureCelsius": -23,
+        "visibilityKm": 31.3,
+        "cloudCover": "partly cloudy"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "CUU"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-06-12T18:00:36Z",
+      "severity": "moderate",
+      "altitude": {
+        "feet": 44038,
+        "meters": 631
+      },
+      "durationMinutes": 20,
+      "affectedArea": {
+        "radiusNm": 35,
+        "center": {
+          "latitude": 18.8729115,
+          "longitude": -97.0564451
+        }
+      },
+      "windSpeed": {
+        "knots": 63,
+        "mph": 31.1
+      },
+      "pilotReport": "Light chop during approach",
+      "weatherConditions": {
+        "temperatureCelsius": -16,
+        "visibilityKm": 33.1,
+        "cloudCover": "scattered"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "HND"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-01-28T05:44:57Z",
+      "severity": "severe",
+      "altitude": {
+        "feet": 17416,
+        "meters": 2920
+      },
+      "durationMinutes": 19,
+      "affectedArea": {
+        "radiusNm": 17,
+        "center": {
+          "latitude": 6.8873531,
+          "longitude": 73.113569
+        }
+      },
+      "windSpeed": {
+        "knots": 50,
+        "mph": 52.6
+      },
+      "pilotReport": "Moderate turbulence",
+      "weatherConditions": {
+        "temperatureCelsius": -21,
+        "visibilityKm": 29.2,
+        "cloudCover": "clear"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "HMO"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-05-22T14:58:59Z",
+      "severity": "severe",
+      "altitude": {
+        "feet": 16581,
+        "meters": 1928
+      },
+      "durationMinutes": 19,
+      "affectedArea": {
+        "radiusNm": 23,
+        "center": {
+          "latitude": 9.4387872,
+          "longitude": -70.490794
+        }
+      },
+      "windSpeed": {
+        "knots": 84,
+        "mph": 6.6
+      },
+      "pilotReport": "Moderate turbulence",
+      "weatherConditions": {
+        "temperatureCelsius": 14,
+        "visibilityKm": 7.1,
+        "cloudCover": "scattered"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "ATL"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-11-25T22:03:00Z",
+      "severity": "severe",
+      "altitude": {
+        "feet": 37780,
+        "meters": 8846
+      },
+      "durationMinutes": 5,
+      "affectedArea": {
+        "radiusNm": 39,
+        "center": {
+          "latitude": 55.7483994,
+          "longitude": 37.8009297
+        }
+      },
+      "windSpeed": {
+        "knots": 73,
+        "mph": 53.2
+      },
+      "pilotReport": "Light chop during approach",
+      "weatherConditions": {
+        "temperatureCelsius": -5,
+        "visibilityKm": 27.1,
+        "cloudCover": "clear"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "BSB"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-10-13T10:15:32Z",
+      "severity": "mild",
+      "altitude": {
+        "feet": 27835,
+        "meters": 9775
+      },
+      "durationMinutes": 51,
+      "affectedArea": {
+        "radiusNm": 40,
+        "center": {
+          "latitude": -10.8050342,
+          "longitude": -76.9794276
+        }
+      },
+      "windSpeed": {
+        "knots": 76,
+        "mph": 60.3
+      },
+      "pilotReport": "Moderate chop encountered",
+      "weatherConditions": {
+        "temperatureCelsius": 50,
+        "visibilityKm": 13.6,
+        "cloudCover": "clear"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "BRS"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-11-10T07:36:41Z",
+      "severity": "moderate",
+      "altitude": {
+        "feet": 30065,
+        "meters": 7193
+      },
+      "durationMinutes": 32,
+      "affectedArea": {
+        "radiusNm": 31,
+        "center": {
+          "latitude": 29.531734,
+          "longitude": 71.6445305
+        }
+      },
+      "windSpeed": {
+        "knots": 18,
+        "mph": 97.7
+      },
+      "pilotReport": "Moderate turbulence",
+      "weatherConditions": {
+        "temperatureCelsius": 40,
+        "visibilityKm": 0.5,
+        "cloudCover": "overcast"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "NGO"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-09-27T07:48:39Z",
+      "severity": "severe",
+      "altitude": {
+        "feet": 22521,
+        "meters": 3142
+      },
+      "durationMinutes": 23,
+      "affectedArea": {
+        "radiusNm": 26,
+        "center": {
+          "latitude": 39.405075,
+          "longitude": 117.441505
+        }
+      },
+      "windSpeed": {
+        "knots": 37,
+        "mph": 62.6
+      },
+      "pilotReport": "Severe turbulence encountered",
+      "weatherConditions": {
+        "temperatureCelsius": -43,
+        "visibilityKm": 45.5,
+        "cloudCover": "scattered"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "MTY"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-11-27T07:19:03Z",
+      "severity": "severe",
+      "altitude": {
+        "feet": 29858,
+        "meters": 3188
+      },
+      "durationMinutes": 41,
+      "affectedArea": {
+        "radiusNm": 48,
+        "center": {
+          "latitude": 58.7472646,
+          "longitude": 17.0266546
+        }
+      },
+      "windSpeed": {
+        "knots": 5,
+        "mph": 90.4
+      },
+      "pilotReport": "Moderate turbulence",
+      "weatherConditions": {
+        "temperatureCelsius": 4,
+        "visibilityKm": 42.6,
+        "cloudCover": "clear"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "HMO"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-05-27T08:24:10Z",
+      "severity": "mild",
+      "altitude": {
+        "feet": 17615,
+        "meters": 4641
+      },
+      "durationMinutes": 57,
+      "affectedArea": {
+        "radiusNm": 2,
+        "center": {
+          "latitude": 14.6701,
+          "longitude": 121.108226
+        }
+      },
+      "windSpeed": {
+        "knots": 32,
+        "mph": 41.4
+      },
+      "pilotReport": "Severe turbulence encountered",
+      "weatherConditions": {
+        "temperatureCelsius": 12,
+        "visibilityKm": 36.9,
+        "cloudCover": "scattered"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "GDL"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-01-21T15:58:08Z",
+      "severity": "mild",
+      "altitude": {
+        "feet": 44387,
+        "meters": 8395
+      },
+      "durationMinutes": 16,
+      "affectedArea": {
+        "radiusNm": 46,
+        "center": {
+          "latitude": 43.7838974,
+          "longitude": 59.0252539
+        }
+      },
+      "windSpeed": {
+        "knots": 53,
+        "mph": 1.1
+      },
+      "pilotReport": "Moderate chop encountered",
+      "weatherConditions": {
+        "temperatureCelsius": 46,
+        "visibilityKm": 22.6,
+        "cloudCover": "overcast"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "CCU"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-12-23T08:37:37Z",
+      "severity": "moderate",
+      "altitude": {
+        "feet": 45608,
+        "meters": 7081
+      },
+      "durationMinutes": 19,
+      "affectedArea": {
+        "radiusNm": 5,
+        "center": {
+          "latitude": 51.84045,
+          "longitude": 39.94134
+        }
+      },
+      "windSpeed": {
+        "knots": 6,
+        "mph": 5.8
+      },
+      "pilotReport": "Moderate chop encountered",
+      "weatherConditions": {
+        "temperatureCelsius": -13,
+        "visibilityKm": 47.9,
+        "cloudCover": "overcast"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "NCL"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-11-18T09:20:59Z",
+      "severity": "severe",
+      "altitude": {
+        "feet": 23391,
+        "meters": 5333
+      },
+      "durationMinutes": 31,
+      "affectedArea": {
+        "radiusNm": 4,
+        "center": {
+          "latitude": -7.4782808,
+          "longitude": -69.8597406
+        }
+      },
+      "windSpeed": {
+        "knots": 80,
+        "mph": 77.4
+      },
+      "pilotReport": "Severe turbulence encountered",
+      "weatherConditions": {
+        "temperatureCelsius": -5,
+        "visibilityKm": 0.7,
+        "cloudCover": "overcast"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "LYS"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-09-11T21:23:38Z",
+      "severity": "mild",
+      "altitude": {
+        "feet": 40201,
+        "meters": 4363
+      },
+      "durationMinutes": 36,
+      "affectedArea": {
+        "radiusNm": 1,
+        "center": {
+          "latitude": 41.761923,
+          "longitude": 22.887043
+        }
+      },
+      "windSpeed": {
+        "knots": 46,
+        "mph": 46.1
+      },
+      "pilotReport": "Moderate turbulence",
+      "weatherConditions": {
+        "temperatureCelsius": -48,
+        "visibilityKm": 26.3,
+        "cloudCover": "partly cloudy"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "DEN"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-07-28T23:24:10Z",
+      "severity": "moderate",
+      "altitude": {
+        "feet": 39698,
+        "meters": 5778
+      },
+      "durationMinutes": 3,
+      "affectedArea": {
+        "radiusNm": 19,
+        "center": {
+          "latitude": 34.2312322,
+          "longitude": -5.7194522
+        }
+      },
+      "windSpeed": {
+        "knots": 9,
+        "mph": 74.0
+      },
+      "pilotReport": "Light chop during approach",
+      "weatherConditions": {
+        "temperatureCelsius": -44,
+        "visibilityKm": 48.2,
+        "cloudCover": "clear"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "BCN"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-03-19T20:39:41Z",
+      "severity": "mild",
+      "altitude": {
+        "feet": 32348,
+        "meters": 2167
+      },
+      "durationMinutes": 48,
+      "affectedArea": {
+        "radiusNm": 3,
+        "center": {
+          "latitude": 36.977145,
+          "longitude": 121.87093
+        }
+      },
+      "windSpeed": {
+        "knots": 27,
+        "mph": 0.6
+      },
+      "pilotReport": "Moderate chop encountered",
+      "weatherConditions": {
+        "temperatureCelsius": -49,
+        "visibilityKm": 23.7,
+        "cloudCover": "partly cloudy"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "CGH"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-10-24T21:38:48Z",
+      "severity": "severe",
+      "altitude": {
+        "feet": 14430,
+        "meters": 8753
+      },
+      "durationMinutes": 15,
+      "affectedArea": {
+        "radiusNm": 20,
+        "center": {
+          "latitude": -20.1215224,
+          "longitude": -40.3077898
+        }
+      },
+      "windSpeed": {
+        "knots": 62,
+        "mph": 2.6
+      },
+      "pilotReport": "Moderate turbulence",
+      "weatherConditions": {
+        "temperatureCelsius": 44,
+        "visibilityKm": 49.5,
+        "cloudCover": "partly cloudy"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "BSB"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-04-13T13:17:10Z",
+      "severity": "mild",
+      "altitude": {
+        "feet": 46642,
+        "meters": 8284
+      },
+      "durationMinutes": 13,
+      "affectedArea": {
+        "radiusNm": 30,
+        "center": {
+          "latitude": 54.2614748,
+          "longitude": 18.6318543
+        }
+      },
+      "windSpeed": {
+        "knots": 16,
+        "mph": 21.7
+      },
+      "pilotReport": "Moderate turbulence",
+      "weatherConditions": {
+        "temperatureCelsius": 36,
+        "visibilityKm": 34.8,
+        "cloudCover": "overcast"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "BOM"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-04-15T11:20:50Z",
+      "severity": "moderate",
+      "altitude": {
+        "feet": 25794,
+        "meters": 4571
+      },
+      "durationMinutes": 55,
+      "affectedArea": {
+        "radiusNm": 45,
+        "center": {
+          "latitude": 60.6184239,
+          "longitude": 16.7769535
+        }
+      },
+      "windSpeed": {
+        "knots": 39,
+        "mph": 36.4
+      },
+      "pilotReport": "Moderate chop encountered",
+      "weatherConditions": {
+        "temperatureCelsius": 47,
+        "visibilityKm": 41.9,
+        "cloudCover": "partly cloudy"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "CNF"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-07-27T05:11:34Z",
+      "severity": "moderate",
+      "altitude": {
+        "feet": 30595,
+        "meters": 3920
+      },
+      "durationMinutes": 15,
+      "affectedArea": {
+        "radiusNm": 28,
+        "center": {
+          "latitude": -4.3920698,
+          "longitude": 32.8986812
+        }
+      },
+      "windSpeed": {
+        "knots": 25,
+        "mph": 47.1
+      },
+      "pilotReport": "Light chop during approach",
+      "weatherConditions": {
+        "temperatureCelsius": -16,
+        "visibilityKm": 40.6,
+        "cloudCover": "partly cloudy"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "PVR"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-01-17T01:51:18Z",
+      "severity": "severe",
+      "altitude": {
+        "feet": 26328,
+        "meters": 8814
+      },
+      "durationMinutes": 21,
+      "affectedArea": {
+        "radiusNm": 11,
+        "center": {
+          "latitude": 46.1468572,
+          "longitude": 6.0796844
+        }
+      },
+      "windSpeed": {
+        "knots": 91,
+        "mph": 73.3
+      },
+      "pilotReport": "Moderate chop encountered",
+      "weatherConditions": {
+        "temperatureCelsius": 11,
+        "visibilityKm": 7.3,
+        "cloudCover": "partly cloudy"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "BCN"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-07-06T10:26:40Z",
+      "severity": "severe",
+      "altitude": {
+        "feet": 41041,
+        "meters": 37
+      },
+      "durationMinutes": 45,
+      "affectedArea": {
+        "radiusNm": 43,
+        "center": {
+          "latitude": -6.4024844,
+          "longitude": 106.7942405
+        }
+      },
+      "windSpeed": {
+        "knots": 70,
+        "mph": 7.5
+      },
+      "pilotReport": "Severe turbulence encountered",
+      "weatherConditions": {
+        "temperatureCelsius": -8,
+        "visibilityKm": 27.2,
+        "cloudCover": "partly cloudy"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "HIJ"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-07-29T16:51:01Z",
+      "severity": "severe",
+      "altitude": {
+        "feet": 33345,
+        "meters": 2172
+      },
+      "durationMinutes": 1,
+      "affectedArea": {
+        "radiusNm": 24,
+        "center": {
+          "latitude": 33.45,
+          "longitude": -111.97
+        }
+      },
+      "windSpeed": {
+        "knots": 34,
+        "mph": 10.3
+      },
+      "pilotReport": "Severe turbulence encountered",
+      "weatherConditions": {
+        "temperatureCelsius": -23,
+        "visibilityKm": 31.7,
+        "cloudCover": "overcast"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "GLA"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-09-01T04:05:50Z",
+      "severity": "severe",
+      "altitude": {
+        "feet": 16624,
+        "meters": 4733
+      },
+      "durationMinutes": 60,
+      "affectedArea": {
+        "radiusNm": 17,
+        "center": {
+          "latitude": 10.4179921,
+          "longitude": 122.8801918
+        }
+      },
+      "windSpeed": {
+        "knots": 65,
+        "mph": 72.3
+      },
+      "pilotReport": "Light chop during approach",
+      "weatherConditions": {
+        "temperatureCelsius": 46,
+        "visibilityKm": 36.4,
+        "cloudCover": "partly cloudy"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "LHR"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-01-11T09:31:11Z",
+      "severity": "moderate",
+      "altitude": {
+        "feet": 2474,
+        "meters": 6914
+      },
+      "durationMinutes": 60,
+      "affectedArea": {
+        "radiusNm": 36,
+        "center": {
+          "latitude": 41.356361,
+          "longitude": 82.63142
+        }
+      },
+      "windSpeed": {
+        "knots": 60,
+        "mph": 12.7
+      },
+      "pilotReport": "Severe turbulence encountered",
+      "weatherConditions": {
+        "temperatureCelsius": -42,
+        "visibilityKm": 23.8,
+        "cloudCover": "scattered"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "COK"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-04-16T00:19:17Z",
+      "severity": "mild",
+      "altitude": {
+        "feet": 16853,
+        "meters": 5250
+      },
+      "durationMinutes": 12,
+      "affectedArea": {
+        "radiusNm": 9,
+        "center": {
+          "latitude": 43.3514833,
+          "longitude": 77.4600674
+        }
+      },
+      "windSpeed": {
+        "knots": 29,
+        "mph": 78.0
+      },
+      "pilotReport": "Light chop during approach",
+      "weatherConditions": {
+        "temperatureCelsius": 24,
+        "visibilityKm": 14.1,
+        "cloudCover": "clear"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "VER"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-10-20T13:47:47Z",
+      "severity": "moderate",
+      "altitude": {
+        "feet": 35345,
+        "meters": 3932
+      },
+      "durationMinutes": 52,
+      "affectedArea": {
+        "radiusNm": 2,
+        "center": {
+          "latitude": 48.783333,
+          "longitude": 132.933333
+        }
+      },
+      "windSpeed": {
+        "knots": 22,
+        "mph": 26.2
+      },
+      "pilotReport": "Moderate turbulence",
+      "weatherConditions": {
+        "temperatureCelsius": 35,
+        "visibilityKm": 25.6,
+        "cloudCover": "scattered"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "ORD"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-06-06T07:48:38Z",
+      "severity": "moderate",
+      "altitude": {
+        "feet": 7524,
+        "meters": 4363
+      },
+      "durationMinutes": 28,
+      "affectedArea": {
+        "radiusNm": 5,
+        "center": {
+          "latitude": -13.838889,
+          "longitude": -74.311944
+        }
+      },
+      "windSpeed": {
+        "knots": 40,
+        "mph": 65.6
+      },
+      "pilotReport": "Moderate turbulence",
+      "weatherConditions": {
+        "temperatureCelsius": -38,
+        "visibilityKm": 40.2,
+        "cloudCover": "partly cloudy"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "ATL"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-12-06T06:23:10Z",
+      "severity": "severe",
+      "altitude": {
+        "feet": 8512,
+        "meters": 178
+      },
+      "durationMinutes": 1,
+      "affectedArea": {
+        "radiusNm": 36,
+        "center": {
+          "latitude": 9.7421342,
+          "longitude": 99.9788481
+        }
+      },
+      "windSpeed": {
+        "knots": 22,
+        "mph": 31.8
+      },
+      "pilotReport": "Moderate chop encountered",
+      "weatherConditions": {
+        "temperatureCelsius": 8,
+        "visibilityKm": 26.2,
+        "cloudCover": "partly cloudy"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "LPA"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-02-02T17:12:46Z",
+      "severity": "moderate",
+      "altitude": {
+        "feet": 21076,
+        "meters": 3241
+      },
+      "durationMinutes": 38,
+      "affectedArea": {
+        "radiusNm": 10,
+        "center": {
+          "latitude": 61.2323264,
+          "longitude": 7.1061441
+        }
+      },
+      "windSpeed": {
+        "knots": 59,
+        "mph": 44.1
+      },
+      "pilotReport": "Moderate turbulence",
+      "weatherConditions": {
+        "temperatureCelsius": 28,
+        "visibilityKm": 20.4,
+        "cloudCover": "partly cloudy"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "VER"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-10-08T08:04:59Z",
+      "severity": "mild",
+      "altitude": {
+        "feet": 41084,
+        "meters": 9703
+      },
+      "durationMinutes": 43,
+      "affectedArea": {
+        "radiusNm": 38,
+        "center": {
+          "latitude": 30.20856,
+          "longitude": 120.211816
+        }
+      },
+      "windSpeed": {
+        "knots": 66,
+        "mph": 58.2
+      },
+      "pilotReport": "Severe turbulence encountered",
+      "weatherConditions": {
+        "temperatureCelsius": -2,
+        "visibilityKm": 41.9,
+        "cloudCover": "scattered"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "SSA"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-07-25T15:43:23Z",
+      "severity": "mild",
+      "altitude": {
+        "feet": 22178,
+        "meters": 548
+      },
+      "durationMinutes": 33,
+      "affectedArea": {
+        "radiusNm": 41,
+        "center": {
+          "latitude": 22.517585,
+          "longitude": 113.39277
+        }
+      },
+      "windSpeed": {
+        "knots": 59,
+        "mph": 54.7
+      },
+      "pilotReport": "Light chop during approach",
+      "weatherConditions": {
+        "temperatureCelsius": 5,
+        "visibilityKm": 1.2,
+        "cloudCover": "clear"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "DFW"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-04-20T15:18:40Z",
+      "severity": "severe",
+      "altitude": {
+        "feet": 37582,
+        "meters": 7811
+      },
+      "durationMinutes": 8,
+      "affectedArea": {
+        "radiusNm": 14,
+        "center": {
+          "latitude": 52.020802,
+          "longitude": 85.908397
+        }
+      },
+      "windSpeed": {
+        "knots": 94,
+        "mph": 22.7
+      },
+      "pilotReport": "Moderate chop encountered",
+      "weatherConditions": {
+        "temperatureCelsius": -6,
+        "visibilityKm": 23.2,
+        "cloudCover": "clear"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "CUN"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-08-25T18:03:46Z",
+      "severity": "mild",
+      "altitude": {
+        "feet": 24810,
+        "meters": 3549
+      },
+      "durationMinutes": 6,
+      "affectedArea": {
+        "radiusNm": 31,
+        "center": {
+          "latitude": 38.0531218,
+          "longitude": -8.7524636
+        }
+      },
+      "windSpeed": {
+        "knots": 25,
+        "mph": 23.0
+      },
+      "pilotReport": "Light chop during approach",
+      "weatherConditions": {
+        "temperatureCelsius": 23,
+        "visibilityKm": 35.5,
+        "cloudCover": "overcast"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "HND"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-06-17T20:20:15Z",
+      "severity": "severe",
+      "altitude": {
+        "feet": 34185,
+        "meters": 7955
+      },
+      "durationMinutes": 38,
+      "affectedArea": {
+        "radiusNm": 11,
+        "center": {
+          "latitude": 34.2816848,
+          "longitude": 109.002843
+        }
+      },
+      "windSpeed": {
+        "knots": 12,
+        "mph": 90.4
+      },
+      "pilotReport": "Light chop during approach",
+      "weatherConditions": {
+        "temperatureCelsius": 46,
+        "visibilityKm": 19.5,
+        "cloudCover": "partly cloudy"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "GIG"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-10-25T06:22:43Z",
+      "severity": "mild",
+      "altitude": {
+        "feet": 10762,
+        "meters": 2268
+      },
+      "durationMinutes": 60,
+      "affectedArea": {
+        "radiusNm": 33,
+        "center": {
+          "latitude": 36.628305,
+          "longitude": 101.765843
+        }
+      },
+      "windSpeed": {
+        "knots": 54,
+        "mph": 88.5
+      },
+      "pilotReport": "Moderate turbulence",
+      "weatherConditions": {
+        "temperatureCelsius": 5,
+        "visibilityKm": 39.6,
+        "cloudCover": "overcast"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "MID"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-08-17T04:50:31Z",
+      "severity": "severe",
+      "altitude": {
+        "feet": 26891,
+        "meters": 3265
+      },
+      "durationMinutes": 20,
+      "affectedArea": {
+        "radiusNm": 12,
+        "center": {
+          "latitude": 48.7057309,
+          "longitude": 2.2186743
+        }
+      },
+      "windSpeed": {
+        "knots": 87,
+        "mph": 19.3
+      },
+      "pilotReport": "Light chop during approach",
+      "weatherConditions": {
+        "temperatureCelsius": -39,
+        "visibilityKm": 45.4,
+        "cloudCover": "overcast"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "MRS"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-09-17T19:05:04Z",
+      "severity": "moderate",
+      "altitude": {
+        "feet": 39869,
+        "meters": 2947
+      },
+      "durationMinutes": 57,
+      "affectedArea": {
+        "radiusNm": 11,
+        "center": {
+          "latitude": 17.183558,
+          "longitude": 120.463672
+        }
+      },
+      "windSpeed": {
+        "knots": 87,
+        "mph": 37.6
+      },
+      "pilotReport": "Moderate turbulence",
+      "weatherConditions": {
+        "temperatureCelsius": 10,
+        "visibilityKm": 32.0,
+        "cloudCover": "clear"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "POA"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-03-30T15:55:47Z",
+      "severity": "severe",
+      "altitude": {
+        "feet": 15051,
+        "meters": 60
+      },
+      "durationMinutes": 10,
+      "affectedArea": {
+        "radiusNm": 5,
+        "center": {
+          "latitude": 7.7247058,
+          "longitude": 81.7131828
+        }
+      },
+      "windSpeed": {
+        "knots": 10,
+        "mph": 59.8
+      },
+      "pilotReport": "Moderate chop encountered",
+      "weatherConditions": {
+        "temperatureCelsius": 29,
+        "visibilityKm": 17.8,
+        "cloudCover": "clear"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "GOI"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-08-27T22:56:45Z",
+      "severity": "mild",
+      "altitude": {
+        "feet": 41236,
+        "meters": 48
+      },
+      "durationMinutes": 57,
+      "affectedArea": {
+        "radiusNm": 47,
+        "center": {
+          "latitude": 27.3115158,
+          "longitude": 30.9713333
+        }
+      },
+      "windSpeed": {
+        "knots": 61,
+        "mph": 68.1
+      },
+      "pilotReport": "Moderate turbulence",
+      "weatherConditions": {
+        "temperatureCelsius": 37,
+        "visibilityKm": 23.6,
+        "cloudCover": "clear"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "MTY"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-04-30T19:59:37Z",
+      "severity": "severe",
+      "altitude": {
+        "feet": 25499,
+        "meters": 5620
+      },
+      "durationMinutes": 10,
+      "affectedArea": {
+        "radiusNm": 33,
+        "center": {
+          "latitude": 46.8318267,
+          "longitude": 29.4620887
+        }
+      },
+      "windSpeed": {
+        "knots": 74,
+        "mph": 96.4
+      },
+      "pilotReport": "Severe turbulence encountered",
+      "weatherConditions": {
+        "temperatureCelsius": -28,
+        "visibilityKm": 36.6,
+        "cloudCover": "scattered"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "BLR"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-09-26T10:08:18Z",
+      "severity": "moderate",
+      "altitude": {
+        "feet": 14824,
+        "meters": 1424
+      },
+      "durationMinutes": 11,
+      "affectedArea": {
+        "radiusNm": 22,
+        "center": {
+          "latitude": 36.8173373,
+          "longitude": 24.5599015
+        }
+      },
+      "windSpeed": {
+        "knots": 5,
+        "mph": 49.6
+      },
+      "pilotReport": "Moderate chop encountered",
+      "weatherConditions": {
+        "temperatureCelsius": 18,
+        "visibilityKm": 13.0,
+        "cloudCover": "partly cloudy"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "REC"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-08-05T21:54:48Z",
+      "severity": "mild",
+      "altitude": {
+        "feet": 49431,
+        "meters": 452
+      },
+      "durationMinutes": 19,
+      "affectedArea": {
+        "radiusNm": 30,
+        "center": {
+          "latitude": 39.4865544,
+          "longitude": -8.0215061
+        }
+      },
+      "windSpeed": {
+        "knots": 57,
+        "mph": 93.2
+      },
+      "pilotReport": "Severe turbulence encountered",
+      "weatherConditions": {
+        "temperatureCelsius": 11,
+        "visibilityKm": 8.2,
+        "cloudCover": "partly cloudy"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "LAS"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-07-04T12:24:50Z",
+      "severity": "mild",
+      "altitude": {
+        "feet": 23813,
+        "meters": 3922
+      },
+      "durationMinutes": 15,
+      "affectedArea": {
+        "radiusNm": 40,
+        "center": {
+          "latitude": 49.7859606,
+          "longitude": -112.1496533
+        }
+      },
+      "windSpeed": {
+        "knots": 82,
+        "mph": 35.4
+      },
+      "pilotReport": "Moderate chop encountered",
+      "weatherConditions": {
+        "temperatureCelsius": 20,
+        "visibilityKm": 39.7,
+        "cloudCover": "partly cloudy"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "NCE"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-01-25T09:58:35Z",
+      "severity": "severe",
+      "altitude": {
+        "feet": 15290,
+        "meters": 4968
+      },
+      "durationMinutes": 24,
+      "affectedArea": {
+        "radiusNm": 4,
+        "center": {
+          "latitude": 29.561775,
+          "longitude": 106.568971
+        }
+      },
+      "windSpeed": {
+        "knots": 58,
+        "mph": 92.7
+      },
+      "pilotReport": "Severe turbulence encountered",
+      "weatherConditions": {
+        "temperatureCelsius": -36,
+        "visibilityKm": 4.3,
+        "cloudCover": "overcast"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "GRU"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-01-22T04:25:10Z",
+      "severity": "moderate",
+      "altitude": {
+        "feet": 42338,
+        "meters": 7031
+      },
+      "durationMinutes": 11,
+      "affectedArea": {
+        "radiusNm": 38,
+        "center": {
+          "latitude": 52.3382178,
+          "longitude": 5.2172366
+        }
+      },
+      "windSpeed": {
+        "knots": 15,
+        "mph": 95.9
+      },
+      "pilotReport": "Severe turbulence encountered",
+      "weatherConditions": {
+        "temperatureCelsius": -13,
+        "visibilityKm": 37.6,
+        "cloudCover": "overcast"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "BCN"
+    },
+    "turbulenceReport": {
+      "timestamp": "2023-09-15T14:25:15Z",
+      "severity": "severe",
+      "altitude": {
+        "feet": 36106,
+        "meters": 436
+      },
+      "durationMinutes": 52,
+      "affectedArea": {
+        "radiusNm": 16,
+        "center": {
+          "latitude": 45.1013124,
+          "longitude": 14.1052162
+        }
+      },
+      "windSpeed": {
+        "knots": 98,
+        "mph": 77.8
+      },
+      "pilotReport": "Moderate chop encountered",
+      "weatherConditions": {
+        "temperatureCelsius": -43,
+        "visibilityKm": 31.4,
+        "cloudCover": "overcast"
+      }
+    }
+  },
+  {
+    "airport": {
+      "code": "LTN"
+    },
+    "turbulenceReport": {
+      "timestamp": "2024-05-27T03:42:51Z",
+      "severity": "mild",
+      "altitude": {
+        "feet": 44608,
+        "meters": 2537
+      },
+      "durationMinutes": 35,
+      "affectedArea": {
+        "radiusNm": 22,
+        "center": {
+          "latitude": 7.75003,
+          "longitude": 168.97513
+        }
+      },
+      "windSpeed": {
+        "knots": 43,
+        "mph": 9.8
+      },
+      "pilotReport": "Moderate turbulence",
+      "weatherConditions": {
+        "temperatureCelsius": 20,
+        "visibilityKm": 8.8,
+        "cloudCover": "clear"
+      }
+    }
+  }
+]

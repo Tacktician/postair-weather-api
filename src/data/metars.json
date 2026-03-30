@@ -1,0 +1,583 @@
+[
+  {
+    "code": "ATL",
+    "name": "Hartsfield-Jackson Atlanta International Airport",
+    "metar": {
+      "raw": "KATL 251800Z 31006KT 8SM BKN025 22/14 A2998 RMK AO2 SLP145",
+      "time": "251800Z",
+      "wind": {
+        "direction": 310,
+        "speed": 6
+      },
+      "visibility": "8SM",
+      "clouds": [
+        {
+          "type": "BKN",
+          "height": 2500
+        }
+      ],
+      "temperature": 22,
+      "dewpoint": 14,
+      "altimeter": 29.98
+    }
+  },
+  {
+    "code": "MCO",
+    "name": "Orlando International Airport",
+    "metar": {
+      "raw": "METAR: KMCO 101453Z 26008KT 10SM SCT024 SCT180 BKN250 31/26 A3002 RMK AO2 SLP165 T03060256 50001",
+      "time": "101453Z",
+      "wind": {
+        "direction": 90,
+        "speed": 9
+      },
+      "visibility": "10SM",
+      "clouds": [
+        {
+          "type": "FEW",
+          "height": 20000
+        },
+        {
+          "type": "SCT",
+          "height": 4000
+        },
+        {
+          "type": "BKN",
+          "height": 25000
+        }
+      ],
+      "temperature": 88,
+      "dewpoint": 22,
+      "altimeter": 30.05
+    }
+  },
+  {
+    "code": "BCN",
+    "name": "Josep Tarradellas Barcelona-El Prat Airport",
+    "metar": {
+      "raw": "LEBL 072030Z 21005KT 9999 SCT018 23/19 Q1015 NOSIG",
+      "time": "072030Z",
+      "wind": {
+        "direction": 210,
+        "speed": 5
+      },
+      "visibility": "9999",
+      "clouds": [
+        {
+          "type": "SCT",
+          "height": 1800
+        }
+      ],
+      "temperature": 23,
+      "dewpoint": 19,
+      "altimeter": 30.15
+    }
+  },
+  {
+    "code": "MAD",
+    "name": "Adolfo Suárez Madrid-Barajas Airport",
+    "metar": {
+      "raw": "LEMD 102030Z 18004KT 150V210 9000 OVC012 12/10 Q1026 NOSIG",
+      "time": "102030Z",
+      "wind": {
+        "direction": 180,
+        "speed": 4,
+        "variation": {
+          "from": 150,
+          "to": 210
+        }
+      },
+      "visibility": "9000",
+      "clouds": [
+        {
+          "type": "OVC",
+          "height": 1200
+        }
+      ],
+      "temperature": 12,
+      "dewpoint": 10,
+      "altimeter": 30.30
+    }
+  },
+  {
+    "code": "LHR",
+    "name": "London Heathrow Airport",
+    "metar": {
+      "raw": "EGLL 072100Z 23008KT 9999 FEW020 SCT035 14/09 Q1018",
+      "time": "072100Z",
+      "wind": {
+        "direction": 230,
+        "speed": 8
+      },
+      "visibility": "9999",
+      "clouds": [
+        {
+          "type": "FEW",
+          "height": 2000
+        },
+        {
+          "type": "SCT",
+          "height": 3500
+        }
+      ],
+      "temperature": 14,
+      "dewpoint": 9,
+      "altimeter": 30.06
+    }
+  },
+  {
+    "code": "JFK",
+    "name": "John F. Kennedy International Airport",
+    "metar": {
+      "raw": "KJFK 072130Z 18012G22KT 10SM FEW025 BKN045 OVC080 15/12 A2985 RMK AO2 RAB15",
+      "time": "072130Z",
+      "wind": {
+        "direction": 180,
+        "speed": 12,
+        "gust": 22
+      },
+      "visibility": "10SM",
+      "clouds": [
+        {
+          "type": "FEW",
+          "height": 2500
+        },
+        {
+          "type": "BKN",
+          "height": 4500
+        },
+        {
+          "type": "OVC",
+          "height": 8000
+        }
+      ],
+      "temperature": 15,
+      "dewpoint": 12,
+      "altimeter": 29.85
+    }
+  },
+  {
+    "code": "LGA",
+    "name": "LaGuardia Airport",
+    "metar": {
+      "raw": "KLGA 072145Z 20010KT 8SM -RA BKN015 OVC025 16/13 A2988 RMK AO2 RAB30",
+      "time": "072145Z",
+      "wind": {
+        "direction": 200,
+        "speed": 10
+      },
+      "visibility": "8SM",
+      "weather": "-RA",
+      "clouds": [
+        {
+          "type": "BKN",
+          "height": 1500
+        },
+        {
+          "type": "OVC",
+          "height": 2500
+        }
+      ],
+      "temperature": 16,
+      "dewpoint": 13,
+      "altimeter": 29.88
+    }
+  },
+  {
+    "code": "MIA",
+    "name": "Miami International Airport",
+    "metar": {
+      "raw": "KMIA 072200Z 12008KT 10SM FEW030 SCT100 28/22 A3002 RMK AO2",
+      "time": "072200Z",
+      "wind": {
+        "direction": 120,
+        "speed": 8
+      },
+      "visibility": "10SM",
+      "clouds": [
+        {
+          "type": "FEW",
+          "height": 3000
+        },
+        {
+          "type": "SCT",
+          "height": 10000
+        }
+      ],
+      "temperature": 28,
+      "dewpoint": 22,
+      "altimeter": 30.02
+    }
+  },
+  {
+    "code": "CDG",
+    "name": "Paris Charles de Gaulle Airport",
+    "metar": {
+      "raw": "LFPG 072215Z 27006KT 9999 SCT025 BKN040 13/10 Q1020 NOSIG",
+      "time": "072215Z",
+      "wind": {
+        "direction": 270,
+        "speed": 6
+      },
+      "visibility": "9999",
+      "clouds": [
+        {
+          "type": "SCT",
+          "height": 2500
+        },
+        {
+          "type": "BKN",
+          "height": 4000
+        }
+      ],
+      "temperature": 13,
+      "dewpoint": 10,
+      "altimeter": 30.12
+    }
+  },
+  {
+    "code": "SFO",
+    "name": "San Francisco International Airport",
+    "metar": {
+      "raw": "KSFO 072230Z 28012KT 10SM FEW015 SCT025 18/12 A3005 RMK AO2",
+      "time": "072230Z",
+      "wind": {
+        "direction": 280,
+        "speed": 12
+      },
+      "visibility": "10SM",
+      "clouds": [
+        {
+          "type": "FEW",
+          "height": 1500
+        },
+        {
+          "type": "SCT",
+          "height": 2500
+        }
+      ],
+      "temperature": 18,
+      "dewpoint": 12,
+      "altimeter": 30.05
+    }
+  },
+  {
+    "code": "DEL",
+    "name": "Indira Gandhi International Airport",
+    "metar": {
+      "raw": "VIDP 072245Z 27008KT 5000 HZ FEW025 SCT100 32/24 Q1005",
+      "time": "072245Z",
+      "wind": {
+        "direction": 270,
+        "speed": 8
+      },
+      "visibility": "5000",
+      "weather": "HZ",
+      "clouds": [
+        {
+          "type": "FEW",
+          "height": 2500
+        },
+        {
+          "type": "SCT",
+          "height": 10000
+        }
+      ],
+      "temperature": 32,
+      "dewpoint": 24,
+      "altimeter": 29.68
+    }
+  },
+  {
+    "code": "BOM",
+    "name": "Chhatrapati Shivaji Maharaj International Airport",
+    "metar": {
+      "raw": "VABB 072300Z 25006KT 8000 SCT020 BKN080 29/26 Q1008",
+      "time": "072300Z",
+      "wind": {
+        "direction": 250,
+        "speed": 6
+      },
+      "visibility": "8000",
+      "clouds": [
+        {
+          "type": "SCT",
+          "height": 2000
+        },
+        {
+          "type": "BKN",
+          "height": 8000
+        }
+      ],
+      "temperature": 29,
+      "dewpoint": 26,
+      "altimeter": 29.77
+    }
+  },
+  {
+    "code": "HND",
+    "name": "Tokyo Haneda Airport",
+    "metar": {
+      "raw": "RJTT 072315Z 09005KT 9999 FEW030 20/16 Q1015",
+      "time": "072315Z",
+      "wind": {
+        "direction": 90,
+        "speed": 5
+      },
+      "visibility": "9999",
+      "clouds": [
+        {
+          "type": "FEW",
+          "height": 3000
+        }
+      ],
+      "temperature": 20,
+      "dewpoint": 16,
+      "altimeter": 29.97
+    }
+  },
+  {
+    "code": "GRU",
+    "name": "São Paulo/Guarulhos International Airport",
+    "metar": {
+      "raw": "SBGR 072330Z 14008KT 9999 SCT015 BKN025 22/19 Q1016",
+      "time": "072330Z",
+      "wind": {
+        "direction": 140,
+        "speed": 8
+      },
+      "visibility": "9999",
+      "clouds": [
+        {
+          "type": "SCT",
+          "height": 1500
+        },
+        {
+          "type": "BKN",
+          "height": 2500
+        }
+      ],
+      "temperature": 22,
+      "dewpoint": 19,
+      "altimeter": 30.00
+    }
+  },
+  {
+    "code": "MEX",
+    "name": "Mexico City International Airport",
+    "metar": {
+      "raw": "MMMX 072345Z 06005KT 8000 SCT025 BKN100 18/12 Q1025",
+      "time": "072345Z",
+      "wind": {
+        "direction": 60,
+        "speed": 5
+      },
+      "visibility": "8000",
+      "clouds": [
+        {
+          "type": "SCT",
+          "height": 2500
+        },
+        {
+          "type": "BKN",
+          "height": 10000
+        }
+      ],
+      "temperature": 18,
+      "dewpoint": 12,
+      "altimeter": 30.27
+    }
+  },
+  {
+    "code": "CUN",
+    "name": "Cancún International Airport",
+    "metar": {
+      "raw": "MMUN 100940Z 16014KT 7SM SCT015 27/24 A2979 RMK 8/500",
+      "time": "100940Z",
+      "wind": {
+        "direction": 160,
+        "speed": 14
+      },
+      "visibility": "7SM",
+      "clouds": [
+        {
+          "type": "SCT",
+          "height": 1500
+        }
+      ],
+      "temperature": 27,
+      "dewpoint": 24,
+      "altimeter": 29.79
+    }
+  },
+  {
+    "code": "TIJ",
+    "name": "Tijuana International Airport",
+    "metar": {
+      "raw": "MMTJ 272346Z 27010KT 10SM SKC 24/15 A2982 RMK SLP117 57016 973 HZY PRESFR ISOL SC N",
+      "time": "272346Z",
+      "wind": {
+        "direction": 270,
+        "speed": 10
+      },
+      "visibility": "10SM",
+      "clouds": [
+        {
+          "type": "SKC"
+        }
+      ],
+      "temperature": 24,
+      "dewpoint": 15,
+      "altimeter": 29.82
+    }
+  },
+  {
+    "code": "CGH",
+    "name": "Congonhas Airport",
+    "metar": {
+      "raw": "SBSP 031200Z 35013KT 310V030 9999 SCT030 26/19 Q1012",
+      "time": "031200Z",
+      "wind": {
+        "direction": 350,
+        "speed": 13,
+        "variation": {
+          "from": 310,
+          "to": 30
+        }
+      },
+      "visibility": "9999",
+      "clouds": [
+        {
+          "type": "SCT",
+          "height": 3000
+        }
+      ],
+      "temperature": 26,
+      "dewpoint": 19,
+      "altimeter": 29.88
+    }
+  },
+  {
+    "code": "POA",
+    "name": "Salgado Filho International Airport",
+    "metar": {
+      "raw": "SBPA 032300Z 13010KT 5000 -DZ BR OVC007 18/16 Q1012",
+      "time": "032300Z",
+      "wind": {
+        "direction": 130,
+        "speed": 10
+      },
+      "visibility": "5000",
+      "weather": "-DZ BR",
+      "clouds": [
+        {
+          "type": "OVC",
+          "height": 700
+        }
+      ],
+      "temperature": 18,
+      "dewpoint": 16,
+      "altimeter": 29.88
+    }
+  },
+  {
+    "code": "NRT",
+    "name": "Narita International Airport",
+    "metar": {
+      "raw": "RJAA 250600Z 11012KT 9999 FEW030 22/12 Q1013",
+      "time": "250600Z",
+      "wind": {
+        "direction": 110,
+        "speed": 12
+      },
+      "visibility": "9999",
+      "clouds": [
+        {
+          "type": "FEW",
+          "height": 3000
+        }
+      ],
+      "temperature": 22,
+      "dewpoint": 12,
+      "altimeter": 29.91
+    }
+  },
+  {
+    "code": "LGW",
+    "name": "London Gatwick Airport",
+    "metar": {
+      "raw": "EGKK 241550Z 23013KT 9999 BKN008 BKN015 12/11 Q1006",
+      "time": "241550Z",
+      "wind": {
+        "direction": 230,
+        "speed": 13
+      },
+      "visibility": "9999",
+      "clouds": [
+        {
+          "type": "BKN",
+          "height": 800
+        },
+        {
+          "type": "BKN",
+          "height": 1500
+        }
+      ],
+      "temperature": 12,
+      "dewpoint": 11,
+      "altimeter": 29.71
+    }
+  },
+  {
+    "code": "GLA",
+    "name": "Glasgow International Airport",
+    "metar": {
+      "raw": "EGPF 241550Z 23013KT 9999 BKN008 BKN015 12/11 Q1006",
+      "time": "241550Z",
+      "wind": {
+        "direction": 230,
+        "speed": 13
+      },
+      "visibility": "9999",
+      "clouds": [
+        {
+          "type": "BKN",
+          "height": 800
+        },
+        {
+          "type": "BKN",
+          "height": 1500
+        }
+      ],
+      "temperature": 12,
+      "dewpoint": 11,
+      "altimeter": 29.71
+    }
+  },
+  {
+    "code": "LAS",
+    "name": "McCarran International Airport",
+    "metar": {
+      "raw": "KLAS 072256Z 00000KT 10SM FEW120 SCT200 32/09 A2992 RMK AO2 SLP131",
+      "time": "072256Z",
+      "wind": {
+        "direction": 0,
+        "speed": 0
+      },
+      "visibility": "10SM",
+      "clouds": [
+        {
+          "type": "FEW",
+          "height": 12000
+        },
+        {
+          "type": "SCT",
+          "height": 20000
+        }
+      ],
+      "temperature": 32,
+      "dewpoint": 9,
+      "altimeter": 29.92
+    }
+  }
+]
