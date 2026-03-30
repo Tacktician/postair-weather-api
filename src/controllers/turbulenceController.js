@@ -1,8 +1,8 @@
 const { v4: uuidv4 } = require('uuid');
-const { getTurbulenceData } = require('../../../util/weather-api-dataLoader');
+const { getTurbulenceData } = require('../services/weatherDataLoader');
 const { StatusCodes, getReasonPhrase } = require('http-status-codes');
 //const c = require('config');
-const demoLogger = require('../../../util/logger').demoLogger(module);
+const demoLogger = require('../util/logger').demoLogger(module);
 
 exports.getTurbulence = async (req, res, next) => {
     try {

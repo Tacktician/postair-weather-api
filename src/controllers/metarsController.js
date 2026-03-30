@@ -1,7 +1,7 @@
 const { v4: uuidv4 } = require('uuid');
-const { getMetarsData } = require('../../../util/weather-api-dataLoader');
+const { getMetarsData } = require('../services/weatherDataLoader');
 const { StatusCodes, getReasonPhrase } = require('http-status-codes');
-const demoLogger = require('../../../util/logger').demoLogger(module);
+const demoLogger = require('..//util/logger').demoLogger(module);
 
 exports.getMetars = async (req, res, next) => {
     try {
