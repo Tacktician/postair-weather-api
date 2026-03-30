@@ -25,3 +25,70 @@ This repository is a **standalone demo HTTP API** intended for use with the <a h
 
    ```bash
    npm install
+   ```
+2. Copy the environment template and set your API key (the server validates `x-api-key` against this value):
+
+   ```bash
+   cp env.example .env
+   ```
+   Edit the `.env` and set `WEATHER_API_KEY` to a non-empty secret. Optionally set `PORT` (default is `3000`).
+3. Start the server:
+   ```bash
+   npm start
+   ```
+   The app listens on `http://localhost:${PORT:-3000}` (see `PORT` in `.env`)
+
+## Usage / Quickstart
+
+### Export Your API Key (zsh)
+Use the same value as `WEATHER_API_KEY` in `.env` so you can pass it to `curl`:
+   ```bash
+   export WEATHER_API_KEY="your-secret-here"
+   ```
+
+### Sample Requests
+With the server running, default base URL `http://localhost:3000` (change the port if you changed `PORT`.
+
+#### Airports — list
+```bash
+curl -sS -H "x-api-key: $WEATHER_API_KEY" \
+  "http://localhost:3000/v1/weather/airports"
+```
+#### Airports — filter by country
+```bash
+curl -sS -H "x-api-key: $WEATHER_API_KEY" \
+  "http://localhost:3000/v1/weather/airports?countryName=United%20States"
+```
+#### Airports — filter by code
+```bash
+curl -sS -H "x-api-key: $WEATHER_API_KEY" \
+  "http://localhost:3000/v1/weather/airports?airportCode=ATL"
+```
+#### Forecast
+```bash
+curl -sS -H "x-api-key: $WEATHER_API_KEY" \
+  "http://localhost:3000/v1/weather/forecast"
+```
+#### Forecast — filter by city
+```bash
+curl -sS -H "x-api-key: $WEATHER_API_KEY" \
+  "http://localhost:3000/v1/weather/forecast?forecastCity=Ocala"
+```
+
+#### Turbulence
+```bash
+curl -sS -H "x-api-key: $WEATHER_API_KEY" \
+  "http://localhost:3000/v1/weather/turbulence?airportCode=ATL"
+```
+### METARs
+```bash
+curl -sS -H "x-api-key: $WEATHER_API_KEY" \
+  "http://localhost:3000/v1/weather/metars?airportCode=ATL"
+```
+`-sS` keeps the response body readable while still surfacing curl errors; remove `-sS` if you want a progress meter.
+
+### OpenAPI
+The contract lives under `api-docs/` (for example `postair-openapi-3_1.yaml`). Import it into Postman to generate a collection or to align requests with the documented paths and schemas.
+
+
+
