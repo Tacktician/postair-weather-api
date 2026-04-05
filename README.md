@@ -32,7 +32,8 @@ This repository is a **standalone demo HTTP API** intended for use with the <a h
    cp env.example .env
    ```
    Edit the `.env` and set `WEATHER_API_KEY` to a non-empty secret. Optionally set `PORT` (default is `3000`).
-3. Start the server:
+   > For `localhost` testing you can use `1234` as a test key.
+4. Start the server:
    ```bash
    npm start
    ```
