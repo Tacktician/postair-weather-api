@@ -14,7 +14,7 @@ jobs:
           command: >-
             collection run ${{ vars.COLLECTION_ID }}
             -e ${{ vars.ENV_ID }}
-            -i "${{ vars.SMOKE_TEST_FOLDER }}
+            -i ${{ vars.SMOKE_TEST_FOLDER }}
             --reporters junit,cli
 
       - name: Upload JUnit report
