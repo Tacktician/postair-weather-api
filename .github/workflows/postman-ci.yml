@@ -12,9 +12,9 @@ jobs:
         with:
           api-key: ${{ secrets.POSTMAN_API_KEY }}
           command: >-
-            collection run "${{ vars.COLLECTION_ID }}"
-            -e "${{ vars.ENV_ID }}"
-            -i "${{ vars.SMOKE_TEST_FOLDER }}"
+            collection run ${{ vars.COLLECTION_ID }}
+            -e ${{ vars.ENV_ID }}
+            -i "${{ vars.SMOKE_TEST_FOLDER }}
             --reporters junit,cli
 
       - name: Upload JUnit report
@@ -22,4 +22,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: postman-junit-report-${{ github.run_number }}
-          path: postman-cli-report.junit.xml
+          path: postman-cli-reports/*.xml
