@@ -1,0 +1,56 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/collections/:collectionId/requests/:requestId
+  method: GET
+  pathVariables:
+    collectionId: 12ece9e1-2abf-4edc-8e34-de66e74114d2
+    requestId: e12d2aa6-85c8-4e6c-aad0-1adcfe05c958
+response:
+  statusCode: 401
+  statusText: Unauthorized
+  body:
+    type: json
+    content: |-
+      {
+          "error": {
+              "name": "Unauthorized",
+              "message": "Unauthorized",
+              "details": {
+                  "model": "request",
+                  "model_id": "c82dd02c-4870-4907-8fcb-593a876cf05b",
+                  "owner": "12345678"
+              }
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "error": {
+                  "type": "object",
+                  "properties": {
+                      "name": {
+                          "type": "string"
+                      },
+                      "message": {
+                          "type": "string"
+                      },
+                      "details": {
+                          "type": "object",
+                          "properties": {
+                              "model": {
+                                  "type": "string"
+                              },
+                              "model_id": {
+                                  "type": "string"
+                              },
+                              "owner": {
+                                  "type": "string"
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+order: 8000

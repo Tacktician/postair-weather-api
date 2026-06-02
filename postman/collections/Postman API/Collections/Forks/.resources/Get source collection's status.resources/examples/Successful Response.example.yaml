@@ -1,0 +1,41 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/collections/:collectionId/source-status
+  method: GET
+  pathVariables:
+    collectionId: 12345678-12ece9e1-2abf-4edc-8e34-de66e74114d2
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "collection": {
+              "12345678-12ece9e1-2abf-4edc-8e34-de66e74114d2": {
+                  "isSourceAhead": false
+              }
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "collection": {
+                  "type": "object",
+                  "properties": {
+                      "12345678-12ece9e1-2abf-4edc-8e34-de66e74114d2": {
+                          "type": "object",
+                          "description": "Information about the forked collection. The object's name is the forked collection's UID (`userId`-`collectionId`).",
+                          "properties": {
+                              "isSourceAhead": {
+                                  "type": "boolean",
+                                  "description": "If true, there is a difference between the forked collection and its source collection."
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+order: 1000

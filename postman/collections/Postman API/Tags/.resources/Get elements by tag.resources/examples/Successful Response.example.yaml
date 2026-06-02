@@ -1,0 +1,65 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/tags/:slugId/entities
+  method: GET
+  pathVariables:
+    slugId: needs-review
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "data": {
+              "entities": [
+                  {
+                      "entityId": "8b86dfe8-de72-44e6-81ea-79d19805bc6a",
+                      "entityType": "collection"
+                  }
+              ]
+          },
+          "meta": {
+              "count": 1
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "data": {
+                  "type": "object",
+                  "description": "An object containing the paginated elements.",
+                  "properties": {
+                      "entities": {
+                          "type": "array",
+                          "description": "A list of the Postman elements that contain the given tag.",
+                          "items": {
+                              "type": "object",
+                              "properties": {
+                                  "entityId": {
+                                      "type": "string",
+                                      "description": "The element's unique ID."
+                                  },
+                                  "entityType": {
+                                      "type": "string",
+                                      "description": "The type of Postman element."
+                                  }
+                              }
+                          }
+                      }
+                  }
+              },
+              "meta": {
+                  "type": "object",
+                  "description": "The response's pagination information.",
+                  "properties": {
+                      "count": {
+                          "type": "integer",
+                          "description": "The number of tagged elements returned in the response."
+                      }
+                  }
+              }
+          }
+      }
+order: 1000

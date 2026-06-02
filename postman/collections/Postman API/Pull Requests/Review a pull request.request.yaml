@@ -1,0 +1,46 @@
+$kind: http-request
+description: Updates the [review](https://learning.postman.com/docs/collaborating-in-postman/using-version-control/reviewing-pull-requests/) status of a pull request.
+url: "{{baseUrl}}/pull-requests/:pullRequestId/tasks"
+method: POST
+pathVariables:
+  - key: pullRequestId
+    value: ""
+    description: The pull request's ID.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "uniqueItems": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+body:
+  type: json
+  content: |-
+    {
+        "action": "{{pullRequestAction}}",
+        "comment": "{{declineComment}}"
+    }
+  $type: |-
+    {
+        "type": "object",
+        "required": ["action"],
+        "properties": {
+            "action": {
+                "type": "string",
+                "description": "The action to perform on the pull request:\n- `approve` — Approve the pull request for merge.\n- `decline` — Decline the pull request.\n- `merge` — Merge the pull request into its parent element.\n- `unapprove` — Revokes a pull request's `approve` status. This action does not decline the pull request.\n"
+            },
+            "comment": {
+                "type": "string",
+                "description": "If the pull request is a `decline` status, an optoinal comment about why the pull request was declined."
+            }
+        }
+    }
+examples: ./.resources/Review a pull request.resources/examples
+order: 2000

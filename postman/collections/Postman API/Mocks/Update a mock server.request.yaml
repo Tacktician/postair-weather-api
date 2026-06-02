@@ -1,0 +1,66 @@
+$kind: http-request
+description: Updates a mock server's properties, such as its name or collection.
+url: "{{baseUrl}}/mocks/:mockId"
+method: PUT
+pathVariables:
+  - key: mockId
+    value: ""
+    description: The mock's ID.
+body:
+  type: json
+  content: |-
+    {
+        "mock": {
+            "name": "{{mockName}}",
+            "environment": "{{environmentUid}}",
+            "private": true,
+            "versionTag": "{{apiVersionTagId}}",
+            "collection": "{{collectionId}}",
+            "config": {
+                "serverResponseId": "{{serverResponseId}}"
+            }
+        }
+    }
+  $type: |-
+    {
+        "type": "object",
+        "properties": {
+            "mock": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "The mock server's name."
+                    },
+                    "environment": {
+                        "type": "string",
+                        "description": "The associated environment's unique ID."
+                    },
+                    "private": {
+                        "type": "boolean",
+                        "default": false,
+                        "description": "If true, the mock server is set private. By default, mock servers are public and can receive requests from anyone and anywhere."
+                    },
+                    "versionTag": {
+                        "type": "string",
+                        "description": "The API's version tag ID."
+                    },
+                    "collection": {
+                        "type": "string",
+                        "description": "The ID of the collection associated with the mock server."
+                    },
+                    "config": {
+                        "type": "object",
+                        "properties": {
+                            "serverResponseId": {
+                                "type": "string",
+                                "description": "The server response ID. This sets the given server response as the default response for each request. To deactivate a server response, pass a null value."
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+examples: ./.resources/Update a mock server.resources/examples
+order: 9000

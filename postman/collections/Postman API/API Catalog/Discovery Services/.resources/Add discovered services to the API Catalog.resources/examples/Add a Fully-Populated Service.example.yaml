@@ -1,0 +1,188 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/api-catalog/discovery-services
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+          "discoveredServices": [
+              {
+                  "name": "user-service",
+                  "version": "3.0.0",
+                  "providerServiceId": "usr-svc-custom-id-001",
+                  "description": "Handles user registration, authentication, and profile management",
+                  "sourceEnvironment": "production",
+                  "endpoints": [
+                      {
+                          "method": "GET",
+                          "path": "/users",
+                          "description": "List all users"
+                      },
+                      {
+                          "method": "POST",
+                          "path": "/users",
+                          "description": "Create a new user"
+                      },
+                      {
+                          "method": "GET",
+                          "path": "/users/{id}",
+                          "description": "Get user by ID"
+                      },
+                      {
+                          "method": "PUT",
+                          "path": "/users/{id}",
+                          "description": "Update user"
+                      },
+                      {
+                          "method": "DELETE",
+                          "path": "/users/{id}",
+                          "description": "Delete user"
+                      }
+                  ],
+                  "tags": [
+                      "auth",
+                      "core",
+                      "identity"
+                  ],
+                  "providerMetadata": {
+                      "commitSha": "a1b2c3d4e5f6",
+                      "branch": "main",
+                      "gitRepoUrl": "https://github.com/acme/user-service",
+                      "deployedAt": "2026-02-10T12:00:00Z"
+                  }
+              }
+          ]
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "data": [
+              {
+                  "id": "9feb4e3c-0cd8-44db-b137-7bf09aee73cd",
+                  "organizationId": 123,
+                  "name": "user-service",
+                  "description": "Handles user registration, authentication, and profile management.",
+                  "version": "3.0.0",
+                  "sourceEnvironment": "production",
+                  "systemEnvironmentId": null,
+                  "tags": [
+                      "auth",
+                      "core",
+                      "identity"
+                  ],
+                  "status": "discovered",
+                  "endpointsCount": 5,
+                  "providerServiceId": "usr-svc-custom-id-001",
+                  "discoveredAt": "2026-02-12T04:01:26.000Z",
+                  "discoveredBy": 12345678,
+                  "lastSyncedAt": "2026-02-12T04:01:26.000Z"
+              }
+          ],
+          "meta": {
+              "total": 1,
+              "created": 1,
+              "updated": 0
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "data": {
+                  "type": "array",
+                  "description": "A list of discovered services.",
+                  "items": {
+                      "type": "object",
+                      "description": "Information about a discovered service.",
+                      "properties": {
+                          "id": {
+                              "type": "string",
+                              "description": "The service's ID."
+                          },
+                          "organizationId": {
+                              "type": "integer",
+                              "description": "The ID of the organization that the service belongs to."
+                          },
+                          "name": {
+                              "type": "string",
+                              "description": "The servie's name."
+                          },
+                          "description": {
+                              "type": ["string", "null"],
+                              "description": "The service's description."
+                          },
+                          "version": {
+                              "type": ["string", "null"],
+                              "description": "The service's version."
+                          },
+                          "sourceEnvironment": {
+                              "type": ["string", "null"],
+                              "description": "The source environment in which the service was discovered."
+                          },
+                          "systemEnvironmentId": {
+                              "type": ["string", "null"],
+                              "description": "The mapped system environment's ID. Returns a null value if the environment is not mapped."
+                          },
+                          "tags": {
+                              "type": "array",
+                              "description": "A list of tags associated with the service.",
+                              "items": {
+                                  "type": "string",
+                                  "description": "The tag's name."
+                              }
+                          },
+                          "status": {
+                              "type": "string",
+                              "description": "The service's current status."
+                          },
+                          "endpointsCount": {
+                              "type": "integer",
+                              "description": "The total number of endpoints associated with the service."
+                          },
+                          "providerServiceId": {
+                              "type": "string",
+                              "description": "The provider-assigned service ID. This value is automatically generated if the `providerServiceId` isn't passed in the request body."
+                          },
+                          "discoveredAt": {
+                              "type": "string",
+                              "format": "date-time",
+                              "description": "The date and time at which the service was first discovered."
+                          },
+                          "discoveredBy": {
+                              "type": "integer",
+                              "description": "The user ID of the user who discovered or ingested the service."
+                          },
+                          "lastSyncedAt": {
+                              "type": "string",
+                              "format": "date-time",
+                              "description": "The date and time of the most recent service sync."
+                          }
+                      }
+                  }
+              },
+              "meta": {
+                  "type": "object",
+                  "description": "The operation's metadata summary.",
+                  "properties": {
+                      "total": {
+                          "type": "integer",
+                          "description": "The total number of services processed."
+                      },
+                      "created": {
+                          "type": "integer",
+                          "description": "The number of new services created."
+                      },
+                      "updated": {
+                          "type": "integer",
+                          "description": "The number of existing services updated."
+                      }
+                  }
+              }
+          }
+      }
+order: 2000

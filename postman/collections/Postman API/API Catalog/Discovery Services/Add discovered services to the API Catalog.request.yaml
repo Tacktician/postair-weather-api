@@ -1,0 +1,152 @@
+$kind: http-request
+description: Adds discovered services to the API Catalog. Accepts up to 20 services in a single call.
+url: "{{baseUrl}}/api-catalog/discovery-services"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "discoveredServices": [
+            {
+                "name": "{{serviceName}}",
+                "version": "{{serviceVersionId}}",
+                "providerServiceId": "{{providerServiceId}}",
+                "description": "{{serviceDescription}}",
+                "sourceEnvironment": "{{sourceEnvironment}}",
+                "apiDefinition": {
+                    "content": "{{base64EncodedApiDefinition}}"
+                },
+                "endpoints": [
+                    {
+                        "method": "{{endpointHttpMethod}}",
+                        "path": "{{endpointPath}}",
+                        "description": "{{endpointDescription}}",
+                        "host": "{{endpointHost}}"
+                    }
+                ],
+                "tags": [
+                    "{{serviceTag}}"
+                ],
+                "providerMetadata": {
+                    "commitSha": "{{providerMetadataCommitSha}}",
+                    "branch": "{{providerMetadataBranch}}",
+                    "gitRepoUrl": "{{providerMetadataGitRepoUrl}}",
+                    "deployedAt": "{{providerMetadataDeployedAt}}"
+                }
+            }
+        ]
+    }
+  $type: |-
+    {
+        "type": "object",
+        "properties": {
+            "discoveredServices": {
+                "type": "array",
+                "minimum": 1,
+                "maximum": 20,
+                "description": "A list of discovered services to add to the API Catalog.",
+                "items": {
+                    "type": "object",
+                    "required": [
+                        "name"
+                    ],
+                    "description": "Information about the discovered service.",
+                    "properties": {
+                        "name": {
+                            "type": "string",
+                            "description": "The service's name."
+                        },
+                        "version": {
+                            "type": "string",
+                            "description": "The service's version."
+                        },
+                        "providerServiceId": {
+                            "type": "string",
+                            "description": "The ID of the service in the source registry. If you do not pass this property, the system uses the `{name}:{version}` value."
+                        },
+                        "description": {
+                            "type": "string",
+                            "description": "The service's description."
+                        },
+                        "sourceEnvironment": {
+                            "type": "string",
+                            "description": "The service's source environment."
+                        },
+                        "apiDefinition": {
+                            "type": "object",
+                            "description": "The API definition (specification) for the service. If you pass this with the `endpoints` array, this object is given preference and `endpoints` is ignored.",
+                            "properties": {
+                                "content": {
+                                    "type": "string",
+                                    "description": "A Base64-encoded JSON API definition. Cannot exceed 2 MB after decoding."
+                                }
+                            }
+                        },
+                        "endpoints": {
+                            "type": "array",
+                            "maxItems": 100,
+                            "description": "A list of the service's endpoints. If you pass this with the `apiDefinition` array, this array is ignored.",
+                            "items": {
+                                "type": "object",
+                                "description": "Information about a service's endpoint.",
+                                "properties": {
+                                    "method": {
+                                        "type": "string",
+                                        "description": "The endpoint's HTTP method."
+                                    },
+                                    "path": {
+                                        "type": "string",
+                                        "description": "The endpoint's URL path."
+                                    },
+                                    "description": {
+                                        "type": [
+                                            "string",
+                                            "null"
+                                        ],
+                                        "description": "The endpoint's description."
+                                    },
+                                    "host": {
+                                        "type": "string",
+                                        "description": "The endpoint's host."
+                                    }
+                                }
+                            }
+                        },
+                        "tags": {
+                            "type": "array",
+                            "maxItems": 50,
+                            "description": "A list of tags associated with the service.",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "providerMetadata": {
+                            "type": "object",
+                            "description": "Additional metadata from the discovery source provider.",
+                            "properties": {
+                                "commitSha": {
+                                    "type": "string",
+                                    "description": "A commit hash ID."
+                                },
+                                "branch": {
+                                    "type": "string",
+                                    "description": "The source provider's branch name."
+                                },
+                                "gitRepoUrl": {
+                                    "type": "string",
+                                    "description": "The source provider's Git repo URL."
+                                },
+                                "deployedAt": {
+                                    "type": "string",
+                                    "format": "date-time",
+                                    "description": "The date and time at which the service was deployed."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+examples: ./.resources/Add discovered services to the API Catalog.resources/examples
+order: 3000

@@ -1,0 +1,73 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/apis?workspaceId=1f0df51a-8658-4ee8-a2a1-d2567dfa09a9
+  method: POST
+  headers:
+    Accept: application/vnd.api.v10+json
+  queryParams:
+    workspaceId: 1f0df51a-8658-4ee8-a2a1-d2567dfa09a9
+  body:
+    type: json
+    content: |-
+      {
+          "name": "Test API",
+          "summary": "Test API Schema",
+          "description": "This is a test API."
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  body:
+    type: json
+    content: |-
+      {
+          "createdAt": "2022-06-29T20:46:58.000Z",
+          "updatedAt": "2022-06-29T20:46:58.000Z",
+          "id": "5360b75f-447e-467c-9299-12fd6c92450d",
+          "name": "Test API",
+          "summary": "Test API Schema",
+          "description": "This is a test API.",
+          "createdBy": "12345678",
+          "updatedBy": "12345678"
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "createdAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "The date and time at which the API was created."
+              },
+              "updatedAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "The date and time at which the API was updated."
+              },
+              "id": {
+                  "type": "string",
+                  "description": "The API's ID."
+              },
+              "name": {
+                  "type": "string",
+                  "description": "The API's name."
+              },
+              "summary": {
+                  "type": "string",
+                  "description": "The API's short summary."
+              },
+              "description": {
+                  "type": "string",
+                  "description": "The API's description."
+              },
+              "createdBy": {
+                  "type": "string",
+                  "description": "The user ID of the user that created the API."
+              },
+              "updatedBy": {
+                  "type": "string",
+                  "description": "The user ID of the user that updated the API."
+              }
+          }
+      }
+order: 1000

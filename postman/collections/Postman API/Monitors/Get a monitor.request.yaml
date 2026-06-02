@@ -1,0 +1,24 @@
+$kind: http-request
+description: Gets information about a monitor.
+url: "{{baseUrl}}/monitors/:monitorId"
+method: GET
+pathVariables:
+  - key: monitorId
+    value: ""
+    description: The monitor's ID.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "uniqueItems": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+examples: ./.resources/Get a monitor.resources/examples
+order: 6000

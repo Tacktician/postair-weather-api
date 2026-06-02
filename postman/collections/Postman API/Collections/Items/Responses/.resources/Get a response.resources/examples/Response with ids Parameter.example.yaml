@@ -1,0 +1,71 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/collections/:collectionId/responses/:responseId?ids=true
+  method: GET
+  queryParams:
+    ids: "true"
+  pathVariables:
+    collectionId: 12ece9e1-2abf-4edc-8e34-de66e74114d2
+    responseId: cc364734-7dfd-4bfc-897d-be763dcdbb07
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "model_id": "cc364734-7dfd-4bfc-897d-be763dcdbb07",
+          "meta": {
+              "model": "response",
+              "populate": false,
+              "changeset": false,
+              "action": "find"
+          },
+          "data": {
+              "owner": "12345678",
+              "request": "c82dd02c-4870-4907-8fcb-593a876cf05b",
+              "id": "cc364734-7dfd-4bfc-897d-be763dcdbb07"
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "description": "Information about the response. For a complete list of properties, refer to the **Response** entry in the [Postman Collection Format documentation](https://schema.postman.com/collection/json/v2.1.0/draft-07/docs/index.html).",
+          "properties": {
+              "model_id": {
+                  "type": "string"
+              },
+              "meta": {
+                  "type": "object",
+                  "properties": {
+                      "model": {
+                          "type": "string"
+                      },
+                      "populate": {
+                          "type": "boolean"
+                      },
+                      "changeset": {
+                          "type": "boolean"
+                      },
+                      "action": {
+                          "type": "string"
+                      }
+                  }
+              },
+              "data": {
+                  "type": "object",
+                  "properties": {
+                      "owner": {
+                          "type": "string"
+                      },
+                      "request": {
+                          "type": "string"
+                      },
+                      "id": {
+                          "type": "string"
+                      }
+                  }
+              }
+          }
+      }
+order: 4000

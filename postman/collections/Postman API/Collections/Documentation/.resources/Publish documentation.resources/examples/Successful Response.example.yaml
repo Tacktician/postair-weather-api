@@ -1,0 +1,234 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/collections/:collectionId/public-documentations
+  method: PUT
+  pathVariables:
+    collectionId: 12345678-12ece9e1-2abf-4edc-8e34-de66e74114d2
+  body:
+    type: json
+    content: |-
+      {
+          "environmentUid": "12345678-f84a5105-a495-49db-aa6b-db02c9ed1023",
+          "customColor": {
+              "highlight": "EF5B25",
+              "rightSidebar": "303030",
+              "topBar": "FFFFFF"
+          },
+          "documentationLayout": "classic-single-column",
+          "customization": {
+              "metaTags": [
+                  {
+                      "name": "title",
+                      "value": "Billing API"
+                  },
+                  {
+                      "name": "description",
+                      "value": "This documentation contains the endpoints for the Billing API."
+                  }
+              ],
+              "appearance": {
+                  "default": "dark",
+                  "themes": [
+                      {
+                          "name": "dark",
+                          "colors": {
+                              "highlight": "EF5B25",
+                              "rightSidebar": "303030",
+                              "topBar": "FFFFFF"
+                          },
+                          "logo": "<s3_url>/<cloudfront_url>"
+                      },
+                      {
+                          "name": "light",
+                          "colors": {
+                              "highlight": "EF5B25",
+                              "rightSidebar": "303030",
+                              "topBar": "FFFFFF"
+                          },
+                          "logo": "<s3_url>/<cloudfront_url>"
+                      }
+                  ]
+              }
+          }
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "published": true,
+          "documentationLayout": "classic-single-column",
+          "customization": {
+              "appearance": {
+                  "default": "dark",
+                  "themes": [
+                      {
+                          "name": "dark",
+                          "colors": {
+                              "highlight": "EF5B25",
+                              "rightSidebar": "303030",
+                              "topBar": "FFFFFF"
+                          },
+                          "logo": "<s3_url>/<cloudfront_url>"
+                      },
+                      {
+                          "name": "light",
+                          "colors": {
+                              "highlight": "EF5B25",
+                              "rightSidebar": "303030",
+                              "topBar": "FFFFFF"
+                          },
+                          "logo": "<s3_url>/<cloudfront_url>"
+                      }
+                  ]
+              },
+              "metaTags": [
+                  {
+                      "name": "description",
+                      "value": "This documentation contains the endpoints for the Billing API."
+                  },
+                  {
+                      "name": "title",
+                      "value": "Billing API"
+                  }
+              ]
+          },
+          "publishDate": "2025-03-24T17:33:10.000Z",
+          "publisherId": "12345678",
+          "environmentUid": "12345678-f84a5105-a495-49db-aa6b-db02c9ed1023",
+          "customColor": {
+              "highlight": "EF5B25",
+              "rightSidebar": "303030",
+              "topBar": "FFFFFF"
+          },
+          "publicUrl": "https://documenter.getpostman-beta.com/view/12345678/6n31uVF",
+          "id": "6n31uVF",
+          "collectionId": "ea39a259-0c9b-4a5c-a2e6-bddadb8f8e6f"
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "published": {
+                  "type": "boolean",
+                  "description": "If true, the documentation is published."
+              },
+              "documentationLayout": {
+                  "type": "string",
+                  "description": "The documentation's default layout style."
+              },
+              "customization": {
+                  "type": "object",
+                  "description": "Information about the documentation's customization.",
+                  "properties": {
+                      "appearance": {
+                          "type": "object",
+                          "description": "Information about the documentation appearance, such as colors and theme.",
+                          "properties": {
+                              "default": {
+                                  "type": "string",
+                                  "description": "The default color theme (`light` or `dark`). Documentation uses the given theme value by default."
+                              },
+                              "themes": {
+                                  "type": "array",
+                                  "description": "A list of theme settings for the `light` and `dark` themes.",
+                                  "items": {
+                                      "type": "object",
+                                      "properties": {
+                                          "name": {
+                                              "type": "string",
+                                              "description": "The `light` or `dark` theme."
+                                          },
+                                          "colors": {
+                                              "type": "object",
+                                              "properties": {
+                                                  "highlight": {
+                                                      "type": "string",
+                                                      "description": "The hexcode color code for the documentation's highlighting."
+                                                  },
+                                                  "rightSidebar": {
+                                                      "type": "string",
+                                                      "description": "The hexcode color code for the documentation's right sidebar color."
+                                                  },
+                                                  "topBar": {
+                                                      "type": "string",
+                                                      "description": "The hexcode color code for the documentation's top bar color."
+                                                  }
+                                              }
+                                          },
+                                          "logo": {
+                                              "type": "string",
+                                              "description": "The URL to the documentation's logo image. By default, public documentation uses your team logo."
+                                          }
+                                      }
+                                  }
+                              }
+                          }
+                      },
+                      "metaTags": {
+                          "type": "array",
+                          "description": "The key-pair values that contain the documentation's `title` and `description` metadata information.",
+                          "items": {
+                              "type": "object",
+                              "properties": {
+                                  "name": {
+                                      "type": "string",
+                                      "description": "The key's name:\n  - `title` — The title of your documentation. This value appears in relevant search queries and browser tabs. By default, the system uses the collection's name for the documentation title.\n  - `description` — The documentation's description. This provides brief information about your document and lets users know what it contains. By default, the system uses the collection's description content.\n"
+                                  },
+                                  "value": {
+                                      "type": "string",
+                                      "description": "The `name` key's value."
+                                  }
+                              }
+                          }
+                      }
+                  }
+              },
+              "publishDate": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "The date and time at which the documentation was published."
+              },
+              "publisherId": {
+                  "type": "string",
+                  "description": "The user ID of the user that published the documentation."
+              },
+              "environmentUid": {
+                  "type": "string",
+                  "description": "The unique ID of the environment published with the collection documentation."
+              },
+              "customColor": {
+                  "type": "object",
+                  "description": "The theme's colors, in six digit hexcode. The values in this object must match the hexcode values of either the `light` or `dark` theme defined in the `appearance` object.",
+                  "properties": {
+                      "highlight": {
+                          "type": "string",
+                          "description": "The hexcode color code for the documentation's highlighting."
+                      },
+                      "rightSidebar": {
+                          "type": "string",
+                          "description": "The hexcode color code for the documentation's right sidebar color."
+                      },
+                      "topBar": {
+                          "type": "string",
+                          "description": "The hexcode color code for the documentation's top bar color."
+                      }
+                  }
+              },
+              "publicUrl": {
+                  "type": "string",
+                  "description": "The public URL of the published documentation."
+              },
+              "id": {
+                  "type": "string",
+                  "description": "The published documentation's ID."
+              },
+              "collectionId": {
+                  "type": "string",
+                  "description": "The collection's ID."
+              }
+          }
+      }
+order: 1000

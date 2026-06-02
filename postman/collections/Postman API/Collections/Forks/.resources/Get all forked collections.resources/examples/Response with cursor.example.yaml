@@ -1,0 +1,86 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/collections/collection-forks?cursor=eyJpZCI6MzMyNzksImZvcmtzQWZ0ZXIiOjIwfQ==
+  method: GET
+  queryParams:
+    cursor: eyJpZCI6MzMyNzksImZvcmtzQWZ0ZXIiOjIwfQ==
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "data": [
+              {
+                  "forkName": "Collection Fork",
+                  "forkId": "12345678-667df1ad-2ee3-7890-b678-7742d82e2e1f",
+                  "sourceId": "87654321-bd46b634-b347-44d4-aa23-8c71ff4ecc4d",
+                  "createdAt": "2023-11-16T09:18:17.000Z"
+              },
+              {
+                  "forkName": "Test Fork",
+                  "forkId": "12345678-38j9f1ad-2ee3-7890-dv5h-7742d82e2e1f",
+                  "sourceId": "87654321-bd46b634-b347-44d4-aa23-8c71ff4ecc4d",
+                  "createdAt": "2023-11-16T09:16:15.000Z"
+              }
+          ],
+          "meta": {
+              "total": 2,
+              "nextCursor": null,
+              "inaccessibleFork": 0
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "data": {
+                  "type": "array",
+                  "description": "A list of the user's forked collections.",
+                  "items": {
+                      "type": "object",
+                      "description": "Information about the forked collection.",
+                      "properties": {
+                          "forkName": {
+                              "type": "string",
+                              "description": "The forked collection's label."
+                          },
+                          "forkId": {
+                              "type": "string",
+                              "description": "The forked collection's ID."
+                          },
+                          "sourceId": {
+                              "type": "string",
+                              "description": "The ID of the forked collection's source collection."
+                          },
+                          "createdAt": {
+                              "type": "string",
+                              "format": "date-time",
+                              "description": "The date and time at which the fork was created."
+                          }
+                      }
+                  }
+              },
+              "meta": {
+                  "type": "object",
+                  "description": "The response's meta information for paginated results.",
+                  "properties": {
+                      "total": {
+                          "type": "integer",
+                          "description": "The total number of forked collections."
+                      },
+                      "nextCursor": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "The pagination cursor that points to the next record in the results set."
+                      },
+                      "inaccessibleFork": {
+                          "type": "integer",
+                          "description": "The total number of forked collections that the user cannot access."
+                      }
+                  }
+              }
+          }
+      }
+order: 2000

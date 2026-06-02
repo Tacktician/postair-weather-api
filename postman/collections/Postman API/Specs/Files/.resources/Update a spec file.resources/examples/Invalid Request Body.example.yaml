@@ -1,0 +1,50 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/specs/:specId/files/:filePath
+  method: PATCH
+  pathVariables:
+    specId: 73e15000-bc7a-4802-b80e-05fff18fd7f8
+    filePath: index.json
+  body:
+    type: json
+    content: |-
+      {
+          "name": "index.json",
+          "type": "ROOT"
+      }
+response:
+  statusCode: 400
+  statusText: Bad Request
+  body:
+    type: json
+    content: |-
+      {
+          "title": "Malformed request",
+          "type": "https://api.postman.com/problems/bad-request",
+          "status": 400,
+          "detail": "Only one of 'content', 'type', or 'name' should be provided."
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "type": {
+                  "type": "string",
+                  "format": "uri",
+                  "description": "The [URI reference](https://www.rfc-editor.org/rfc/rfc3986) that identifies the type of problem."
+              },
+              "title": {
+                  "type": "string",
+                  "description": "A short summary of the problem."
+              },
+              "detail": {
+                  "type": "string",
+                  "description": "Information about the error."
+              },
+              "status": {
+                  "type": "integer",
+                  "description": "The error's HTTP status code."
+              }
+          }
+      }
+order: 8000

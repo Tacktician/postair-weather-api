@@ -1,0 +1,76 @@
+$kind: http-request
+description: Updates a mock server's server response.
+url: "{{baseUrl}}/mocks/:mockId/server-responses/:serverResponseId"
+method: PUT
+pathVariables:
+  - key: mockId
+    value: ""
+    description: The mock's ID.
+  - key: serverResponseId
+    value: ""
+    description: The server response's ID.
+body:
+  type: json
+  content: |-
+    {
+        "serverResponse": {
+            "name": "{{serverStubName}}",
+            "statusCode": 500,
+            "headers": [
+                {
+                    "key": "{{headerKey}}",
+                    "value": "{{headerValue}}"
+                }
+            ],
+            "body": "{{serverStubBody}}",
+            "language": "{{languageType}}"
+        }
+    }
+  $type: |-
+    {
+        "type": "object",
+        "properties": {
+            "serverResponse": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "The server response's name."
+                    },
+                    "statusCode": {
+                        "type": "integer",
+                        "description": "The server response's 5xx HTTP response code. This property only accepts [5xx values](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml)."
+                    },
+                    "headers": {
+                        "type": "array",
+                        "description": "The server response's request headers, such as Content-Type, Accept, encoding, and other information.",
+                        "items": {
+                            "type": "object",
+                            "description": "Information about the key-value pair.",
+                            "properties": {
+                                "key": {
+                                    "type": "string",
+                                    "description": "The request header's key value."
+                                },
+                                "value": {
+                                    "type": "string",
+                                    "description": "The request header's value. This value defines the corresponding value for the header key."
+                                }
+                            }
+                        }
+                    },
+                    "body": {
+                        "type": "string",
+                        "description": "The server response's body that returns when you call the mock server."
+                    },
+                    "language": {
+                        "type": "string",
+                        "description": "The server response's body language type.",
+                        "enum": ["text", "javascript", "json", "html", "xml"]
+                    }
+                }
+            }
+        }
+    }
+examples: ./.resources/Update a server response.resources/examples
+order: 4000

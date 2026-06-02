@@ -1,0 +1,72 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/teams/:teamId/access-requests
+  method: POST
+  pathVariables:
+    teamId: "123"
+  body:
+    type: json
+    content: |-
+      {
+          "entityList": [
+              {
+                  "entityType": "user",
+                  "entityId": "12345678"
+              }
+          ],
+          "role": "TEAM_MANAGER",
+          "reason": "Needs the manager role.",
+          "requestType": "UPGRADE_ROLE"
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "result": [
+              {
+                  "entityType": "user",
+                  "entityId": 12345678,
+                  "role": "TEAM_MANAGER",
+                  "status": "Skipped",
+                  "reason": "Entity has this role"
+              }
+          ]
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "result": {
+                  "type": "array",
+                  "items": {
+                      "type": "object",
+                      "properties": {
+                          "entityType": {
+                              "type": "string",
+                              "description": "The entity type."
+                          },
+                          "entityId": {
+                              "type": ["string", "integer"],
+                              "description": "The entity's ID."
+                          },
+                          "role": {
+                              "type": "string",
+                              "description": "The requested team role."
+                          },
+                          "status": {
+                              "type": "string",
+                              "description": "The access request's status."
+                          },
+                          "reason": {
+                              "type": "string",
+                              "description": "The reason the access request was created."
+                          }
+                      }
+                  }
+              }
+          }
+      }
+order: 1000

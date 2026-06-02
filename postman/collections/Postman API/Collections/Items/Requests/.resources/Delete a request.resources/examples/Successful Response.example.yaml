@@ -1,0 +1,65 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/collections/:collectionId/requests/:requestId
+  method: DELETE
+  pathVariables:
+    collectionId: 12ece9e1-2abf-4edc-8e34-de66e74114d2
+    requestId: e12d2aa6-85c8-4e6c-aad0-1adcfe05c958
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "model_id": "c82dd02c-4870-4907-8fcb-593a876cf05b",
+          "meta": {
+              "model": "request",
+              "action": "destroy"
+          },
+          "data": {
+              "id": "c82dd02c-4870-4907-8fcb-593a876cf05b",
+              "owner": "12345678"
+          },
+          "revision": 24995158577
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "model_id": {
+                  "type": "string",
+                  "description": "The request's ID."
+              },
+              "meta": {
+                  "type": "object",
+                  "description": "A Postman-specific response that contains information about the internal performed operation.",
+                  "properties": {
+                      "model": {
+                          "type": "string"
+                      },
+                      "action": {
+                          "type": "string"
+                      }
+                  }
+              },
+              "data": {
+                  "type": "object",
+                  "properties": {
+                      "id": {
+                          "type": "string",
+                          "description": "The request's ID."
+                      },
+                      "owner": {
+                          "type": "string",
+                          "description": "The user ID of the request's owner."
+                      }
+                  }
+              },
+              "revision": {
+                  "type": "integer",
+                  "description": "An internal revision ID. Its value increments each time the resource changes. You can use this ID to track whether there were changes since the last time you fetched the resource."
+              }
+          }
+      }
+order: 1000

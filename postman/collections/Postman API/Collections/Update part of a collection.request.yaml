@@ -1,0 +1,152 @@
+$kind: http-request
+description: |-
+  Updates specific collection information, such as its authentication, name, events, or variables. For a complete list of properties and information, see the [Postman Collection Format documentation](https://schema.postman.com/collection/json/v2.1.0/draft-07/docs/index.html).
+
+  **Note:**
+
+  This request uses example values in the request body for context when replacing a collection's data. For additional ways to replace collection data, see the collection's examples.
+url: "{{baseUrl}}/collections/:collectionId"
+method: PATCH
+pathVariables:
+  - key: collectionId
+    value: ""
+    description: The collection's ID.
+body:
+  type: json
+  content: |-
+    {
+        "collection": {
+            "info": {
+                "name": "Users API",
+                "description": "This is a test."
+            },
+            "auth": {
+                "type": "apikey",
+                "apikey": [
+                    {
+                        "key": "value",
+                        "value": "{{apiKey}}"
+                    },
+                    {
+                        "key": "key",
+                        "value": "api-key"
+                    },
+                    {
+                        "key": "in",
+                        "value": "header"
+                    }
+                ]
+            },
+            "events": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "id": "e74ce0d0-5acd-44b6-a3ae-95f617c1546e",
+                        "type": "text/javascript",
+                        "exec": [
+                            ""
+                        ]
+                    },
+                    "disabled": false
+                },
+                {
+                    "listen": "test",
+                    "script": {
+                        "id": "28dc4f71-73bd-49cb-a6bd-8b41a06a3b36",
+                        "type": "text/javascript",
+                        "exec": [
+                            ""
+                        ]
+                    },
+                    "disabled": false
+                }
+            ],
+            "variable": [
+                {
+                    "key": "userId",
+                    "value": 12345678,
+                    "disabled": true,
+                    "description": "The user's ID."
+                }
+            ]
+        }
+    }
+  $type: |-
+    {
+        "type": "object",
+        "properties": {
+            "collection": {
+                "type": "object",
+                "properties": {
+                    "info": {
+                        "type": "object",
+                        "description": "An object that contains the collection's updated name and description.",
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "description": "The collection's updated name."
+                            },
+                            "description": {
+                                "type": "string",
+                                "description": "The collection's updated description."
+                            }
+                        }
+                    },
+                    "variable": {
+                        "type": "array",
+                        "description": "A list of the collection's variables.",
+                        "items": {
+                            "type": "object",
+                            "description": "Information about the variable.",
+                            "properties": {
+                                "key": {
+                                    "type": "string",
+                                    "description": "The variable's key (name)."
+                                },
+                                "value": {
+                                    "anyOf": [
+                                        {
+                                            "type": "string",
+                                            "title": "string"
+                                        },
+                                        {
+                                            "type": "boolean",
+                                            "title": "boolean"
+                                        },
+                                        {
+                                            "type": "integer",
+                                            "title": "integer"
+                                        }
+                                    ],
+                                    "description": "The key's value."
+                                },
+                                "disabled": {
+                                    "type": "boolean",
+                                    "default": false,
+                                    "description": "If true, the variable is not enabled. Doesn't apply to path parameter variables."
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "maxLength": 512,
+                                    "description": "The variable's description."
+                                }
+                            }
+                        }
+                    },
+                    "auth": {
+                        "type": "object",
+                        "description": "The collection's authentication. Refer to the **Auth** entry in the [Postman Collection Format documentation](https://schema.postman.com/collection/json/v2.1.0/draft-07/docs/index.html).",
+                        "required": [
+                            "type"
+                        ]
+                    },
+                    "events": {
+                        "type": "array",
+                        "description": "A list of the collection's events. Refer to the **Event List** entry in the [Postman Collection Format documentation](https://schema.postman.com/collection/json/v2.1.0/draft-07/docs/index.html)."
+                    }
+                }
+            }
+        }
+    }
+examples: ./.resources/Update part of a collection.resources/examples
+order: 20000

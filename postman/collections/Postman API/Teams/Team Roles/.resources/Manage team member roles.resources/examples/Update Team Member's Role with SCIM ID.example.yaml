@@ -1,0 +1,72 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/teams/:teamId/bulk-members
+  method: POST
+  headers:
+    identifierType: scim
+  pathVariables:
+    teamId: "123"
+  body:
+    type: json
+    content: |-
+      {  
+          "add": {
+              "users": { 
+                  "f10ba7a8dac248e8fd9769163dc63aef920f3897c7ea2c86": [
+                      "TEAM_MANAGER"
+                  ]
+              }
+          }
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "result": [
+              {
+                  "entityType": "user",
+                  "entityId": "f10ba7a8dac248e8fd9769163dc63aef920f3897c7ea2c86",
+                  "role": "TEAM_MANAGER",
+                  "previousRole": "TEAM_DEVELOPER",
+                  "status": "Accepted"
+              }
+          ]
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "result": {
+                  "type": "array",
+                  "items": {
+                      "type": "object",
+                      "properties": {
+                          "entityType": {
+                              "type": "string",
+                              "description": "The entity type."
+                          },
+                          "entityId": {
+                              "type": ["string", "integer"],
+                              "description": "The entity's ID."
+                          },
+                          "role": {
+                              "type": ["string", "null"],
+                              "description": "The user's role."
+                          },
+                          "previousRole": {
+                              "type": ["string", "null"],
+                              "description": "The user's previous role. This value only returns if the user's role is modified."
+                          },
+                          "status": {
+                              "type": "string",
+                              "description": "The request's status."
+                          }
+                      }
+                  }
+              }
+          }
+      }
+order: 5000

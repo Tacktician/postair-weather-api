@@ -1,0 +1,38 @@
+$kind: http-request
+description: Updates the [sync options](https://learning.postman.com/docs/design-apis/specifications/generate-collections/#configure-sync-settings) for a specification's generated collection.
+url: "{{baseUrl}}/specs/:specId/collections/:collectionId/sync-options"
+method: PATCH
+pathVariables:
+  - key: specId
+    value: ""
+    description: The spec's ID.
+  - key: collectionId
+    value: ""
+    description: The collection's ID.
+body:
+  type: json
+  content: |-
+    {
+        "syncOptions": {
+            "syncExamples": true
+        }
+    }
+  $type: |-
+    {
+        "type": "object",
+        "required": ["syncOptions"],
+        "properties": {
+            "syncOptions": {
+                "type": "object",
+                "description": "Information about the specification sync options.",
+                "properties": {
+                    "syncExamples": {
+                        "type": "boolean",
+                        "description": "If true, updates made to examples in the specification or to example values in the generated collection stay synchronized."
+                    }
+                }
+            }
+        }
+    }
+examples: ./.resources/Update spec sync options.resources/examples
+order: 10000

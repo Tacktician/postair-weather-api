@@ -1,0 +1,39 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/apis/:apiId/schemas/:schemaId
+  method: GET
+  headers:
+    Accept: application/vnd.api.v10+json
+  pathVariables:
+    apiId: 90ca9f5a-c4c4-11ed-afa1-0242ac120002
+    schemaId: 5381f010-c4c1-11ed-afa1-0242ac120002
+response:
+  statusCode: 400
+  statusText: Bad Request
+  body:
+    type: json
+    content: |-
+      {
+          "title": "Invalid request body",
+          "type": "invalidParamError",
+          "detail": "Missing field 'versionId' in the request body"
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "type": {
+                  "type": "string",
+                  "description": "The type of error."
+              },
+              "title": {
+                  "type": "string",
+                  "description": "A short summary of the problem."
+              },
+              "detail": {
+                  "type": "string",
+                  "description": "Information about the error."
+              }
+          }
+      }
+order: 6000

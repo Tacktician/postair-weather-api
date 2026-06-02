@@ -1,0 +1,36 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/tags/:slugId/entities
+  method: GET
+  pathVariables:
+    slugId: 23894fhsjrs
+response:
+  statusCode: 401
+  statusText: Unauthorized
+  body:
+    type: json
+    content: |-
+      {
+          "error": "Bad Request",
+          "message": "params/slug must match pattern \"^[a-z][a-z0-9-]*[a-z0-9]+$\"",
+          "statusCode": 400
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "error": {
+                  "type": "string",
+                  "description": "A short summary of the problem."
+              },
+              "message": {
+                  "type": "string",
+                  "description": "The error message."
+              },
+              "statusCode": {
+                  "type": "integer",
+                  "description": "The error's HTTP status code."
+              }
+          }
+      }
+order: 3000

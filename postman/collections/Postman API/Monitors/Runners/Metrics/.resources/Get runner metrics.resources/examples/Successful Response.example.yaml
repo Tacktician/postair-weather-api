@@ -1,0 +1,37 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/runners/:runnerId/metrics
+  method: GET
+  pathVariables:
+    runnerId: 1f08d6ba-c377-4ca0-be80-af81daf8fef9
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "lastPingAt": "2025-09-21T12:11:19.000Z",
+          "queueDepth": 9,
+          "oldestQueuedRunAgeSeconds": 10213
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "lastPingAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "The last date and time the runner sent results to the Postman cloud."
+              },
+              "queueDepth": {
+                  "type": "integer",
+                  "description": "The number of pending Postman monitor runs in the runner's queue."
+              },
+              "oldestQueuedRunAgeSeconds": {
+                  "type": "integer",
+                  "description": "The age of the monitor, in seconds, that has been waiting the longest to run in the runner."
+              }
+          }
+      }
+order: 1000

@@ -1,0 +1,136 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/collections?limit=3&offset=0
+  method: GET
+  queryParams:
+    limit: "3"
+    offset: "0"
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "collections": [
+              {
+                  "id": "dac5eac9-148d-a32e-b76b-3edee9da28f7",
+                  "name": "Cloud API",
+                  "owner": "12345678",
+                  "createdAt": "2022-04-12T10:29:46.000Z",
+                  "updatedAt": "2022-04-12T10:29:56.000Z",
+                  "uid": "12345678-dac5eac9-148d-a32e-b76b-3edee9da28f7",
+                  "isPublic": true
+              },
+              {
+                  "id": "12ece9e1-2abf-4edc-8e34-de66e74114d2",
+                  "name": "Test Collection",
+                  "owner": "12345678",
+                  "createdAt": "2022-01-13T10:21:46.000Z",
+                  "updatedAt": "2022-02-12T11:29:56.000Z",
+                  "uid": "12345678-12ece9e1-2abf-4edc-8e34-de66e74114d2",
+                  "isPublic": false,
+                  "fork": {
+                      "label": "Test Fork",
+                      "createdAt": "2022-06-16T19:51:44.069Z",
+                      "from": "12345678-12ece9e1-2abf-4edc-8e34-de66e74114d2"
+                  }
+              },
+              {
+                  "id": "f695cab7-6878-eb55-7943-ad88e1ccfd65",
+                  "name": "Postman Echo",
+                  "owner": "12345678",
+                  "createdAt": "2021-04-11T09:18:26.000Z",
+                  "updatedAt": "2022-05-01T15:29:32.000Z",
+                  "uid": "12345678-f695cab7-6878-eb55-7943-ad88e1ccfd65",
+                  "isPublic": true
+              }
+          ],
+          "meta": {
+              "total": 30,
+              "offset": 0,
+              "limit": 3
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "collections": {
+                  "type": "array",
+                  "items": {
+                      "type": "object",
+                      "properties": {
+                          "id": {
+                              "type": "string",
+                              "description": "The collection's ID."
+                          },
+                          "name": {
+                              "type": "string",
+                              "description": "The collection's name."
+                          },
+                          "owner": {
+                              "type": "string",
+                              "description": "The owner of the collection."
+                          },
+                          "createdAt": {
+                              "type": "string",
+                              "format": "date-time",
+                              "description": "The collection's creation date and time."
+                          },
+                          "updatedAt": {
+                              "type": "string",
+                              "format": "date-time",
+                              "description": "The date and time at which the collection was last updated."
+                          },
+                          "uid": {
+                              "type": "string",
+                              "description": "The collection's unique ID."
+                          },
+                          "isPublic": {
+                              "type": "boolean",
+                              "description": "If true, the collection is public and visible to all users."
+                          },
+                          "fork": {
+                              "type": "object",
+                              "description": "If the collection is [forked](https://learning.postman.com/docs/collaborating-in-postman/version-control/#forking-postman-entities), the fork's information.",
+                              "properties": {
+                                  "label": {
+                                      "type": "string",
+                                      "description": "The fork's label."
+                                  },
+                                  "createdAt": {
+                                      "type": "string",
+                                      "format": "date-time",
+                                      "description": "The collection's creation date and time."
+                                  },
+                                  "from": {
+                                      "type": "string",
+                                      "description": "The unique ID of the fork's source collection."
+                                  }
+                              }
+                          }
+                      }
+                  }
+              },
+              "meta": {
+                  "type": "object",
+                  "description": "The response's meta information for paginated results.",
+                  "properties": {
+                      "total": {
+                          "type": "integer",
+                          "description": "The number of records found."
+                      },
+                      "offset": {
+                          "type": "integer",
+                          "description": "The zero-based offset of the first item returned."
+                      },
+                      "limit": {
+                          "type": "integer",
+                          "description": "The maximum number of records in the paginated response."
+                      }
+                  }
+              }
+          }
+      }
+order: 1000

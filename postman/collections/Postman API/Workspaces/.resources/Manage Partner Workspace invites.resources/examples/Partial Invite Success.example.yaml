@@ -1,0 +1,109 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/invitations
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+          "action": "invite_partner",
+          "targetEntity": "workspace",
+          "targetEntityId": "1f0df51a-8658-4ee8-a2a1-d2567dfa09a9",
+          "roleId": "4",
+          "target": {
+              "emails": [
+                  "alex.cruz@example.com",
+                  "mike.brown@example.com",
+                  "sara.smith@example.com"
+              ]
+          }
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "action": "invite_partner",
+          "targetEntity": "workspace",
+          "targetEntityId": "1f0df51a-8658-4ee8-a2a1-d2567dfa09a9",
+          "roleId": "4",
+          "roleDisplayName": "Viewer",
+          "results": [
+              {
+                  "status": "PARTNER_ADDED",
+                  "userId": 56781234,
+                  "message": "Partner added to workspace",
+                  "email": "alex.cruz@example.com"
+              },
+              {
+                  "status": "ALREADY_INVITED",
+                  "email": "mike.brown@xample.com",
+                  "invitationLink": "https://go.getpostman.com/invite-signup?invite_code=XXX",
+                  "message": "Pending invite exists"
+              },
+              {
+                  "email": "sara.smith@example.com",
+                  "status": "FAILED",
+                  "message": "Failed to process invitation"
+              }
+          ]
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "targetEntity": {
+                  "type": "string",
+                  "description": "The target entity."
+              },
+              "targetEntityId": {
+                  "type": "string",
+                  "description": "The workspace's ID."
+              },
+              "roleId": {
+                  "type": "string",
+                  "description": "The role ID assigned to the users."
+              },
+              "action": {
+                  "type": "string",
+                  "description": "The action peformed."
+              },
+              "roleDisplayName": {
+                  "type": "string",
+                  "description": "The assigned role's display name."
+              },
+              "results": {
+                  "type": "array",
+                  "description": "A list of the action results for each email address.",
+                  "items": {
+                      "type": "object",
+                      "properties": {
+                          "status": {
+                              "type": "string",
+                              "description": "The invitation status:\n- `EMAIL_SENT` — An invitation email was sent.\n- `ALREADY_INVITED` — The user already has a pending invitation.\n- `PARTNER_ADDED` — The existing user was added to the workspace directly.\n- `FAILED` — The invitation failed."
+                          },
+                          "userId": {
+                              "type": "integer",
+                              "description": "The user ID. This only returns for the `PARTNER_ADDED` status."
+                          },
+                          "message": {
+                              "type": "string",
+                              "description": "A response message."
+                          },
+                          "email": {
+                              "type": "string",
+                              "format": "email",
+                              "description": "The invited user's email address."
+                          },
+                          "invitationLink": {
+                              "type": "string",
+                              "description": "An invitation link. This only returns for the `EMAIL_SENT` and `ALREADY_INVITED` statuses."
+                          }
+                      }
+                  }
+              }
+          }
+      }
+order: 2000

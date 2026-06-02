@@ -1,0 +1,39 @@
+$kind: http-request
+description: |-
+  [Merges](https://learning.postman.com/docs/collaborating-in-postman/using-version-control/forking-elements/#merge-changes-from-a-fork) a forked (source) collection and its parent (destination) collection asynchronously. To pull changes into a fork, pass the forked collection's ID as the `destination` value and the parent collection ID as the `source` value.
+
+  The response returns a task `id` value, which you can use to track the merge's status with the GET `/collection-merges-tasks/{taskId}` endpoint.
+url: "{{baseUrl}}/collection-merges"
+method: PUT
+body:
+  type: json
+  content: |-
+    {
+        "strategy": "{{mergeStrategy}}",
+        "source": "{{sourceCollectionUid}}",
+        "destination": "{{destinationCollectionUid}}"
+    }
+  $type: |-
+    {
+        "type": "object",
+        "required": ["strategy", "source", "destination"],
+        "properties": {
+            "strategy": {
+                "type": "string",
+                "description": "The fork's merge strategy:\n- `default` — Make no changes to the fork. You must have **Editor** access to the destination collection.\n- `updateSourceWithDestination` — Merge changes and apply any differences in the destination collection to the source. You must have **Editor** access to both the source and destination collection.\n- `deleteSource` — Merge the changes and delete the fork. You must have **Editor** access to both the source and destination collection.\n",
+                "enum": ["default", "updateSourceWithDestination", "deleteSource"]
+            },
+            "source": {
+                "type": "string",
+                "format": "uuid",
+                "description": "The source collection's unique ID."
+            },
+            "destination": {
+                "type": "string",
+                "format": "uuid",
+                "description": "The destination collection's unique ID."
+            }
+        }
+    }
+examples: ./.resources/Merge or pull changes into a collection fork.resources/examples
+order: 6000

@@ -1,0 +1,25 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/collections?workspace=12345
+  method: GET
+  queryParams:
+    workspace: "12345"
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "collections": []
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "collections": {
+                  "type": "array"
+              }
+          }
+      }
+order: 4000

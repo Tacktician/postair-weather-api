@@ -1,0 +1,50 @@
+$kind: http-request
+description: |-
+  Gets the roles of users, user groups, and partners in a workspace.
+
+  **Note:**
+
+  Partner roles don't support SCIM IDs.
+url: "{{baseUrl}}/workspaces/:workspaceId/roles"
+method: GET
+queryParams:
+  - key: include
+    value: scim
+    disabled: true
+    description: |-
+      Include the following information in the endpoint's response:
+      - `scim` — Return IDs as SCIM user and group IDs.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "enum": [
+              "scim"
+            ],
+            "uniqueItems": false
+          }
+        }
+      }
+pathVariables:
+  - key: workspaceId
+    value: ""
+    description: The workspace's ID.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "uniqueItems": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+examples: ./.resources/Get a workspace's roles.resources/examples
+order: 2000

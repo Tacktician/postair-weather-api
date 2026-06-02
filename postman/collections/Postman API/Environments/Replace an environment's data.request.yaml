@@ -1,0 +1,80 @@
+$kind: http-request
+description: |-
+  Replaces all the contents of an environment with the given information.
+
+  **Note:**
+
+  - The request body size cannot exceed the maximum allowed size of 30MB.
+      
+  - If you receive an HTTP `411 Length Required` error response, manually pass the `Content-Length` header and its value in the request header.
+url: "{{baseUrl}}/environments/:environmentId"
+method: PUT
+pathVariables:
+  - key: environmentId
+    value: ""
+    description: The environment's ID.
+body:
+  type: json
+  content: |-
+    {
+        "environment": {
+            "name": "{{environmentName}}",
+            "values": [
+                {
+                    "key": "{{environmentVariableName}}",
+                    "value": "{{environmentVariableValue}}",
+                    "enabled": true,
+                    "type": "{{environmentType}}",
+                    "description": "{{environmentVariableDescription}}"
+                }
+            ]
+        }
+    }
+  $type: |-
+    {
+        "type": "object",
+        "properties": {
+            "environment": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "The environment's name."
+                    },
+                    "values": {
+                        "type": "array",
+                        "description": "Information about the environment's variables.",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "key": {
+                                    "type": "string",
+                                    "description": "The variable's name."
+                                },
+                                "value": {
+                                    "type": "string",
+                                    "description": "The variable's value."
+                                },
+                                "enabled": {
+                                    "type": "boolean",
+                                    "description": "If true, the variable is enabled."
+                                },
+                                "type": {
+                                    "type": "string",
+                                    "description": "The variable type.",
+                                    "enum": ["secret", "default"]
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "maxLength": 512,
+                                    "description": "The variable's description."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+examples: ./.resources/Replace an environment's data.resources/examples
+order: 6000

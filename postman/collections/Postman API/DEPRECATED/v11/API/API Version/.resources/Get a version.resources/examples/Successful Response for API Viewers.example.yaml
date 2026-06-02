@@ -1,0 +1,111 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/apis/:apiId/versions/:versionId
+  method: GET
+  headers:
+    Accept: application/vnd.api.v10+json
+  pathVariables:
+    apiId: 90ca9f5a-c4c4-11ed-afa1-0242ac120002
+    versionId: 3563baaa-07a2-46ed-9fd2-0e8a3c5f7ec2
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "version": {
+              "createdAt": "2022-06-09T14:48:45.000Z",
+              "updatedAt": "2022-06-09T19:50:49.000Z",
+              "id": "3563baaa-07a2-46ed-9fd2-0e8a3c5f7ec2",
+              "name": "Release 1.0",
+              "releaseNotes": "This is the first release.",
+              "schemas": [
+                  {
+                      "id": "C1",
+                      "type": "openapi:3"
+                  }
+              ],
+              "collections": [
+                  {
+                      "id": "C1",
+                      "name": "collection1"
+                  },
+                  {
+                      "id": "C2",
+                      "name": "collection2"
+                  }
+              ]
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "version": {
+                  "type": "object",
+                  "description": "Information about the API version.",
+                  "properties": {
+                      "createdAt": {
+                          "type": "string",
+                          "format": "date-time",
+                          "description": "The date and time at which the version was created."
+                      },
+                      "updatedAt": {
+                          "type": "string",
+                          "format": "date-time",
+                          "description": "The date and time at which the version was last updated."
+                      },
+                      "id": {
+                          "type": "string",
+                          "description": "The version's ID."
+                      },
+                      "name": {
+                          "type": "string",
+                          "description": "The version's name."
+                      },
+                      "releaseNotes": {
+                          "type": "string",
+                          "description": "The version's release notes."
+                      },
+                      "schemas": {
+                          "type": "array",
+                          "description": "A list of the API's schemas.",
+                          "items": {
+                              "type": "object",
+                              "description": "Information about the schema.",
+                              "properties": {
+                                  "id": {
+                                      "type": "string",
+                                      "description": "The schema's ID."
+                                  },
+                                  "type": {
+                                      "type": "string",
+                                      "description": "The schema type."
+                                  }
+                              }
+                          }
+                      },
+                      "collections": {
+                          "type": "array",
+                          "description": "A list of the API's collections.",
+                          "items": {
+                              "type": "object",
+                              "description": "Information about the collection.",
+                              "properties": {
+                                  "id": {
+                                      "type": "string",
+                                      "description": "The collection's ID."
+                                  },
+                                  "name": {
+                                      "type": "string",
+                                      "description": "The collection's name."
+                                  }
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+order: 3000

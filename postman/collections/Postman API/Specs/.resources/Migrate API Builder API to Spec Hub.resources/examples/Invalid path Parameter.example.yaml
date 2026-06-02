@@ -1,0 +1,59 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/apis/:apiId/spec-migrations
+  method: POST
+  pathVariables:
+    apiId: 90ca9f5a-c4c4-11ed-afa1-0242ac120002
+  body:
+    type: json
+    content: |-
+      {
+          "workspaceInfo": {
+              "name": "API Workspace"
+          },
+          "gitInfo": {
+              "path": "/../spaceships"
+          }
+      }
+response:
+  statusCode: 400
+  statusText: Bad Request
+  body:
+    type: json
+    content: |-
+      {
+          "error": {
+              "type": "badRequest",
+              "name": "invalidGitInfoPath",
+              "message": "The provided path is invalid. It must be an absolute path starting with \\, contain only alphanumeric characters, slashes, hyphens, underscores, and dots, and must not contain \\..\\ path traversal sequences.",
+              "title": "Invalid path parameter"
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "error": {
+                  "type": "object",
+                  "properties": {
+                      "type": {
+                          "type": "string",
+                          "description": "A short summary of the problem."
+                      },
+                      "name": {
+                          "type": "string",
+                          "description": "The error name."
+                      },
+                      "message": {
+                          "type": "string",
+                          "description": "The error message."
+                      },
+                      "title": {
+                          "type": "string",
+                          "description": "A short summary of the problem."
+                      }
+                  }
+              }
+          }
+      }
+order: 7000

@@ -1,0 +1,81 @@
+$kind: http-request
+description: |-
+  Creates a comment on a collection.
+
+  **Note:**
+
+  This endpoint accepts a max of 10,000 characters.
+url: "{{baseUrl}}/collections/:collectionUid/comments"
+method: POST
+pathVariables:
+  - key: collectionUid
+    value: ""
+    description: The collection's unique ID.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "uniqueItems": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+body:
+  type: json
+  content: |-
+    {
+        "body": "{{comment}}",
+        "threadId": "{{threadId}}",
+        "tags": {
+            "{{userName}}": {
+                "type": "user",
+                "id": "{{userId}}"
+            }
+        }
+    }
+  $type: |-
+    {
+        "type": "object",
+        "required": ["body"],
+        "properties": {
+            "body": {
+                "type": "string",
+                "description": "The contents of the comment."
+            },
+            "threadId": {
+                "type": "string",
+                "description": "The comment's thread ID. To create a reply on an existing comment, include this property."
+            },
+            "tags": {
+                "type": "object",
+                "description": "Information about users tagged in the `body` comment.",
+                "properties": {
+                    "{{userName}}": {
+                        "type": "object",
+                        "required": ["type", "id"],
+                        "description": "An object that contains information about the tagged user. The object's name is the user's Postman username. For example, `@user-postman`.",
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "description": "The `user` value.",
+                                "enum": [
+                                    "user"
+                                ]
+                            },
+                            "id": {
+                                "type": "string",
+                                "description": "The user's ID."
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+examples: ./.resources/Create a collection comment.resources/examples
+order: 2000

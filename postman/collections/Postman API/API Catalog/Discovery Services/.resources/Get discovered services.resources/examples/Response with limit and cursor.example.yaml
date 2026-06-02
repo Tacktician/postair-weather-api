@@ -1,0 +1,129 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/api-catalog/discovery-services?limit=3&cursor=eyJpZCI6MjJ9
+  method: GET
+  queryParams:
+    limit: "3"
+    cursor: eyJpZCI6MjJ9
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "meta": {
+              "total": 26,
+              "nextCursor": "eyJpZCI6MjJ9"
+          },
+          "items": [
+              {
+                  "id": "0eac9b7d-0603-4f16-8a4a-76c78df8fe26",
+                  "name": "Supply - stage (1.0.1)",
+                  "version": "1.0.1",
+                  "sourceEnvironment": "stage",
+                  "systemEnvironmentId": null,
+                  "status": "discovered",
+                  "endpointsCount": 6,
+                  "discoverySource": "api_gateway_app",
+                  "tags": [],
+                  "discoveredAt": "2026-02-12T04:01:26.000Z"
+              },
+              {
+                  "id": "7e83e0d9-66ab-4e1f-a1e7-56c75f5ca95e",
+                  "name": "Supply - stage (1.0.0)",
+                  "version": "1.0.0",
+                  "sourceEnvironment": "stage",
+                  "systemEnvironmentId": null,
+                  "status": "discovered",
+                  "endpointsCount": 5,
+                  "discoverySource": "api_gateway_app",
+                  "tags": [],
+                  "discoveredAt": "2026-02-12T04:01:26.000Z"
+              },
+              {
+                  "id": "1478fe99-a3a6-47aa-a6f7-61591f959ce9",
+                  "name": "Supply - sandbox (1.0.0)",
+                  "version": "1.0.0",
+                  "sourceEnvironment": "sandbox",
+                  "systemEnvironmentId": null,
+                  "status": "discovered",
+                  "endpointsCount": 6,
+                  "discoverySource": "api_gateway_app",
+                  "tags": [],
+                  "discoveredAt": "2026-02-12T04:01:26.000Z"
+              }
+          ]
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "meta": {
+                  "type": "object",
+                  "description": "The response's meta information for paginated results.",
+                  "properties": {
+                      "total": {
+                          "type": "integer",
+                          "description": "The number of records found."
+                      },
+                      "nextCursor": {
+                          "type": ["string", "null"],
+                          "description": "The pagination cursor that points to the next record in the results set."
+                      }
+                  }
+              },
+              "data": {
+                  "type": "array",
+                  "description": "A list of discovered services.",
+                  "items": {
+                      "type": "object",
+                      "description": "Information about the discovered service.",
+                      "properties": {
+                          "id": {
+                              "type": "string",
+                              "description": "The service's ID."
+                          },
+                          "name": {
+                              "type": "string",
+                              "description": "The service's name."
+                          },
+                          "version": {
+                              "type": ["string", "null"],
+                              "description": "The service's version."
+                          },
+                          "sourceEnvironment": {
+                              "type": ["string", "null"],
+                              "description": "The source environment in which the service was discovered."
+                          },
+                          "systemEnvironmentId": {
+                              "type": ["string", "null"],
+                              "description": "The mapped system environment's ID. Returns a null value if the environment is not mapped."
+                          },
+                          "status": {
+                              "type": "string",
+                              "description": "The service's current status."
+                          },
+                          "endpointsCount": {
+                              "type": "integer",
+                              "description": "The total number of endpoints associated with the service."
+                          },
+                          "discoverySource": {
+                              "type": "string",
+                              "description": "The source through which the service was discovered."
+                          },
+                          "tags": {
+                              "type": "array",
+                              "description": "A list of tags associated with the service."
+                          },
+                          "discoveredAt": {
+                              "type": "string",
+                              "format": "date-time",
+                              "description": "The date and time at which the service was first discovered."
+                          }
+                      }
+                  }
+              }
+          }
+      }
+order: 5000

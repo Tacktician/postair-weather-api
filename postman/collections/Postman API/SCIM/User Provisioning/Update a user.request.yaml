@@ -1,0 +1,80 @@
+$kind: http-request
+description: |-
+  Updates a user in Postman.
+
+  ### Reactivating users
+
+  By setting the `active` property from `false` to `true`, this reactivates an account. This allows the account to authenticate in to Postman and adds the account back on to your Postman team.
+url: "{{baseUrl}}/scim/v2/Users/:userId"
+method: PUT
+pathVariables:
+  - key: userId
+    value: ""
+    description: The user's SCIM ID.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "uniqueItems": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+body:
+  type: json
+  content: |-
+    {
+        "schemas": [
+            "urn:ietf:params:scim:schemas:core:2.0:User"
+            ],
+        "userName": "{{userEmail}}",
+        "name": {
+            "givenName": "{{firstName}}",
+            "familyName": "{{lastName}}"
+        },
+        "active": true
+    }
+  $type: |-
+    {
+        "type": "object",
+        "properties": {
+            "schemas": {
+                "type": "array",
+                "description": "The [SCIM schema URI](https://www.iana.org/assignments/scim/scim.xhtml).",
+                "items": {
+                    "type": "string",
+                    "format": "uri",
+                    "enum": ["urn:ietf:params:scim:schemas:core:2.0:User"]
+                }
+            },
+            "userName": {
+                "type": "string",
+                "description": "The user's email address."
+            },
+            "name": {
+                "type": "object",
+                "description": "Information about the user's name.",
+                "properties": {
+                    "givenName": {
+                        "type": "string",
+                        "description": "The user's first name."
+                    },
+                    "familyName": {
+                        "type": "string",
+                        "description": "The user's last name."
+                    }
+                }
+            },
+            "active": {
+                "type": "boolean",
+                "description": "Sets the user's `active` state:\n- `true` — Activates the user. This lets them authenticate in to your Postman team.\n- `false` — Removes the user from your Postman team and deactivates the account. This blocks the user from authenticating in to Postman."
+            }
+        }
+    }
+examples: ./.resources/Update a user.resources/examples
+order: 2000

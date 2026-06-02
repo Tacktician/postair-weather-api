@@ -1,0 +1,116 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/workspaces
+  method: GET
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "workspaces": [
+              {
+                  "id": "1f0df51a-8658-4ee8-a2a1-d2567dfa09a9",
+                  "name": "My Workspace",
+                  "type": "personal",
+                  "visibility": "personal",
+                  "createdBy": "12345678",
+                  "about": "This is a personal workspace.",
+                  "createdAt": "2022-07-18T06:57:37.000Z",
+                  "updatedAt": "2025-05-30T08:49:54.000Z"
+              },
+              {
+                  "id": "a0f46158-1529-11ee-be56-0242ac120002",
+                  "name": "Private Workspace",
+                  "type": "team",
+                  "visibility": "private",
+                  "createdBy": "12345678",
+                  "about": "This is a private workspace.",
+                  "createdAt": "2022-07-18T06:57:37.000Z",
+                  "updatedAt": "2025-05-30T08:49:54.000Z"
+              },
+              {
+                  "id": "f8801e9e-03a4-4c7b-b31e-5db5cd771696",
+                  "name": "Team Workspace",
+                  "type": "team",
+                  "visibility": "team",
+                  "createdBy": "12345678",
+                  "about": "This is a team workspace.",
+                  "createdAt": "2022-07-18T06:57:37.000Z",
+                  "updatedAt": "2025-05-30T08:49:54.000Z"
+              },
+              {
+                  "id": "74dbfab8-1529-11ee-be56-0242ac120002",
+                  "name": "Public Workspace",
+                  "type": "team",
+                  "visibility": "public",
+                  "createdBy": "12345678",
+                  "about": "This is a public workspace.",
+                  "createdAt": "2022-07-18T06:57:37.000Z",
+                  "updatedAt": "2025-05-30T08:49:54.000Z"
+              },
+              {
+                  "id": "74dbfab8-1529-11ee-be56-0242ac120002",
+                  "name": "Partner Workspace",
+                  "type": "team",
+                  "visibility": "partner",
+                  "createdBy": "12345678",
+                  "about": "This is a Partner Workspace.",
+                  "createdAt": "2022-07-18T06:57:37.000Z",
+                  "updatedAt": "2025-05-30T08:49:54.000Z"
+              }
+          ]
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "workspaces": {
+                  "type": "array",
+                  "description": "A list of workspaces.",
+                  "items": {
+                      "type": "object",
+                      "description": "Information about the workspace.",
+                      "properties": {
+                          "id": {
+                              "type": "string",
+                              "description": "The workspace's ID."
+                          },
+                          "name": {
+                              "type": "string",
+                              "description": "The workspace's name."
+                          },
+                          "type": {
+                              "type": "string",
+                              "description": "The type of workspace."
+                          },
+                          "visibility": {
+                              "type": "string",
+                              "description": "The workspace's visibility. Visibility determines who can access the workspace:\n- `personal` — Only you can access the workspace.\n- `team` — All team members can access the workspace.\n- `private` — Only invited team members can access the workspace (**Team** and **Enterprise** plans only).\n- `public` — Everyone can access the workspace.\n- `partner` — Only invited team members and partners can access the workspace (**Team** and **Enterprise** plans only).\n",
+                              "enum": ["personal", "team", "private", "public", "partner"]
+                          },
+                          "createdBy": {
+                              "type": "string",
+                              "description": "The user who created the workspace. The response only returns workspaces that you have access to."
+                          },
+                          "about": {
+                              "type": "string",
+                              "description": "A brief summary about the workspace."
+                          },
+                          "createdAt": {
+                              "type": "string",
+                              "format": "date-time",
+                              "description": "The date and time at which the workspace was created."
+                          },
+                          "updatedAt": {
+                              "type": "string",
+                              "format": "date-time",
+                              "description": "The date and time at which the workspace was last updated."
+                          }
+                      }
+                  }
+              }
+          }
+      }
+order: 1000

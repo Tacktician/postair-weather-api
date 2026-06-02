@@ -1,0 +1,82 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/teams/:teamId/bulk-members
+  method: POST
+  pathVariables:
+    teamId: "123"
+  body:
+    type: json
+    content: |-
+      {
+          "add": {
+              "users": {
+                  "12345678": [
+                      "TEAM_MANAGER"
+                  ]
+              },
+              "groups": {
+                  "1234": [
+                      "TEAM_DEVELOPER"
+                  ]
+              }
+          }
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "result": [
+              {
+                  "entityType": "user",
+                  "entityId": 12345678,
+                  "role": "TEAM_MANAGER",
+                  "previousRole": null,
+                  "status": "Accepted"
+              },
+              {
+                  "entityType": "group",
+                  "entityId": 1234,
+                  "role": "TEAM_DEVELOPER",
+                  "previousRole": null,
+                  "status": "Accepted"
+              }
+          ]
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "result": {
+                  "type": "array",
+                  "items": {
+                      "type": "object",
+                      "properties": {
+                          "entityType": {
+                              "type": "string",
+                              "description": "The entity type."
+                          },
+                          "entityId": {
+                              "type": ["string", "integer"],
+                              "description": "The entity's ID."
+                          },
+                          "role": {
+                              "type": ["string", "null"],
+                              "description": "The user's role."
+                          },
+                          "previousRole": {
+                              "type": ["string", "null"],
+                              "description": "The user's previous role. This value only returns if the user's role is modified."
+                          },
+                          "status": {
+                              "type": "string",
+                              "description": "The request's status."
+                          }
+                      }
+                  }
+              }
+          }
+      }
+order: 1000

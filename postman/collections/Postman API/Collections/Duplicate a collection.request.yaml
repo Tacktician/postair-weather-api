@@ -1,0 +1,49 @@
+$kind: http-request
+description: |-
+  Creates a duplicate of the given collection in another workspace.
+
+  Use the GET `/collection-duplicate-tasks/{taskId}` endpoint to get the duplication task's current status.
+url: "{{baseUrl}}/collections/:collectionId/duplicates"
+method: POST
+pathVariables:
+  - key: collectionId
+    value: ""
+    description: The collection's unique ID.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "uniqueItems": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+body:
+  type: json
+  content: |-
+    {
+        "workspace": "{{workspaceId}}",
+        "suffix": "{{suffixText}}"
+    }
+  $type: |-
+    {
+        "type": "object",
+        "required": ["workspace"],
+        "properties": {
+            "workspace": {
+                "type": "string",
+                "description": "The workspace ID in which to duplicate the collection."
+            },
+            "suffix": {
+                "type": "string",
+                "description": "An optional suffix to append to the duplicated collection's name."
+            }
+        }
+    }
+examples: ./.resources/Duplicate a collection.resources/examples
+order: 14000

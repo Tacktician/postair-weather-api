@@ -1,0 +1,91 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/workspaces?include=scim
+  method: GET
+  queryParams:
+    include: scim
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "workspaces": [
+              {
+                  "id": "1f0df51a-8658-4ee8-a2a1-d2567dfa09a9",
+                  "name": "My Workspace",
+                  "type": "personal",
+                  "visibility": "personal",
+                  "createdBy": "12345678",
+                  "about": "",
+                  "scim": {
+                      "createdBy": "405775fe15ed41872a8eea4c8aa2b38cda9749812cc55c99"
+                  },
+                  "createdAt": "2022-07-18T06:57:37.000Z",
+                  "updatedAt": "2025-05-30T08:49:54.000Z"
+              }
+          ]
+      }
+    $type: |
+      {
+          "type": "object",
+          "properties": {
+              "workspaces": {
+                  "type": "array",
+                  "description": "A list of workspaces.",
+                  "items": {
+                      "type": "object",
+                      "description": "Information about the workspace.",
+                      "properties": {
+                          "id": {
+                              "type": "string",
+                              "description": "The workspace's ID."
+                          },
+                          "name": {
+                              "type": "string",
+                              "description": "The workspace's name."
+                          },
+                          "type": {
+                              "type": "string",
+                              "description": "The type of workspace."
+                          },
+                          "visibility": {
+                              "type": "string",
+                              "description": "The workspace's visibility. Visibility determines who can access the workspace:\n- `personal` — Only you can access the workspace.\n- `team` — All team members can access the workspace.\n- `private` — Only invited team members can access the workspace (**Team** and **Enterprise** plans only).\n- `public` — Everyone can access the workspace.\n- `partner` — Only invited team members and partners can access the workspace (**Team** and **Enterprise** plans only).\n",
+                              "enum": ["personal", "team", "private", "public", "partner"]
+                          },
+                          "createdBy": {
+                              "type": "string",
+                              "description": "The user who created the workspace. The response only returns workspaces that you have access to."
+                          },
+                          "about": {
+                              "type": "string",
+                              "description": "A brief summary about the workspace."
+                          },
+                          "scim": {
+                              "type": "object",
+                              "description": "An object containing SCIM user IDs. This object only returns if you pass the `include=scim` query parameter.",
+                              "properties": {
+                                  "createdBy": {
+                                      "type": "string",
+                                      "description": "The SCIM user ID of the user who created the workspace."
+                                  }
+                              }
+                          },
+                          "createdAt": {
+                              "type": "string",
+                              "format": "date-time",
+                              "description": "The date and time at which the workspace was created."
+                          },
+                          "updatedAt": {
+                              "type": "string",
+                              "format": "date-time",
+                              "description": "The date and time at which the workspace was last updated."
+                          }
+                      }
+                  }
+              }
+          }
+      }
+order: 2000

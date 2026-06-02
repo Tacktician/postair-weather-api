@@ -1,0 +1,39 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/collections/:collectionId/pulls
+  method: PUT
+  pathVariables:
+    collectionId: 12ece9e1-2abf-4edc-8e34-de66e74114d2
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "collection": {
+              "destinationId": "12345678-12ece9e1-2abf-4edc-8e34-de66e74114d2",
+              "sourceId": "12345678-45499451-e894-41b8-8c66-8191ab64932a"
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "collection": {
+                  "type": "object",
+                  "description": "Information about the updated collection fork.",
+                  "properties": {
+                      "destinationId": {
+                          "type": "string",
+                          "description": "The ID of the forked collection the changes were pulled into."
+                      },
+                      "sourceId": {
+                          "type": "string",
+                          "description": "The ID of the source collection the changes were pulled from."
+                      }
+                  }
+              }
+          }
+      }
+order: 1000

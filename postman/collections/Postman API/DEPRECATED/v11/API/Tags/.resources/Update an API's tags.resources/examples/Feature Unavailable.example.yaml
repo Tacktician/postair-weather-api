@@ -1,0 +1,54 @@
+$kind: http-example
+request:
+  url: https://api.eu.postman.com/apis/:apiId/tags
+  method: PUT
+  headers:
+    Accept: application/vnd.api.v10+json
+  pathVariables:
+    apiId: 6fd634a3-79ba-451d-8f07-56a953f96667
+  body:
+    type: json
+    content: |-
+      {
+          "tags": [
+              {
+                  "slug": "needs-review"
+              }
+          ]
+      }
+response:
+  statusCode: 403
+  statusText: Forbidden
+  body:
+    type: json
+    content: |-
+      {
+          "type": "https://api.postman.com/problems/forbidden",
+          "title": "Forbidden",
+          "detail": "This feature isn't available in your region.",
+          "status": 403
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "type": {
+                  "type": "string",
+                  "format": "uri",
+                  "description": "The [URI reference](https://www.rfc-editor.org/rfc/rfc3986) that identifies the type of problem."
+              },
+              "title": {
+                  "type": "string",
+                  "description": "A short summary of the problem."
+              },
+              "detail": {
+                  "type": "string",
+                  "description": "Information about the error."
+              },
+              "status": {
+                  "type": "integer",
+                  "description": "The error's HTTP status code."
+              }
+          }
+      }
+order: 11000

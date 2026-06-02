@@ -1,0 +1,62 @@
+$kind: http-request
+description: Updates and replaces a workspace's global [variables](https://learning.postman.com/docs/sending-requests/variables/#variable-scopes). This endpoint replaces all existing global variables with the variables you pass in the request body.
+url: "{{baseUrl}}/workspaces/:workspaceId/global-variables"
+method: PUT
+pathVariables:
+  - key: workspaceId
+    value: ""
+    description: The workspace's ID.
+body:
+  type: json
+  content: |-
+    {
+        "values": [
+            {
+                "key": "{{keyName}}",
+                "type": "{{keyType}}",
+                "value": "{{keyValue}}",
+                "enabled": true,
+                "description": "{{variableDescription}}"
+            }
+        ]
+    }
+  $type: |-
+    {
+        "type": "object",
+        "properties": {
+            "values": {
+                "type": "array",
+                "description": "A list of the workspace's global variables.",
+                "items": {
+                    "type": "object",
+                    "description": "Information about the global variable.",
+                    "properties": {
+                        "key": {
+                            "type": "string",
+                            "description": "The variable's name."
+                        },
+                        "type": {
+                            "type": "string",
+                            "description": "The [type](https://learning.postman.com/docs/sending-requests/variables/#variable-types) of variable.",
+                            "enum": ["default", "secret"]
+                        },
+                        "value": {
+                            "type": "string",
+                            "description": "The variable's value."
+                        },
+                        "enabled": {
+                            "type": "boolean",
+                            "description": "If true, the variable is enabled."
+                        },
+                        "description": {
+                            "type": "string",
+                            "maxLength": 512,
+                            "description": "The variable's description."
+                        }
+                    }
+                }
+            }
+        }
+    }
+examples: ./.resources/Update global variables.resources/examples
+order: 2000

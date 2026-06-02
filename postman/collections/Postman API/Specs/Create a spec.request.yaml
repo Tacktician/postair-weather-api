@@ -1,0 +1,93 @@
+$kind: http-request
+description: |-
+  Creates an API specification in Postman's [Spec Hub](https://learning.postman.com/docs/design-apis/specifications/overview/). Specifications can be single or multi-file.
+
+  **Note:**
+
+  - Postman supports OpenAPI 2.0, OpenAPI 3.0, OpenAPI 3.1, AsyncAPI 2.0, protobuf 2 and 3, and GraphQL specifications.
+      
+  - If the file path contains a `/` (forward slash) character, then a folder is created. For example, if the path is the `components/schemas.json` value, then a `components` folder is created with the `schemas.json` file inside.
+      
+  - Multi-file specifications can only have one root file.
+      
+  - Files cannot exceed a maximum of 10 MB in size.
+url: "{{baseUrl}}/specs?workspaceId="
+method: POST
+queryParams:
+  - key: workspaceId
+    value: ""
+    description: The workspace's ID.
+body:
+  type: json
+  content: |-
+    {
+        "name": "{{specName}}",
+        "type": "{{specType}}",
+        "files": [
+            {
+                "path": "{{filePath}}",
+                "content": "{{content}}"
+            }
+        ]
+    }
+  $type: |-
+    {
+        "type": "object",
+        "required": ["name", "type", "files"],
+        "properties": {
+            "name": {
+                "type": "string",
+                "description": "The specification's name."
+            },
+            "type": {
+                "type": "string",
+                "enum": ["OPENAPI:2.0", "OPENAPI:3.0", "OPENAPI:3.1", "ASYNCAPI:2.0", "PROTOBUF:2", "PROTOBUF:3", "GRAPHQL"],
+                "description": "The specification's type."
+            },
+            "files": {
+                "type": "array",
+                "description": "A list of the specification's files and their contents.",
+                "items": {
+                    "oneOf": [
+                        {
+                            "title": "Multi-file Spec",
+                            "type": "object",
+                            "required": ["path", "content", "type"],
+                            "properties": {
+                                "path": {
+                                    "type": "string",
+                                    "description": "The file's path. Accepts .json, .yaml, .proto and .graphql file types."
+                                },
+                                "content": {
+                                    "type": "string",
+                                    "description": "The file's stringified contents."
+                                },
+                                "type": {
+                                    "type": "string",
+                                    "enum": ["DEFAULT","ROOT"],
+                                    "description": "The type of file. This property is required when creating multi-file specifications:\n- `ROOT` — The file containing the full OpenAPI structure. This serves as the entry point for the API spec and references other (`DEFAULT`) spec files. Multi-file specs can only have one root file. \n- `DEFAULT` — A file referenced by the `ROOT` file."
+                                }
+                            }
+                        },
+                        {
+                            "title": "Single File Spec",
+                            "type": "object",
+                            "required": ["path", "content"],
+                            "properties": {
+                                "path": {
+                                    "type": "string",
+                                    "description": "The file's path. Accepts .json, .yaml, .proto and .graphql file types."
+                                },
+                                "content": {
+                                    "type": "string",
+                                    "description": "The file's stringified contents."
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    }
+examples: ./.resources/Create a spec.resources/examples
+order: 4000

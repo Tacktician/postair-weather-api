@@ -1,0 +1,148 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/analytics?resource=team&metrics=partner_engagement_funnel&view=summary&duration=last_180_days
+  method: GET
+  queryParams:
+    resource: team
+    metrics: partner_engagement_funnel
+    view: summary
+    duration: last_180_days
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "data": {
+              "summary": {
+                  "schema": {
+                      "columns": [
+                          {
+                              "name": "metric",
+                              "type": "STRING",
+                              "description": "Name of the partner engagement metric."
+                          },
+                          {
+                              "name": "count",
+                              "type": "INTEGER",
+                              "description": "Value associated with the specific engagement metric."
+                          }
+                      ]
+                  },
+                  "rows": [
+                      [
+                          "all_partners",
+                          131
+                      ],
+                      [
+                          "workspace_visited",
+                          7
+                      ],
+                      [
+                          "viewed_collection",
+                          6
+                      ],
+                      [
+                          "request_sent",
+                          3
+                      ],
+                      [
+                          "successful_requests_200OK",
+                          3
+                      ]
+                  ]
+              }
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "data": {
+                  "type": "object",
+                  "properties": {
+                      "summary": {
+                          "type": "object",
+                          "properties": {
+                              "schema": {
+                                  "type": "object",
+                                  "properties": {
+                                      "columns": {
+                                          "type": "array",
+                                          "description": "A list of column entries.",
+                                          "items": {
+                                              "type": "object",
+                                              "properties": {
+                                                  "name": {
+                                                      "type": "string",
+                                                      "description": "The name of the column."
+                                                  },
+                                                  "type": {
+                                                      "type": "string",
+                                                      "enum": [
+                                                          "DATE",
+                                                          "STRING",
+                                                          "INTEGER",
+                                                          "TIMESTAMP",
+                                                          "BOOLEAN",
+                                                          "NUMBER",
+                                                          "FLOAT"
+                                                      ],
+                                                      "description": "The data type of the column."
+                                                  },
+                                                  "description": {
+                                                      "type": "string",
+                                                      "description": "A description of what the column represents."
+                                                  }
+                                              }
+                                          }
+                                      }
+                                  }
+                              },
+                              "rows": {
+                                  "type": "array",
+                                  "description": "A list of data row entries. Each row is an array of values that correspond to the columns defined in the schema.",
+                                  "items": {
+                                      "type": "array",
+                                      "items": {
+                                          "type": [
+                                              "string",
+                                              "integer",
+                                              "number",
+                                              "boolean",
+                                              "null"
+                                          ],
+                                          "description": "The format of the column value."
+                                      }
+                                  }
+                              },
+                              "pagination": {
+                                  "type": "object",
+                                  "description": "Information about the response pagination.",
+                                  "properties": {
+                                      "total": {
+                                          "type": "integer",
+                                          "description": "The total number of records available."
+                                      },
+                                      "limit": {
+                                          "type": "integer",
+                                          "description": "The maximum number of records returned in the response."
+                                      },
+                                      "offset": {
+                                          "type": "integer",
+                                          "description": "The number of records skipped."
+                                      },
+                                      "has_more": {
+                                          "type": "boolean",
+                                          "description": "Indicates whether more are records available."
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+order: 35000

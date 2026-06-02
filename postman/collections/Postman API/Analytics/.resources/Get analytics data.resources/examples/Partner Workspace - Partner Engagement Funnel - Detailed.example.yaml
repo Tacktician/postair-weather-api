@@ -1,0 +1,632 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/analytics?resource=team&metrics=partner_engagement_funnel&view=detailed&duration=last_180_days&limit=3&offset=0
+  method: GET
+  queryParams:
+    resource: team
+    metrics: partner_engagement_funnel
+    view: detailed
+    duration: last_180_days
+    limit: "3"
+    offset: "0"
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "data": {
+              "all_partners": {
+                  "schema": {
+                      "columns": [
+                          {
+                              "name": "user_id",
+                              "type": "STRING",
+                              "description": "Unique identifier of the partner user."
+                          },
+                          {
+                              "name": "timestamp",
+                              "type": "TIMESTAMP",
+                              "format": "YYYY-MM-DDTHH:MM:SSZ",
+                              "description": "Time when the partner activity was recorded."
+                          }
+                      ]
+                  },
+                  "rows": [
+                      [
+                          "12345678",
+                          "2026-01-21T00:00:00.000Z"
+                      ],
+                      [
+                          "87654321",
+                          "2026-01-21T00:00:00.000Z"
+                      ],
+                      [
+                          "56781234",
+                          "2026-01-21T00:00:00.000Z"
+                      ]
+                  ],
+                  "pagination": {
+                      "total": 131,
+                      "limit": 3,
+                      "offset": 0,
+                      "has_more": true
+                  }
+              },
+              "workspace_visited": {
+                  "schema": {
+                      "columns": [
+                          {
+                              "name": "user_id",
+                              "type": "STRING",
+                              "description": "Unique identifier of the partner user."
+                          },
+                          {
+                              "name": "timestamp",
+                              "type": "TIMESTAMP",
+                              "format": "YYYY-MM-DDTHH:MM:SSZ",
+                              "description": "Time when the partner activity was recorded."
+                          }
+                      ]
+                  },
+                  "rows": [
+                      [
+                          "12345678",
+                          "2026-01-21T00:00:00.000Z"
+                      ],
+                      [
+                          "87654321",
+                          "2026-01-21T00:00:00.000Z"
+                      ],
+                      [
+                          "56781234",
+                          "2026-01-21T00:00:00.000Z"
+                      ]
+                  ],
+                  "pagination": {
+                      "total": 7,
+                      "limit": 3,
+                      "offset": 0,
+                      "has_more": true
+                  }
+              },
+              "viewed_collection": {
+                  "schema": {
+                      "columns": [
+                          {
+                              "name": "user_id",
+                              "type": "STRING",
+                              "description": "Unique identifier of the partner user."
+                          },
+                          {
+                              "name": "timestamp",
+                              "type": "TIMESTAMP",
+                              "format": "YYYY-MM-DDTHH:MM:SSZ",
+                              "description": "Time when the partner activity was recorded."
+                          }
+                      ]
+                  },
+                  "rows": [
+                      [
+                          "12345678",
+                          "2026-01-21T00:00:00.000Z"
+                      ],
+                      [
+                          "87654321",
+                          "2026-01-21T00:00:00.000Z"
+                      ],
+                      [
+                          "56781234",
+                          "2026-01-21T00:00:00.000Z"
+                      ]
+                  ],
+                  "pagination": {
+                      "total": 3,
+                      "limit": 3,
+                      "offset": 0,
+                      "has_more": false
+                  }
+              },
+              "request_sent": {
+                  "schema": {
+                      "columns": [
+                          {
+                              "name": "user_id",
+                              "type": "STRING",
+                              "description": "Unique identifier of the partner user."
+                          },
+                          {
+                              "name": "timestamp",
+                              "type": "TIMESTAMP",
+                              "format": "YYYY-MM-DDTHH:MM:SSZ",
+                              "description": "Time when the partner activity was recorded."
+                          }
+                      ]
+                  },
+                  "rows": [
+                      [
+                          "12345678",
+                          "2026-01-21T00:00:00.000Z"
+                      ],
+                      [
+                          "87654321",
+                          "2026-01-21T00:00:00.000Z"
+                      ],
+                      [
+                          "56781234",
+                          "2026-01-21T00:00:00.000Z"
+                      ]
+                  ],
+                  "pagination": {
+                      "total": 3,
+                      "limit": 3,
+                      "offset": 0,
+                      "has_more": false
+                  }
+              },
+              "successful_requests_200OK": {
+                  "schema": {
+                      "columns": [
+                          {
+                              "name": "user_id",
+                              "type": "STRING",
+                              "description": "Unique identifier of the partner user."
+                          },
+                          {
+                              "name": "timestamp",
+                              "type": "TIMESTAMP",
+                              "format": "YYYY-MM-DDTHH:MM:SSZ",
+                              "description": "Time when the partner activity was recorded."
+                          }
+                      ]
+                  },
+                  "rows": [
+                      [
+                          "12345678",
+                          "2026-01-21T00:00:00.000Z"
+                      ],
+                      [
+                          "87654321",
+                          "2026-01-21T00:00:00.000Z"
+                      ],
+                      [
+                          "56781234",
+                          "2026-01-21T00:00:00.000Z"
+                      ]
+                  ],
+                  "pagination": {
+                      "total": 3,
+                      "limit": 3,
+                      "offset": 0,
+                      "has_more": false
+                  }
+              }
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "data": {
+                  "type": "object",
+                  "properties": {
+                      "all_partners": {
+                          "type": "object",
+                          "description": "Information about partner users and their activity.",
+                          "properties": {
+                              "schema": {
+                                  "type": "object",
+                                  "properties": {
+                                      "columns": {
+                                          "type": "array",
+                                          "description": "A list of column entries.",
+                                          "items": {
+                                              "type": "object",
+                                              "properties": {
+                                                  "name": {
+                                                      "type": "string",
+                                                      "description": "The name of the column."
+                                                  },
+                                                  "type": {
+                                                      "type": "string",
+                                                      "enum": [
+                                                          "DATE",
+                                                          "STRING",
+                                                          "INTEGER",
+                                                          "TIMESTAMP",
+                                                          "BOOLEAN",
+                                                          "NUMBER",
+                                                          "FLOAT"
+                                                      ],
+                                                      "description": "The data type of the column."
+                                                  },
+                                                  "format": {
+                                                      "type": "string",
+                                                      "description": "The data type's format."
+                                                  },
+                                                  "description": {
+                                                      "type": "string",
+                                                      "description": "A description of what the column represents."
+                                                  }
+                                              }
+                                          }
+                                      }
+                                  }
+                              },
+                              "rows": {
+                                  "type": "array",
+                                  "description": "A list of data row entries. Each row is an array of values that correspond to the columns defined in the schema.",
+                                  "items": {
+                                      "type": "array",
+                                      "items": {
+                                          "type": [
+                                              "string",
+                                              "integer",
+                                              "number",
+                                              "boolean",
+                                              "null"
+                                          ]
+                                      }
+                                  }
+                              },
+                              "pagination": {
+                                  "type": "object",
+                                  "description": "Information about the response pagination.",
+                                  "properties": {
+                                      "total": {
+                                          "type": "integer",
+                                          "description": "The total number of records available."
+                                      },
+                                      "limit": {
+                                          "type": "integer",
+                                          "description": "The maximum number of records returned in the response."
+                                      },
+                                      "offset": {
+                                          "type": "integer",
+                                          "description": "The number of records skipped."
+                                      },
+                                      "has_more": {
+                                          "type": "boolean",
+                                          "description": "Indicates whether more are records available."
+                                      }
+                                  }
+                              }
+                          }
+                      },
+                      "workspace_visited": {
+                          "type": "object",
+                          "description": "Information about partner users' workspace visits.",
+                          "properties": {
+                              "schema": {
+                                  "type": "object",
+                                  "properties": {
+                                      "columns": {
+                                          "type": "array",
+                                          "description": "A list of column entries.",
+                                          "items": {
+                                              "type": "object",
+                                              "properties": {
+                                                  "name": {
+                                                      "type": "string",
+                                                      "description": "The name of the column."
+                                                  },
+                                                  "type": {
+                                                      "type": "string",
+                                                      "enum": [
+                                                          "DATE",
+                                                          "STRING",
+                                                          "INTEGER",
+                                                          "TIMESTAMP",
+                                                          "BOOLEAN",
+                                                          "NUMBER",
+                                                          "FLOAT"
+                                                      ],
+                                                      "description": "The data type of the column."
+                                                  },
+                                                  "format": {
+                                                      "type": "string",
+                                                      "description": "The data type's format."
+                                                  },
+                                                  "description": {
+                                                      "type": "string",
+                                                      "description": "A description of what the column represents."
+                                                  }
+                                              }
+                                          }
+                                      }
+                                  }
+                              },
+                              "rows": {
+                                  "type": "array",
+                                  "description": "A list of data row entries. Each row is an array of values that correspond to the columns defined in the schema.",
+                                  "items": {
+                                      "type": "array",
+                                      "items": {
+                                          "type": [
+                                              "string",
+                                              "integer",
+                                              "number",
+                                              "boolean",
+                                              "null"
+                                          ]
+                                      }
+                                  }
+                              },
+                              "pagination": {
+                                  "type": "object",
+                                  "description": "Information about the response pagination.",
+                                  "properties": {
+                                      "total": {
+                                          "type": "integer",
+                                          "description": "The total number of records available."
+                                      },
+                                      "limit": {
+                                          "type": "integer",
+                                          "description": "The maximum number of records returned in the response."
+                                      },
+                                      "offset": {
+                                          "type": "integer",
+                                          "description": "The number of records skipped."
+                                      },
+                                      "has_more": {
+                                          "type": "boolean",
+                                          "description": "Indicates whether more are records available."
+                                      }
+                                  }
+                              }
+                          }
+                      },
+                      "viewed_collection": {
+                          "type": "object",
+                          "description": "Information about partner users' views of collections in a workspace.",
+                          "properties": {
+                              "schema": {
+                                  "type": "object",
+                                  "properties": {
+                                      "columns": {
+                                          "type": "array",
+                                          "description": "A list of column entries.",
+                                          "items": {
+                                              "type": "object",
+                                              "properties": {
+                                                  "name": {
+                                                      "type": "string",
+                                                      "description": "The name of the column."
+                                                  },
+                                                  "type": {
+                                                      "type": "string",
+                                                      "enum": [
+                                                          "DATE",
+                                                          "STRING",
+                                                          "INTEGER",
+                                                          "TIMESTAMP",
+                                                          "BOOLEAN",
+                                                          "NUMBER",
+                                                          "FLOAT"
+                                                      ],
+                                                      "description": "The data type of the column."
+                                                  },
+                                                  "format": {
+                                                      "type": "string",
+                                                      "description": "The data type's format."
+                                                  },
+                                                  "description": {
+                                                      "type": "string",
+                                                      "description": "A description of what the column represents."
+                                                  }
+                                              }
+                                          }
+                                      }
+                                  }
+                              },
+                              "rows": {
+                                  "type": "array",
+                                  "description": "A list of data row entries. Each row is an array of values that correspond to the columns defined in the schema.",
+                                  "items": {
+                                      "type": "array",
+                                      "items": {
+                                          "type": [
+                                              "string",
+                                              "integer",
+                                              "number",
+                                              "boolean",
+                                              "null"
+                                          ]
+                                      }
+                                  }
+                              },
+                              "pagination": {
+                                  "type": "object",
+                                  "description": "Information about the response pagination.",
+                                  "properties": {
+                                      "total": {
+                                          "type": "integer",
+                                          "description": "The total number of records available."
+                                      },
+                                      "limit": {
+                                          "type": "integer",
+                                          "description": "The maximum number of records returned in the response."
+                                      },
+                                      "offset": {
+                                          "type": "integer",
+                                          "description": "The number of records skipped."
+                                      },
+                                      "has_more": {
+                                          "type": "boolean",
+                                          "description": "Indicates whether more are records available."
+                                      }
+                                  }
+                              }
+                          }
+                      },
+                      "request_sent": {
+                          "type": "object",
+                          "properties": {
+                              "schema": {
+                                  "type": "object",
+                                  "properties": {
+                                      "columns": {
+                                          "type": "array",
+                                          "description": "A list of column entries.",
+                                          "items": {
+                                              "type": "object",
+                                              "properties": {
+                                                  "name": {
+                                                      "type": "string",
+                                                      "description": "The name of the column."
+                                                  },
+                                                  "type": {
+                                                      "type": "string",
+                                                      "enum": [
+                                                          "DATE",
+                                                          "STRING",
+                                                          "INTEGER",
+                                                          "TIMESTAMP",
+                                                          "BOOLEAN",
+                                                          "NUMBER",
+                                                          "FLOAT"
+                                                      ],
+                                                      "description": "The data type of the column."
+                                                  },
+                                                  "format": {
+                                                      "type": "string",
+                                                      "description": "The data type's format."
+                                                  },
+                                                  "description": {
+                                                      "type": "string",
+                                                      "description": "A description of what the column represents."
+                                                  }
+                                              }
+                                          }
+                                      }
+                                  }
+                              },
+                              "rows": {
+                                  "type": "array",
+                                  "description": "A list of data row entries. Each row is an array of values that correspond to the columns defined in the schema.",
+                                  "items": {
+                                      "type": "array",
+                                      "items": {
+                                          "type": [
+                                              "string",
+                                              "integer",
+                                              "number",
+                                              "boolean",
+                                              "null"
+                                          ]
+                                      }
+                                  }
+                              },
+                              "pagination": {
+                                  "type": "object",
+                                  "description": "Information about the response pagination.",
+                                  "properties": {
+                                      "total": {
+                                          "type": "integer",
+                                          "description": "The total number of records available."
+                                      },
+                                      "limit": {
+                                          "type": "integer",
+                                          "description": "The maximum number of records returned in the response."
+                                      },
+                                      "offset": {
+                                          "type": "integer",
+                                          "description": "The number of records skipped."
+                                      },
+                                      "has_more": {
+                                          "type": "boolean",
+                                          "description": "Indicates whether more are records available."
+                                      }
+                                  }
+                              }
+                          }
+                      },
+                      "successful_requests_200OK": {
+                          "type": "object",
+                          "description": "Information about partner users' successful request calls in a workspace.",
+                          "properties": {
+                              "schema": {
+                                  "type": "object",
+                                  "properties": {
+                                      "columns": {
+                                          "type": "array",
+                                          "description": "A list of column entries.",
+                                          "items": {
+                                              "type": "object",
+                                              "properties": {
+                                                  "name": {
+                                                      "type": "string",
+                                                      "description": "The name of the column."
+                                                  },
+                                                  "type": {
+                                                      "type": "string",
+                                                      "enum": [
+                                                          "DATE",
+                                                          "STRING",
+                                                          "INTEGER",
+                                                          "TIMESTAMP",
+                                                          "BOOLEAN",
+                                                          "NUMBER",
+                                                          "FLOAT"
+                                                      ],
+                                                      "description": "The data type of the column."
+                                                  },
+                                                  "format": {
+                                                      "type": "string",
+                                                      "description": "The data type's format."
+                                                  },
+                                                  "description": {
+                                                      "type": "string",
+                                                      "description": "A description of what the column represents."
+                                                  }
+                                              }
+                                          }
+                                      }
+                                  }
+                              },
+                              "rows": {
+                                  "type": "array",
+                                  "description": "A list of data row entries. Each row is an array of values that correspond to the columns defined in the schema.",
+                                  "items": {
+                                      "type": "array",
+                                      "items": {
+                                          "type": [
+                                              "string",
+                                              "integer",
+                                              "number",
+                                              "boolean",
+                                              "null"
+                                          ]
+                                      }
+                                  }
+                              },
+                              "pagination": {
+                                  "type": "object",
+                                  "description": "Information about the response pagination.",
+                                  "properties": {
+                                      "total": {
+                                          "type": "integer",
+                                          "description": "The total number of records available."
+                                      },
+                                      "limit": {
+                                          "type": "integer",
+                                          "description": "The maximum number of records returned in the response."
+                                      },
+                                      "offset": {
+                                          "type": "integer",
+                                          "description": "The number of records skipped."
+                                      },
+                                      "has_more": {
+                                          "type": "boolean",
+                                          "description": "Indicates whether more are records available."
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+order: 34000

@@ -1,0 +1,113 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/network/private/network-entity/request/:requestId
+  method: PUT
+  pathVariables:
+    requestId: "2"
+  body:
+    type: json
+    content: |-
+      {
+          "status": "approved"
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "request": [
+              {
+                  "id": 2,
+                  "createdAt": "2024-06-09T14:48:45.000Z",
+                  "createdBy": 87654321,
+                  "message": "Please add this to the network",
+                  "status": "approved",
+                  "element": {
+                      "id": "1f0df51a-8658-4ee8-a2a1-d2567dfa09a9",
+                      "name": "Billing Team Workspace",
+                      "summary": "The Billing team's workspace.",
+                      "description": null,
+                      "type": "workspace",
+                      "createdBy": 12345678,
+                      "createdAt": "2024-06-19T04:48:40.000Z"
+                  }
+              }
+          ]
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "request": {
+                  "type": "array",
+                  "description": "A list of Private API Network requests.",
+                  "items": {
+                      "type": "object",
+                      "description": "Information about the Private API Network request.",
+                      "properties": {
+                          "id": {
+                              "type": "integer",
+                              "description": "The request's ID."
+                          },
+                          "createdAt": {
+                              "type": "string",
+                              "format": "date-time",
+                              "description": "The date and time at which the request was created."
+                          },
+                          "createdBy": {
+                              "type": "integer",
+                              "description": "The ID of the user who created the request."
+                          },
+                          "message": {
+                              "type": "string",
+                              "description": "The user's optional message included in the request."
+                          },
+                          "status": {
+                              "type": "string",
+                              "enum": ["approved", "denied"],
+                              "description": "The request's status."
+                          },
+                          "element": {
+                              "type": "object",
+                              "description": "Information about the requested element.",
+                              "properties": {
+                                  "id": {
+                                      "type": "string",
+                                      "description": "The element's ID."
+                                  },
+                                  "name": {
+                                      "type": "string",
+                                      "description": "The element's name."
+                                  },
+                                  "summary": {
+                                      "type": ["string", "null"],
+                                      "description": "The element's short summary."
+                                  },
+                                  "description": {
+                                      "type": ["string", "null"],
+                                      "description": "The element's description."
+                                  },
+                                  "type": {
+                                      "type": "string",
+                                      "enum": ["workspace"],
+                                      "description": "The `workspace` element type."
+                                  },
+                                  "createdBy": {
+                                      "type": "integer",
+                                      "description": "The ID of the user who added the element to the Private API Network."
+                                  },
+                                  "createdAt": {
+                                      "type": "string",
+                                      "format": "date-time",
+                                      "description": "The date and time the element was added to the Private API Network."
+                                  }
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+order: 1000

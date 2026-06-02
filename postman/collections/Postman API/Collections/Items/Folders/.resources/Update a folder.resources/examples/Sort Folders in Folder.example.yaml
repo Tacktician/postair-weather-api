@@ -1,0 +1,133 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/collections/:collectionId/folders/:folderId
+  method: PUT
+  pathVariables:
+    collectionId: 12ece9e1-2abf-4edc-8e34-de66e74114d2
+    folderId: 65a99e60-8e0a-4b6e-b79c-7d8264cc5caa
+  body:
+    type: json
+    content: |-
+      {
+          "folders_order": [
+              "b73b4c0c-881b-47e6-8887-6dabab1fd2d1",
+              "abcc80b2-8a1c-45e5-ab1b-becc385b4dbd"
+          ]
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "data": {
+              "folders_order": [
+                  "b73b4c0c-881b-47e6-8887-6dabab1fd2d1",
+                  "abcc80b2-8a1c-45e5-ab1b-becc385b4dbd"
+              ],
+              "id": "65a99e60-8e0a-4b6e-b79c-7d8264cc5caa",
+              "auth": null,
+              "name": "Test Folder",
+              "order": [],
+              "owner": "12345678",
+              "events": null,
+              "folder": null,
+              "updatedAt": "2022-08-29T16:49:19.964Z",
+              "createdAt": "2022-08-29T16:49:19.964Z",
+              "variables": null,
+              "collection": "12ece9e1-2abf-4edc-8e34-de66e74114d2",
+              "description": "This is a test folder.",
+              "lastRevision": 24977100955,
+              "lastUpdatedBy": "12345678"
+          },
+          "meta": {
+              "model": "folder",
+              "action": "update"
+          },
+          "model_id": "65a99e60-8e0a-4b6e-b79c-7d8264cc5caa",
+          "revision": 24977103385
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "data": {
+                  "type": "object",
+                  "description": "The folder's information.",
+                  "properties": {
+                      "folders_order": {
+                          "type": "array",
+                          "items": {
+                              "type": "string"
+                          }
+                      },
+                      "id": {
+                          "type": "string"
+                      },
+                      "auth": {
+                          "type": "null"
+                      },
+                      "name": {
+                          "type": "string"
+                      },
+                      "order": {
+                          "type": "array"
+                      },
+                      "owner": {
+                          "type": "string"
+                      },
+                      "events": {
+                          "type": "null"
+                      },
+                      "folder": {
+                          "type": "null"
+                      },
+                      "updatedAt": {
+                          "type": "string",
+                          "format": "date-time"
+                      },
+                      "createdAt": {
+                          "type": "string",
+                          "format": "date-time"
+                      },
+                      "variables": {
+                          "type": "null"
+                      },
+                      "collection": {
+                          "type": "string"
+                      },
+                      "description": {
+                          "type": "string"
+                      },
+                      "lastRevision": {
+                          "type": "integer"
+                      },
+                      "lastUpdatedBy": {
+                          "type": "string"
+                      }
+                  }
+              },
+              "meta": {
+                  "type": "object",
+                  "description": "A Postman-specific response that contains information about the internal performed operation.",
+                  "properties": {
+                      "model": {
+                          "type": "string"
+                      },
+                      "action": {
+                          "type": "string"
+                      }
+                  }
+              },
+              "model_id": {
+                  "type": "string",
+                  "description": "The folder's ID."
+              },
+              "revision": {
+                  "type": "integer",
+                  "description": "An internal revision ID. Its value increments each time the resource changes. You can use this ID to track whether there were changes since the last time you fetched the resource."
+              }
+          }
+      }
+order: 3000

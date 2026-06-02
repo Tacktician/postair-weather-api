@@ -1,0 +1,148 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/network/private
+  method: GET
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "elements": [
+              {
+                  "addedAt": "2024-11-29T06:31:24.000Z",
+                  "addedBy": 12345678,
+                  "createdBy": 12345678,
+                  "createdAt": "2024-11-29T06:31:24.000Z",
+                  "updatedBy": 12345678,
+                  "updatedAt": "2024-11-29T06:31:24.000Z",
+                  "type": "workspace",
+                  "id": "5360b75f-447e-467c-9299-12fd6c92450d",
+                  "parentFolderId": 0,
+                  "name": "Billing Team Workspace",
+                  "summary": "The Billing team's workspace.",
+                  "description": null,
+                  "href": "https://api.getpostman.com/workspaces/1f0df51a-8658-4ee8-a2a1-d2567dfa09a9"
+              },
+              {
+                  "addedAt": "2024-11-29T06:31:26.000Z",
+                  "addedBy": 12345678,
+                  "createdBy": 12345678,
+                  "createdAt": "2024-11-29T06:31:26.000Z",
+                  "updatedBy": 12345678,
+                  "updatedAt": "2024-11-29T06:31:26.000Z",
+                  "type": "workspace",
+                  "id": "360b75f-447e-467c-9299-12fd3c92450d",
+                  "parentFolderId": 0,
+                  "name": "Test Workspace",
+                  "summary": "This is a test workspace.",
+                  "description": null,
+                  "href": "https://api.getpostman.com/workspaces/41f6dc6d-d8ab-45c6-8506-74a25acf5d5f"
+              }
+          ],
+          "folders": [],
+          "meta": {
+              "limit": 1000,
+              "offset": 0,
+              "totalCount": 2
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "elements": {
+                  "type": "array",
+                  "description": "A list of Private API Network elements.",
+                  "items": {
+                      "type": "object",
+                      "description": "Information about the Private API Network element.",
+                      "properties": {
+                          "addedAt": {
+                              "type": "string",
+                              "format": "date-time",
+                              "description": "The date and time at which the element was published to your team's Private API Network. This value is the same as the `updatedAt` value."
+                          },
+                          "addedBy": {
+                              "type": "integer",
+                              "description": "The user ID of the user who published the element."
+                          },
+                          "createdBy": {
+                              "type": "integer",
+                              "description": "The user who created the element."
+                          },
+                          "createdAt": {
+                              "type": "string",
+                              "format": "date-time",
+                              "description": "The date and time at which the element was created."
+                          },
+                          "updatedBy": {
+                              "type": "integer",
+                              "description": "The user ID of the user who updated the element."
+                          },
+                          "updatedAt": {
+                              "type": "string",
+                              "format": "date-time",
+                              "description": "The date and time at which the element was last updated."
+                          },
+                          "type": {
+                              "type": "string",
+                              "description": "The `workspace` element type."
+                          },
+                          "id": {
+                              "type": "string",
+                              "description": "The element's ID."
+                          },
+                          "parentFolderId": {
+                              "type": "integer",
+                              "deprecated": true,
+                              "default": 0,
+                              "description": "The `0` value."
+                          },
+                          "name": {
+                              "type": "string",
+                              "description": "The element's name."
+                          },
+                          "summary": {
+                              "type": ["string", "null"],
+                              "description": "The element's summary."
+                          },
+                          "description": {
+                              "type": ["string", "null"],
+                              "description": "The element's description."
+                          },
+                          "href": {
+                              "type": "string",
+                              "format": "uri",
+                              "description": "The element's HREF."
+                          }
+                      }
+                  }
+              },
+              "folders": {
+                  "type": "array",
+                  "deprecated": true,
+                  "description": "This property is deprecated and only returns an empty array."
+              },
+              "meta": {
+                  "type": "object",
+                  "description": "The response's non-standard meta information.",
+                  "properties": {
+                      "limit": {
+                          "type": "integer",
+                          "description": "The maximum number of elements returned. If the value exceeds the maximum value of `1000`, then the system uses the `1000` value."
+                      },
+                      "offset": {
+                          "type": "integer",
+                          "description": "The zero-based offset of the first item returned."
+                      },
+                      "totalCount": {
+                          "type": "integer",
+                          "description": "The total number of elements."
+                      }
+                  }
+              }
+          }
+      }
+order: 1000

@@ -1,0 +1,285 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/collections/:collectionId/requests
+  method: POST
+  pathVariables:
+    collectionId: 12ece9e1-2abf-4edc-8e34-de66e74114d2
+  body:
+    type: json
+    content: |-
+      {
+          "name": "Example POST Request",
+          "url": "https://postman-echo.com/post",
+          "method": "POST",
+          "headers": [
+              {
+                  "key": "Host",
+                  "value": "postman-echo.com"
+              },
+              {
+                  "key": "user-agent",
+                  "value": "curl/7.88.1"
+              },
+              {
+                  "key": "accept",
+                  "value": "*/*"
+              },
+              {
+                  "key": "content-type",
+                  "value": "application/json"
+              },
+              {
+                  "key": "content-length",
+                  "value": "22"
+              }
+          ],
+          "events": [
+              {
+                  "listen": "test",
+                  "script": {
+                      "id": "a8608e1a-ce4b-4129-8c89-930d26ae0f6a",
+                      "exec": [
+                          "pm.test(\"Status code is 200\", function () {",
+                          "    pm.response.to.have.status(200);",
+                          "});"
+                      ],
+                      "type": "text/javascript"
+                  }
+              },
+              {
+                  "listen": "prerequest",
+                  "script": {
+                      "id": "5b4bb273-5878-4bd7-a296-94a256783a66",
+                      "exec": [
+                          ""
+                      ],
+                      "type": "text/javascript"
+                  }
+              }
+          ],
+          "dataMode": "raw",
+          "rawModeData": "{\n  \"field\": \"Value\"\n}",
+          "dataOptions": {
+              "raw": {
+                  "language": "json"
+              }
+          }
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "model_id": "c82dd02c-4870-4907-8fcb-593a876cf05b",
+          "meta": {
+              "model": "request",
+              "action": "import"
+          },
+          "data": {
+              "collection": "12ece9e1-2abf-4edc-8e34-de66e74114d2",
+              "method": "POST",
+              "headers": [
+                  {
+                      "key": "Host",
+                      "value": "postman-echo.com"
+                  },
+                  {
+                      "key": "user-agent",
+                      "value": "curl/7.88.1"
+                  },
+                  {
+                      "key": "accept",
+                      "value": "*/*"
+                  },
+                  {
+                      "key": "content-type",
+                      "value": "application/json"
+                  },
+                  {
+                      "key": "content-length",
+                      "value": "22"
+                  }
+              ],
+              "events": [
+                  {
+                      "listen": "test",
+                      "script": {
+                          "id": "a8608e1a-ce4b-4129-8c89-930d26ae0f6a",
+                          "exec": [
+                              "pm.test(\"Status code is 200\", function () {",
+                              "    pm.response.to.have.status(200);",
+                              "});"
+                          ],
+                          "type": "text/javascript"
+                      }
+                  },
+                  {
+                      "listen": "prerequest",
+                      "script": {
+                          "id": "5b4bb273-5878-4bd7-a296-94a256783a66",
+                          "exec": [
+                              ""
+                          ],
+                          "type": "text/javascript"
+                      }
+                  }
+              ],
+              "dataMode": "raw",
+              "url": "https://postman-echo.com/post",
+              "name": "Example POST Request",
+              "owner": "12345678",
+              "folder": null,
+              "responses_order": [],
+              "id": "c82dd02c-4870-4907-8fcb-593a876cf05b",
+              "lastUpdatedBy": "12345678",
+              "headerData": [],
+              "createdAt": "2023-09-07T13:35:33.691Z",
+              "updatedAt": "2023-09-07T13:35:33.691Z",
+              "rawModeData": null,
+              "dataOptions": {
+                  "raw": {
+                      "language": "json"
+                  }
+              },
+              "responses": []
+          },
+          "revision": 32456382272
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "model_id": {
+                  "type": "string",
+                  "description": "The request's ID."
+              },
+              "meta": {
+                  "type": "object",
+                  "description": "A Postman-specific response that contains information about the internal performed operation.",
+                  "properties": {
+                      "model": {
+                          "type": "string"
+                      },
+                      "action": {
+                          "type": "string"
+                      }
+                  }
+              },
+              "data": {
+                  "type": "object",
+                  "description": "Information about the updated request. For a complete list of properties, refer to the **Request** entry in the [Postman Collection Format documentation](https://schema.postman.com/collection/json/v2.1.0/draft-07/docs/index.html).",
+                  "properties": {
+                      "collection": {
+                          "type": "string"
+                      },
+                      "method": {
+                          "type": "string"
+                      },
+                      "headers": {
+                          "type": "array",
+                          "items": {
+                              "type": "object",
+                              "properties": {
+                                  "key": {
+                                      "type": "string"
+                                  },
+                                  "value": {
+                                      "type": "string"
+                                  }
+                              }
+                          }
+                      },
+                      "events": {
+                          "type": "array",
+                          "items": {
+                              "type": "object",
+                              "properties": {
+                                  "listen": {
+                                      "type": "string"
+                                  },
+                                  "script": {
+                                      "type": "object",
+                                      "properties": {
+                                          "id": {
+                                              "type": "string"
+                                          },
+                                          "exec": {
+                                              "type": "array",
+                                              "items": {
+                                                  "type": "string"
+                                              }
+                                          },
+                                          "type": {
+                                              "type": "string"
+                                          }
+                                      }
+                                  }
+                              }
+                          }
+                      },
+                      "dataMode": {
+                          "type": "string"
+                      },
+                      "url": {
+                          "type": "string",
+                          "format": "uri"
+                      },
+                      "name": {
+                          "type": "string"
+                      },
+                      "owner": {
+                          "type": "string"
+                      },
+                      "folder": {
+                          "type": "null"
+                      },
+                      "responses_order": {
+                          "type": "array"
+                      },
+                      "id": {
+                          "type": "string"
+                      },
+                      "lastUpdatedBy": {
+                          "type": "string"
+                      },
+                      "headerData": {
+                          "type": "array"
+                      },
+                      "createdAt": {
+                          "type": "string",
+                          "format": "date-time"
+                      },
+                      "updatedAt": {
+                          "type": "string",
+                          "format": "date-time"
+                      },
+                      "rawModeData": {
+                          "type": "null"
+                      },
+                      "dataOptions": {
+                          "type": "object",
+                          "properties": {
+                              "raw": {
+                                  "type": "object",
+                                  "properties": {
+                                      "language": {
+                                          "type": "string"
+                                      }
+                                  }
+                              }
+                          }
+                      },
+                      "responses": {
+                          "type": "array"
+                      }
+                  }
+              },
+              "revision": {
+                  "type": "integer",
+                  "description": "An internal revision ID. Its value increments each time the resource changes. You can use this ID to track whether there were changes since the last time you fetched the resource."
+              }
+          }
+      }
+order: 5000

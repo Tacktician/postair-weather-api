@@ -1,0 +1,167 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/analytics?resource=team&metrics=internal_workspace_distribution&view=summary&duration=last_6_months
+  method: GET
+  queryParams:
+    resource: team
+    metrics: internal_workspace_distribution
+    view: summary
+    duration: last_6_months
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "data": {
+              "summary": {
+                  "schema": {
+                      "columns": [
+                          {
+                              "name": "date",
+                              "type": "DATE",
+                              "format": "YYYY-MM-DD",
+                              "description": "Reporting date for internal workspace distribution."
+                          },
+                          {
+                              "name": "internal_team_shared",
+                              "type": "INTEGER",
+                              "description": "Count of internal team-shared workspaces."
+                          },
+                          {
+                              "name": "internal_private",
+                              "type": "INTEGER",
+                              "description": "Count of internal private workspaces."
+                          }
+                      ]
+                  },
+                  "rows": [
+                      [
+                          "2025-02-01",
+                          520,
+                          380
+                      ],
+                      [
+                          "2025-03-01",
+                          540,
+                          395
+                      ],
+                      [
+                          "2025-04-01",
+                          555,
+                          405
+                      ],
+                      [
+                          "2025-05-01",
+                          565,
+                          415
+                      ],
+                      [
+                          "2025-06-01",
+                          575,
+                          425
+                      ],
+                      [
+                          "2025-07-01",
+                          590,
+                          440
+                      ]
+                  ]
+              }
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "data": {
+                  "type": "object",
+                  "properties": {
+                      "summary": {
+                          "type": "object",
+                          "properties": {
+                              "schema": {
+                                  "type": "object",
+                                  "properties": {
+                                      "columns": {
+                                          "type": "array",
+                                          "description": "A list of column entries.",
+                                          "items": {
+                                              "type": "object",
+                                              "properties": {
+                                                  "name": {
+                                                      "type": "string",
+                                                      "description": "The name of the column."
+                                                  },
+                                                  "type": {
+                                                      "type": "string",
+                                                      "enum": [
+                                                          "DATE",
+                                                          "STRING",
+                                                          "INTEGER",
+                                                          "TIMESTAMP",
+                                                          "BOOLEAN",
+                                                          "NUMBER",
+                                                          "FLOAT"
+                                                      ],
+                                                      "description": "The data type of the column."
+                                                  },
+                                                  "format": {
+                                                      "type": "string",
+                                                      "description": "The data type's format."
+                                                  },
+                                                  "description": {
+                                                      "type": "string",
+                                                      "description": "A description of what the column represents."
+                                                  }
+                                              }
+                                          }
+                                      }
+                                  }
+                              },
+                              "rows": {
+                                  "type": "array",
+                                  "description": "A list of data row entries. Each row is an array of values that correspond to the columns defined in the schema.",
+                                  "items": {
+                                      "type": "array",
+                                      "items": {
+                                          "type": [
+                                              "string",
+                                              "integer",
+                                              "number",
+                                              "boolean",
+                                              "null"
+                                          ]
+                                      }
+                                  }
+                              },
+                              "pagination": {
+                                  "type": "object",
+                                  "description": "Information about the response pagination.",
+                                  "properties": {
+                                      "total": {
+                                          "type": "integer",
+                                          "description": "The total number of records available."
+                                      },
+                                      "limit": {
+                                          "type": "integer",
+                                          "description": "The maximum number of records returned in the response."
+                                      },
+                                      "offset": {
+                                          "type": "integer",
+                                          "description": "The number of records skipped."
+                                      },
+                                      "has_more": {
+                                          "type": "boolean",
+                                          "description": "Indicates whether more are records available."
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+order: 20000

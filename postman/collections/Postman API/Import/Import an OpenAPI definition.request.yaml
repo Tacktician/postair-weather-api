@@ -1,0 +1,65 @@
+$kind: http-request
+description: |-
+  Imports an OpenAPI definition into Postman as a new [Postman Collection](https://learning.postman.com/docs/getting-started/creating-the-first-collection/).
+
+  **Note:**
+
+  - The Postman web app does not support the `file` input method type.
+      
+  - If you do not include the `workspace` query parameter, the system imports the definition into the oldest personal Internal workspace you own.
+url: "{{baseUrl}}/import/openapi?workspace="
+method: POST
+queryParams:
+  - key: workspace
+    value: ""
+    description: |-
+      The workspace ID in which to import the OpenAPI specification.
+
+      If you do not include this parameter, the system imports the definition into the oldest personal Internal workspace you own.
+body:
+  type: json
+  content: |-
+    {
+        "type": "{{APIspecificationType}}",
+        "input": "{{APIspecification}}",
+        "options": {
+            "{{optionName}}": "{{optionvalue}}"
+        }
+    }
+  $type: |-
+    {
+        "type": "object",
+        "required": ["type", "input"],
+        "properties": {
+            "type": {
+                "type": "string",
+                "description": "The `json` or `string` value.",
+                "enum": ["json", "string"]
+            },
+            "input": {
+                "anyOf": [
+                    {
+                        "type": "string",
+                        "title": "string",
+                        "description": "The stringified OpenAPI definition."
+                    },
+                    {
+                        "type": "object",
+                        "title": "object",
+                        "description": "An object that contains a valid JSON OpenAPI definition. For more information, read the [OpenAPI documentation](https://swagger.io/docs/specification/basic-structure/)."
+                    }
+                ]
+            },
+            "options": {
+                "type": "object",
+                "description": "The advanced creation options and their values. For more details, see Postman's [OpenAPI to Postman Collection Converter OPTIONS documentation](https://github.com/postmanlabs/openapi-to-postman/blob/develop/OPTIONS.md). These properties are case-sensitive.",
+                "properties": {
+                    "{{optionName}}": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+examples: ./.resources/Import an OpenAPI definition.resources/examples
+order: 1000

@@ -1,0 +1,35 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/secret-types
+  method: GET
+response:
+  statusCode: 401
+  statusText: Unauthorized
+  body:
+    type: json
+    content: |-
+      {
+          "instance": "",
+          "status": 401,
+          "title": "Unauthorized. Please try again with valid credentials.",
+          "type": "UNAUTHORIZED"
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "instance": {
+                  "type": "string"
+              },
+              "status": {
+                  "type": "integer"
+              },
+              "title": {
+                  "type": "string"
+              },
+              "type": {
+                  "type": "string"
+              }
+          }
+      }
+order: 2000

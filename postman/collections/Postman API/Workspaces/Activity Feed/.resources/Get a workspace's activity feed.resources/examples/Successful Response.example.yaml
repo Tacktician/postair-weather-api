@@ -1,0 +1,243 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/workspaces/:workspaceId/activities?limit=8
+  method: GET
+  queryParams:
+    limit: "8"
+  pathVariables:
+    workspaceId: 1f0df51a-8658-4ee8-a2a1-d2567dfa09a9
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "meta": {
+              "nextCursor": "bmV4dDppZDpZWEpqYUdsMllXeEVRaXhtWldWa2MxOHlNREkxWHpFc01UTXpNelE0"
+          },
+          "data": [
+              {
+                  "workspaceId": "1f0df51a-8658-4ee8-a2a1-d2567dfa09a9",
+                  "createdAt": "2025-04-07T14:33:23Z",
+                  "updatedAt": "2025-04-07T14:33:23Z",
+                  "id": 15178,
+                  "user": {
+                      "id": 12345678,
+                      "username": "research-physicist-12345678",
+                      "isPartner": false,
+                      "name": "Taylor Lee"
+                  },
+                  "action": "update",
+                  "elementType": "collection",
+                  "trigger": "update",
+                  "elementId": "12345678-12ece9e1-2abf-4edc-8e34-de66e74114d2",
+                  "elementName": "Test API"
+              },
+              {
+                  "workspaceId": "1f0df51a-8658-4ee8-a2a1-d2567dfa09a9",
+                  "createdAt": "2025-04-07T14:33:23Z",
+                  "updatedAt": "2025-04-07T14:33:23Z",
+                  "id": 15177,
+                  "user": {
+                      "id": 12345678,
+                      "username": "research-physicist-12345678",
+                      "isPartner": false,
+                      "name": "Taylor Lee"
+                  },
+                  "action": "update",
+                  "elementType": "collection",
+                  "trigger": "update",
+                  "elementId": "12345678-12ece9e1-2abf-4edc-8e34-de66e74114d2",
+                  "elementName": "New Collection"
+              },
+              {
+                  "workspaceId": "1f0df51a-8658-4ee8-a2a1-d2567dfa09a9",
+                  "createdAt": "2025-04-07T13:59:02Z",
+                  "updatedAt": "2025-04-07T13:59:02Z",
+                  "id": 15131,
+                  "user": {
+                      "id": 12345678,
+                      "username": "research-physicist-12345678",
+                      "isPartner": false,
+                      "name": "Taylor Lee"
+                  },
+                  "action": "update",
+                  "elementType": "workspace",
+                  "trigger": "update_visibility",
+                  "elementId": "1f0df51a-8658-4ee8-a2a1-d2567dfa09a9",
+                  "elementName": "Testing APIs"
+              },
+              {
+                  "workspaceId": "1f0df51a-8658-4ee8-a2a1-d2567dfa09a9",
+                  "createdAt": "2025-04-07T13:56:09Z",
+                  "updatedAt": "2025-04-07T13:56:09Z",
+                  "id": 15130,
+                  "user": {
+                      "id": 12345678,
+                      "username": "research-physicist-12345678",
+                      "isPartner": false,
+                      "name": "Taylor Lee"
+                  },
+                  "action": "update",
+                  "elementType": "workspace",
+                  "trigger": "add_user_role",
+                  "elementId": "1f0df51a-8658-4ee8-a2a1-d2567dfa09a9",
+                  "elementName": "Testing APIs"
+              },
+              {
+                  "workspaceId": "1f0df51a-8658-4ee8-a2a1-d2567dfa09a9",
+                  "createdAt": "2025-04-07T13:54:07Z",
+                  "updatedAt": "2025-04-07T13:54:07Z",
+                  "id": 15125,
+                  "user": {
+                      "id": 12345678,
+                      "username": "research-physicist-12345678",
+                      "isPartner": false,
+                      "name": "Taylor Lee"
+                  },
+                  "action": "destroy",
+                  "elementType": "collection",
+                  "trigger": "destroy",
+                  "elementid": "12345678-ea39a259-0c9b-4a5c-a2e6-bddadb8f8e6f",
+                  "elementName": "Billing API"
+              },
+              {
+                  "workspaceId": "1f0df51a-8658-4ee8-a2a1-d2567dfa09a9",
+                  "createdAt": "2025-04-07T13:52:53Z",
+                  "updatedAt": "2025-04-07T13:53:34Z",
+                  "id": 15122,
+                  "user": {
+                      "id": 12345678,
+                      "username": "research-physicist-12345678",
+                      "isPartner": false,
+                      "name": "Taylor Lee"
+                  },
+                  "action": "update",
+                  "elementType": "collection",
+                  "trigger": "update",
+                  "elementId": "12345678-12ece9e1-2abf-4edc-8e34-de66e74114d2",
+                  "elementName": "New Collection"
+              },
+              {
+                  "workspaceId": "1f0df51a-8658-4ee8-a2a1-d2567dfa09a9",
+                  "createdAt": "2025-04-07T13:52:43Z",
+                  "updatedAt": "2025-04-07T13:52:43Z",
+                  "id": 15117,
+                  "user": {
+                      "id": 12345678,
+                      "username": "research-physicist-12345678",
+                      "isPartner": false,
+                      "name": "Taylor Lee"
+                  },
+                  "action": "create",
+                  "elementType": "collection",
+                  "trigger": "create",
+                  "elementId": "12345678-12ece9e1-2abf-4edc-8e34-de66e74114d2",
+                  "elementName": "New Collection"
+              },
+              {
+                  "workspaceId": "1f0df51a-8658-4ee8-a2a1-d2567dfa09a9",
+                  "createdAt": "2025-03-24T17:00:09Z",
+                  "updatedAt": "2025-03-24T17:00:09Z",
+                  "id": 133348,
+                  "user": {
+                      "id": 12345678,
+                      "username": "research-physicist-12345678",
+                      "isPartner": false,
+                      "name": "Taylor Lee"
+                  },
+                  "action": "create",
+                  "elementType": "collection",
+                  "trigger": "create",
+                  "elementid": "12345678-e562f717-596b-4d3a-80d9-0aaa44a8f900",
+                  "elementName": "Billing API"
+              }
+          ]
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "meta": {
+                  "type": "object",
+                  "properties": {
+                      "nextCursor": {
+                          "type": "string",
+                          "description": "The pagination cursor that points to the next record in the results set."
+                      }
+                  }
+              },
+              "data": {
+                  "type": "array",
+                  "description": "Information about the workspace's activity.",
+                  "items": {
+                      "type": "object",
+                      "properties": {
+                          "workspaceId": {
+                              "type": "string",
+                              "description": "The workspace's ID."
+                          },
+                          "createdAt": {
+                              "type": "string",
+                              "format": "date-time",
+                              "description": "The date and time at which the element was created."
+                          },
+                          "updatedAt": {
+                              "type": "string",
+                              "format": "date-time",
+                              "description": "The date and time at which the element was updated."
+                          },
+                          "id": {
+                              "type": "integer",
+                              "description": "The activity feed's ID."
+                          },
+                          "user": {
+                              "type": "object",
+                              "description": "Information about the user that performed the activity.",
+                              "properties": {
+                                  "id": {
+                                      "type": "integer",
+                                      "description": "The user's ID."
+                                  },
+                                  "username": {
+                                      "type": "string",
+                                      "description": "The user's Postman username."
+                                  },
+                                  "isPartner": {
+                                      "type": "boolean",
+                                      "description": "If true, the user is a [Partner](https://learning.postman.com/docs/collaborating-in-postman/roles-and-permissions/#partner-team-and-partner-workspace-roles) in the workspace."
+                                  },
+                                  "name": {
+                                      "type": "string",
+                                      "description": "The user's name."
+                                  }
+                              }
+                          },
+                          "action": {
+                              "type": "string",
+                              "description": "The action that occurred in the workspace.",
+                              "enum": ["create", "update", "destroy"]
+                          },
+                          "elementType": {
+                              "type": "string",
+                              "description": "The element type."
+                          },
+                          "trigger": {
+                              "type": "string",
+                              "description": "The trigger that caused the workspace action (`create`, `update`, or `destroy`)."
+                          },
+                          "elementId": {
+                              "type": "string",
+                              "description": "The element's ID."
+                          },
+                          "elementName": {
+                              "type": "string",
+                              "description": "The element's name."
+                          }
+                      }
+                  }
+              }
+          }
+      }
+order: 1000

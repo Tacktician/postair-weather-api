@@ -1,0 +1,198 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/audit/logs?action=team.scim_add_member
+  method: GET
+  queryParams:
+    action: team.scim_add_member
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+          "trails": [
+              {
+                  "id": 13,
+                  "ip": "192.0.2.0",
+                  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+                  "action": "user.apikey_create",
+                  "timestamp": "2025-12-22T05:14:47.000Z",
+                  "message": "Taylor Lee created an API key with identifier: 6948d*****.",
+                  "data": {
+                      "actor": {
+                          "name": "Taylor Lee",
+                          "username": "taylor.lee",
+                          "email": "taylor.lee@example.com",
+                          "id": 12345678,
+                          "active": true
+                      },
+                      "user": {
+                          "name": "Taylor Lee",
+                          "username": "taylor.lee",
+                          "email": "taylor.lee@example.com",
+                          "id": 12345678
+                      },
+                      "team": {
+                          "name": "Billing API Team",
+                          "id": 123
+                      },
+                      "variables": {
+                          "apiKey": "6948d*****"
+                      }
+                  }
+              },
+              {
+                  "id": 14,
+                  "ip": "192.0.2.0",
+                  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+                  "action": "user.apikey_create",
+                  "timestamp": "2025-11-17T11:03:45.000Z",
+                  "message": "Alex Cruz created an API key with identifier: 691b0*****.",
+                  "data": {
+                      "actor": {
+                          "name": "Alex Cruz",
+                          "username": "supply-technologist-87654321",
+                          "email": "alex.cruz@example.com",
+                          "id": 1068007,
+                          "active": true
+                      },
+                      "user": {
+                          "name": "Alex Cruz",
+                          "username": "supply-technologist-87654321",
+                          "email": "alex.cruz@example.com",
+                          "id": 1068007
+                      },
+                      "team": {
+                          "name": "Billing API Team",
+                          "id": 123
+                      },
+                      "variables": {
+                          "apiKey": "691b0*****"
+                      }
+                  }
+              }
+          ]
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "trails": {
+                  "type": "array",
+                  "items": {
+                      "type": "object",
+                      "properties": {
+                          "id": {
+                              "type": "integer",
+                              "description": "The audit event's ID."
+                          },
+                          "ip": {
+                              "type": "string",
+                              "nullable": true,
+                              "description": "The IP address of the user that performed the action."
+                          },
+                          "userAgent": {
+                              "type": "string",
+                              "nullable": true,
+                              "description": "The user agent information."
+                          },
+                          "action": {
+                              "type": "string",
+                              "description": "The action performed by the user."
+                          },
+                          "timestamp": {
+                              "type": "string",
+                              "format": "date-time",
+                              "description": "The date and time at which the event occurred."
+                          },
+                          "message": {
+                              "type": "string",
+                              "description": "The audit event's description."
+                          },
+                          "data": {
+                              "type": "object",
+                              "description": "Information about the user who preformed the audit event.",
+                              "properties": {
+                                  "actor": {
+                                      "type": "object",
+                                      "description": "Information about the user who preformed the audit event.",
+                                      "properties": {
+                                          "name": {
+                                              "type": "string",
+                                              "description": "The user's name."
+                                          },
+                                          "username": {
+                                              "type": "string",
+                                              "description": "The user's username."
+                                          },
+                                          "email": {
+                                              "type": "string",
+                                              "format": "email",
+                                              "description": "The user's email address."
+                                          },
+                                          "id": {
+                                              "type": "integer",
+                                              "description": "The user's ID."
+                                          },
+                                          "active": {
+                                              "type": "boolean",
+                                              "description": "If true, the user is active. If false, the user is deactivated."
+                                          }
+                                      }
+                                  },
+                                  "user": {
+                                      "type": "object",
+                                      "description": "Information about the user.",
+                                      "properties": {
+                                          "name": {
+                                              "type": "string",
+                                              "description": "The user's name."
+                                          },
+                                          "username": {
+                                              "type": "string",
+                                              "description": "The user's username."
+                                          },
+                                          "email": {
+                                              "type": "string",
+                                              "format": "email",
+                                              "description": "The user's email address."
+                                          },
+                                          "id": {
+                                              "type": "integer",
+                                              "description": "The user's ID."
+                                          }
+                                      }
+                                  },
+                                  "team": {
+                                      "type": "object",
+                                      "description": "The user's team information.",
+                                      "properties": {
+                                          "name": {
+                                              "type": "string",
+                                              "description": "The team's name."
+                                          },
+                                          "id": {
+                                              "type": "integer",
+                                              "description": "The team's ID."
+                                          }
+                                      }
+                                  },
+                                  "variables": {
+                                      "type": "object",
+                                      "description": "Additional information about the performed action.",
+                                      "additionalProperties": true
+                                  }
+                              }
+                          }
+                      }
+                  }
+              },
+              "nextCursor": {
+                  "type": "integer"
+              }
+          }
+      }
+order: 3000

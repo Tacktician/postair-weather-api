@@ -1,0 +1,41 @@
+$kind: http-request
+description: Deletes a file in an API specification. On success, this returns an HTTP `204 No Content` response.
+url: "{{baseUrl}}/specs/:specId/files/:filePath"
+method: DELETE
+pathVariables:
+  - key: specId
+    value: ""
+    description: The spec's ID.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "uniqueItems": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+  - key: filePath
+    value: ""
+    description: The path to the file.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "uniqueItems": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+examples: ./.resources/Delete a spec file.resources/examples
+order: 5000

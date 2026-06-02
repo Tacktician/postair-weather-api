@@ -1,0 +1,29 @@
+$kind: http-request
+description: |-
+  Gets the status of a collection's merge or a pull changes task.
+
+  **Note:**
+
+  After a merge's success or failure, the task's status is only available for a period of 24 hours. Afterwards, this endpoint returns an HTTP `404 Not Found` response.
+url: "{{baseUrl}}/collection-merges-tasks/:taskId"
+method: GET
+pathVariables:
+  - key: taskId
+    value: ""
+    description: The task's ID.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "uniqueItems": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+examples: ./.resources/Get merge or pull task status.resources/examples
+order: 7000

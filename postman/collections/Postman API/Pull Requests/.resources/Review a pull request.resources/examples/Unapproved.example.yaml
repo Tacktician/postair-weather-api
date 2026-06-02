@@ -1,0 +1,67 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/pull-requests/:pullRequestId/tasks
+  method: POST
+  pathVariables:
+    pullRequestId: 4e1a6609-1a29-4037-a411-89ecc14c6cd8
+  body:
+    type: json
+    content: |-
+      {
+          "action": "unapprove"
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "id": "4e1a6609-1a29-4037-a411-89ecc14c6cd8",
+          "reviewedBy": {
+              "id": 12345678,
+              "name": "Taylor Lee",
+              "username": "taylor-lee"
+          },
+          "status": "open",
+          "updatedAt": "2024-02-21T08:19:09.000Z"
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "id": {
+                  "type": "string",
+                  "description": "The pull request's ID."
+              },
+              "reviewedBy": {
+                  "type": "object",
+                  "description": "Information about the user who reviewed the pull request review.",
+                  "properties": {
+                      "id": {
+                          "type": "integer",
+                          "description": "The user's ID."
+                      },
+                      "name": {
+                          "type": "string",
+                          "description": "The user's name."
+                      },
+                      "username": {
+                          "type": "string",
+                          "description": "The user's username."
+                      }
+                  }
+              },
+              "status": {
+                  "type": "string",
+                  "enum": ["open", "approved", "declined", "merged"],
+                  "description": "The pull request's current review status:\n- `open` — The pull request is still open.\n- `approved` — The pull request was approved by its reviewers.\n- `declined` — The pull request was not approved by its reviewers.\n- `merged` — The pull request was merged."
+              },
+              "updatedAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "The date and time at which the pull request was updated."
+              }
+          }
+      }
+order: 4000

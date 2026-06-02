@@ -1,0 +1,44 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/monitors?owner=12345678
+  method: GET
+  queryParams:
+    owner: "12345678"
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "monitors": [],
+          "meta": {
+              "nextCursor": "",
+              "limit": 25
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "monitors": {
+                  "type": "array",
+                  "description": "A list of monitors."
+              },
+              "meta": {
+                  "type": "object",
+                  "description": "The response's meta information for paginated results.",
+                  "properties": {
+                      "nextCursor": {
+                          "type": "string",
+                          "description": "The pagination cursor that points to the next record in the results set."
+                      },
+                      "limit": {
+                          "type": "integer",
+                          "description": "The maximum number of records in the paginated response."
+                      }
+                  }
+              }
+          }
+      }
+order: 8000

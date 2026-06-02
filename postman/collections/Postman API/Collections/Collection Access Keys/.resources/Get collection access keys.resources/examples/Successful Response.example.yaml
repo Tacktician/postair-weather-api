@@ -1,0 +1,124 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/collection-access-keys
+  method: GET
+  headers:
+    Content-Type: application/json
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "data": [
+              {
+                  "id": "Njg5OjU3MDQ1NjYtYmQxZDU3NzktMWVkNS00ZDhjLWI0ZmQtZWRhOGY2Mzg1NTY0",
+                  "token": "PMAT-**********************43BR",
+                  "status": "ACTIVE",
+                  "teamId": 123,
+                  "userId": 12345678,
+                  "collectionId": "12345678-12ece9e1-2abf-4edc-8e34-de66e74114d2",
+                  "expiresAfter": "2024-06-11T13:21:11.000Z",
+                  "lastUsedAt": "",
+                  "createdAt": "2024-04-12T13:21:11.000Z",
+                  "updatedAt": "2024-04-09T11:00:53.000Z"
+              },
+              {
+                  "id": "K7yJPzQ18BC7Snm09PXL12RMmnq57hQorFJW8JnCKhQ11JmNQiTlgXnQ1p93jGYN",
+                  "token": "PMAT-**********************51FZ",
+                  "status": "ACTIVE",
+                  "teamId": 123,
+                  "userId": 56781234,
+                  "collectionId": "56781234-68e5e7ac-c134-45f4-9770-40e72f3fc474",
+                  "expiresAfter": "2024-06-11T13:21:11.000Z",
+                  "lastUsedAt": "2024-04-29T08:24:23.000Z",
+                  "createdAt": "2024-04-22T10:11:00.000Z",
+                  "updatedAt": "2024-04-22T10:11:00.000Z"
+              }
+          ],
+          "meta": {
+              "nextCursor": "b2Zmc2V0PTEwJmxpbWl0PTEw",
+              "prevCursor": ""
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "data": {
+                  "type": "array",
+                  "description": "A list of collection access keys.",
+                  "items": {
+                      "type": "object",
+                      "description": "Information about the collection access key.",
+                      "properties": {
+                          "id": {
+                              "type": "string",
+                              "description": "The collection access key's ID."
+                          },
+                          "token": {
+                              "type": "string",
+                              "description": "The masked collection access key."
+                          },
+                          "status": {
+                              "type": "string",
+                              "description": "The token's active status.",
+                              "enum": ["ACTIVE", "INACTIVE"]
+                          },
+                          "teamId": {
+                              "type": "integer",
+                              "description": "The team ID of the collection access key's owner."
+                          },
+                          "userId": {
+                              "type": "integer",
+                              "description": "The user ID of the collection access key's owner."
+                          },
+                          "collectionId": {
+                              "type": "string",
+                              "description": "The collection access key's associated collection ID."
+                          },
+                          "expiresAfter": {
+                              "type": "string",
+                              "format": "date-time",
+                              "description": "The date and time at which the collection access key expires. Collection access keys are valid for 60 days. If unused, the access key expires after 60 days. If someone uses the access key, then its expiration date increases by another 60 days."
+                          },
+                          "lastUsedAt": {
+                              "type": "string",
+                              "description": "The date and time at which the collection access key was used. If the collection key is unused, this returns an empty string value."
+                          },
+                          "createdAt": {
+                              "type": "string",
+                              "format": "date-time",
+                              "description": "The date and time at which the collection access key was created."
+                          },
+                          "updatedAt": {
+                              "type": "string",
+                              "format": "date-time",
+                              "description": "The date and time at which the collection access key was updated."
+                          },
+                          "deletedAt": {
+                              "type": "string",
+                              "format": "date-time",
+                              "description": "The date and time at which the collection access key was revoked."
+                          }
+                      }
+                  }
+              },
+              "meta": {
+                  "type": "object",
+                  "description": "The response's non-standard metadata information.",
+                  "properties": {
+                      "nextCursor": {
+                          "type": "string",
+                          "description": "The pagination cursor that points to the next record in the results set."
+                      },
+                      "prevCursor": {
+                          "type": "string",
+                          "description": "The pagination cursor to previous set of response data."
+                      }
+                  }
+              }
+          }
+      }
+order: 1000

@@ -1,0 +1,209 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/api-catalog/discovery-services/:serviceId
+  method: GET
+  pathVariables:
+    serviceId: c6ec74e7-14f8-498c-9470-7a654173bed6
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "id": "c6ec74e7-14f8-498c-9470-7a654173bed6",
+          "organizationId": 123,
+          "discoverySource": "api_gateway_app",
+          "name": "Jelly Bean Wiki (IBM - 10) - sandbox (1.0.0)",
+          "description": null,
+          "version": "1.0.0",
+          "sourceEnvironment": "sandbox",
+          "systemEnvironmentId": null,
+          "tags": [],
+          "status": "discovered",
+          "providerServiceId": "048840c0-1be8-4d9f-a8a6-7429ca50f5ca,989213fc-b1a3-42cb-b0d6-b7843ee5d47d,40d57331-ad73-47a3-87f0-032af447df8e",
+          "providerMetadata": {
+              "title": "Jelly Bean Wiki (IBM - 10) - sandbox (1.0.0)",
+              "environmentId": "048840c0-1be8-4d9f-a8a6-7429ca50f5ca,989213fc-b1a3-42cb-b0d6-b7843ee5d47d",
+              "environmentVersion": "2.0.0",
+              "openApiSpecCanBeDownloaded": true
+          },
+          "apiDefinition": {
+              "format": "openapi_3",
+              "formatVersion": "3.0.1",
+              "contentHash": "8839a589ba50f454a03f58ec761ad26e2d267a8f26bd63cf6298d4643b23ed7e",
+              "content": "eyJvcGVuYXBpIjoiMy4wLjAiLCJpbmZvIjp7InRpdGxlIjoiQ29uZmlnIiwidmVyc2lvbiI6IjEuMC4wIn0sInBhdGhzIjp7Ii9jb25maWciOnsiZ2V0Ijp7InN1bW1hcnkiOiJHZXQgY29uZmlnIn19LCIvY29uZmlnL3trZXl9Ijp7InB1dCI6eyJzdW1tYXJ5IjoiVXBkYXRlIGNvbmZpZyJ9fX19="
+          },
+          "endpoints": [
+              {
+                  "method": "GET",
+                  "path": "/api/recipes",
+                  "description": null
+              },
+              {
+                  "method": "GET",
+                  "path": "/api/mileStones",
+                  "description": null
+              },
+              {
+                  "method": "GET",
+                  "path": "/api/Beans",
+                  "description": null
+              }
+          ],
+          "endpointsCount": 3,
+          "discoveredAt": "2026-02-12T02:04:58.000Z",
+          "discoveredBy": 12345678,
+          "lastSyncedAt": "2026-02-12T02:04:58.000Z",
+          "managedWorkspaceId": null,
+          "integratedAt": null
+      }
+    $type: |-
+      {
+          "type": "object",
+          "description": "Information about the discovered service.",
+          "properties": {
+              "id": {
+                  "type": "string",
+                  "description": "The service's ID."
+              },
+              "organizationId": {
+                  "type": "integer",
+                  "description": "The ID of the organization that the service belongs to."
+              },
+              "discoverySource": {
+                  "type": "string",
+                  "description": "The source through which the service was discovered."
+              },
+              "name": {
+                  "type": "string",
+                  "description": "The servie's name."
+              },
+              "description": {
+                  "type": ["string", "null"],
+                  "description": "The service's description."
+              },
+              "version": {
+                  "type": "string",
+                  "description": "The service's version."
+              },
+              "sourceEnvironment": {
+                  "type": ["string", "null"],
+                  "description": "The source environment in which the service was discovered."
+              },
+              "systemEnvironmentId": {
+                  "type": ["string", "null"],
+                  "description": "The mapped system environment's ID. Returns a null value if the environment is not mapped."
+              },
+              "tags": {
+                  "type": "array",
+                  "description": "A list of tags associated with the service."
+              },
+              "status": {
+                  "type": "string",
+                  "description": "The service's current status."
+              },
+              "providerServiceId": {
+                  "type": "string",
+                  "description": "The provider-assigned service ID."
+              },
+              "providerMetadata": {
+                  "type": "object",
+                  "description": "Additional metadata from the discovery source provider.",
+                  "properties": {
+                      "title": {
+                          "type": "string",
+                          "description": "The provider's service display title."
+                      },
+                      "environmentId": {
+                          "type": "string",
+                          "description": "The provider's environment ID."
+                      },
+                      "environmentVersion": {
+                          "type": "string",
+                          "description": "The provider's environment version."
+                      },
+                      "openApiSpecCanBeDownloaded": {
+                          "type": "boolean",
+                          "description": "If true, the provider has enabled downloading of the OpenAPI specification."
+                      }
+                  }
+              },
+              "apiDefinition": {
+                  "type": "object",
+                  "description": "The API definition associated with the service.",
+                  "properties": {
+                      "format": {
+                          "type": "string",
+                          "description": "The definition's format."
+                      },
+                      "formatVersion": {
+                          "type": "string",
+                          "description": "The API definition format's version."
+                      },
+                      "contentHash": {
+                          "type": "string",
+                          "description": "A SHA-256 hash of the API definition content for change detection."
+                      },
+                      "content": {
+                          "type": "string",
+                          "description": "A Base64-encoded API definition."
+                      }
+                  }
+              },
+              "endpoints": {
+                  "type": "array",
+                  "description": "A list of the service's endpoints.",
+                  "items": {
+                      "type": "object",
+                      "description": "Information about a service's endpoint.",
+                      "properties": {
+                          "method": {
+                              "type": "string",
+                              "description": "The endpoint's HTTP method."
+                          },
+                          "path": {
+                              "type": "string",
+                              "description": "The endpoint's URL path."
+                          },
+                          "description": {
+                              "type": ["string", "null"],
+                              "description": "The endpoint's description."
+                          },
+                          "host": {
+                              "type": "string",
+                              "description": "The endpoint's host."
+                          }
+                      }
+                  }
+              },
+              "endpointsCount": {
+                  "type": "integer",
+                  "description": "The total number of endpoints associated with the service."
+              },
+              "discoveredAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "The date and time at which the service was first discovered."
+              },
+              "discoveredBy": {
+                  "type": "integer",
+                  "description": "The user ID of the user who discovered or ingested the service."
+              },
+              "lastSyncedAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "The date and time of the most recent service sync."
+              },
+              "managedWorkspaceId": {
+                  "type": ["string", "null"],
+                  "description": "The ID of the Postman workspace that the service has been integrated into. Returns a null value if the service is not integrated."
+              },
+              "integratedAt": {
+                  "type": ["string", "null"],
+                  "format": "date-time",
+                  "description": "The date and time at which the service was linked to a Postman workspace. Returns a null value if the service is not integrated."
+              }
+          }
+      }
+order: 1000

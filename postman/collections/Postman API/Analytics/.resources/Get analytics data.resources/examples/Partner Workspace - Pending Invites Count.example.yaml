@@ -1,0 +1,128 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/analytics?resource=workspace&metrics=pending_invites&view=summary
+  method: GET
+  queryParams:
+    resource: workspace
+    metrics: pending_invites
+    view: summary
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "data": {
+              "summary": {
+                  "schema": {
+                      "columns": [
+                          {
+                              "name": "count",
+                              "type": "INTEGER",
+                              "description": "Total number Pending invites."
+                          }
+                      ]
+                  },
+                  "rows": [
+                      [
+                          65
+                      ]
+                  ]
+              }
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "data": {
+                  "type": "object",
+                  "properties": {
+                      "summary": {
+                          "type": "object",
+                          "properties": {
+                              "schema": {
+                                  "type": "object",
+                                  "properties": {
+                                      "columns": {
+                                          "type": "array",
+                                          "description": "A list of column entries.",
+                                          "items": {
+                                              "type": "object",
+                                              "properties": {
+                                                  "name": {
+                                                      "type": "string",
+                                                      "description": "The name of the column."
+                                                  },
+                                                  "type": {
+                                                      "type": "string",
+                                                      "enum": [
+                                                          "DATE",
+                                                          "STRING",
+                                                          "INTEGER",
+                                                          "TIMESTAMP",
+                                                          "BOOLEAN",
+                                                          "NUMBER",
+                                                          "FLOAT"
+                                                      ],
+                                                      "description": "The data type of the column."
+                                                  },
+                                                  "format": {
+                                                      "type": "string",
+                                                      "description": "The data type's format."
+                                                  },
+                                                  "description": {
+                                                      "type": "string",
+                                                      "description": "A description of what the column represents."
+                                                  }
+                                              }
+                                          }
+                                      }
+                                  }
+                              },
+                              "rows": {
+                                  "type": "array",
+                                  "description": "A list of data row entries. Each row is an array of values that correspond to the columns defined in the schema.",
+                                  "items": {
+                                      "type": "array",
+                                      "items": {
+                                          "type": [
+                                              "string",
+                                              "integer",
+                                              "number",
+                                              "boolean",
+                                              "null"
+                                          ]
+                                      }
+                                  }
+                              },
+                              "pagination": {
+                                  "type": "object",
+                                  "description": "Information about the response pagination.",
+                                  "properties": {
+                                      "total": {
+                                          "type": "integer",
+                                          "description": "The total number of records available."
+                                      },
+                                      "limit": {
+                                          "type": "integer",
+                                          "description": "The maximum number of records returned in the response."
+                                      },
+                                      "offset": {
+                                          "type": "integer",
+                                          "description": "The number of records skipped."
+                                      },
+                                      "has_more": {
+                                          "type": "boolean",
+                                          "description": "Indicates whether more are records available."
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+order: 24000

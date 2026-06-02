@@ -1,0 +1,117 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/environments/:environmentId
+  method: PATCH
+  pathVariables:
+    environmentId: 5daabc50-8451-43f6-922d-96b403b4f28e
+  body:
+    type: json
+    content: |-
+      [
+          {
+              "op": "remove",
+              "path": "/values/4"
+          },
+          {
+              "op": "remove",
+              "path": "/values/3"
+          },
+          {
+              "op": "remove",
+              "path": "/values/2"
+          },
+          {
+              "op": "remove",
+              "path": "/values/1"
+          }
+      ]
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "environment": {
+              "id": "5daabc50-8451-43f6-922d-96b403b4f28e",
+              "name": "Test API Environment",
+              "owner": "12345678",
+              "createdAt": "2025-03-10T15:37:00.000Z",
+              "updatedAt": "2025-03-10T15:54:02.000Z",
+              "values": [
+                  {
+                      "key": "x-api-key",
+                      "value": "{{x-api-key}}",
+                      "type": "default",
+                      "enabled": true
+                  }
+              ],
+              "uid": "12345678-5daabc50-8451-43f6-922d-96b403b4f28e"
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "environment": {
+                  "type": "object",
+                  "description": "Information about the environment.",
+                  "properties": {
+                      "id": {
+                          "type": "string",
+                          "description": "The environment's ID."
+                      },
+                      "name": {
+                          "type": "string",
+                          "description": "The environment's name."
+                      },
+                      "owner": {
+                          "type": "string",
+                          "description": "The ID of environment's owner."
+                      },
+                      "createdAt": {
+                          "type": "string",
+                          "format": "date-time",
+                          "description": "The date and time at which the environment was created."
+                      },
+                      "updatedAt": {
+                          "type": "string",
+                          "format": "date-time",
+                          "description": "The date and time at which the environment was last updated."
+                      },
+                      "values": {
+                          "type": "array",
+                          "description": "A list of the environment's variables.",
+                          "items": {
+                              "type": "object",
+                              "description": "Information about the variable.",
+                              "properties": {
+                                  "key": {
+                                      "type": "string",
+                                      "description": "The variable's name."
+                                  },
+                                  "value": {
+                                      "type": "string",
+                                      "description": "The variable's value."
+                                  },
+                                  "type": {
+                                      "type": "string",
+                                      "enum": ["default", "secret"],
+                                      "description": "The variable's type:\n- `secret` — The variable value is masked.\n- `default` — The variable value is visible in plain text."
+                                  },
+                                  "enabled": {
+                                      "type": "boolean",
+                                      "description": "If true, the variable is enabled."
+                                  }
+                              }
+                          }
+                      },
+                      "uid": {
+                          "type": "string",
+                          "description": "The environment's unique ID."
+                      }
+                  }
+              }
+          }
+      }
+order: 7000

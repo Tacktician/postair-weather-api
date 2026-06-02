@@ -1,0 +1,92 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/analytics-metadata?metrics=active_workspaces,license_consumption
+  method: GET
+  queryParams:
+    metrics: active_workspaces,license_consumption
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "data": {
+              "resources": [
+                  {
+                      "metrics": [
+                          {
+                              "description": "List of active workspaces in the selected period based on edits and API requests sent.",
+                              "metric": "active_workspaces"
+                          }
+                      ],
+                      "resource": "workspace",
+                      "description": "Workspace-level metrics and insights about activities and collaboration patterns"
+                  },
+                  {
+                      "metrics": [
+                          {
+                              "description": "Tracks how licenses are used across roles (members, partners, guests) and identifies unused seats.",
+                              "metric": "license_consumption"
+                          }
+                      ],
+                      "resource": "team",
+                      "description": "Team-level metrics and insights on team activity, license consumption, and organizational workspace trends"
+                  }
+              ],
+              "description": "Metadata for analytics APIs delivering usage, success, workspace and team trend insights in Postman"
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "data": {
+                  "type": "object",
+                  "description": "The Analytics API's metadata information.",
+                  "properties": {
+                      "description": {
+                          "type": "string",
+                          "description": "A description of the endpoint."
+                      },
+                      "resources": {
+                          "type": "array",
+                          "description": "A list of accepted resource values.",
+                          "items": {
+                              "type": "object",
+                              "description": "Information about the resource.",
+                              "properties": {
+                                  "resource": {
+                                      "type": "string",
+                                      "description": "The name of the resource."
+                                  },
+                                  "description": {
+                                      "type": "string",
+                                      "description": "A description of the resource."
+                                  },
+                                  "metrics": {
+                                      "type": "array",
+                                      "description": "A list of the resource's accepted metrics values.",
+                                      "items": {
+                                          "type": "object",
+                                          "description": "Information about the resource's metric.",
+                                          "properties": {
+                                              "metric": {
+                                                  "type": "string",
+                                                  "description": "The metric's name."
+                                              },
+                                              "description": {
+                                                  "type": "string",
+                                                  "description": "A description of the metric."
+                                              }
+                                          }
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+order: 2000

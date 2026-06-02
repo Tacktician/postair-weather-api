@@ -1,0 +1,45 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/collection-duplicate-tasks/:taskId
+  method: GET
+  pathVariables:
+    taskId: 12345678-66ae9950-0869-4e65-96b0-1e0e47e771af
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "task": {
+              "status": "completed",
+              "reason": null,
+              "id": "12345678-66ae9950-0869-4e65-96b0-1e0e47e771af"
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "task": {
+                  "type": "object",
+                  "properties": {
+                      "status": {
+                          "type": "string",
+                          "description": "The status of the collection duplication task.",
+                          "enum": ["completed", "processing", "failed"]
+                      },
+                      "reason": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "If the task failed, the reason why it failed to complete."
+                      },
+                      "id": {
+                          "type": "string",
+                          "description": "The task's ID."
+                      }
+                  }
+              }
+          }
+      }
+order: 1000

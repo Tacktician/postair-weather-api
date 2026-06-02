@@ -1,0 +1,220 @@
+$kind: http-request
+description: |-
+  Manages invitations and access to your team's [Partner Workspaces](https://learning.postman.com/docs/collaborating-in-postman/using-workspaces/partner-workspaces/manage/). You can use this endpoint to:
+
+  - Send Partner Workspace invitations to the given email addresses. Users who already exist in the partnership are added directly, while new users receive an invitation email.
+      
+  - Remove partners from a workspace.
+      
+  - Remove partners from a partnership and all of its workspaces.
+      
+
+  **Note:**
+
+  - Partner Workspaces are available on the Postman **Team** and **Enterprise** [plans](https://www.postman.com/pricing/).
+      
+  - This endpoint requires the following [roles](https://learning.postman.com/docs/administration/roles-and-permissions/), based on your plan:
+      
+      - **Team** — Requires the **Workspace Editor** role to invite or remove partners from workspaces. The **Admin** role is required for removing partners from all workspaces.
+          
+      - **Enterprise** — The **Partner Manager** role can perform all operations. The **Workspace Editor** role and **Admin** roles have the same permissions on this plan as they do on the Team plan. It's recommended to use the **Partner Manager** role if you're on an Enterprise plan.
+url: "{{baseUrl}}/invitations"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "action": "invite_partner",
+        "targetEntity": "workspace",
+        "targetEntityId": "{{targetEntityId}}",
+        "roleId": "{{roleId}}",
+        "target": {
+            "emails": [
+                "{{userEmailAddress}}"
+            ]
+        }
+    }
+
+    // For examples of removing users, reference the request's examples or the request body schema.
+  $type: |-
+    {
+        "type": "object",
+        "oneOf": [
+            {
+                "title": "Invite Partners",
+                "type": "object",
+                "description": "Invite partners to a Partner Workspace.",
+                "required": [
+                    "action",
+                    "targetEntity",
+                    "targetEntityId",
+                    "roleId",
+                    "target"
+                ],
+                "properties": {
+                    "action": {
+                        "type": "string",
+                        "description": "The `invite_partner` action.",
+                        "enum": [
+                            "invite_partner"
+                        ]
+                    },
+                    "targetEntity": {
+                        "type": "string",
+                        "description": "The `workspace` value.",
+                        "enum": [
+                            "workspace"
+                        ]
+                    },
+                    "targetEntityId": {
+                        "type": "string",
+                        "maxLength": 60,
+                        "minLength": 1,
+                        "description": "The Partner Workspace's ID."
+                    },
+                    "roleId": {
+                        "type": "string",
+                        "description": "The role ID to assign to invited partners:\n- `4` — Viewer\n- `5` — Editor\n- `6` — Viewer and Partner Lead\n- `7` — Editor and Partner Lead\n",
+                        "enum": [
+                            "4",
+                            "5",
+                            "6",
+                            "7"
+                        ]
+                    },
+                    "target": {
+                        "type": "object",
+                        "description": "The target on which to perform the action.",
+                        "required": [
+                            "emails"
+                        ],
+                        "properties": {
+                            "emails": {
+                                "type": "array",
+                                "minItems": 1,
+                                "uniqueItems": true,
+                                "description": "A list of the partners' email addresses.",
+                                "items": {
+                                    "type": "string",
+                                    "format": "email",
+                                    "minLength": 1,
+                                    "maxLength": 254,
+                                    "description": "A partner's email address."
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "title": "Remove Partners",
+                "type": "object",
+                "description": "The request body for removing partners from a Partner Workspace.",
+                "required": [
+                    "action",
+                    "targetEntity",
+                    "targetEntityId",
+                    "target"
+                ],
+                "properties": {
+                    "targetEntity": {
+                        "type": "string",
+                        "description": "The `workspace` value.",
+                        "enum": [
+                            "workspace"
+                        ]
+                    },
+                    "targetEntityId": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 60,
+                        "description": "The Partner Workspace ID from which to remove partners."
+                    },
+                    "action": {
+                        "type": "string",
+                        "enum": [
+                            "remove_partner"
+                        ],
+                        "description": "The `remove_partner` action."
+                    },
+                    "target": {
+                        "type": "object",
+                        "description": "The target on which to perform the action.",
+                        "required": [
+                            "userIds"
+                        ],
+                        "properties": {
+                            "userIds": {
+                                "type": "array",
+                                "uniqueItems": true,
+                                "minItems": 1,
+                                "description": "A list of partner user IDs to remove from the Partner Workspace.",
+                                "items": {
+                                    "type": "string",
+                                    "minLength": 1,
+                                    "maxLength": 25,
+                                    "description": "The partner's ID."
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "type": "object",
+                "title": "Remove Partner From Partnership",
+                "description": "The request body for removing partners from partnership with a team.",
+                "required": [
+                    "action",
+                    "targetEntity",
+                    "targetEntityId",
+                    "target"
+                ],
+                "properties": {
+                    "targetEntity": {
+                        "type": "string",
+                        "enum": [
+                            "team"
+                        ],
+                        "description": "The `team` value."
+                    },
+                    "targetEntityId": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 60,
+                        "description": "The team ID from which to remove partners."
+                    },
+                    "action": {
+                        "type": "string",
+                        "enum": [
+                            "remove_partner"
+                        ],
+                        "description": "The `remove_partner` action."
+                    },
+                    "target": {
+                        "type": "object",
+                        "description": "The target on which to perform the action.",
+                        "required": [
+                            "userIds"
+                        ],
+                        "properties": {
+                            "userIds": {
+                                "type": "array",
+                                "uniqueItems": true,
+                                "minItems": 1,
+                                "description": "A list of partner publishers' team IDs.",
+                                "items": {
+                                    "type": "string",
+                                    "minLength": 1,
+                                    "maxLength": 25,
+                                    "description": "The partner's ID."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        ]
+    }
+examples: ./.resources/Manage Partner Workspace invites.resources/examples
+order: 11000

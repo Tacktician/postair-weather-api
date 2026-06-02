@@ -1,0 +1,72 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/users?groupId=123
+  method: GET
+  queryParams:
+    groupId: "123"
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "data": [
+              {
+                  "id": 1,
+                  "name": "Taylor Lee",
+                  "username": "taylor-lee",
+                  "email": "taylor.lee@example.com",
+                  "roles": [
+                      "admin",
+                      "user"
+                  ],
+                  "joinedAt": "2022-11-23T14:38:25.000Z"
+              }
+          ]
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "data": {
+                  "type": "array",
+                  "items": {
+                      "type": "object",
+                      "description": "Information about the user.",
+                      "properties": {
+                          "id": {
+                              "type": "integer",
+                              "description": "The user's ID."
+                          },
+                          "name": {
+                              "type": "string",
+                              "description": "The user's name."
+                          },
+                          "username": {
+                              "type": "string",
+                              "description": "The user's username."
+                          },
+                          "email": {
+                              "type": "string",
+                              "format": "email",
+                              "description": "The user's email address."
+                          },
+                          "roles": {
+                              "type": "array",
+                              "description": "The user's roles.",
+                              "items": {
+                                  "type": "string"
+                              }
+                          },
+                          "joinedAt": {
+                              "type": "string",
+                              "format": "date-time",
+                              "description": "The user's join date."
+                          }
+                      }
+                  }
+              }
+          }
+      }
+order: 2000

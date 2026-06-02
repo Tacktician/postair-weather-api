@@ -1,0 +1,102 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/environments/:environmentId
+  method: GET
+  pathVariables:
+    environmentId: 12345678-5daabc50-8451-43f6-922d-96b403b4f28e
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "environment": {
+              "id": "5daabc50-8451-43f6-922d-96b403b4f28e",
+              "name": "Test Environment",
+              "owner": "12345678",
+              "createdAt": "2020-11-05T13:59:22.000Z",
+              "updatedAt": "2020-11-05T13:59:23.000Z",
+              "values": [
+                  {
+                      "key": "collectionId",
+                      "value": "12ece9e1-2abf-4edc-8e34-de66e74114d2",
+                      "enabled": true,
+                      "type": "default",
+                      "description": "The collection's ID."
+                  }
+              ],
+              "isPublic": false
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "environment": {
+                  "type": "object",
+                  "description": "Information about the environment.",
+                  "properties": {
+                      "id": {
+                          "type": "string",
+                          "description": "The environment's ID."
+                      },
+                      "name": {
+                          "type": "string",
+                          "description": "The environment's name."
+                      },
+                      "owner": {
+                          "type": "string",
+                          "description": "The ID of environment's owner."
+                      },
+                      "createdAt": {
+                          "type": "string",
+                          "format": "date-time",
+                          "description": "The date and time at which the environment was created."
+                      },
+                      "updatedAt": {
+                          "type": "string",
+                          "format": "date-time",
+                          "description": "The date and time at which the environment was last updated."
+                      },
+                      "values": {
+                          "type": "array",
+                          "description": "A list of the environment's variables.",
+                          "items": {
+                              "type": "object",
+                              "description": "Information about the variable.",
+                              "properties": {
+                                  "key": {
+                                      "type": "string",
+                                      "description": "The variable's name."
+                                  },
+                                  "value": {
+                                      "type": "string",
+                                      "description": "The variable's value."
+                                  },
+                                  "enabled": {
+                                      "type": "boolean",
+                                      "description": "If true, the variable is enabled."
+                                  },
+                                  "type": {
+                                      "type": "string",
+                                      "enum": ["secret", "default"],
+                                      "description": "The variable's type:\n- `secret` — The variable value is masked.\n- `default` — The variable value is visible in plain text."
+                                  },
+                                  "description": {
+                                      "type": "string",
+                                      "maxLength": 512,
+                                      "description": "The variable's description."           
+                                  }
+                              }
+                          }
+                      },
+                      "isPublic": {
+                          "type": "boolean",
+                          "description": "If true, the environment is public and visible to all users."
+                      }
+                  }
+              }
+          }
+      }
+order: 1000

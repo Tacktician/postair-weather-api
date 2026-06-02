@@ -1,0 +1,63 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/apis/:apiId
+  method: GET
+  headers:
+    Accept: application/vnd.api.v10+json
+  pathVariables:
+    apiId: 5360b75f-447e-467c-9299-12fd6c92450d
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "description": "This is a test API.",
+          "id": "5360b75f-447e-467c-9299-12fd6c92450d",
+          "updatedBy": "12345678",
+          "createdBy": "12345678",
+          "createdAt": "2022-06-09T14:48:45.000Z",
+          "name": "Test API",
+          "summary": "Test API.",
+          "updatedAt": "2022-06-09T19:50:49.000Z"
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "description": {
+                  "type": "string",
+                  "description": "The API's description."
+              },
+              "id": {
+                  "type": "string",
+                  "description": "The API's ID."
+              },
+              "updatedBy": {
+                  "type": "string",
+                  "description": "The user ID of the user that updated the API."
+              },
+              "createdBy": {
+                  "type": "string",
+                  "description": "The user ID of the user that created the API."
+              },
+              "createdAt": {
+                  "type": "string",
+                  "description": "The date and time at which the API was created."
+              },
+              "name": {
+                  "type": "string",
+                  "description": "The API's name."
+              },
+              "summary": {
+                  "type": "string",
+                  "description": "The API's short summary."
+              },
+              "updatedAt": {
+                  "type": "string",
+                  "description": "The date and time at which the API was updated."
+              }
+          }
+      }
+order: 1000

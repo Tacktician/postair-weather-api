@@ -1,0 +1,183 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/analytics?resource=workspace&metrics=active_collections&view=detailed&workspaceType=public,partner,internal&duration=last_30_days&limit=3
+  method: GET
+  queryParams:
+    resource: workspace
+    metrics: active_collections
+    view: detailed
+    workspaceType: public,partner,internal
+    duration: last_30_days
+    limit: "3"
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "data": {
+              "summary": {
+                  "pagination": {
+                      "total": 38,
+                      "limit": 3,
+                      "offset": 0,
+                      "has_more": true
+                  },
+                  "schema": {
+                      "columns": [
+                          {
+                              "type": "BOOLEAN",
+                              "name": "is_hidden",
+                              "description": "Indicates whether the collection is hidden."
+                          },
+                          {
+                              "type": "STRING",
+                              "name": "collection_id",
+                              "description": "Unique identifier of the collection."
+                          },
+                          {
+                              "type": "STRING",
+                              "name": "collection_name",
+                              "description": "Display name of the collection."
+                          },
+                          {
+                              "type": "STRING",
+                              "name": "workspace_name",
+                              "description": "Name of the workspace containing the collection."
+                          },
+                          {
+                              "type": "STRING",
+                              "name": "created_by",
+                              "description": "Unique identifier assigned to the user."
+                          },
+                          {
+                              "type": "INTEGER",
+                              "name": "api_calls_count",
+                              "description": "Total number of API calls made using requests in this collection."
+                          }
+                      ]
+                  },
+                  "rows": [
+                      [
+                          false,
+                          "12345678-f5c93a94-8981-4005-a75a-a02d5a4e5235",
+                          "Service Monitoring API",
+                          "Engineering Hub",
+                          "12345678",
+                          152
+                      ],
+                      [
+                          false,
+                          "975a340d-5911-486c-8382-8d952ac4f336",
+                          "Import Tools",
+                          "Gateway Tools",
+                          "12345678",
+                          100
+                      ],
+                      [
+                          false,
+                          "36c18c9f-e942-4119-bef8-2cf0ebede4e9",
+                          "User Authentication API",
+                          "Partner API Hub",
+                          "12345678",
+                          95
+                      ]
+                  ]
+              }
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "data": {
+                  "type": "object",
+                  "properties": {
+                      "summary": {
+                          "type": "object",
+                          "properties": {
+                              "schema": {
+                                  "type": "object",
+                                  "properties": {
+                                      "columns": {
+                                          "type": "array",
+                                          "description": "A list of column entries.",
+                                          "items": {
+                                              "type": "object",
+                                              "properties": {
+                                                  "name": {
+                                                      "type": "string",
+                                                      "description": "The name of the column."
+                                                  },
+                                                  "type": {
+                                                      "type": "string",
+                                                      "enum": [
+                                                          "DATE",
+                                                          "STRING",
+                                                          "INTEGER",
+                                                          "TIMESTAMP",
+                                                          "BOOLEAN",
+                                                          "NUMBER",
+                                                          "FLOAT"
+                                                      ],
+                                                      "description": "The data type of the column."
+                                                  },
+                                                  "format": {
+                                                      "type": "string",
+                                                      "description": "The data type's format."
+                                                  },
+                                                  "description": {
+                                                      "type": "string",
+                                                      "description": "A description of what the column represents."
+                                                  }
+                                              }
+                                          }
+                                      }
+                                  }
+                              },
+                              "rows": {
+                                  "type": "array",
+                                  "description": "A list of data row entries. Each row is an array of values that correspond to the columns defined in the schema.",
+                                  "items": {
+                                      "type": "array",
+                                      "items": {
+                                          "type": [
+                                              "string",
+                                              "integer",
+                                              "number",
+                                              "boolean",
+                                              "null"
+                                          ]
+                                      }
+                                  }
+                              },
+                              "pagination": {
+                                  "type": "object",
+                                  "description": "Information about the response pagination.",
+                                  "properties": {
+                                      "total": {
+                                          "type": "integer",
+                                          "description": "The total number of records available."
+                                      },
+                                      "limit": {
+                                          "type": "integer",
+                                          "description": "The maximum number of records returned in the response."
+                                      },
+                                      "offset": {
+                                          "type": "integer",
+                                          "description": "The number of records skipped."
+                                      },
+                                      "has_more": {
+                                          "type": "boolean",
+                                          "description": "Indicates whether more are records available."
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+order: 13000

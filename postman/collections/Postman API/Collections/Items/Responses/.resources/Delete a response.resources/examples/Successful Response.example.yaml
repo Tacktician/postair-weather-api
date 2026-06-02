@@ -1,0 +1,67 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/collections/:collectionId/responses/:responseId
+  method: DELETE
+  pathVariables:
+    collectionId: 12ece9e1-2abf-4edc-8e34-de66e74114d2
+    responseId: cc364734-7dfd-4bfc-897d-be763dcdbb07
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "model_id": "cc364734-7dfd-4bfc-897d-be763dcdbb07",
+          "meta": {
+              "model": "response",
+              "action": "destroy"
+          },
+          "data": {
+              "id": "cc364734-7dfd-4bfc-897d-be763dcdbb07",
+              "owner": "12345678"
+          },
+          "revision": 24997417224
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "model_id": {
+                  "type": "string",
+                  "description": "The response's ID."
+              },
+              "meta": {
+                  "type": "object",
+                  "description": "A Postman-specific response that contains information about the internal performed operation.",
+                  "additionalProperties": true,
+                  "properties": {
+                      "model": {
+                          "type": "string"
+                      },
+                      "action": {
+                          "type": "string"
+                      }
+                  }
+              },
+              "data": {
+                  "type": "object",
+                  "description": "The response's information.",
+                  "properties": {
+                      "id": {
+                          "type": "string",
+                          "description": "The response's ID."
+                      },
+                      "owner": {
+                          "type": "string",
+                          "description": "The user ID of the request's owner."
+                      }
+                  }
+              },
+              "revision": {
+                  "type": "integer",
+                  "description": "An internal revision ID. Its value increments each time the resource changes. You can use this ID to track whether there were changes since the last time you fetched the resource."
+              }
+          }
+      }
+order: 1000

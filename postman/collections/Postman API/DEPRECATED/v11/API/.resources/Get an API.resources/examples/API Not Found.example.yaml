@@ -1,0 +1,38 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/apis/:apiId
+  method: GET
+  headers:
+    Accept: application/vnd.api.v10+json
+  pathVariables:
+    apiId: 5360b75f-447e-467c-9299-12fd6c92450d
+response:
+  statusCode: 404
+  statusText: Not Found
+  body:
+    type: json
+    content: |-
+      {
+          "type": "instanceNotFoundError",
+          "title": "We could not find the API you are looking for",
+          "detail": "We could not find the API you are looking for."
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "type": {
+                  "type": "string",
+                  "description": "The type of error."
+              },
+              "title": {
+                  "type": "string",
+                  "description": "A short summary of the problem."
+              },
+              "detail": {
+                  "type": "string",
+                  "description": "Information about the error."
+              }
+          }
+      }
+order: 8000

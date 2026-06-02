@@ -1,0 +1,42 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/collection-duplicate-tasks/:taskId
+  method: GET
+  pathVariables:
+    taskId: 12345678-66ae9950
+response:
+  statusCode: 400
+  statusText: Bad Request
+  body:
+    type: json
+    content: |-
+      {
+          "title": "Bad request",
+          "status": 400,
+          "type": "https://api.postman.com/problems/bad-request",
+          "detail": "Invalid task id"
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "type": {
+                  "type": "string",
+                  "format": "uri",
+                  "description": "The [URI reference](https://www.rfc-editor.org/rfc/rfc3986) that identifies the type of problem."
+              },
+              "title": {
+                  "type": "string",
+                  "description": "A short summary of the problem."
+              },
+              "detail": {
+                  "type": "string",
+                  "description": "Information about the error."
+              },
+              "status": {
+                  "type": "integer",
+                  "description": "The error's HTTP status code."
+              }
+          }
+      }
+order: 4000

@@ -1,0 +1,94 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/me
+  method: GET
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "user": {
+              "id": 12345678,
+              "sub": "4d71435e-0e67-45b9-9d4c-e3262166d157",
+              "username": "taylor-lee",
+              "email": "taylor.lee@example.com",
+              "fullName": "Taylor Lee",
+              "avatar": null,
+              "isPublic": true,
+              "emailVerified": true,
+              "teamId": 123,
+              "teamName": "Test Team",
+              "teamDomain": "test-team",
+              "roles": [
+                  "user"
+              ]
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "user": {
+                  "type": "object",
+                  "properties": {
+                      "id": {
+                          "type": "integer",
+                          "description": "The user's Postman ID."
+                      },
+                      "sub": {
+                          "type": "string",
+                          "description": "The authenticated user's ID. This ID is unique to the user and isn't associated with any Postman teams. Can return in UUID or ID format."
+                      },
+                      "username": {
+                          "type": "string",
+                          "description": "The user's username."
+                      },
+                      "email": {
+                          "type": "string",
+                          "format": "email",
+                          "description": "The user's email address."
+                      },
+                      "fullName": {
+                          "type": "string",
+                          "description": "The user's full name."
+                      },
+                      "avatar": {
+                          "type": "string",
+                          "format": "uri",
+                          "nullable": true,
+                          "description": "The user's avatar image URL."
+                      },
+                      "isPublic": {
+                          "type": "boolean",
+                          "description": "If true, the user's information is public and visible to all users."
+                      },
+                      "emailVerified": {
+                          "type": "boolean",
+                          "description": "If true, the user's email address is verified by Postman."
+                      },
+                      "teamId": {
+                          "type": "integer",
+                          "description": "The team ID the user is assigned to. This returns a `0` value if the user is not assigned to a team."
+                      },
+                      "teamName": {
+                          "type": "string",
+                          "description": "The name of the team the user is assigned to."
+                      },
+                      "teamDomain": {
+                          "type": "string",
+                          "description": "The team's Postman domain ID."
+                      },
+                      "roles": {
+                          "type": "array",
+                          "description": "A list of the user's assigned [roles](https://learning.postman.com/docs/collaborating-in-postman/roles-and-permissions/#team-roles).",
+                          "items": {
+                              "type": "string"
+                          }
+                      }
+                  }
+              }
+          }
+      }
+order: 2000

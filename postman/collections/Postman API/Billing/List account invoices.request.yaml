@@ -1,0 +1,45 @@
+$kind: http-request
+description: Gets all invoices for a Postman billing account filtered by the status of the invoice.
+url: "{{baseUrl}}/accounts/:accountId/invoices?status=PAID"
+method: GET
+queryParams:
+  - key: status
+    value: PAID
+    description: (Required) The invoice status. Currently accepts only the `PAID` value.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "enum": [
+              "PAID"
+            ],
+            "uniqueItems": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+pathVariables:
+  - key: accountId
+    value: ""
+    description: The account's ID.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "uniqueItems": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+examples: ./.resources/List account invoices.resources/examples
+order: 2000

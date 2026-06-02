@@ -1,0 +1,57 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/scim/v2/Users
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+          "schemas": [
+              "urn:ietf:params:scim:schemas:core:2.0:User"
+          ],
+          "userName": "taylor-lee@example.com",
+          "name": {
+              "givenName": "Taylor",
+              "familyName": "Lee"
+          },
+          "externalId": "12345678",
+          "displayName": "Taylor Lee",
+          "locale": "en-US",
+          "active": true
+      }
+response:
+  statusCode: 500
+  statusText: Internal Server Error
+  body:
+    type: json
+    content: |-
+      {
+          "schemas": [
+              "urn:ietf:params:scim:api:messages:2.0:Error"
+          ],
+          "detail": "Unable to add members to the team. Try again — it should work next time around.",
+          "status": "500"
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "schemas": {
+                  "type": "array",
+                  "description": "The [SCIM schema URI](https://www.iana.org/assignments/scim/scim.xhtml).",
+                  "items": {
+                      "type": "string",
+                      "format": "uri"
+                  }
+              },
+              "detail": {
+                  "type": "string",
+                  "description": "Information about the error."
+              },
+              "status": {
+                  "type": "string",
+                  "description": "The HTTP status code."
+              }
+          }
+      }
+order: 11000

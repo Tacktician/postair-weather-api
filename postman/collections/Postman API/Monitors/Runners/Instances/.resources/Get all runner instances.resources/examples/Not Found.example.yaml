@@ -1,0 +1,45 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/runners/:runnerId/instances
+  method: GET
+  pathVariables:
+    runnerId: 1f08d6ba-c377-4ca0-be80-af81daf8fef9
+response:
+  statusCode: 404
+  statusText: Not Found
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+          "type": "urn:error:monitor:instanceNotFoundError",
+          "title": "Instance not found in the database.",
+          "detail": "Runner not found.",
+          "createdAt": "2025-11-06T14:14:45.934Z"
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "type": {
+                  "type": "string",
+                  "format": "uri",
+                  "description": "The [URI reference](https://www.rfc-editor.org/rfc/rfc3986) that identifies the type of problem."
+              },
+              "title": {
+                  "type": "string",
+                  "description": "A short summary of the problem."
+              },
+              "detail": {
+                  "type": "string",
+                  "description": "Information about the error."
+              },
+              "createdAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "The date and time at which the error occurred."
+              }
+          }
+      }
+order: 7000

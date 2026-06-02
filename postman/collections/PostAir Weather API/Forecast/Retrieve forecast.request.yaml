@@ -1,0 +1,19 @@
+$kind: http-request
+description: Returns a list of forecasts
+url: "{{baseUrl}}/forecast?forecastCity=Atlanta"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: forecastCity
+    value: Atlanta
+    $type: string
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("Status code is 200", function () {
+          pm.response.to.have.status(200);
+      });
+    language: text/javascript
+examples: ./.resources/Retrieve forecast.resources/examples
+order: 1000

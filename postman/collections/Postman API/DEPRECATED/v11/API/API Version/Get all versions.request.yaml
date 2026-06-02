@@ -1,0 +1,77 @@
+$kind: http-request
+description: Gets all the published versions of an API.
+url: "{{baseUrl}}/apis/:apiId/versions"
+method: GET
+headers:
+  - key: Accept
+    value: application/vnd.api.v10+json
+    description: The request header required to use the endpoint.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "enum": [
+              "application/vnd.api.v10+json"
+            ],
+            "uniqueItems": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+queryParams:
+  - key: cursor
+    value: ""
+    disabled: true
+    description: The pointer to the first record of the set of paginated results.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "uniqueItems": false
+          }
+        }
+      }
+  - key: limit
+    value: ""
+    disabled: true
+    description: The maximum number of rows to return in the response. This value defaults to `10`.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer",
+            "deprecated": false,
+            "default": "10",
+            "uniqueItems": false
+          }
+        }
+      }
+pathVariables:
+  - key: apiId
+    value: "{{apiId}}"
+    description: The API's ID.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "uniqueItems": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+examples: ./.resources/Get all versions.resources/examples
+order: 2000

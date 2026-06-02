@@ -1,0 +1,87 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/workspaces/:workspaceId/roles?include=scim
+  method: GET
+  queryParams:
+    include: scim
+  pathVariables:
+    workspaceId: 1f0df51a-8658-4ee8-a2a1-d2567dfa09a9
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "roles": [
+              {
+                  "id": "1",
+                  "displayName": "Viewer",
+                  "user": [
+                      "405775fe15ed41872a8eea4c8aa2b38cda9749812cc55c99"
+                  ]
+              },
+              {
+                  "id": "3",
+                  "displayName": "Admin",
+                  "group": [
+                      "561631fq14ed41872a8eea4c8aa2b38cda9749812cc55c00"
+                  ]
+              },
+              {
+                  "id": "5",
+                  "displayName": "Editor",
+                  "partner": [
+                      "43215678"
+                  ]
+              }
+          ]
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "roles": {
+                  "type": "array",
+                  "description": "A list of workspace roles and the users and groups assigned to them.",
+                  "items": {
+                      "type": "object",
+                      "properties": {
+                          "id": {
+                              "type": "string",
+                              "description": "The role's ID."
+                          },
+                          "displayName": {
+                              "type": "string",
+                              "description": "The role's display name."
+                          },
+                          "user": {
+                              "type": "array",
+                              "description": "A list of user IDs assigned to the role.",
+                              "items": {
+                                  "type": "string",
+                                  "description": "The user's ID or SCIM ID."
+                              }
+                          },
+                          "group": {
+                              "type": "array",
+                              "description": "A list of user group IDs assigned to the role.",
+                              "items": {
+                                  "type": "string",
+                                  "description": "The group's ID or SCIM ID."
+                              }
+                          },
+                          "partner": {
+                              "type": "array",
+                              "description": "A list of partner IDs assigned to the role.",
+                              "items": {
+                                  "type": "string",
+                                  "description": "The partner's ID."
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+order: 2000

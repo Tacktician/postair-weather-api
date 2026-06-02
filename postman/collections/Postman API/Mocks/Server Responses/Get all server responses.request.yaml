@@ -1,0 +1,24 @@
+$kind: http-request
+description: Gets all of a mock server's server responses.
+url: "{{baseUrl}}/mocks/:mockId/server-responses"
+method: GET
+pathVariables:
+  - key: mockId
+    value: ""
+    description: The mock's ID.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "uniqueItems": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+examples: ./.resources/Get all server responses.resources/examples
+order: 2000

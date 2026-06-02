@@ -1,0 +1,81 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/mocks/:mockId/server-responses/:serverResponseId
+  method: GET
+  pathVariables:
+    mockId: 12345678-e3d951bf-873f-49ac-a658-b2dcb91d3289
+    serverResponseId: 965cdd16-fe22-4d96-a161-3d05490ac421
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "createdAt": "2022-08-02T15:08:03.000Z",
+          "updatedAt": "2022-08-02T15:08:03.000Z",
+          "id": "965cdd16-fe22-4d96-a161-3d05490ac421",
+          "name": "Internal Server Error",
+          "statusCode": 500,
+          "headers": [],
+          "language": null,
+          "body": "{\n    \"message\": \"Something went wrong; try again later.\"\n}",
+          "createdBy": "20891195",
+          "updatedBy": "20891195",
+          "mock": "32cd624d-9986-4f20-9048-89252f722269"
+      }
+    $type: |-
+      {
+          "type": "object",
+          "description": "Information about the mock server's response.",
+          "properties": {
+              "createdAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "The date and time at which the server response was created."
+              },
+              "updatedAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "The date and time at which the server response was last updated."
+              },
+              "id": {
+                  "type": "string",
+                  "description": "The server response's ID."
+              },
+              "name": {
+                  "type": "string",
+                  "description": "The server response's name."
+              },
+              "statusCode": {
+                  "type": "integer",
+                  "description": "The server response's 5xx HTTP response code."
+              },
+              "headers": {
+                  "type": "array",
+                  "description": "The server response's request headers key-value pairs, such as Content-Type, Accept, encoding, and other information."
+              },
+              "language": {
+                  "type": "string",
+                  "nullable": true,
+                  "description": "The server response's body language type."
+              },
+              "body": {
+                  "type": "string",
+                  "description": "The server response's body that returns when calling the mock server."
+              },
+              "createdBy": {
+                  "type": "string",
+                  "description": "The user ID of the user who created the server response."
+              },
+              "updatedBy": {
+                  "type": "string",
+                  "description": "The user ID of the user who last updated the server response."
+              },
+              "mock": {
+                  "type": "string",
+                  "description": "The associated mock server's ID."
+              }
+          }
+      }
+order: 1000

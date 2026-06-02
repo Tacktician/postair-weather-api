@@ -1,0 +1,114 @@
+$kind: http-request
+description: |-
+  Gets the files in an API schema. You can use the `versionId` query parameter to get schema files published in an API version.
+
+  **Note:**
+
+  The `versionId` query parameter is a **required** parameter for API viewers.
+url: "{{baseUrl}}/apis/:apiId/schemas/:schemaId/files"
+method: GET
+headers:
+  - key: Accept
+    value: application/vnd.api.v10+json
+    description: The request header required to use the endpoint.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "enum": [
+              "application/vnd.api.v10+json"
+            ],
+            "uniqueItems": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+queryParams:
+  - key: limit
+    value: ""
+    disabled: true
+    description: The maximum number of rows to return in the response. This value defaults to `10`.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer",
+            "deprecated": false,
+            "default": "10",
+            "uniqueItems": false
+          }
+        }
+      }
+  - key: versionId
+    value: ""
+    disabled: true
+    description: The API's version ID.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "uniqueItems": false
+          }
+        }
+      }
+  - key: cursor
+    value: ""
+    disabled: true
+    description: The pointer to the first record of the set of paginated results.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "uniqueItems": false
+          }
+        }
+      }
+pathVariables:
+  - key: apiId
+    value: "{{apiId}}"
+    description: The API's ID.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "uniqueItems": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+  - key: schemaId
+    value: "{{schemaId}}"
+    description: The API schema's ID.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "uniqueItems": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+examples: ./.resources/Get schema files.resources/examples
+order: 4000

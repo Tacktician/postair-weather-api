@@ -1,0 +1,192 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/analytics?resource=team&metrics=workspace_distribution&view=summary&duration=last_6_months
+  method: GET
+  queryParams:
+    resource: team
+    metrics: workspace_distribution
+    view: summary
+    duration: last_6_months
+  body:
+    type: json
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "data": {
+              "summary": {
+                  "schema": {
+                      "columns": [
+                          {
+                              "name": "date",
+                              "type": "DATE",
+                              "format": "YYYY-MM-DD",
+                              "description": "Reporting date for the aggregated workspace counts."
+                          },
+                          {
+                              "name": "total",
+                              "type": "INTEGER",
+                              "description": "Total number of workspaces for the given date."
+                          },
+                          {
+                              "name": "internal",
+                              "type": "INTEGER",
+                              "description": "Number of internal workspaces."
+                          },
+                          {
+                              "name": "partner",
+                              "type": "INTEGER",
+                              "description": "Number of partner workspaces."
+                          },
+                          {
+                              "name": "public",
+                              "type": "INTEGER",
+                              "description": "Number of public workspaces."
+                          }
+                      ]
+                  },
+                  "rows": [
+                      [
+                          "2025-02-01",
+                          1300,
+                          950,
+                          200,
+                          150
+                      ],
+                      [
+                          "2025-03-01",
+                          1350,
+                          980,
+                          210,
+                          160
+                      ],
+                      [
+                          "2025-04-01",
+                          1370,
+                          995,
+                          215,
+                          160
+                      ],
+                      [
+                          "2025-05-01",
+                          1380,
+                          1000,
+                          220,
+                          160
+                      ],
+                      [
+                          "2025-06-01",
+                          1400,
+                          1020,
+                          225,
+                          155
+                      ],
+                      [
+                          "2025-07-01",
+                          1420,
+                          1035,
+                          230,
+                          155
+                      ]
+                  ]
+              }
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "data": {
+                  "type": "object",
+                  "properties": {
+                      "summary": {
+                          "type": "object",
+                          "properties": {
+                              "schema": {
+                                  "type": "object",
+                                  "properties": {
+                                      "columns": {
+                                          "type": "array",
+                                          "description": "A list of column entries.",
+                                          "items": {
+                                              "type": "object",
+                                              "properties": {
+                                                  "name": {
+                                                      "type": "string",
+                                                      "description": "The name of the column."
+                                                  },
+                                                  "type": {
+                                                      "type": "string",
+                                                      "enum": [
+                                                          "DATE",
+                                                          "STRING",
+                                                          "INTEGER",
+                                                          "TIMESTAMP",
+                                                          "BOOLEAN",
+                                                          "NUMBER",
+                                                          "FLOAT"
+                                                      ],
+                                                      "description": "The data type of the column."
+                                                  },
+                                                  "format": {
+                                                      "type": "string",
+                                                      "description": "The data type's format."
+                                                  },
+                                                  "description": {
+                                                      "type": "string",
+                                                      "description": "A description of what the column represents."
+                                                  }
+                                              }
+                                          }
+                                      }
+                                  }
+                              },
+                              "rows": {
+                                  "type": "array",
+                                  "description": "A list of data row entries. Each row is an array of values that correspond to the columns defined in the schema.",
+                                  "items": {
+                                      "type": "array",
+                                      "items": {
+                                          "type": [
+                                              "string",
+                                              "integer",
+                                              "number",
+                                              "boolean",
+                                              "null"
+                                          ]
+                                      }
+                                  }
+                              },
+                              "pagination": {
+                                  "type": "object",
+                                  "description": "Information about the response pagination.",
+                                  "properties": {
+                                      "total": {
+                                          "type": "integer",
+                                          "description": "The total number of records available."
+                                      },
+                                      "limit": {
+                                          "type": "integer",
+                                          "description": "The maximum number of records returned in the response."
+                                      },
+                                      "offset": {
+                                          "type": "integer",
+                                          "description": "The number of records skipped."
+                                      },
+                                      "has_more": {
+                                          "type": "boolean",
+                                          "description": "Indicates whether more are records available."
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+order: 19000

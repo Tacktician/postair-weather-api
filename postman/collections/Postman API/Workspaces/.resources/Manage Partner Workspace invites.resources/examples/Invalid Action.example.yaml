@@ -1,0 +1,56 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/invitations
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+          "action": "invitePartner",
+          "targetEntity": "workspace",
+          "targetEntityId": "1f0df51a-8658-4ee8-a2a1-d2567dfa09a9",
+          "roleId": "4",
+          "target": {
+              "emails": [
+                  "alex.cruz@example.com",
+                  "mike.brown@example.com",
+                  "sara.smith@example.com"
+              ]
+          }
+      }
+response:
+  statusCode: 400
+  statusText: Bad Request
+  body:
+    type: json
+    content: |-
+      {
+          "type": "https://api.postman.com/problems/bad-request",
+          "title": "Invalid request body.",
+          "detail": "Invalid \"action\" property - should be one of: invite_partner, remove_partner",
+          "status": 400
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "detail": {
+                  "type": "string",
+                  "description": "Information about the error."
+              },
+              "type": {
+                  "type": "string",
+                  "format": "uri",
+                  "description": "The [URI reference](https://www.rfc-editor.org/rfc/rfc3986) that identifies the type of problem."
+              },
+              "title": {
+                  "type": "string",
+                  "description": "A short summary of the problem."
+              },
+              "status": {
+                  "type": "integer",
+                  "description": "The error's HTTP status code."
+              }
+          }
+      }
+order: 6000

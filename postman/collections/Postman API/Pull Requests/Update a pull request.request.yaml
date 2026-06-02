@@ -1,0 +1,43 @@
+$kind: http-request
+description: Updates an open pull request.
+url: "{{baseUrl}}/pull-requests/:pullRequestId"
+method: PUT
+pathVariables:
+  - key: pullRequestId
+    value: ""
+    description: The pull request's ID.
+body:
+  type: json
+  content: |-
+    {
+        "title": "{{pullRequestTitle}}",
+        "description": "{{pullRequestDescription}}",
+        "reviewers": [
+            "{{userId}}"
+        ]
+    }
+  $type: |-
+    {
+        "type": "object",
+        "required": ["reviewers", "title"],
+        "properties": {
+            "title": {
+                "type": "string",
+                "description": "The pull request's updated title."
+            },
+            "description": {
+                "type": "string",
+                "description": "The updated pull request description."
+            },
+            "reviewers": {
+                "type": "array",
+                "description": "An updated list of the pull request's assigned reviewers. This replaces all existing users assigned to the pull request with those you pass in the request body.",
+                "items": {
+                    "type": "string",
+                    "description": "The reviewer's user ID."
+                }
+            }
+        }
+    }
+examples: ./.resources/Update a pull request.resources/examples
+order: 3000

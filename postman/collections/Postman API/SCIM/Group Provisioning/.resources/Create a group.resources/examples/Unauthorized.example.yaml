@@ -1,0 +1,50 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/scim/v2/Groups
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+          "schemas": [
+              "urn:ietf:params:scim:schemas:core:2.0:Group"
+          ],
+          "displayName": "TestAPI",
+          "members": []
+      }
+response:
+  statusCode: 401
+  statusText: Unauthorized
+  body:
+    type: json
+    content: |-
+      {
+          "schemas": [
+              "urn:ietf:params:scim:api:messages:2.0:Error"
+          ],
+          "detail": "Unable to access the team. Check if you have entered a valid API key.",
+          "status": "401"
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "schemas": {
+                  "type": "array",
+                  "description": "The [SCIM schema URI](https://www.iana.org/assignments/scim/scim.xhtml).",
+                  "items": {
+                      "type": "string",
+                      "format": "uri"
+                  }
+              },
+              "detail": {
+                  "type": "string",
+                  "description": "Information about the error."
+              },
+              "status": {
+                  "type": "string",
+                  "description": "The HTTP status code."
+              }
+          }
+      }
+order: 7000

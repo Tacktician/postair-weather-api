@@ -1,0 +1,262 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/collections/:collectionId?model=minimal
+  method: GET
+  queryParams:
+    model: minimal
+  pathVariables:
+    collectionId: 12ece9e1-2abf-4edc-8e34-de66e74114d2
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "collection": {
+              "info": {
+                  "_postman_id": "12ece9e1-2abf-4edc-8e34-de66e74114d2",
+                  "name": "Test Collection",
+                  "description": "This is a test.",
+                  "updatedAt": "2023-10-13T08:14:22.000Z",
+                  "uid": "12345678-12ece9e1-2abf-4edc-8e34-de66e74114d2",
+                  "createdAt": "2023-10-09T18:34:58.000Z",
+                  "lastUpdatedBy": "12345678"
+              },
+              "variable": [
+                  {
+                      "key": "userId",
+                      "value": "12345678",
+                      "disabled": true,
+                      "description": "The user's ID."
+                  }
+              ],
+              "auth": {
+                  "type": "apikey",
+                  "apikey": [
+                      {
+                          "key": "value",
+                          "value": "XXX",
+                          "type": "string"
+                      },
+                      {
+                          "key": "key",
+                          "value": "x-api-key",
+                          "type": "string"
+                      }
+                  ]
+              },
+              "events": [
+                  {
+                      "listen": "prerequest",
+                      "script": {
+                          "id": "95d3e370-b6eb-42f5-9a98-8f276742037d",
+                          "type": "text/javascript",
+                          "exec": [
+                              ""
+                          ]
+                      }
+                  },
+                  {
+                      "listen": "test",
+                      "script": {
+                          "id": "d09029f2-ab45-4a80-b167-90a4c49bf64e",
+                          "type": "text/javascript",
+                          "exec": [
+                              ""
+                          ]
+                      }
+                  }
+              ],
+              "rootLevelRequests": [
+                  "12345678-8178d96f-7504-4273-9ca2-26c2ac725a5b",
+                  "12345678-fd7565b1-ec19-4d16-b5d4-a3116d1972fb",
+                  "12345678-3860896c-11fe-4c32-9f0a-88625977c8dc"
+              ],
+              "rootLevelFolders": [
+                  "12345678-803151f5-57f1-4ae5-8f75-4919dbd20372"
+              ]
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "collection": {
+                  "type": "object",
+                  "description": "Information about the collection and its items, such as folders, requests, and responses.",
+                  "properties": {
+                      "info": {
+                          "type": "object",
+                          "description": "Information about the collection.",
+                          "properties": {
+                              "_postman_id": {
+                                  "type": "string",
+                                  "description": "The collection's Postman ID."
+                              },
+                              "name": {
+                                  "type": "string",
+                                  "description": "The collection's name."
+                              },
+                              "description": {
+                                  "type": "string",
+                                  "description": "The collection's description."
+                              },
+                              "updatedAt": {
+                                  "type": "string",
+                                  "format": "date-time",
+                                  "description": "The date and time at which the collection was last updated."
+                              },
+                              "uid": {
+                                  "type": "string",
+                                  "description": "The collection's unique ID."
+                              },
+                              "createdAt": {
+                                  "type": "string",
+                                  "format": "date-time",
+                                  "description": "The date and time at which the collection was created."
+                              },
+                              "lastUpdatedBy": {
+                                  "type": "string",
+                                  "description": "The user ID of the user who last updated the collection."
+                              }
+                          }
+                      },
+                      "variable": {
+                          "type": "array",
+                          "description": "Information about the collection's variables.",
+                          "items": {
+                              "type": "object",
+                              "description": "Information about the variable.",
+                              "properties": {
+                                  "key": {
+                                      "type": "string",
+                                      "description": "The variable's key (name)."
+                                  },
+                                  "value": {
+                                      "anyOf": [
+                                          {
+                                              "type": "string",
+                                              "title": "string"
+                                          },
+                                          {
+                                              "type": "boolean",
+                                              "title": "boolean"
+                                          },
+                                          {
+                                              "type": "integer",
+                                              "title": "integer"
+                                          }
+                                      ],
+                                      "description": "The key's value."
+                                  },
+                                  "disabled": {
+                                      "type": "boolean",
+                                      "default": false,
+                                      "description": "If true, the variable is not enabled. Doesn't apply to path parameter variables."
+                                  },
+                                  "description": {
+                                      "type": "string",
+                                      "maxLength": 512,
+                                      "description": "The variable's description."
+                                  }
+                              }
+                          }
+                      },
+                      "auth": {
+                          "type": "object",
+                          "description": "The [authorization type supported by Postman](https://learning.postman.com/docs/sending-requests/authorization/authorization-types/).",
+                          "properties": {
+                              "type": {
+                                  "type": "string",
+                                  "description": "The authorization type."
+                              },
+                              "apikey": {
+                                  "type": "array",
+                                  "description": "This property is the name of the authorization `type` value.",
+                                  "items": {
+                                      "type": "object",
+                                      "properties": {
+                                          "key": {
+                                              "type": "string",
+                                              "description": "The auth method's key value."
+                                          },
+                                          "value": {
+                                              "anyOf": [
+                                                  {
+                                                      "type": "string",
+                                                      "title": "string"
+                                                  },
+                                                  {
+                                                      "type": "array",
+                                                      "title": "array",
+                                                      "items": {
+                                                          "type": "object"
+                                                      }
+                                                  }
+                                              ],
+                                              "description": "The key's value. This property's type can change, depending on the selected auth type."
+                                          },
+                                          "type": {
+                                              "type": "string",
+                                              "description": "The value's type."
+                                          }
+                                      }
+                                  }
+                              }
+                          }
+                      },
+                      "events": {
+                          "type": "array",
+                          "description": "A list of events.",
+                          "items": {
+                              "type": "object",
+                              "description": "Information about the event.",
+                              "properties": {
+                                  "listen": {
+                                      "type": "string",
+                                      "description": "The `prerequest` (pre-request) or `test` (post-response) value."
+                                  },
+                                  "script": {
+                                      "type": "object",
+                                      "description": "Information about the Javascript code that can be used to to perform setup or teardown operations in a response.",
+                                      "properties": {
+                                          "id": {
+                                              "type": "string",
+                                              "description": "The event's ID."
+                                          },
+                                          "type": {
+                                              "type": "string",
+                                              "description": "The type of script. For example, `text/javascript`."
+                                          },
+                                          "exec": {
+                                              "type": "array",
+                                              "description": "A list of script strings, where each line represents a line of code. Separate lines makes it easy to track script changes.",
+                                              "items": {
+                                                  "type": "string"
+                                              }
+                                          }
+                                      }
+                                  }
+                              }
+                          }
+                      },
+                      "rootLevelRequests": {
+                          "type": "array",
+                          "description": "A list of the collection's root-level requests' unique IDs.",
+                          "items": {
+                              "type": "string"
+                          }
+                      },
+                      "rootLevelFolders": {
+                          "type": "array",
+                          "description": "A list of the collection's root-level folders' unique IDs.",
+                          "items": {
+                              "type": "string"
+                          }
+                      }
+                  }
+              }
+          }
+      }
+order: 3000

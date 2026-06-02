@@ -1,0 +1,47 @@
+$kind: http-request
+description: |-
+  Syncs an API specification linked to a collection. This is an asynchronous endpoint that returns an HTTP `202 Accepted` response.
+
+  **Note:**
+
+  - This endpoint only supports the OpenAPI 2.0, 3.0, and 3.1 specification types.
+      
+  - You can only sync specs generated from the given collection ID.
+url: "{{baseUrl}}/specs/:specId/synchronizations?collectionUid="
+method: PUT
+queryParams:
+  - key: collectionUid
+    value: ""
+    description: The collection's unique ID.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+pathVariables:
+  - key: specId
+    value: ""
+    description: The spec's ID.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+examples: ./.resources/Sync spec with collection.resources/examples
+order: 3000

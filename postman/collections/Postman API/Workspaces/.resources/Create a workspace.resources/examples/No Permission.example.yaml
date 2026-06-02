@@ -1,0 +1,62 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/workspaces
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+          "workspace": {
+              "name": "Public Workspace",
+              "type": "public",
+              "description": "This is a public workspace.",
+              "about": "Public workspace."
+          }
+      }
+response:
+  statusCode: 403
+  statusText: Forbidden
+  body:
+    type: json
+    content: |-
+      {
+          "error": {
+              "status": 403,
+              "name": "forbiddenError",
+              "message": "You are not authorized to perform this action",
+              "detail": "You do not have permission to create team workspaces.",
+              "instance": ""
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "error": {
+                  "type": "object",
+                  "properties": {
+                      "status": {
+                          "type": "integer",
+                          "description": "The error's HTTP status code."
+                      },
+                      "name": {
+                          "type": "string",
+                          "description": "The error name."
+                      },
+                      "message": {
+                          "type": "string",
+                          "description": "The error message."
+                      },
+                      "detail": {
+                          "type": "string",
+                          "description": "Information about the error."
+                      },
+                      "instance": {
+                          "type": "string",
+                          "description": "The URI reference that identifies the specific occurrence of the problem."
+                      }
+                  }
+              }
+          }
+      }
+order: 11000

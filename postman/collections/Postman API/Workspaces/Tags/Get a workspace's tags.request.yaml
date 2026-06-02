@@ -1,0 +1,24 @@
+$kind: http-request
+description: Gets all the tags associated with a workspace.
+url: "{{baseUrl}}/workspaces/:workspaceId/tags"
+method: GET
+pathVariables:
+  - key: workspaceId
+    value: ""
+    description: The workspace's ID.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "uniqueItems": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+examples: ./.resources/Get a workspace's tags.resources/examples
+order: 1000

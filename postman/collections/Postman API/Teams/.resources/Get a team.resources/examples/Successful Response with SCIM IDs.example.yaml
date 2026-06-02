@@ -1,0 +1,81 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/teams/:teamId
+  method: GET
+  headers:
+    identifierType: scim
+  pathVariables:
+    teamId: "123"
+  body:
+    type: json
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "team": {
+              "createdAt": "2025-02-26T08:17:42.000Z",
+              "updatedAt": "2025-02-26T08:17:42.000Z",
+              "id": 123,
+              "name": "Testing Team",
+              "handle": "testing-team",
+              "description": "API testing team.",
+              "organizationId": 1,
+              "createdBy": "33d8e85cc5ec04715bb0c18b42312d80413bad8a96622eb7",
+              "enabled": true
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "team": {
+                  "type": "object",
+                  "description": "Information about the team.",
+                  "properties": {
+                      "createdAt": {
+                          "type": "string",
+                          "format": "date-time",
+                          "description": "The date and time that the team was created."
+                      },
+                      "updatedAt": {
+                          "type": "string",
+                          "format": "date-time",
+                          "description": "The date and time that the team was last updated."
+                      },
+                      "id": {
+                          "type": "integer",
+                          "description": "The team's ID."
+                      },
+                      "name": {
+                          "type": "string",
+                          "description": "The team's name."
+                      },
+                      "handle": {
+                          "type": "string",
+                          "description": "The team's handle."
+                      },
+                      "description": {
+                          "type": "string",
+                          "description": "A description about the team."
+                      },
+                      "organizationId": {
+                          "type": "integer",
+                          "description": "The team's organization ID."
+                      },
+                      "createdBy": {
+                          "type": ["string", "integer"],
+                          "description": "The user ID of the user that created the team."
+                      },
+                      "enabled": {
+                          "type": "boolean",
+                          "description": "If true, the team is active."
+                      }
+                  }
+              }
+          }
+      }
+order: 2000

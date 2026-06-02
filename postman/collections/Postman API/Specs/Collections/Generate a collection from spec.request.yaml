@@ -1,0 +1,90 @@
+$kind: http-request
+description: Creates a collection from the given OpenAPI 2.0, 3.0, or 3.1 specification. The response contains a polling link to the task status.
+url: "{{baseUrl}}/specs/:specId/generations/:elementType"
+method: POST
+pathVariables:
+  - key: specId
+    value: ""
+    description: The spec's ID.
+  - key: elementType
+    value: ""
+    description: The `collection` element type.
+body:
+  type: json
+  content: |-
+    {
+        "name": "{{name}}",
+        "options": {
+            "requestNameSource": "Fallback",
+            "indentCharacter": "Space",
+            "folderStrategy": "Paths",
+            "includeAuthInfoInExample": true,
+            "enableOptionalParameters": true,
+            "keepImplicitHeaders": false,
+            "includeDeprecated": true,
+            "alwaysInheritAuthentication": false,
+            "nestedFolderHierarchy": false
+        }
+    }
+  $type: |-
+    {
+        "type": "object",
+        "properties": {
+            "name": {
+                "type": "string",
+                "description": "The generated collection's name."
+            },
+            "options": {
+                "type": "object",
+                "description": "The advanced creation options and their values. For more details, see Postman's [OpenAPI to Postman Collection Converter OPTIONS documentation](https://github.com/postmanlabs/openapi-to-postman/blob/develop/OPTIONS.md). These properties are case-sensitive.",
+                "properties": {
+                    "requestNameSource": {
+                        "type": "string",
+                        "description": "Determines how the generated collection's requests are named. If the `Fallback` value is passed, then the request is named after one of the following values in the schema:\n- `summary`\n- `operationId`\n- `description`\n- `url`\n",
+                        "enum": ["Fallback", "URL"]
+                    },
+                    "indentCharacter": {
+                        "type": "string",
+                        "description": "The option for setting the indentation character type.",
+                        "enum": ["Tab", "Space"]
+                    },
+                    "parametersResolution": {
+                        "deprecated": true,
+                        "type": "string",
+                        "description": "Generated collections use examples for parameter generation by default. Any existing collections generated using the schema parameter generation will continue to sync using their existing strategy."
+                    },
+                    "folderStrategy": {
+                        "type": "string",
+                        "description": "Whether to create folders based on the specification's `paths` or `tags` properties.",
+                        "enum": ["Paths", "Tags"]
+                    },
+                    "includeAuthInfoInExample": {
+                        "type": "boolean",
+                        "description": "If true, include the authentication parameters in the example request."
+                    },
+                    "enableOptionalParameters": {
+                        "type": "boolean",
+                        "description": "If true, enables optional parameters in the collection and its requests."
+                    },
+                    "keepImplicitHeaders": {
+                        "type": "boolean",
+                        "description": "If true, keep the implicit headers from the OpenAPI specification, which are removed by default."
+                    },
+                    "includeDeprecated": {
+                        "type": "boolean",
+                        "description": "If true, includes all deprecated operations, parameters, and properties in generated collection."
+                    },
+                    "alwaysInheritAuthentication": {
+                        "type": "boolean",
+                        "description": "Whether authentication details should be included in all requests, or always inherited from the collection."
+                    },
+                    "nestedFolderHierarchy": {
+                        "type": "boolean",
+                        "description": "If true, creates subfolders in the generated collection based on the order of the endpoints' tags."
+                    }
+                }
+            }
+        }
+    }
+examples: ./.resources/Generate a collection from spec.resources/examples
+order: 1000

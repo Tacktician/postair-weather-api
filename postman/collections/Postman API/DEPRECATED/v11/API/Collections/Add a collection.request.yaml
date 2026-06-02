@@ -1,0 +1,140 @@
+$kind: http-request
+description: |-
+  Adds a collection to an API. To do this, use the following `operationType` values:
+
+  - `COPY_COLLECTION` — Copies a collection from the workspace and adds it to an API.
+      
+  - `CREATE_NEW` — Creates a new collection by providing the new collection's content. For a complete list of values, refer to the [Postman Collection Format documentation](https://schema.postman.com/collection/json/v2.1.0/draft-07/docs/index.html).
+      
+  - `GENERATE_FROM_SCHEMA` — Generates the collection from an API schema.
+      
+      - `options` — An **object** that contains advanced creation options and their values. You can find a complete list of properties and their values in Postman's [OpenAPI to Postman Collection Converter OPTIONS documentation](https://github.com/postmanlabs/openapi-to-postman/blob/develop/OPTIONS.md). These properties are case-sensitive.
+          
+
+  For examples of each method, see the collection's response examples.
+url: "{{baseUrl}}/apis/:apiId/collections"
+method: POST
+headers:
+  - key: Accept
+    value: application/vnd.api.v10+json
+    description: The request header required to use the endpoint.
+pathVariables:
+  - key: apiId
+    value: "{{apiId}}"
+    description: The API's ID.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "uniqueItems": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+body:
+  type: json
+  content: |-
+    {
+          "operationType": "COPY_COLLECTION",
+          "data": {
+            "collectionId": "{{collectionId}}"
+          }
+        }
+  $type: |-
+    {
+        "type": "object",
+        "anyOf": [
+            {
+                "title": "Copy Collection to API",
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "type": "object",
+                        "properties": {
+                            "collectionId": {
+                                "type": "string",
+                                "description": "The collection ID to copy to the API."
+                            }
+                        }
+                    },
+                    "operationType": {
+                        "type": "string",
+                        "description": "The `COPY_COLLECTION` method.",
+                        "enum": [
+                            "COPY_COLLECTION"
+                        ]
+                    }
+                }
+            },
+            {
+                "title": "Create API Collection",
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "type": "object",
+                        "description": "Information about the collection's contents, such as requests and responses. For a complete list of values, refer to the [Postman Collection Format documentation](https://schema.postman.com/collection/json/v2.1.0/draft-07/docs/index.html).",
+                        "properties": {
+                            "info": {
+                                "type": "object",
+                                "description": "Information about the collection.",
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "description": "The collection's name."
+                                    },
+                                    "schema": {
+                                        "type": "string",
+                                        "description": "The collection's schema format.",
+                                        "enum": [
+                                            "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+                                        ]
+                                    }
+                                }
+                            },
+                            "item": {
+                                "type": "array",
+                                "description": "Information about the requests and responses in the collection. For a complete list of values, refer to the [Postman Collection Format documentation](https://schema.postman.com/collection/json/v2.1.0/draft-07/docs/index.html).",
+                                "items": {}
+                            }
+                        }
+                    },
+                    "operationType": {
+                        "type": "string",
+                        "description": "The `CREATE_NEW` method.",
+                        "enum": [
+                            "CREATE_NEW"
+                        ]
+                    }
+                }
+            },
+            {
+                "title": "Generate from Schema",
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "The collection's name."
+                    },
+                    "operationType": {
+                        "type": "string",
+                        "description": "The `GENERATE_FROM_SCHEMA` method.",
+                        "enum": [
+                            "GENERATE_FROM_SCHEMA"
+                        ]
+                    },
+                    "options": {
+                        "type": "object",
+                        "additionalProperties": true,
+                        "description": "The advanced creation options for collections and their values. For a complete list of properties and their values, see Postman's [OpenAPI to Postman Collection Converter OPTIONS documentation](https://github.com/postmanlabs/openapi-to-postman/blob/develop/OPTIONS.md). These properties are case-sensitive."
+                    }
+                }
+            }
+        ]
+    }
+examples: ./.resources/Add a collection.resources/examples
+order: 3000

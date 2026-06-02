@@ -1,0 +1,175 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/collections/:collectionId/responses?request=c82dd02c-4870-4907-8fcb-593a876cf05b
+  method: POST
+  queryParams:
+    request: c82dd02c-4870-4907-8fcb-593a876cf05b
+  pathVariables:
+    collectionId: 12ece9e1-2abf-4edc-8e34-de66e74114d2
+  body:
+    type: json
+    content: |-
+      {
+          "name": "Example GET Response",
+          "responseCode": {
+              "code": 200,
+              "name": "OK"
+          },
+          "headers": [
+              {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+              },
+              {
+                  "key": "content-length",
+                  "value": "370"
+              },
+              {
+                  "key": "etag",
+                  "value": "W/\"172-GDbDAS2r5X4Ypw2ia9AUhtyIyhk\""
+              },
+              {
+                  "key": "set-cookie",
+                  "value": "sails.sid=s%3A23szD8Az12345Vs7dMzU4hjUHqqA1LeX.x8Jbnx4BEVHgzajknZdH%2BqxW7Pctx47m%2FlduU5Q4TAI; Path=/ HttpOnly"
+              }
+          ],
+          "text": "{\n  \"args\": {\n    \"param\": \"value\"\n  },\n  \"headers\": {\n    \"x-forwarded-proto\": \"https\",\n    \"x-forwarded-port\": \"443\",\n    \"host\": \"postman-echo.com\",\n    \"x-amzn-trace-id\": \"Root=1-64f9cd12-62f18f3a048796d345508073\",\n    \"user-agent\": \"curl/7.88.1\",\n    \"accept\": \"*/*\",\n    \"content-type\": \"application/json\"\n  },\n  \"url\": \"https://postman-echo.com/get?param=value\"\n}\n",
+          "language": "json",
+          "requestObject": "{\n  \"name\": \"Request\",\n  \"description\": \"\",\n  \"url\": \"https://postman-echo.com/get?param=value\",\n  \"method\": \"GET\",\n  \"headers\": [\n    {\n      \"key\": \"Host\",\n      \"value\": \"postman-echo.com\"\n    },\n    {\n      \"key\": \"user-agent\",\n      \"value\": \"curl/7.88.1\"\n    },\n    {\n      \"key\": \"accept\",\n      \"value\": \"*/*\"\n    },\n    {\n      \"key\": \"content-type\",\n      \"value\": \"application/json\"\n    }\n  ],\n  \"dataMode\": \"raw\",\n  \"rawModeData\": null,\n  \"dataOptions\": {\n    \"raw\": {\n      \"language\": \"json\"\n    }\n  }\n}"
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+        "model_id": "cc364734-7dfd-4bfc-897d-be763dcdbb07",
+        "meta": {
+          "model": "response",
+          "action": "create"
+        },
+        "data": {
+          "request": "c82dd02c-4870-4907-8fcb-593a876cf05b",
+          "headers": [
+            {
+              "key": "content-type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "content-length",
+              "value": "370"
+            },
+            {
+              "key": "etag",
+              "value": "W/\"172-GDbDAS2r5X4Ypw2ia9AUhtyIyhk\""
+            },
+            {
+              "key": "set-cookie",
+              "value": "sails.sid=s%3A23szD8Az12345Vs7dMzU4hjUHqqA1LeX.x8Jbnx4BEVHgzajknZdH%2BqxW7Pctx47m%2FlduU5Q4TAI; Path=/ HttpOnly"
+            }
+          ],
+          "name": "Example GET Response",
+          "text": "{\n  \"args\": {\n    \"param\": \"value\"\n  },\n  \"headers\": {\n    \"x-forwarded-proto\": \"https\",\n    \"x-forwarded-port\": \"443\",\n    \"host\": \"postman-echo.com\",\n    \"x-amzn-trace-id\": \"Root=1-64f9cd12-62f18f3a048796d345508073\",\n    \"user-agent\": \"curl/7.88.1\",\n    \"accept\": \"*/*\",\n    \"content-type\": \"application/json\"\n  },\n  \"url\": \"https://postman-echo.com/get?param=value\"\n}\n",
+          "requestObject": "{\n  \"name\": \"Request\",\n  \"description\": \"\",\n  \"url\": \"https://postman-echo.com/get?param=value\",\n  \"method\": \"GET\",\n  \"headers\": [\n    {\n      \"key\": \"Host\",\n      \"value\": \"postman-echo.com\"\n    },\n    {\n      \"key\": \"user-agent\",\n      \"value\": \"curl/7.88.1\"\n    },\n    {\n      \"key\": \"accept\",\n      \"value\": \"*/*\"\n    },\n    {\n      \"key\": \"content-type\",\n      \"value\": \"application/json\"\n    }\n  ],\n  \"dataMode\": \"raw\",\n  \"rawModeData\": null,\n  \"dataOptions\": {\n    \"raw\": {\n      \"language\": \"json\"\n    }\n  }\n}",
+          "responseCode": {
+            "code": 200,
+            "name": "OK"
+          },
+          "language": "json",
+          "id": "cc364734-7dfd-4bfc-897d-be763dcdbb07",
+          "owner": "12345678",
+          "lastUpdatedBy": "12345678",
+          "createdAt": "2023-09-07T13:33:18.700Z",
+          "updatedAt": "2023-09-07T13:33:18.700Z"
+        },
+        "revision": 32456338262
+      }
+    $type: |-
+      {
+          "type": "object",
+          "description": "Information about the response. For a complete list of properties, refer to the **Response** entry in the [Postman Collection Format documentation](https://schema.postman.com/collection/json/v2.1.0/draft-07/docs/index.html).\n\n**Note:**\n\nIt is recommended that you pass the `name` property in the request body. If you do not, the system uses a null value. As a result, this creates a response with a blank name.",
+          "properties": {
+              "model_id": {
+                  "type": "string"
+              },
+              "meta": {
+                  "type": "object",
+                  "properties": {
+                      "model": {
+                          "type": "string"
+                      },
+                      "action": {
+                          "type": "string"
+                      }
+                  }
+              },
+              "data": {
+                  "type": "object",
+                  "description": "The response's properties. For a complete list of properties, refer to the **Response** entry in the [Postman Collection Format documentation](https://schema.postman.com/collection/json/v1.0.0/draft-07/collection.json).",
+                  "properties": {
+                      "request": {
+                          "type": "string"
+                      },
+                      "headers": {
+                          "type": "array",
+                          "items": {
+                              "type": "object",
+                              "properties": {
+                                  "key": {
+                                      "type": "string"
+                                  },
+                                  "value": {
+                                      "type": "string"
+                                  }
+                              }
+                          }
+                      },
+                      "name": {
+                          "type": "string"
+                      },
+                      "text": {
+                          "type": "string"
+                      },
+                      "requestObject": {
+                          "type": "string"
+                      },
+                      "responseCode": {
+                          "type": "object",
+                          "properties": {
+                              "code": {
+                                  "type": "integer"
+                              },
+                              "name": {
+                                  "type": "string"
+                              }
+                          }
+                      },
+                      "language": {
+                          "type": "string"
+                      },
+                      "id": {
+                          "type": "string"
+                      },
+                      "owner": {
+                          "type": "string"
+                      },
+                      "lastUpdatedBy": {
+                          "type": "string"
+                      },
+                      "createdAt": {
+                          "type": "string",
+                          "format": "date-time"
+                      },
+                      "updatedAt": {
+                          "type": "string",
+                          "format": "date-time"
+                      }
+                  }
+              },
+              "revision": {
+                  "type": "integer"
+              }
+          }
+      }
+order: 1000

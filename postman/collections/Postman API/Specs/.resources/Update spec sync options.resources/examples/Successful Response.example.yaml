@@ -1,0 +1,43 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/specs/:specId/collections/:collectionId/sync-options
+  method: GET
+  pathVariables:
+    specId: 73e15000-bc7a-4802-b80e-05fff18fd7f8
+    collectionId: 12ece9e1-2abf-4edc-8e34-de66e74114d2
+  body:
+    type: json
+    content: |-
+      {
+          "syncOptions": {
+              "syncExamples": true
+          }
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "syncOptions": {
+              "syncExamples": true
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "syncOptions": {
+                  "type": "object",
+                  "description": "Information about the specification sync options.",
+                  "properties": {
+                      "syncExamples": {
+                          "type": "boolean",
+                          "description": "If true, updates made to examples in the specification or to example values in the generated collection stay synchronized."
+                      }
+                  }
+              }
+          }
+      }
+order: 1000

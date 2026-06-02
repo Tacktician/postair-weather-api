@@ -1,0 +1,82 @@
+$kind: http-request
+description: Copies or moves folders into a collection or folder.
+url: "{{baseUrl}}/collection-folders-transfers"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "ids": [
+            "{{folderUid}}"
+        ],
+        "target": {
+            "model": "{{modelType}}",
+            "id": "{{modelUid}}"
+        },
+        "location": {
+            "position": "{{position}}",
+            "model": "{{modelId}}",
+            "id": "{{modelUid}}"
+        },
+        "mode": "{{modeType}}"
+    }
+  $type: |-
+    {
+        "type": "object",
+        "required": ["ids", "target", "location", "mode"],
+        "properties": {
+            "ids": {
+                "type": "array",
+                "description": "A list of collection folder UIDs to transfer.",
+                "items": {
+                    "type": "string",
+                    "format": "uuid"
+                }
+            },
+            "target": {
+                "type": "object",
+                "description": "Information about the item transfer's destination location.",
+                "required": ["model", "id"],
+                "properties": {
+                    "model": {
+                        "type": "string",
+                        "description": "The collection or folder that the items will be transferred to.",
+                        "enum": ["collection", "folder"]
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The UID of the destination collection or folder."
+                    }
+                }
+            },
+            "location": {
+                "type": "object",
+                "description": "The transferred items' placement in the target destination:\n- For `start` or `end` — Do not include the `model` and `id` values.\n- For `before` or `after` — Include the `model` and `id` properties.",
+                "required": ["position"],
+                "properties": {
+                    "position": {
+                        "type": "string",
+                        "description": "The transferred item's position within the destination object.",
+                        "enum": ["start", "end", "before", "after"]
+                    },
+                    "model": {
+                        "type": "string",
+                        "description": "For `before` or `after` positions, the type of item (model) that the transferred item will be positioned by.",
+                        "enum": ["collection", "folder"]
+                    },
+                    "id": {
+                        "type": "string",
+                        "format": "uuid",
+                        "description": "For `before` or `after` positions, the model's UID."
+                    }
+                }
+            },
+            "mode": {
+                "type": "string",
+                "description": "The transfer operation to perform.",
+                "enum": ["copy", "move"]
+            }
+        }
+    }
+examples: ./.resources/Transfer folders.resources/examples
+order: 1000

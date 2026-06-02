@@ -1,0 +1,35 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/secret-types
+  method: GET
+response:
+  statusCode: 403
+  statusText: Forbidden
+  body:
+    type: json
+    content: |-
+      {
+          "type": "FORBIDDEN",
+          "title": "This feature is only available with \"Advanced Security Administration\" add-on. Contact your team admin to purchase this add-on.",
+          "instance": "",
+          "status": 403
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "type": {
+                  "type": "string"
+              },
+              "title": {
+                  "type": "string"
+              },
+              "instance": {
+                  "type": "string"
+              },
+              "status": {
+                  "type": "integer"
+              }
+          }
+      }
+order: 5000

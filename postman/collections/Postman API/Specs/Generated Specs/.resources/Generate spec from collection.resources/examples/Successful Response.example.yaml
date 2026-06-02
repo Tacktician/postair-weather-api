@@ -1,0 +1,40 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/collections/:collectionUid/generations/:elementType
+  method: POST
+  pathVariables:
+    collectionUid: 12345678-12ece9e1-2abf-4edc-8e34-de66e74114d2
+    elementType: spec
+  body:
+    type: json
+    content: |-
+      {
+          "name": "Sample API",
+          "type": "OPENAPI:3.0",
+          "format": "JSON"
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "taskId": "66ae9950-0869-4e65-96b0-1e0e47e771af",
+          "url": "/collections/12345678-12ece9e1-2abf-4edc-8e34-de66e74114d2/tasks/66ae9950-0869-4e65-96b0-1e0e47e771af"
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "taskId": {
+                  "type": "string",
+                  "description": "The created task ID. You can use this ID to track the status of the task."
+              },
+              "url": {
+                  "type": "string",
+                  "description": "The URL to get or poll the status of a generated spec task."
+              }
+          }
+      }
+order: 1000

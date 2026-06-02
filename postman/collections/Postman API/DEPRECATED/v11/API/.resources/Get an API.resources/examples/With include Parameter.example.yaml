@@ -1,0 +1,129 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/apis/:apiId?include=schemas,collections,versions,gitInfo
+  method: GET
+  headers:
+    Accept: application/vnd.api.v10+json
+  queryParams:
+    include: schemas,collections,versions,gitInfo
+  pathVariables:
+    apiId: 5360b75f-447e-467c-9299-12fd6c92450d
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "createdBy": "12345678",
+          "name": "Test API",
+          "updatedBy": "12345678",
+          "updatedAt": "2022-06-09T19:50:49.000Z",
+          "description": "This is a test API.",
+          "id": "5360b75f-447e-467c-9299-12fd6c92450d",
+          "collections": [
+              {
+                  "id": "16bb367e-fafb-4ef3-933b-ee3d971866fb"
+              }
+          ],
+          "gitInfo": {},
+          "schemas": [
+              {
+                  "id": "ae2b9ab2-28f2-401d-912f-eca09a78e98b"
+              }
+          ],
+          "versions": [
+              {
+                  "id": "18ccb2dc-1746-4945-ba76-8152b37cr123",
+                  "name": "v1.0.0"
+              }
+          ],
+          "createdAt": "2022-06-09T14:48:45.000Z",
+          "summary": "Test API."
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "createdBy": {
+                  "type": "string",
+                  "description": "The user ID of the user that created the API."
+              },
+              "name": {
+                  "type": "string",
+                  "description": "The API's name."
+              },
+              "updatedBy": {
+                  "type": "string",
+                  "description": "The user ID of the user that updated the API."
+              },
+              "updatedAt": {
+                  "type": "string",
+                  "description": "The date and time at which the API was updated."
+              },
+              "description": {
+                  "type": "string",
+                  "description": "The API's description."
+              },
+              "id": {
+                  "type": "string",
+                  "description": "The API's ID."
+              },
+              "collections": {
+                  "type": "array",
+                  "description": "The API's collections.",
+                  "items": {
+                      "type": "object",
+                      "properties": {
+                          "id": {
+                              "type": "string",
+                              "description": "The collection's ID."
+                          }
+                      }
+                  }
+              },
+              "gitInfo": {
+                  "type": "object",
+                  "description": "Information about the API's Git repository integration."
+              },
+              "schemas": {
+                  "type": "array",
+                  "description": "The API's schemas.",
+                  "items": {
+                      "type": "object",
+                      "properties": {
+                          "id": {
+                              "type": "string",
+                              "description": "The schema's ID."
+                          }
+                      }
+                  }
+              },
+              "versions": {
+                  "type": "array",
+                  "description": "The API's versions.",
+                  "items": {
+                      "type": "object",
+                      "properties": {
+                          "id": {
+                              "type": "string",
+                              "description": "The version's ID."
+                          },
+                          "name": {
+                              "type": "string",
+                              "description": "The version's name."
+                          }
+                      }
+                  }
+              },
+              "createdAt": {
+                  "type": "string",
+                  "description": "The date and time at which the API was created."
+              },
+              "summary": {
+                  "type": "string",
+                  "description": "The API's short summary."
+              }
+          }
+      }
+order: 2000

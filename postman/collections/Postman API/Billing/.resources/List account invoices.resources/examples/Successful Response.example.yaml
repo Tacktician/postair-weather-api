@@ -1,0 +1,92 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/accounts/:accountId/invoices?status=PAID
+  method: GET
+  queryParams:
+    status: PAID
+  pathVariables:
+    accountId: "123456"
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "data": [
+              {
+                  "id": "inv_7UDSYBJPGQU93N7M",
+                  "status": "PAID",
+                  "issuedAt": "2023-10-12",
+                  "totalAmount": {
+                      "value": 440,
+                      "currency": "USD"
+                  },
+                  "links": {
+                      "web": {
+                          "href": "https://pay.postman.com/invoices/pay?invoice_public_id=inv_7UDSYBJPGQU93N7M"
+                      }
+                  }
+              }
+          ]
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "data": {
+                  "type": "array",
+                  "items": {
+                      "type": "object",
+                      "description": "Information about the invoice.",
+                      "properties": {
+                          "id": {
+                              "type": "string",
+                              "description": "The invoice's ID."
+                          },
+                          "status": {
+                              "type": "string",
+                              "description": "The invoice's status."
+                          },
+                          "issuedAt": {
+                              "type": "string",
+                              "format": "date",
+                              "description": "The date on which the invoice was issued."
+                          },
+                          "totalAmount": {
+                              "type": "object",
+                              "description": "Information about the invoice's total billed amount.",
+                              "properties": {
+                                  "value": {
+                                      "type": "integer",
+                                      "description": "The amount billed."
+                                  },
+                                  "currency": {
+                                      "type": "string",
+                                      "description": "The currency of the billed amount. Currently only supports the `USD` value."
+                                  }
+                              }
+                          },
+                          "links": {
+                              "type": "object",
+                              "description": "A [JSON API spec](https://jsonapi.org/format/#document-links) object containing hypermedia links.",
+                              "properties": {
+                                  "web": {
+                                      "type": "object",
+                                      "description": "An object containing web-based account references.",
+                                      "properties": {
+                                          "href": {
+                                              "type": "string",
+                                              "format": "uri",
+                                              "description": "A URL where you can download the invoice in PDF and view details."
+                                          }
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+order: 1000

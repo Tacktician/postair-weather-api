@@ -1,0 +1,93 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/groups/:groupId
+  method: GET
+  pathVariables:
+    - key: groupId
+      value: "123"
+      description: The group's ID.
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "id": 123,
+          "teamId": 1,
+          "name": "API Test Group",
+          "summary": "API testing group.",
+          "createdBy": 12345678,
+          "createdAt": "2024-10-03T14:05:05.000Z",
+          "updatedAt": "2024-10-03T14:05:05.000Z",
+          "members": [
+              12345678,
+              87654321,
+              56781234
+          ],
+          "roles": [
+              "user"
+          ],
+          "managers": [
+              12345678
+          ]
+      }
+    $type: |-
+      {
+          "type": "object",
+          "description": "Information about the group.",
+          "properties": {
+              "id": {
+                  "type": "integer",
+                  "description": "The group's ID."
+              },
+              "teamId": {
+                  "type": "integer",
+                  "description": "The group's Postman team ID."
+              },
+              "name": {
+                  "type": "string",
+                  "description": "The group's name."
+              },
+              "summary": {
+                  "type": "string",
+                  "description": "The group's summary."
+              },
+              "createdBy": {
+                  "type": "integer",
+                  "description": "The ID of ther user who created the group."
+              },
+              "createdAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "The date and time at which the group was created."
+              },
+              "updatedAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "The date and time at which the group was updated."
+              },
+              "members": {
+                  "type": "array",
+                  "description": "The group members' IDs.",
+                  "items": {
+                      "type": "integer"
+                  }
+              },
+              "roles": {
+                  "type": "array",
+                  "description": "The group's roles.",
+                  "items": {
+                      "type": "string"
+                  }
+              },
+              "managers": {
+                  "type": "array",
+                  "description": "The group's managers.",
+                  "items": {
+                      "type": "integer"
+                  }
+              }
+          }
+      }
+order: 1000

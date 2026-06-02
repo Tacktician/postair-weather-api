@@ -1,0 +1,97 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/monitors?active=false
+  method: GET
+  queryParams:
+    active: "false"
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "monitors": [
+              {
+                  "id": "3d08e460-b58f-4f46-9dbb-018c57760864",
+                  "name": "Billing",
+                  "active": false,
+                  "uid": "56781234-3d08e460-b58f-4f46-9dbb-018c57760864",
+                  "owner": 56781234,
+                  "collectionUid": "56781234-b79c429b-b347-4b9c-a969-9cc3e1349f68",
+                  "environmentUid": "56781234-ec29504a-a305-47b2-9c73-8b0dcd6ddd61"
+              },
+              {
+                  "id": "5c8ff94d-ae04-4f23-812c-d428fa72bc43",
+                  "name": "API Test 2",
+                  "active": false,
+                  "uid": "87654321-5c8ff94d-ae04-4f23-812c-d428fa72bc43",
+                  "owner": 87654321,
+                  "collectionUid": "87654321-01c3b7c7-bf1e-47ab-8d57-0f9f950dca65",
+                  "environmentUid": "87654321-2ff3607d-2bdc-49a4-91af-40b0f48a0c77"
+              }
+          ],
+          "meta": {
+              "nextCursor": "",
+              "limit": 25
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "monitors": {
+                  "type": "array",
+                  "description": "A list of monitors.",
+                  "items": {
+                      "type": "object",
+                      "description": "Information about the monitor.",
+                      "properties": {
+                          "id": {
+                              "type": "string",
+                              "description": "The monitor's ID."
+                          },
+                          "name": {
+                              "type": "string",
+                              "description": "The monitor's name."
+                          },
+                          "active": {
+                              "type": "boolean",
+                              "description": "Whether the monitor is active (`true`) or inactive (`false`)."
+                          },
+                          "uid": {
+                              "type": "string",
+                              "description": "The monitor's unique ID."
+                          },
+                          "owner": {
+                              "type": "integer",
+                              "description": "The ID of the user that created the monitor."
+                          },
+                          "collectionUid": {
+                              "type": "string",
+                              "description": "The unique ID of the monitor's associated collection."
+                          },
+                          "environmentUid": {
+                              "type": "string",
+                              "description": "The unique ID of the monitor's associated environment."
+                          }
+                      }
+                  }
+              },
+              "meta": {
+                  "type": "object",
+                  "description": "The response's meta information for paginated results.",
+                  "properties": {
+                      "nextCursor": {
+                          "type": "string",
+                          "description": "The pagination cursor that points to the next record in the results set."
+                      },
+                      "limit": {
+                          "type": "integer",
+                          "description": "The maximum number of records in the paginated response."
+                      }
+                  }
+              }
+          }
+      }
+order: 5000

@@ -1,0 +1,50 @@
+$kind: http-request
+description: |-
+  Transfers a workspace from one team (`source`) to another team (`destination`).
+
+  **Note:**
+
+  - This endpoint is only available with [Postman Enterprise plans](https://www.postman.com/pricing/) with [Postman Organizations](https://learning.postman.com/docs/administration/onboarding-checklist) enabled.
+      
+  - Team user roles are modified when workspaces are transferred. For example, if a user has the Admin role in the `source` team but not the `destination` team, then their role is removed from the workspace after it's transferred to the `destination` team.
+url: "{{baseUrl}}/workspaces/:workspaceId/transfers"
+method: PATCH
+pathVariables:
+  - key: workspaceId
+    value: ""
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+body:
+  type: json
+  content: |-
+    {
+        "source": "{{sourceTeamId}}",
+        "destination": "{{destinationTeamId}}"
+    }
+  $type: |-
+    {
+        "type": "object",
+        "properties": {
+            "source": {
+                "type": "string",
+                "description": "The ID of the team to transfer the workspace from."
+            },
+            "destination": {
+                "type": "string",
+                "description": "The ID of the team to transfer the workspace to."
+            }
+        }
+    }
+examples: ./.resources/Transfer workspace to a team.resources/examples
+order: 12000

@@ -1,0 +1,66 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/specs/:specId/files
+  method: POST
+  pathVariables:
+    specId: ""
+  body:
+    type: json
+    content: |-
+      {
+          "path": "schemas.yaml",
+          "content": "SpacecraftId:\n  description: The unique identifier of a spacecraft\n  type: string\nSpacecraft:\n  type: object\n  required:\n  - id\n  - name\n  - type\n  properties:\n    id:\n      \"$ref\": \"#/SpacecraftId\"\n    name:\n      type: string\n    type:\n      type: string\n      enum:\n      - capsule\n      - probe\n      - satellite\n      - spaceplane\n      - station\n    description:\n      type: string\nError:\n  type: object\n  required:\n  - message\n  properties:\n    message:\n      description: A human readable error message\n      type: string\n"
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  body:
+    type: json
+    content: |-
+      {
+          "createdAt": "2025-07-22T19:29:08.000Z",
+          "createdBy": 12345678,
+          "id": "944b28d1-dda1-4042-8603-93fb391ade7e",
+          "path": "schemas.yaml",
+          "updatedAt": "2025-07-22T19:29:57.000Z",
+          "updatedBy": 12345678,
+          "type": "DEFAULT"
+      }
+    $type: |-
+      {
+          "type": "object",
+          "description": "Information about the API specification file.",
+          "properties": {
+              "createdAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "The date and time at which the file was created."
+              },
+              "createdBy": {
+                  "type": "integer",
+                  "description": "The user ID of the user that created the file."
+              },
+              "id": {
+                  "type": "string",
+                  "description": "The file's ID."
+              },
+              "path": {
+                  "type": "string",
+                  "description": "The file's path."
+              },
+              "updatedAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "The date and time at which the file was updated."
+              },
+              "updatedBy": {
+                  "type": "integer",
+                  "description": "The ID of the user who updated the file."
+              },
+              "type": {
+                  "type": "string",
+                  "description": "The type of file:\n- `ROOT` — The file containing the full OpenAPI structure. This serves as the entry point for the API spec and references other (`DEFAULT`) spec files. Multi-file specs can only have one root file.\n- `DEFAULT` — A file referenced by the `ROOT` file."
+              }
+          }
+      }
+order: 2000

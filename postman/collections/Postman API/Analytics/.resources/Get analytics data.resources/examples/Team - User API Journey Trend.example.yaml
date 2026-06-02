@@ -1,0 +1,200 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/analytics?resource=team&metrics=user_api_journey&view=summary&duration=last_6_months
+  method: GET
+  queryParams:
+    resource: team
+    metrics: user_api_journey
+    view: summary
+    duration: last_6_months
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "data": {
+              "summary": {
+                  "schema": {
+                      "columns": [
+                          {
+                              "name": "timestamp",
+                              "type": "DATE",
+                              "format": "YYYY-MM-DD",
+                              "description": "Reporting date for aggregated user activity metrics."
+                          },
+                          {
+                              "name": "active_user",
+                              "type": "INTEGER",
+                              "description": "Total number of users active on the given date."
+                          },
+                          {
+                              "name": "api_user",
+                              "type": "INTEGER",
+                              "description": "Number of users who made at least one API call."
+                          },
+                          {
+                              "name": "new_api_user",
+                              "type": "INTEGER",
+                              "description": "Number of users making API calls for the first time."
+                          },
+                          {
+                              "name": "successful",
+                              "type": "INTEGER",
+                              "description": "Number of users whose API calls were mostly successful."
+                          },
+                          {
+                              "name": "error_only",
+                              "type": "INTEGER",
+                              "description": "Number of users who encountered only error responses."
+                          }
+                      ]
+                  },
+                  "rows": [
+                      [
+                          "2025-03-01",
+                          812,
+                          654,
+                          120,
+                          590,
+                          64
+                      ],
+                      [
+                          "2025-04-01",
+                          920,
+                          710,
+                          145,
+                          620,
+                          90
+                      ],
+                      [
+                          "2025-05-01",
+                          845,
+                          692,
+                          100,
+                          640,
+                          52
+                      ],
+                      [
+                          "2025-06-01",
+                          900,
+                          730,
+                          130,
+                          670,
+                          60
+                      ],
+                      [
+                          "2025-07-01",
+                          870,
+                          710,
+                          110,
+                          660,
+                          50
+                      ],
+                      [
+                          "2025-08-01",
+                          890,
+                          740,
+                          140,
+                          690,
+                          50
+                      ]
+                  ]
+              }
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "data": {
+                  "type": "object",
+                  "properties": {
+                      "summary": {
+                          "type": "object",
+                          "properties": {
+                              "schema": {
+                                  "type": "object",
+                                  "properties": {
+                                      "columns": {
+                                          "type": "array",
+                                          "description": "A list of column entries.",
+                                          "items": {
+                                              "type": "object",
+                                              "properties": {
+                                                  "name": {
+                                                      "type": "string",
+                                                      "description": "The name of the column."
+                                                  },
+                                                  "type": {
+                                                      "type": "string",
+                                                      "enum": [
+                                                          "DATE",
+                                                          "STRING",
+                                                          "INTEGER",
+                                                          "TIMESTAMP",
+                                                          "BOOLEAN",
+                                                          "NUMBER",
+                                                          "FLOAT"
+                                                      ],
+                                                      "description": "The data type of the column."
+                                                  },
+                                                  "format": {
+                                                      "type": "string",
+                                                      "description": "The data type's format."
+                                                  },
+                                                  "description": {
+                                                      "type": "string",
+                                                      "description": "A description of what the column represents."
+                                                  }
+                                              }
+                                          }
+                                      }
+                                  }
+                              },
+                              "rows": {
+                                  "type": "array",
+                                  "description": "A list of data row entries. Each row is an array of values that correspond to the columns defined in the schema.",
+                                  "items": {
+                                      "type": "array",
+                                      "items": {
+                                          "type": [
+                                              "string",
+                                              "integer",
+                                              "number",
+                                              "boolean",
+                                              "null"
+                                          ]
+                                      }
+                                  }
+                              },
+                              "pagination": {
+                                  "type": "object",
+                                  "description": "Information about the response pagination.",
+                                  "properties": {
+                                      "total": {
+                                          "type": "integer",
+                                          "description": "The total number of records available."
+                                      },
+                                      "limit": {
+                                          "type": "integer",
+                                          "description": "The maximum number of records returned in the response."
+                                      },
+                                      "offset": {
+                                          "type": "integer",
+                                          "description": "The number of records skipped."
+                                      },
+                                      "has_more": {
+                                          "type": "boolean",
+                                          "description": "Indicates whether more are records available."
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+order: 18000

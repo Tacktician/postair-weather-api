@@ -1,0 +1,201 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/analytics?resource=workspace&metrics=elements_in_workspace&view=summary&workspaceType=public,partner,internal&duration=last_6_months
+  method: GET
+  queryParams:
+    resource: workspace
+    metrics: elements_in_workspace
+    view: summary
+    workspaceType: public,partner,internal
+    duration: last_6_months
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "data": {
+              "summary": {
+                  "schema": {
+                      "columns": [
+                          {
+                              "name": "timestamp",
+                              "type": "DATE",
+                              "format": "YYYY-MM-DD",
+                              "description": "Reporting date for the aggregated metrics."
+                          },
+                          {
+                              "name": "collections_count",
+                              "type": "INTEGER",
+                              "description": "Total number of collections at the given time."
+                          },
+                          {
+                              "name": "environments_count",
+                              "type": "INTEGER",
+                              "description": "Total number of environments at the given time."
+                          },
+                          {
+                              "name": "mocks_count",
+                              "type": "INTEGER",
+                              "description": "Total number of mock servers at the given time."
+                          },
+                          {
+                              "name": "monitors_count",
+                              "type": "INTEGER",
+                              "description": "Total number of monitors at the given time."
+                          },
+                          {
+                              "name": "flows_count",
+                              "type": "INTEGER",
+                              "description": "Total number of flows created at the given time."
+                          }
+                      ]
+                  },
+                  "rows": [
+                      [
+                          "2025-03-01",
+                          420,
+                          310,
+                          150,
+                          190,
+                          120
+                      ],
+                      [
+                          "2025-04-01",
+                          450,
+                          320,
+                          160,
+                          200,
+                          125
+                      ],
+                      [
+                          "2025-05-01",
+                          470,
+                          335,
+                          170,
+                          215,
+                          130
+                      ],
+                      [
+                          "2025-06-01",
+                          500,
+                          345,
+                          185,
+                          230,
+                          140
+                      ],
+                      [
+                          "2025-07-01",
+                          520,
+                          355,
+                          195,
+                          240,
+                          145
+                      ],
+                      [
+                          "2025-08-01",
+                          540,
+                          370,
+                          205,
+                          255,
+                          150
+                      ]
+                  ]
+              }
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "data": {
+                  "type": "object",
+                  "properties": {
+                      "summary": {
+                          "type": "object",
+                          "properties": {
+                              "schema": {
+                                  "type": "object",
+                                  "properties": {
+                                      "columns": {
+                                          "type": "array",
+                                          "description": "A list of column entries.",
+                                          "items": {
+                                              "type": "object",
+                                              "properties": {
+                                                  "name": {
+                                                      "type": "string",
+                                                      "description": "The name of the column."
+                                                  },
+                                                  "type": {
+                                                      "type": "string",
+                                                      "enum": [
+                                                          "DATE",
+                                                          "STRING",
+                                                          "INTEGER",
+                                                          "TIMESTAMP",
+                                                          "BOOLEAN",
+                                                          "NUMBER",
+                                                          "FLOAT"
+                                                      ],
+                                                      "description": "The data type of the column."
+                                                  },
+                                                  "format": {
+                                                      "type": "string",
+                                                      "description": "The data type's format."
+                                                  },
+                                                  "description": {
+                                                      "type": "string",
+                                                      "description": "A description of what the column represents."
+                                                  }
+                                              }
+                                          }
+                                      }
+                                  }
+                              },
+                              "rows": {
+                                  "type": "array",
+                                  "description": "A list of data row entries. Each row is an array of values that correspond to the columns defined in the schema.",
+                                  "items": {
+                                      "type": "array",
+                                      "items": {
+                                          "type": [
+                                              "string",
+                                              "integer",
+                                              "number",
+                                              "boolean",
+                                              "null"
+                                          ]
+                                      }
+                                  }
+                              },
+                              "pagination": {
+                                  "type": "object",
+                                  "description": "Information about the response pagination.",
+                                  "properties": {
+                                      "total": {
+                                          "type": "integer",
+                                          "description": "The total number of records available."
+                                      },
+                                      "limit": {
+                                          "type": "integer",
+                                          "description": "The maximum number of records returned in the response."
+                                      },
+                                      "offset": {
+                                          "type": "integer",
+                                          "description": "The number of records skipped."
+                                      },
+                                      "has_more": {
+                                          "type": "boolean",
+                                          "description": "Indicates whether more are records available."
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+order: 4000

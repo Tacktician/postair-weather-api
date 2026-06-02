@@ -1,0 +1,144 @@
+$kind: http-request
+description: |-
+  Updates specific environment properties, such as its name and variables.
+
+  **Note:**
+
+  - You can only perform one type of operation at a time. For example, you cannot perform an `add` and `replace` operation in the same call.
+      
+  - The request body size cannot exceed the maximum allowed size of 30MB.
+      
+  - If you receive an HTTP `411 Length Required` error response, manually pass the `Content-Length` header and its value in the request header.
+      
+  - To add a description to an existing variable, use the `add` operation.
+url: "{{baseUrl}}/environments/:environmentId"
+method: PATCH
+pathVariables:
+  - key: environmentId
+    value: ""
+    description: The environment's ID.
+body:
+  type: json
+  content: |-
+    [
+        {
+            "op": "{{operationType}}",
+            "path": "{{environmentPath}}",
+            "value": "{{value}}"
+        }
+    ]
+  $type: |-
+    {
+        "anyOf": [
+            {
+                "title": "Add Variable",
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "required": ["op", "path", "value"],
+                    "properties": {
+                        "op": {
+                            "type": "string",
+                            "description": "The `add` operation."
+                        },
+                        "path": {
+                            "type": "string",
+                            "description": "The [JSON Pointer syntax](https://datatracker.ietf.org/doc/html/rfc6901) that indicates the entry to update, in `/values/#` format, where `#` is the entry ID. The first record begins at the `0` value."
+                        },
+                        "value": {
+                            "type": "object",
+                            "description": "Information about the variable.",
+                            "properties": {
+                                "key": {
+                                    "type": "string",
+                                    "description": "The variable's key (name)."
+                                },
+                                "value": {
+                                    "type": "string",
+                                    "description": "The variable's value."
+                                },
+                                "type": {
+                                    "type": "string",
+                                    "description": "The variable's type:\n- `secret` — The variable value is masked.\n- `default` — The variable value is visible in plain text.\n"
+                                },
+                                "enabled": {
+                                    "type": "boolean",
+                                    "default": true,
+                                    "description": "If true, enables the variable."
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "maxLength": 512,
+                                    "description": "The variable's description."
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "title": "Update Environment Name",
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "required": ["op","path","value"],
+                    "properties": {
+                        "op": {
+                            "type": "string",
+                            "description": "The `replace` operation."
+                        },
+                        "path": {
+                            "type": "string",
+                            "description": "The `/name` value."
+                        },
+                        "value": {
+                            "type": "string",
+                            "description": "The environment's updated name."
+                        }
+                    }
+                }
+            },
+            {
+                "title": "Update Variable",
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "required": ["op", "path", "value"],
+                    "properties": {
+                        "op": {
+                            "type": "string",
+                            "description": "The `replace` operation."
+                        },
+                        "path": {
+                            "type": "string",
+                            "description": "The [JSON Pointer syntax](https://datatracker.ietf.org/doc/html/rfc6901) that indicates the entry to update, in `/values/#/{value}` format, where:\n- `#` — The entry ID. The first record begins at the `0` value.\n- `{value}` — The variable property to update. Accepts `key`, `value`, `type`, and `enable`.\n"
+                        },
+                        "value": {
+                            "type": "string",
+                            "description": "The variable's value."
+                        }
+                    }
+                }
+            },
+            {
+                "title": "Remove Variable",
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "required": ["op", "path"],
+                    "properties": {
+                        "op": {
+                            "type": "string",
+                            "description": "The `remove` operation."
+                        },
+                        "path": {
+                            "type": "string",
+                            "description": "The [JSON Pointer syntax](https://datatracker.ietf.org/doc/html/rfc6901) that indicates the entry to update, in `/values/#` format, where `#` is the entry ID. The first record begins at the `0` value."
+                        }
+                    }
+                }
+            }
+        ]
+    }
+examples: ./.resources/Update an environment.resources/examples
+order: 5000

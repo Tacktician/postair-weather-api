@@ -1,0 +1,121 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/apis/:apiId?include=schemas,collections,versions,gitInfo
+  method: GET
+  headers:
+    Accept: application/vnd.api.v10+json
+  queryParams:
+    include: schemas,collections,versions,gitInfo
+  pathVariables:
+    apiId: 5360b75f-447e-467c-9299-12fd6c92450d
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "createdBy": "12345678",
+          "createdAt": "2022-06-09T14:48:45.000Z",
+          "updatedBy": "12345678",
+          "updatedAt": "2022-06-09T19:50:49.000Z",
+          "description": "This is a test API.",
+          "id": "5360b75f-447e-467c-9299-12fd6c92450d",
+          "name": "Test API",
+          "summary": "Test API.",
+          "versions": [
+              {
+                  "id": "18ccb2dc-1746-4945-ba76-8152b37cr123",
+                  "name": "v1.0.0"
+              }
+          ],
+          "gitInfo": {
+              "schemaFolder": "",
+              "domain": "https://example.com",
+              "repository": "repo-name",
+              "organization": "org-name",
+              "collectionFolder": "collection-folder"
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "createdBy": {
+                  "type": "string",
+                  "description": "The user ID of the user that created the API."
+              },
+              "createdAt": {
+                  "type": "string",
+                  "description": "The date and time at which the API was created."
+              },
+              "updatedBy": {
+                  "type": "string",
+                  "description": "The user ID of the user that updated the API."
+              },
+              "updatedAt": {
+                  "type": "string",
+                  "description": "The date and time at which the API was updated."
+              },
+              "description": {
+                  "type": "string",
+                  "description": "The API's description."
+              },
+              "id": {
+                  "type": "string",
+                  "description": "The API's ID."
+              },
+              "name": {
+                  "type": "string",
+                  "description": "The API's name."
+              },
+              "summary": {
+                  "type": "string",
+                  "description": "The API's short summary."
+              },
+              "versions": {
+                  "type": "array",
+                  "description": "The API's versions.",
+                  "items": {
+                      "type": "object",
+                      "properties": {
+                          "id": {
+                              "type": "string",
+                              "description": "The version's ID."
+                          },
+                          "name": {
+                              "type": "string",
+                              "description": "The version's name."
+                          }
+                      }
+                  }
+              },
+              "gitInfo": {
+                  "type": "object",
+                  "description": "Information about the API's Git repository integration.",
+                  "properties": {
+                      "schemaFolder": {
+                          "type": "string",
+                          "description": "The API definition's repository folder location."
+                      },
+                      "domain": {
+                          "type": "string",
+                          "description": "The domain at which the Git repository is hosted."
+                      },
+                      "repository": {
+                          "type": "string",
+                          "description": "The repository's name."
+                      },
+                      "organization": {
+                          "type": "string",
+                          "description": "The organization that owns the repository."
+                      },
+                      "collectionFolder": {
+                          "type": "string",
+                          "description": "The API definition's collection repository folder location."
+                      }
+                  }
+              }
+          }
+      }
+order: 3000

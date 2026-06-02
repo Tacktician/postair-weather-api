@@ -1,0 +1,112 @@
+$kind: http-request
+name: Update a user
+description: |-
+  Updates a user in Postman.
+
+  ### Reactivating users
+
+  By setting the `active` property from `false` to `true`, this reactivates an account. This allows the account to authenticate in to Postman and adds the account back on to your Postman team.
+url: "{{baseUrl}}/scim/v2/Users/:userId"
+method: PATCH
+pathVariables:
+  - key: userId
+    value: ""
+    description: The user's SCIM ID.
+body:
+  type: json
+  content: |-
+    {
+        "schemas": [
+            "urn:ietf:params:scim:api:messages:2.0:PatchOp"
+        ],
+        "Operations": [
+            {
+                "op": "replace",
+                "value": {
+                    "active": true
+                }
+            }
+        ]
+    }
+  $type: |-
+    {
+        "type": "object",
+        "anyOf": [
+            {
+                "title": "Update Active State",
+                "type": "object",
+                "properties": {
+                    "schemas": {
+                        "type": "array",
+                        "description": "The [SCIM schema URI](https://www.iana.org/assignments/scim/scim.xhtml).",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "Operations": {
+                        "type": "array",
+                        "description": "Information about the user update operation.",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "op": {
+                                    "type": "string",
+                                    "description": "The operation to perform.",
+                                    "enum": ["replace"]
+                                },
+                                "value": {
+                                    "type": "object",
+                                    "description": "The performed operation's value.",
+                                    "properties": {
+                                        "active": {
+                                            "type": "boolean",
+                                            "description": "Sets the user's `active` state:\n- `true` — Activates the user. This lets them authenticate in to your Postman team.\n- `false` — Removes the user from your Postman team and deactivates the account. This blocks the user from authenticating in to Postman."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "title": "Update Username",
+                "type": "object",
+                "properties": {
+                    "schemas": {
+                        "type": "array",
+                        "description": "The [SCIM schema URI](https://www.iana.org/assignments/scim/scim.xhtml).",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "Operations": {
+                        "type": "array",
+                        "description": "Information about the user update operation.",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "op": {
+                                    "type": "string",
+                                    "description": "The operation to perform. Accepts the `replace` value.",
+                                    "enum": ["replace"]
+                                },
+                                "path": {
+                                    "type": "string",
+                                    "description": "The operation's path. Accepts the `userName` value.",
+                                    "enum": ["userName"]
+                                },
+                                "value": {
+                                    "type": "string",
+                                    "format": "email",
+                                    "description": "The user's email address."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        ]
+    }
+examples: ./.resources/Update a user-1.resources/examples
+order: 5000

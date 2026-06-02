@@ -1,0 +1,102 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/teams/:teamId/access-requests/:requestId
+  method: POST
+  pathVariables:
+    teamId: "123"
+    requestId: "1096"
+  body:
+    type: json
+    content: |-
+      {
+          "action": "deny"
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "result": {
+              "entityType": "user",
+              "entityId": 87654321,
+              "role": "TEAM_DEVELOPER",
+              "status": "Denied",
+              "accessRequest": {
+                  "id": 1095,
+                  "requestType": "REQUEST_TO_ADD_MEMBERS",
+                  "reason": "",
+                  "status": "Denied",
+                  "objectType": "team",
+                  "objectId": 1095,
+                  "createdBy": 87654321
+              }
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "result": {
+                  "type": "object",
+                  "properties": {
+                      "entityType": {
+                          "type": "string",
+                          "description": "The entity type."
+                      },
+                      "entityId": {
+                          "type": ["string", "integer"],
+                          "description": "The entity's ID."
+                      },
+                      "role": {
+                          "type": "string",
+                          "description": "The requested team role."
+                      },
+                      "previousRole": {
+                          "type": ["string", "null"],
+                          "description": "The previously assigned role, if one existed."
+                      },
+                      "status": {
+                          "type": "string",
+                          "description": "The access request's status."
+                      },
+                      "accessRequest": {
+                          "type": "object",
+                          "description": "Information about the access request",
+                          "properties": {
+                              "id": {
+                                  "type": "integer",
+                                  "description": "The access request's ID."
+                              },
+                              "requestType": {
+                                  "type": "string",
+                                  "description": "The access request type."
+                              },
+                              "reason": {
+                                  "type": "string",
+                                  "description": "The reason the access request was created."
+                              },
+                              "status": {
+                                  "type": "string",
+                                  "description": "The access request's status."
+                              },
+                              "objectType": {
+                                  "type": "string",
+                                  "description": "The entity type."
+                              },
+                              "objectId": {
+                                  "type": "integer",
+                                  "description": "The entity's ID."
+                              },
+                              "createdBy": {
+                                  "type": "integer",
+                                  "description": "The user ID of the user who created the access request."
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+order: 2000

@@ -1,0 +1,55 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/apis/:apiId/tags
+  method: PUT
+  headers:
+    Accept: application/vnd.api.v10+json
+  pathVariables:
+    apiId: 6fd634a3-79ba-451d-8f07-56a953f96667
+  body:
+    type: json
+    content: |-
+      {
+          "tags": [
+              {
+                  "slug": "needs-review"
+              }
+          ]
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "tags": [
+              {
+                  "slug": "needs-review"
+              }
+          ]
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "tags": {
+                  "type": "array",
+                  "description": "A list of associated tags.",
+                  "items": {
+                      "type": "object",
+                      "description": "Information about the tag.",
+                      "properties": {
+                          "slug": {
+                              "type": "string",
+                              "pattern": "^[a-z][a-z0-9-]*[a-z0-9]+$",
+                              "minLength": 2,
+                              "maxLength": 64,
+                              "description": "The tag's ID within a team or individual (non-team) user scope."
+                          }
+                      }
+                  }
+              }
+          }
+      }
+order: 1000

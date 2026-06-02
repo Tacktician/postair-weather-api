@@ -1,0 +1,53 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/collections/:collectionUid/folders/:folderUid/comments
+  method: POST
+  pathVariables:
+    collectionUid: 12345678-12ece9e1-2abf-4edc-8e34-de66e74114d2
+    folderUid: 12345678-65a99e60-8e0a-4b6e-b79c-7d8264cc5caa
+  body:
+    type: json
+    content: |-
+      {
+      	"body": "This is an example."
+      }
+response:
+  statusCode: 404
+  statusText: Not Found
+  body:
+    type: json
+    content: |-
+      {
+          "type": "https://api.postman.com/problems/not-found",
+          "title": "Not Found",
+          "detail": "Not Found",
+          "status": 404
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "type": {
+                  "type": "string",
+                  "format": "uri",
+                  "description": "The [URI reference](https://www.rfc-editor.org/rfc/rfc3986) that identifies the type of problem."
+              },
+              "title": {
+                  "type": "string",
+                  "description": "A short summary of the problem."
+              },
+              "detail": {
+                  "type": "string",
+                  "description": "Information about the error."
+              },
+              "status": {
+                  "type": "integer",
+                  "description": "The error's HTTP status code."
+              },
+              "instance": {
+                  "type": "string",
+                  "description": "The URI reference that identifies the specific occurrence of the problem."
+              }
+          }
+      }
+order: 6000

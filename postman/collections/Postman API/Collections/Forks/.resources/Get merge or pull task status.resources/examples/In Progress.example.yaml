@@ -1,0 +1,32 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/collection-merges-tasks/:taskId
+  method: GET
+  pathVariables:
+    taskId: pm~vc:merge-workflow~12345678-5a027c05-056b-49f5-ac9d-37c29f2d91c3
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "id": "pm~vc:merge-workflow~12345678-5a027c05-056b-49f5-ac9d-37c29f2d91c3",
+          "status": "in-progress"
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "id": {
+                  "type": "string",
+                  "description": "The task's ID."
+              },
+              "status": {
+                  "type": "string",
+                  "description": "The task's current status.",
+                  "enum": ["successful", "in-progress", "failed"]
+              }
+          }
+      }
+order: 2000

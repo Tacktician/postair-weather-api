@@ -1,0 +1,40 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/scim/v2/Groups
+  method: GET
+response:
+  statusCode: 429
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "schemas": [
+              "urn:ietf:params:scim:api:messages:2.0:Error"
+          ],
+          "detail": "That’s 300 attempts in less than a minute. Wait for a minute and then try again.",
+          "status": 429
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "schemas": {
+                  "type": "array",
+                  "description": "The [SCIM schema URI](https://www.iana.org/assignments/scim/scim.xhtml).",
+                  "items": {
+                      "type": "string",
+                      "format": "uri"
+                  }
+              },
+              "detail": {
+                  "type": "string",
+                  "description": "Information about the error."
+              },
+              "status": {
+                  "type": "integer",
+                  "description": "The HTTP status code."
+              }
+          }
+      }
+order: 8000

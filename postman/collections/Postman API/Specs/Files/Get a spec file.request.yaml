@@ -1,0 +1,41 @@
+$kind: http-request
+description: Gets the contents of an API specification's file.
+url: "{{baseUrl}}/specs/:specId/files/:filePath"
+method: GET
+pathVariables:
+  - key: specId
+    value: ""
+    description: The spec's ID.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "uniqueItems": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+  - key: filePath
+    value: ""
+    description: The path to the file.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "uniqueItems": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+examples: ./.resources/Get a spec file.resources/examples
+order: 1000

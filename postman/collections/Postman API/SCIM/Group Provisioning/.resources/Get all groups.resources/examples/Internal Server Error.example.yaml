@@ -1,0 +1,40 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/scim/v2/Groups
+  method: GET
+response:
+  statusCode: 500
+  statusText: Internal Server Error
+  body:
+    type: json
+    content: |-
+      {
+          "schemas": [
+              "urn:ietf:params:scim:api:messages:2.0:Error"
+          ],
+          "detail": "Couldn’t fetch members of the team.",
+          "status": "500"
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "schemas": {
+                  "type": "array",
+                  "description": "The [SCIM schema URI](https://www.iana.org/assignments/scim/scim.xhtml).",
+                  "items": {
+                      "type": "string",
+                      "format": "uri"
+                  }
+              },
+              "detail": {
+                  "type": "string",
+                  "description": "Information about the error."
+              },
+              "status": {
+                  "type": "string",
+                  "description": "The HTTP status code."
+              }
+          }
+      }
+order: 9000

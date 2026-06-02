@@ -1,0 +1,186 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/api-catalog/discovery-services
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+          "discoveredServices": [
+              {
+                  "name": "order-service",
+                  "version": "1.0.0"
+              },
+              {
+                  "name": "inventory-service",
+                  "version": "2.3.1"
+              },
+              {
+                  "name": "notification-service",
+                  "version": "0.9.0"
+              }
+          ]
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |
+      {
+          "data": [
+              {
+                  "id": "ad800c7e-f304-4731-ba94-ec8e6d61efc6",
+                  "organizationId": 123,
+                  "name": "order-service",
+                  "description": null,
+                  "version": "1.0.0",
+                  "sourceEnvironment": null,
+                  "systemEnvironmentId": null,
+                  "tags": [],
+                  "status": "discovered",
+                  "endpointsCount": 0,
+                  "providerServiceId": "order-service:1.0.0",
+                  "discoveredAt": "2026-02-12T04:01:26.000Z",
+                  "discoveredBy": 12345678,
+                  "lastSyncedAt": "2026-02-12T04:01:26.000Z"
+              },
+              {
+                  "id": "fb15530b-7166-4777-b167-a3f1a2ce3b68",
+                  "organizationId": 123,
+                  "connectionId": 1,
+                  "name": "inventory-service",
+                  "description": null,
+                  "version": "2.3.1",
+                  "sourceEnvironment": null,
+                  "systemEnvironmentId": null,
+                  "tags": [],
+                  "status": "discovered",
+                  "endpointsCount": 0,
+                  "providerServiceId": "inventory-service:2.3.1",
+                  "discoveredAt": "2026-02-12T04:01:26.000Z",
+                  "discoveredBy": 12345678,
+                  "lastSyncedAt": "2026-02-12T04:01:26.000Z"
+              },
+              {
+                  "id": "a4fa1e36-161f-4635-a3f3-db62237b76c2",
+                  "organizationId": 123,
+                  "name": "notification-service",
+                  "description": null,
+                  "version": "0.9.0",
+                  "sourceEnvironment": null,
+                  "systemEnvironmentId": null,
+                  "tags": [],
+                  "status": "discovered",
+                  "endpointsCount": 0,
+                  "providerServiceId": "notification-service:0.9.0",
+                  "discoveredAt": "2026-02-12T04:01:26.000Z",
+                  "discoveredBy": 12345678,
+                  "lastSyncedAt": "2026-02-12T04:01:26.000Z"
+              }
+          ],
+          "meta": {
+              "total": 3,
+              "created": 3,
+              "updated": 0
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "data": {
+                  "type": "array",
+                  "description": "A list of discovered services.",
+                  "items": {
+                      "type": "object",
+                      "description": "Information about a discovered service.",
+                      "properties": {
+                          "id": {
+                              "type": "string",
+                              "description": "The service's ID."
+                          },
+                          "organizationId": {
+                              "type": "integer",
+                              "description": "The ID of the organization that the service belongs to."
+                          },
+                          "name": {
+                              "type": "string",
+                              "description": "The servie's name."
+                          },
+                          "description": {
+                              "type": ["string", "null"],
+                              "description": "The service's description."
+                          },
+                          "version": {
+                              "type": ["string", "null"],
+                              "description": "The service's version."
+                          },
+                          "sourceEnvironment": {
+                              "type": ["string", "null"],
+                              "description": "The source environment in which the service was discovered."
+                          },
+                          "systemEnvironmentId": {
+                              "type": ["string", "null"],
+                              "description": "The mapped system environment's ID. Returns a null value if the environment is not mapped."
+                          },
+                          "tags": {
+                              "type": "array",
+                              "description": "A list of tags associated with the service.",
+                              "items": {
+                                  "type": "string",
+                                  "description": "The tag's name."
+                              }
+                          },
+                          "status": {
+                              "type": "string",
+                              "description": "The service's current status."
+                          },
+                          "endpointsCount": {
+                              "type": "integer",
+                              "description": "The total number of endpoints associated with the service."
+                          },
+                          "providerServiceId": {
+                              "type": "string",
+                              "description": "The provider-assigned service ID. This value is automatically generated if the `providerServiceId` isn't passed in the request body."
+                          },
+                          "discoveredAt": {
+                              "type": "string",
+                              "format": "date-time",
+                              "description": "The date and time at which the service was first discovered."
+                          },
+                          "discoveredBy": {
+                              "type": "integer",
+                              "description": "The user ID of the user who discovered or ingested the service."
+                          },
+                          "lastSyncedAt": {
+                              "type": "string",
+                              "format": "date-time",
+                              "description": "The date and time of the most recent service sync."
+                          }
+                      }
+                  }
+              },
+              "meta": {
+                  "type": "object",
+                  "description": "The operation's metadata summary.",
+                  "properties": {
+                      "total": {
+                          "type": "integer",
+                          "description": "The total number of services processed."
+                      },
+                      "created": {
+                          "type": "integer",
+                          "description": "The number of new services created."
+                      },
+                      "updated": {
+                          "type": "integer",
+                          "description": "The number of existing services updated."
+                      }
+                  }
+              }
+          }
+      }
+order: 4000

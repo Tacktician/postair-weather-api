@@ -1,0 +1,49 @@
+$kind: http-request
+description: |-
+  Deletes a comment from an API. On success, this returns an HTTP `204 No Content` response.
+
+  **Note:**
+
+  Deleting the first comment of a thread deletes all the comments in the thread.
+url: "{{baseUrl}}/apis/:apiId/comments/:commentId"
+method: DELETE
+pathVariables:
+  - key: apiId
+    value: "{{apiId}}"
+    description: The API's ID.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "uniqueItems": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+  - key: commentId
+    value: "{{commentId}}"
+    description: The comment's ID.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer",
+            "deprecated": false,
+            "uniqueItems": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+body:
+  type: json
+  content: ""
+examples: ./.resources/Delete an API's comment.resources/examples
+order: 4000

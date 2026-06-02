@@ -1,0 +1,95 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/scim/v2/ResourceTypes
+  method: GET
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      [
+          {
+              "schemas": [
+                  "urn:ietf:params:scim:schemas:core:2.0:ResourceType"
+              ],
+              "id": "User",
+              "name": "User",
+              "endpoint": "/Users",
+              "description": "User Account",
+              "schema": "urn:ietf:params:scim:schemas:core:2.0:User",
+              "schemaExtensions": [
+                  {
+                      "schema": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User",
+                      "required": true
+                  }
+              ]
+          },
+          {
+              "schemas": [
+                  "urn:ietf:params:scim:schemas:core:2.0:ResourceType"
+              ],
+              "id": "Group",
+              "name": "Group",
+              "endpoint": "/Groups",
+              "description": "Group Account",
+              "schema": "urn:ietf:params:scim:schemas:core:2.0:Group"
+          }
+      ]
+    $type: |-
+      {
+          "type": "array",
+          "items": {
+              "type": "object",
+              "properties": {
+                  "schemas": {
+                      "type": "array",
+                      "description": "The [SCIM schema URI](https://www.iana.org/assignments/scim/scim.xhtml).",
+                      "items": {
+                          "type": "string",
+                          "format": "uri"
+                      }
+                  },
+                  "id": {
+                      "type": "string",
+                      "description": "The resource's ID."
+                  },
+                  "name": {
+                      "type": "string",
+                      "description": "The resource's friendly name."
+                  },
+                  "endpoint": {
+                      "type": "string",
+                      "description": "The resource's endpoint."
+                  },
+                  "description": {
+                      "type": "string",
+                      "description": "The resource's description."
+                  },
+                  "schema": {
+                      "type": "string",
+                      "description": "The [SCIM schema URI](https://www.iana.org/assignments/scim/scim.xhtml).",
+                      "format": "uri"
+                  },
+                  "schemaExtensions": {
+                      "type": "array",
+                      "description": "Information about the resource's schema extensions.",
+                      "items": {
+                          "type": "object",
+                          "properties": {
+                              "schema": {
+                                  "type": "string",
+                                  "format": "uri",
+                                  "description": "The [SCIM schema URI](https://www.iana.org/assignments/scim/scim.xhtml)."
+                              },
+                              "required": {
+                                  "type": "boolean",
+                                  "description": "If true, the resource must include this schema extension."
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+order: 1000

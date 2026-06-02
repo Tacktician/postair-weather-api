@@ -1,0 +1,61 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/collections/:collectionId
+  method: PATCH
+  pathVariables:
+    collectionId: 12ece9e1-2abf-4edc-8e34-de66e74114d2
+  body:
+    type: json
+    content: |-
+      {
+          "collection": {
+              "auth": {
+                  "type": "apikey"
+              }
+          }
+      }
+response:
+  statusCode: 400
+  statusText: Bad Request
+  body:
+    type: json
+    content: |-
+      {
+          "error": {
+              "name": "paramMissingError",
+              "message": "The key 'apikey' must be present in 'collection.auth' when 'type' is 'apikey'.",
+              "details": {
+                  "param": "apikey"
+              }
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "error": {
+                  "type": "object",
+                  "properties": {
+                      "name": {
+                          "type": "string",
+                          "description": "The error name."
+                      },
+                      "message": {
+                          "type": "string",
+                          "description": "The error message."
+                      },
+                      "details": {
+                          "type": "object",
+                          "description": "Information about the error.",
+                          "properties": {
+                              "param": {
+                                  "type": "string",
+                                  "description": "The missing parameter value."
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+order: 11000

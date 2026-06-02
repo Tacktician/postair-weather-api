@@ -1,0 +1,29 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/network/private/network-entity/request/all
+  method: GET
+response:
+  statusCode: 400
+  statusText: Bad Request
+  body:
+    type: json
+    content: |-
+      {
+          "name": "invalidParamsError",
+          "message": "The specified request does not exist."
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "name": {
+                  "type": "string",
+                  "description": "The error name."
+              },
+              "message": {
+                  "type": "string",
+                  "description": "The error message."
+              }
+          }
+      }
+order: 2000

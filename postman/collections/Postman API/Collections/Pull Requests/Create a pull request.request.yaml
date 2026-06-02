@@ -1,0 +1,49 @@
+$kind: http-request
+description: Creates a pull request for a forked collection into its parent collection.
+url: "{{baseUrl}}/collections/:collectiondUid/pull-requests"
+method: POST
+pathVariables:
+  - key: collectiondUid
+    value: ""
+    description: The collection's unique ID.
+body:
+  type: json
+  content: |-
+    {
+        "title": "{{pullRequestTitle}}",
+        "description": "{{pullRequesetDescription}}",
+        "reviewers": [
+            "{{userId}}"
+        ],
+        "destinationId": "{{destinationCollectionId}}"
+    }
+  $type: |-
+    {
+        "type": "object",
+        "description": "Information about the pull request.",
+        "required": ["title", "description", "destinationId"],
+        "properties": {
+            "title": {
+                "type": "string",
+                "description": "The title of the pull request."
+            },
+            "description": {
+                "type": "string",
+                "description": "The pull request's description."
+            },
+            "reviewers": {
+                "type": "array",
+                "description": "A list of reviewers to assign to the pull request.",
+                "items": {
+                    "type": "string",
+                    "description": "The reviewer's user ID."
+                }
+            },
+            "destinationId": {
+                "type": "string",
+                "description": "The collection ID to merge the pull request into."
+            }
+        }
+    }
+examples: ./.resources/Create a pull request.resources/examples
+order: 2000

@@ -1,0 +1,53 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/scim/v2/Groups?startIndex=1&count=2
+  method: GET
+  queryParams:
+    startIndex: "1"
+    count: "2"
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "schemas": [
+              "urn:ietf:params:scim:api:messages:2.0:ListResponse"
+          ],
+          "totalResults": 0,
+          "startIndex": 1,
+          "itemsPerPage": 0,
+          "Resources": []
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "schemas": {
+                  "type": "array",
+                  "description": "The [SCIM schema URI](https://www.iana.org/assignments/scim/scim.xhtml).",
+                  "items": {
+                      "type": "string",
+                      "format": "uri"
+                  }
+              },
+              "totalResults": {
+                  "type": "integer",
+                  "description": "The total number of results found."
+              },
+              "startIndex": {
+                  "type": "integer",
+                  "description": "The index entry by which the returned results begin."
+              },
+              "itemsPerPage": {
+                  "type": "integer",
+                  "description": "The number of items per response page."
+              },
+              "Resources": {
+                  "type": "array",
+                  "description": "A list of group resources."
+              }
+          }
+      }
+order: 3000

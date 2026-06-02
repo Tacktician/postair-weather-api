@@ -1,0 +1,162 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/pull-requests/:pullRequestId
+  method: GET
+  pathVariables:
+    pullRequestId: 4e1a6609-1a29-4037-a411-89ecc14c6cd8
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "createdAt": "2024-02-20T09:55:46.000Z",
+          "updatedAt": "2024-02-20T09:58:38.000Z",
+          "id": "4e1a6609-1a29-4037-a411-89ecc14c6cd8",
+          "title": "Test PR",
+          "description": "This is a test pull request.",
+          "createdBy": "12345678",
+          "updatedBy": "12345678",
+          "comment": "Missing descriptions in requests",
+          "forkType": "collection",
+          "source": {
+              "id": "87654321-3b79068c-dbe5-41d5-a826-51be4bf646ef",
+              "name": "test-collection",
+              "forkName": "Taylor Lee's fork",
+              "exists": true
+          },
+          "destination": {
+              "id": "123456789-24f57217-1169-4b7c-a810-0e957c04eaa5",
+              "name": "test-collection",
+              "exists": true
+          },
+          "status": "declined",
+          "merge": {
+              "status": "inactive"
+          },
+          "reviewers": [
+              {
+                  "id": "12345678",
+                  "status": "declined"
+              }
+          ]
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "createdAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "The date and time at which the pull request was created."
+              },
+              "updatedAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "The date and time at which the pull request was updated."
+              },
+              "id": {
+                  "type": "string",
+                  "description": "The pull request's ID."
+              },
+              "title": {
+                  "type": "string",
+                  "description": "The pull request's title."
+              },
+              "description": {
+                  "type": "string",
+                  "description": "The pull request's description."
+              },
+              "createdBy": {
+                  "type": "string",
+                  "description": "The ID of the user who created the pull request."
+              },
+              "updatedBy": {
+                  "type": "string",
+                  "description": "The ID of the user who last updated the pull request."
+              },
+              "comment": {
+                  "type": "string",
+                  "description": "If the pull request is a `decline` status, an optional comment about why the pull request was declined."
+              },
+              "forkType": {
+                  "type": "string",
+                  "description": "The type of element the pull request was forked from."
+              },
+              "source": {
+                  "type": "object",
+                  "description": "Information about the pull request's source (parent) element.",
+                  "properties": {
+                      "id": {
+                          "type": "string",
+                          "description": "The pull request's source ID."
+                      },
+                      "name": {
+                          "type": "string",
+                          "description": "The source element's name."
+                      },
+                      "forkName": {
+                          "type": "string",
+                          "description": "The name of the fork created from the source element."
+                      },
+                      "exists": {
+                          "type": "boolean",
+                          "description": "If true, whether the element is present and not deleted."
+                      }
+                  }
+              },
+              "destination": {
+                  "type": "object",
+                  "description": "Information about the pull request destination element.",
+                  "properties": {
+                      "id": {
+                          "type": "string",
+                          "description": "The destination element's ID."
+                      },
+                      "name": {
+                          "type": "string",
+                          "description": "The destination element's name."
+                      },
+                      "exists": {
+                          "type": "boolean",
+                          "description": "If true, whether the element is present and not deleted."
+                      }
+                  }
+              },
+              "status": {
+                  "type": "string",
+                  "enum": ["open", "declined", "approved"],
+                  "description": "The pull request's current review status:\n- `open` — The pull request is still open.\n- `approved` — The pull request was approved by its reviewers.\n- `declined` — The pull request was not approved by its reviewers."
+              },
+              "merge": {
+                  "type": "object",
+                  "properties": {
+                      "status": {
+                          "type": "string",
+                          "enum": ["inactive", "inprogress", "failed"],
+                          "description": "The pull request's current merge status:\n- `inactive` — There is no merge in progress.\n- `inprogress` — The pull request is currently merging.\n- `failed` — The pull request's merge failed.\n"
+                      }
+                  }
+              },
+              "reviewers": {
+                  "type": "array",
+                  "description": "Information about the reviewers assigned to the pull request.",
+                  "items": {
+                      "type": "object",
+                      "properties": {
+                          "id": {
+                              "type": "string",
+                              "description": "The reviewer's user ID."
+                          },
+                          "status": {
+                              "type": "string",
+                              "enum": ["approved", "declined"],
+                              "description": "The reviewer's review status response. One of:\n- `approved`\n- `declined`"
+                          }
+                      }
+                  }
+              }
+          }
+      }
+order: 1000

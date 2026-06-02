@@ -1,0 +1,249 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/collections/:collectionId/requests?folder=4249383d-2af6-4ac6-9a2b-0930e8f639e3
+  method: POST
+  queryParams:
+    folder: 4249383d-2af6-4ac6-9a2b-0930e8f639e3
+  pathVariables:
+    collectionId: 12ece9e1-2abf-4edc-8e34-de66e74114d2
+  body:
+    type: json
+    content: |-
+      {
+          "name": "Example GET Request",
+          "description": "This is an example GET request.",
+          "url": "https://postman-echo.com/get?param=value",
+          "method": "GET",
+          "headers": [
+              {
+                  "key": "Host",
+                  "value": "postman-echo.com"
+              },
+              {
+                  "key": "user-agent",
+                  "value": "curl/7.88.1"
+              },
+              {
+                  "key": "accept",
+                  "value": "*/*"
+              },
+              {
+                  "key": "content-type",
+                  "value": "application/json"
+              }
+          ],
+          "queryParams": [
+              {
+                  "key": "id",
+                  "value": "{{id}}",
+                  "equals": true,
+                  "description": "Optional. The user's ID.",
+                  "enabled": true
+              }
+          ],
+          "dataMode": "raw",
+          "rawModeData": null,
+          "dataOptions": {
+              "raw": {
+                  "language": "json"
+              }
+          }
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "model_id": "c82dd02c-4870-4907-8fcb-593a876cf05b",
+          "meta": {
+              "model": "request",
+              "action": "import"
+          },
+          "data": {
+              "folder": "4249383d-2af6-4ac6-9a2b-0930e8f639e3",
+              "collection": "12ece9e1-2abf-4edc-8e34-de66e74114d2",
+              "method": "GET",
+              "queryParams": [
+                  {
+                      "value": "{{id}}",
+                      "key": "id",
+                      "equals": true,
+                      "description": "Optional. The user's ID.",
+                      "enabled": false
+                  }
+              ],
+              "description": "This is an example GET request.",
+              "url": "https://postman-echo.com/get?param=value",
+              "name": "Example",
+              "headers": [
+                  {
+                      "key": "Host",
+                      "value": "postman-echo.com"
+                  },
+                  {
+                      "key": "user-agent",
+                      "value": "curl/7.88.1"
+                  },
+                  {
+                      "key": "accept",
+                      "value": "*/*"
+                  },
+                  {
+                      "key": "content-type",
+                      "value": "application/json"
+                  }
+              ],
+              "dataMode": "raw",
+              "responses_order": [],
+              "id": "389f1640-7996-b519-4747-9f3c6a350a19",
+              "owner": "20891195",
+              "lastUpdatedBy": "20891195",
+              "headerData": [],
+              "createdAt": "2023-09-13T18:03:16.957Z",
+              "updatedAt": "2023-09-13T18:03:16.957Z",
+              "rawModeData": null,
+              "dataOptions": {
+                  "raw": {
+                      "language": "json"
+                  }
+              },
+              "responses": []
+          },
+          "revision": 32549528635
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "model_id": {
+                  "type": "string",
+                  "description": "The request's ID."
+              },
+              "meta": {
+                  "type": "object",
+                  "description": "A Postman-specific response that contains information about the internal performed operation.",
+                  "properties": {
+                      "model": {
+                          "type": "string"
+                      },
+                      "action": {
+                          "type": "string"
+                      }
+                  }
+              },
+              "data": {
+                  "type": "object",
+                  "description": "Information about the updated request. For a complete list of properties, refer to the **Request** entry in the [Postman Collection Format documentation](https://schema.postman.com/collection/json/v2.1.0/draft-07/docs/index.html).",
+                  "properties": {
+                      "folder": {
+                          "type": "string"
+                      },
+                      "collection": {
+                          "type": "string"
+                      },
+                      "method": {
+                          "type": "string"
+                      },
+                      "queryParams": {
+                          "type": "array",
+                          "items": {
+                              "type": "object",
+                              "properties": {
+                                  "value": {
+                                      "type": "string"
+                                  },
+                                  "key": {
+                                      "type": "string"
+                                  },
+                                  "equals": {
+                                      "type": "boolean"
+                                  },
+                                  "description": {
+                                      "type": "string"
+                                  },
+                                  "enabled": {
+                                      "type": "boolean"
+                                  }
+                              }
+                          }
+                      },
+                      "description": {
+                          "type": "string"
+                      },
+                      "url": {
+                          "type": "string",
+                          "format": "uri"
+                      },
+                      "name": {
+                          "type": "string"
+                      },
+                      "headers": {
+                          "type": "array",
+                          "items": {
+                              "type": "object",
+                              "properties": {
+                                  "key": {
+                                      "type": "string"
+                                  },
+                                  "value": {
+                                      "type": "string"
+                                  }
+                              }
+                          }
+                      },
+                      "dataMode": {
+                          "type": "string"
+                      },
+                      "responses_order": {
+                          "type": "array"
+                      },
+                      "id": {
+                          "type": "string"
+                      },
+                      "owner": {
+                          "type": "string"
+                      },
+                      "lastUpdatedBy": {
+                          "type": "string"
+                      },
+                      "headerData": {
+                          "type": "array"
+                      },
+                      "createdAt": {
+                          "type": "string",
+                          "format": "date-time"
+                      },
+                      "updatedAt": {
+                          "type": "string",
+                          "format": "date-time"
+                      },
+                      "rawModeData": {
+                          "type": "null"
+                      },
+                      "dataOptions": {
+                          "type": "object",
+                          "properties": {
+                              "raw": {
+                                  "type": "object",
+                                  "properties": {
+                                      "language": {
+                                          "type": "string"
+                                      }
+                                  }
+                              }
+                          }
+                      },
+                      "responses": {
+                          "type": "array"
+                      }
+                  }
+              },
+              "revision": {
+                  "type": "integer",
+                  "description": "An internal revision ID. Its value increments each time the resource changes. You can use this ID to track whether there were changes since the last time you fetched the resource."
+              }
+          }
+      }
+order: 3000

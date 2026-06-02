@@ -1,0 +1,57 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/monitors/:monitorId
+  method: PUT
+  pathVariables:
+    monitorId: 12345678-1e6b6cb7-f13d-4000-acb7-0695757174a8
+  body:
+    type: json
+    content: |-
+      {
+      	"monitor": {
+      		"name": "Test Monitor",
+      		"schedule": {
+      			"cron": "* * * * *",
+      			"timezone": "America/Chicago"
+      		}
+      	}
+      }
+response:
+  statusCode: 400
+  statusText: Bad Request
+  body:
+    type: json
+    content: |-
+      {
+          "error": {
+              "name": "cronPatternNotAllowedError",
+              "message": "The specified cron pattern is not allowed. Please check https://monitor.getpostman.com for the allowed schedules.",
+              "details": {
+                  "pattern": "* * * * *"
+              }
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "error": {
+                  "type": "object",
+                  "properties": {
+                      "name": {
+                          "type": "string",
+                          "description": "The error name."
+                      },
+                      "message": {
+                          "type": "string",
+                          "description": "The error message."
+                      },
+                      "details": {
+                          "type": "object",
+                          "description": "Information about the error."
+                      }
+                  }
+              }
+          }
+      }
+order: 6000

@@ -1,0 +1,85 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/pull-requests/:pullRequestId
+  method: PUT
+  pathVariables:
+    pullRequestId: 4e1a6609-1a29-4037-a411-89ecc14c6cd8
+  body:
+    type: json
+    content: |-
+      {
+          "title": "Updated PR title",
+          "description": "Updated description of the pull request.",
+          "reviewers": [
+              "12345678",
+              "87654321"
+          ]
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "id": "4e1a6609-1a29-4037-a411-89ecc14c6cd8",
+          "createdAt": "2024-02-20T09:58:57.000Z",
+          "updatedAt": "2024-02-20T09:58:57.000Z",
+          "sourceId": "87654321-3b79068c-dbe5-41d5-a826-51be4bf646ef",
+          "destinationId": "12345678-12ece9e1-2abf-4edc-8e34-de66e74114d2",
+          "title": "Updated PR title",
+          "description": "Updated description of the pull request.",
+          "createdBy": "12345678",
+          "status": "open",
+          "forkType": "collection"
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "id": {
+                  "type": "string",
+                  "description": "The pull request's ID."
+              },
+              "createdAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "The date and time at which the pull request was created."
+              },
+              "updatedAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "The date and time at which the pull request was updated."
+              },
+              "sourceId": {
+                  "type": "string",
+                  "description": "The unique ID of the source element."
+              },
+              "destinationId": {
+                  "type": "string",
+                  "description": "The pull request's merge destination ID."
+              },
+              "title": {
+                  "type": "string",
+                  "description": "The pull request's title."
+              },
+              "description": {
+                  "type": "string",
+                  "description": "The pull request's description."
+              },
+              "createdBy": {
+                  "type": "string",
+                  "description": "The ID of the user who created the pull request."
+              },
+              "status": {
+                  "type": "string",
+                  "enum": ["open", "approved", "declined", "merged"],
+                  "description": "The pull request's status."
+              },
+              "forkType": {
+                  "type": "string",
+                  "description": "The type of forked element."
+              }
+          }
+      }
+order: 1000

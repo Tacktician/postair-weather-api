@@ -1,0 +1,85 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/apis/:apiId/versions?cursor=RnJpIEZlYiAxNyAyMDIzIDEwOjM5OjUxIEdNVCswMDAwIChDb29yZGluYXRlZCBVbml2ZXJzYWwgVGltZSk=&limit=10
+  method: GET
+  headers:
+    Accept: application/vnd.api.v10+json
+  queryParams:
+    cursor: RnJpIEZlYiAxNyAyMDIzIDEwOjM5OjUxIEdNVCswMDAwIChDb29yZGluYXRlZCBVbml2ZXJzYWwgVGltZSk=
+    limit: "10"
+  pathVariables:
+    apiId: 90ca9f5a-c4c4-11ed-afa1-0242ac120002
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "meta": {
+              "total": 4,
+              "limit": 10
+          },
+          "versions": [
+              {
+                  "createdAt": "2023-02-17T10:39:51.000Z",
+                  "name": "v4",
+                  "id": "bc792958-ffd5-4a4c-bcf5-1c07cb8f277b",
+                  "releaseNotes": "",
+                  "updatedAt": "2023-02-17T10:39:57.000Z"
+              }
+          ]
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "meta": {
+                  "type": "object",
+                  "description": "The response's meta information for paginated results.",
+                  "properties": {
+                      "total": {
+                          "type": "integer",
+                          "description": "The number of records that match the defined criteria."
+                      },
+                      "limit": {
+                          "type": "integer",
+                          "description": "The maximum number of records in the paginated response."
+                      }
+                  }
+              },
+              "versions": {
+                  "type": "array",
+                  "description": "A list of the API's versions.",
+                  "items": {
+                      "type": "object",
+                      "description": "Information about the API version.",
+                      "properties": {
+                          "createdAt": {
+                              "type": "string",
+                              "format": "date-time",
+                              "description": "The date and time at which the version was created."
+                          },
+                          "name": {
+                              "type": "string",
+                              "description": "The version's name."
+                          },
+                          "id": {
+                              "type": "string",
+                              "description": "The version's ID."
+                          },
+                          "releaseNotes": {
+                              "type": "string",
+                              "description": "The version's release notes."
+                          },
+                          "updatedAt": {
+                              "type": "string",
+                              "format": "date-time",
+                              "description": "The date and time at which the version was last updated."
+                          }
+                      }
+                  }
+              }
+          }
+      }
+order: 3000

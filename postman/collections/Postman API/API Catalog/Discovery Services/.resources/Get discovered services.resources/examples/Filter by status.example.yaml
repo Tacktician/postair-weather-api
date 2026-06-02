@@ -1,0 +1,152 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/api-catalog/discovery-services?status=discovered
+  method: GET
+  queryParams:
+    status: discovered
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "meta": {
+              "total": 7,
+              "nextCursor": null
+          },
+          "data": [
+              {
+                  "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+                  "name": "Supply - stage (1.0.1)",
+                  "version": "1.0.1",
+                  "sourceEnvironment": "stage",
+                  "systemEnvironmentId": null,
+                  "status": "discovered",
+                  "endpointsCount": 6,
+                  "discoverySource": "api_gateway_app",
+                  "tags": [],
+                  "discoveredAt": "2026-02-12T04:01:26.000Z"
+              },
+              {
+                  "id": "d4e5f6a7-b8c9-0123-defa-234567890123",
+                  "name": "Order - stage (3.0.0)",
+                  "version": "3.0.0",
+                  "sourceEnvironment": "stage",
+                  "systemEnvironmentId": null,
+                  "status": "discovered",
+                  "endpointsCount": 2,
+                  "discoverySource": "api_gateway_app",
+                  "tags": [],
+                  "discoveredAt": "2026-02-12T04:01:26.000Z"
+              },
+              {
+                  "id": "b8c9d0e1-f2a3-4567-bcde-678901234567",
+                  "name": "Jelly Bean Wiki (IBM - 9) - sandbox (1.0.0)",
+                  "version": "1.0.0",
+                  "sourceEnvironment": "sandbox",
+                  "systemEnvironmentId": null,
+                  "status": "discovered",
+                  "endpointsCount": 3,
+                  "discoverySource": "api_gateway_app",
+                  "tags": [],
+                  "discoveredAt": "2026-02-12T04:01:26.000Z"
+              },
+              {
+                  "id": "c9d0e1f2-a3b4-5678-cdef-789012345678",
+                  "name": "Jelly Bean Wiki (IBM - 8) - sandbox (1.0.0)",
+                  "version": "1.0.0",
+                  "sourceEnvironment": "sandbox",
+                  "systemEnvironmentId": null,
+                  "status": "discovered",
+                  "endpointsCount": 3,
+                  "discoverySource": "api_gateway_app",
+                  "tags": [],
+                  "discoveredAt": "2026-02-12T04:01:26.000Z"
+              },
+              {
+                  "id": "d0e1f2a3-b4c5-6789-defa-890123456789",
+                  "name": "Jelly Bean Wiki (IBM - 7) - sandbox (1.0.0)",
+                  "version": "1.0.0",
+                  "sourceEnvironment": null,
+                  "systemEnvironmentId": null,
+                  "status": "discovered",
+                  "endpointsCount": 3,
+                  "discoverySource": "api_gateway_app",
+                  "tags": [],
+                  "discoveredAt": "2026-02-12T04:01:26.000Z"
+              }
+          ]
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "meta": {
+                  "type": "object",
+                  "description": "The response's meta information for paginated results.",
+                  "properties": {
+                      "total": {
+                          "type": "integer",
+                          "description": "The number of records found."
+                      },
+                      "nextCursor": {
+                          "type": ["string", "null"],
+                          "description": "The pagination cursor that points to the next record in the results set."
+                      }
+                  }
+              },
+              "data": {
+                  "type": "array",
+                  "description": "A list of discovered services.",
+                  "items": {
+                      "type": "object",
+                      "description": "Information about the discovered service.",
+                      "properties": {
+                          "id": {
+                              "type": "string",
+                              "description": "The service's ID."
+                          },
+                          "name": {
+                              "type": "string",
+                              "description": "The service's name."
+                          },
+                          "version": {
+                              "type": "string",
+                              "description": "The service's version."
+                          },
+                          "sourceEnvironment": {
+                              "type": ["string", "null"],
+                              "description": "The source environment in which the service was discovered."
+                          },
+                          "systemEnvironmentId": {
+                              "type": ["string", "null"],
+                              "description": "The mapped system environment's ID. Returns a null value if the environment is not mapped."
+                          },
+                          "status": {
+                              "type": "string",
+                              "description": "The service's current status."
+                          },
+                          "endpointsCount": {
+                              "type": "integer",
+                              "description": "The total number of endpoints associated with the service."
+                          },
+                          "discoverySource": {
+                              "type": "string",
+                              "description": "The source through which the service was discovered."
+                          },
+                          "tags": {
+                              "type": "array",
+                              "description": "A list of tags associated with the service."
+                          },
+                          "discoveredAt": {
+                              "type": "string",
+                              "format": "date-time",
+                              "description": "The date and time at which the service was first discovered."
+                          }
+                      }
+                  }
+              }
+          }
+      }
+order: 2000

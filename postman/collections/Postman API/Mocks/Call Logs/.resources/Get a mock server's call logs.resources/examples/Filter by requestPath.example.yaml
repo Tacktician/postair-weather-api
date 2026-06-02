@@ -1,0 +1,103 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/mocks/:mockId/call-logs?requestPath=/animals?type=Dog
+  method: GET
+  queryParams:
+    requestPath: /animals?type=Dog
+  pathVariables:
+    mockId: 12345678-e3d951bf-873f-49ac-a658-b2dcb91d3289
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+      	"call-logs": [
+      		{
+      			"id": "dae50669-f4c1-460a-b3a4-3a2445f4f39d-2468",
+      			"responseName": "Get filtered list of Animals",
+      			"servedAt": "2022-01-17T06:18:26.000Z",
+      			"request": {
+      				"method": "GET",
+      				"path": "/animals?type=dog"
+      			},
+      			"response": {
+      				"type": "success",
+      				"statusCode": 200
+      			}
+      		}
+      	],
+      	"meta": {
+      		"nextCursor": null
+      	}
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "call-logs": {
+                  "type": "array",
+                  "description": "A list of call logs.",
+                  "items": {
+                      "type": "object",
+                      "description": "Information about the mock server's server response.",
+                      "properties": {
+                          "id": {
+                              "type": "string",
+                              "description": "The server response's ID."
+                          },
+                          "responseName": {
+                              "type": "string",
+                              "description": "The server response's name."
+                          },
+                          "servedAt": {
+                              "type": "string",
+                              "format": "date-time",
+                              "description": "The date and time at which the server response was served."
+                          },
+                          "request": {
+                              "type": "object",
+                              "description": "The server response's request information.",
+                              "properties": {
+                                  "method": {
+                                      "type": "string",
+                                      "description": "The request method."
+                                  },
+                                  "path": {
+                                      "type": "string",
+                                      "description": "The request's path."
+                                  }
+                              }
+                          },
+                          "response": {
+                              "type": "object",
+                              "description": "The server response's response information.",
+                              "properties": {
+                                  "type": {
+                                      "type": "string",
+                                      "description": "The type of response."
+                                  },
+                                  "statusCode": {
+                                      "type": "integer",
+                                      "description": "The response's status code."
+                                  }
+                              }
+                          }
+                      }
+                  }
+              },
+              "meta": {
+                  "type": "object",
+                  "description": "The response's non-standard meta information.",
+                  "properties": {
+                      "nextCursor": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "The pagination cursor that points to the next record in the results set."
+                      }
+                  }
+              }
+          }
+      }
+order: 9000

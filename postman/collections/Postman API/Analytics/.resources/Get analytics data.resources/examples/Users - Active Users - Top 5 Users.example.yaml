@@ -1,0 +1,180 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/analytics?resource=user&metrics=active_users&view=detailed&workspaceType=all&limit=5&offset=0
+  method: GET
+  queryParams:
+    resource: user
+    metrics: active_users
+    view: detailed
+    workspaceType: all
+    limit: "5"
+    offset: "0"
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "data": {
+              "summary": {
+                  "pagination": {
+                      "total": 360,
+                      "has_more": true,
+                      "offset": 0,
+                      "limit": 3
+                  },
+                  "schema": {
+                      "columns": [
+                          {
+                              "type": "STRING",
+                              "name": "user_id",
+                              "description": "Unique identifier assigned to the user."
+                          },
+                          {
+                              "type": "DATE",
+                              "name": "team_joining_date",
+                              "description": "Date when the user joined the team."
+                          },
+                          {
+                              "type": "TIMESTAMP",
+                              "name": "last_active_ts",
+                              "description": "Timestamp of the user's most recent activity.",
+                              "format": "YYYY-MM-DDTHH:MM:SSZ"
+                          },
+                          {
+                              "type": "INTEGER",
+                              "name": "api_requests_count",
+                              "description": "Total number of API requests made by the user."
+                          }
+                      ]
+                  },
+                  "rows": [
+                      [
+                          "12345678",
+                          "2022-06-10",
+                          "2026-03-13T00:00:00.000Z",
+                          103
+                      ],
+                      [
+                          "87654321",
+                          "2022-08-14",
+                          "2026-03-19T00:00:00.000Z",
+                          93
+                      ],
+                      [
+                          "56781234",
+                          "2023-01-03",
+                          "2026-03-22T00:00:00.000Z",
+                          5
+                      ],
+                      [
+                          "987612345",
+                          "2022-08-14",
+                          "2026-03-01T00:00:00.000Z",
+                          71
+                      ],
+                      [
+                          "132495678",
+                          "2022-06-10",
+                          "2026-03-02T00:00:00.000Z",
+                          22
+                      ]
+                  ]
+              }
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "data": {
+                  "type": "object",
+                  "properties": {
+                      "summary": {
+                          "type": "object",
+                          "properties": {
+                              "schema": {
+                                  "type": "object",
+                                  "properties": {
+                                      "columns": {
+                                          "type": "array",
+                                          "description": "A list of column entries.",
+                                          "items": {
+                                              "type": "object",
+                                              "properties": {
+                                                  "name": {
+                                                      "type": "string",
+                                                      "description": "The name of the column."
+                                                  },
+                                                  "type": {
+                                                      "type": "string",
+                                                      "enum": [
+                                                          "DATE",
+                                                          "STRING",
+                                                          "INTEGER",
+                                                          "TIMESTAMP",
+                                                          "BOOLEAN",
+                                                          "NUMBER",
+                                                          "FLOAT"
+                                                      ],
+                                                      "description": "The data type of the column."
+                                                  },
+                                                  "format": {
+                                                      "type": "string",
+                                                      "description": "The data type's format."
+                                                  },
+                                                  "description": {
+                                                      "type": "string",
+                                                      "description": "A description of what the column represents."
+                                                  }
+                                              }
+                                          }
+                                      }
+                                  }
+                              },
+                              "rows": {
+                                  "type": "array",
+                                  "description": "A list of data row entries. Each row is an array of values that correspond to the columns defined in the schema.",
+                                  "items": {
+                                      "type": "array",
+                                      "items": {
+                                          "type": [
+                                              "string",
+                                              "integer",
+                                              "number",
+                                              "boolean",
+                                              "null"
+                                          ]
+                                      }
+                                  }
+                              },
+                              "pagination": {
+                                  "type": "object",
+                                  "description": "Information about the response pagination.",
+                                  "properties": {
+                                      "total": {
+                                          "type": "integer",
+                                          "description": "The total number of records available."
+                                      },
+                                      "limit": {
+                                          "type": "integer",
+                                          "description": "The maximum number of records returned in the response."
+                                      },
+                                      "offset": {
+                                          "type": "integer",
+                                          "description": "The number of records skipped."
+                                      },
+                                      "has_more": {
+                                          "type": "boolean",
+                                          "description": "Indicates whether more are records available."
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+order: 1000

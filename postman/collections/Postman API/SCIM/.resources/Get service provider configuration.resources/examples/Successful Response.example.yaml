@@ -1,0 +1,182 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/ServiceProviderConfig
+  method: GET
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "schemas": [
+              "urn:ietf:params:scim:schemas:core:2.0:ServiceProviderConfig"
+          ],
+          "documentationUri": "https://learning.postman.com/docs/administration/managing-your-team/configuring-scim",
+          "patch": {
+              "supported": true
+          },
+          "bulk": {
+              "supported": false,
+              "maxOperations": 0,
+              "maxPayloadSize": 0
+          },
+          "filter": {
+              "supported": true,
+              "maxResults": 100
+          },
+          "changePassword": {
+              "supported": false
+          },
+          "sort": {
+              "supported": false
+          },
+          "etag": {
+              "supported": false
+          },
+          "authenticationSchemes": [
+              {
+                  "name": "OAuth Bearer Token",
+                  "description": "Authentication scheme using the OAuth Bearer Token Standard",
+                  "specUri": "http://www.rfc-editor.org/info/rfc6750",
+                  "type": "oauthbearertoken"
+              }
+          ],
+          "meta": {
+              "resourceType": "ServiceProviderConfig",
+              "location": "https://api.getpostman.com/scim/v2/ServiceProviderConfig"
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "description": "Information about Postman's SCIM API configurations and supported operations.",
+          "properties": {
+              "schemas": {
+                  "type": "array",
+                  "description": "The [SCIM schema URI](https://www.iana.org/assignments/scim/scim.xhtml).",
+                  "items": {
+                      "type": "string",
+                      "format": "uri"
+                  }
+              },
+              "documentationUri": {
+                  "type": "string",
+                  "format": "uri",
+                  "description": "A link to the URI's documentation."
+              },
+              "patch": {
+                  "type": "object",
+                  "description": "Information about patch configuration.",
+                  "properties": {
+                      "supported": {
+                          "type": "boolean",
+                          "description": "If true, the feature is supported."
+                      }
+                  }
+              },
+              "bulk": {
+                  "type": "object",
+                  "description": "Information about bulk configuration.",
+                  "properties": {
+                      "supported": {
+                          "type": "boolean",
+                          "description": "If true, the feature is supported."
+                      },
+                      "maxOperations": {
+                          "type": "integer",
+                          "description": "The total number of maximum operations allowed for bulk operations."
+                      },
+                      "maxPayloadSize": {
+                          "type": "integer",
+                          "description": "The maximum payload allowed for bulk operations."
+                      }
+                  }
+              },
+              "filter": {
+                  "type": "object",
+                  "description": "Information about the filter configuration.",
+                  "properties": {
+                      "supported": {
+                          "type": "boolean",
+                          "description": "If true, the feature is supported."
+                      },
+                      "maxResults": {
+                          "type": "integer",
+                          "description": "The total number of maximum results allowed for filter operations."
+                      }
+                  }
+              },
+              "changePassword": {
+                  "type": "object",
+                  "description": "Information about the change password configuration.",
+                  "properties": {
+                      "supported": {
+                          "type": "boolean",
+                          "description": "If true, the feature is supported."
+                      }
+                  }
+              },
+              "sort": {
+                  "type": "object",
+                  "description": "Information about the sort configuration.",
+                  "properties": {
+                      "supported": {
+                          "type": "boolean",
+                          "description": "If true, the feature is supported."
+                      }
+                  }
+              },
+              "etag": {
+                  "type": "object",
+                  "description": "Information about the [entity tag](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag) (Etag) HTTP response header configuration.",
+                  "properties": {
+                      "supported": {
+                          "type": "boolean",
+                          "description": "If true, the feature is supported."
+                      }
+                  }
+              },
+              "authenticationSchemes": {
+                  "type": "array",
+                  "description": "A list of authentication schemes.",
+                  "items": {
+                      "type": "object",
+                      "description": "Information about the scheme.",
+                      "properties": {
+                          "name": {
+                              "type": "string",
+                              "description": "The scheme's friendly name."
+                          },
+                          "description": {
+                              "type": "string",
+                              "description": "The scheme's description."
+                          },
+                          "specUri": {
+                              "type": "string",
+                              "format": "uri",
+                              "description": "A link to the scheme's specification documentation."
+                          },
+                          "type": {
+                              "type": "string",
+                              "description": "The scheme's type."
+                          }
+                      }
+                  }
+              },
+              "meta": {
+                  "type": "object",
+                  "description": "The response's non-standard meta information.",
+                  "properties": {
+                      "resourceType": {
+                          "type": "string"
+                      },
+                      "location": {
+                          "type": "string",
+                          "format": "uri"
+                      }
+                  }
+              }
+          }
+      }
+order: 1000

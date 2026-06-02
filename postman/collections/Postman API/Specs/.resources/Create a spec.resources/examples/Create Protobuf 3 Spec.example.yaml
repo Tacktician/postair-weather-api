@@ -1,0 +1,72 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/specs?workspaceId=1f0df51a-8658-4ee8-a2a1-d2567dfa09a9
+  method: POST
+  queryParams:
+    workspaceId: 1f0df51a-8658-4ee8-a2a1-d2567dfa09a9
+  body:
+    type: json
+    content: |-
+      {
+          "name": "Sample API",
+          "type": "PROTOBUF:3",
+          "files": [
+              {
+                  "path": "index.proto",
+                  "content": "syntax = \"proto3\";\n\npackage com.book;\n\nmessage Book {\n  int64 isbn = 1;\n  string title = 2;\n  string author = 3;\n}\n\nmessage GetBookRequest {\n  int64 isbn = 1;\n}\n\nmessage GetBookViaAuthor {\n  string author = 1;\n}\n\nservice BookService {\n  rpc GetBook (GetBookRequest) returns (Book) {}\n  rpc GetBooksViaAuthor (GetBookViaAuthor) returns (stream Book) {}\n  rpc GetGreatestBook (stream GetBookRequest) returns (Book) {}\n  rpc GetBooks (stream GetBookRequest) returns (stream Book) {}\n}"
+              }
+          ]
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  body:
+    type: json
+    content: |-
+      {
+          "name": "Sample API",
+          "type": "PROTOBUF:3",
+          "updatedAt": "2025-03-15T13:48:28.000Z",
+          "createdAt": "2025-03-15T13:48:28.000Z",
+          "createdBy": 12345678,
+          "updatedBy": 12345678,
+          "id": "b4fc1bdc-6587-4f9b-95c9-f768146089b4"
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "name": {
+                  "type": "string",
+                  "description": "The API specification's name."
+              },
+              "type": {
+                  "type": "string",
+                  "enum": ["OPENAPI:2.0", "OPENAPI:3.0", "OPENAPI:3.1", "ASYNCAPI:2.0", "PROTOBUF:2", "PROTOBUF:3", "GRAPHQL"],
+                  "description": "The API specification's type."
+              },
+              "updatedAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "The date and time at which the file was last updated."
+              },
+              "createdAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "The date and time at which the specification file was created."
+              },
+              "createdBy": {
+                  "type": "integer",
+                  "description": "The user ID of the user that created the file."
+              },
+              "updatedBy": {
+                  "type": "integer",
+                  "description": "The user ID of the user that last updated the specification file."
+              },
+              "id": {
+                  "type": "string",
+                  "description": "The specification's ID."
+              }
+          }
+      }
+order: 7000

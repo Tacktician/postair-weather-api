@@ -1,0 +1,97 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/network/private
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+          "workspace": {
+              "id": "1f0df51a-8658-4ee8-a2a1-d2567dfa09a9"
+          }
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "addedAt": "2024-12-07T17:59:23.000Z",
+          "addedBy": 12345678,
+          "createdBy": 12345678,
+          "createdAt": "2024-12-07T17:59:23.000Z",
+          "updatedBy": 12345678,
+          "updatedAt": "2024-12-07T17:59:23.000Z",
+          "type": "workspace",
+          "id": "1f0df51a-8658-4ee8-a2a1-d2567dfa09a9",
+          "name": "Billing Team Workspace",
+          "summary": "The Billing team's workspace.",
+          "description": null,
+          "href": "https://api.getpostman.com/workspaces/1f0df51a-8658-4ee8-a2a1-d2567dfa09a9",
+          "parentFolderId": null
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "addedAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "The date and time at which the element was added."
+              },
+              "addedBy": {
+                  "type": "integer",
+                  "description": "The user who added the element."
+              },
+              "createdBy": {
+                  "type": "integer",
+                  "description": "The user who created the element."
+              },
+              "createdAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "The date and time at which the element was created."
+              },
+              "updatedBy": {
+                  "type": "integer",
+                  "description": "The user who last updated the element."
+              },
+              "updatedAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "The date and time at which the element was last updated."
+              },
+              "type": {
+                  "type": "string",
+                  "enum": ["workspace"],
+                  "description": "The `workspace` element."
+              },
+              "id": {
+                  "type": "string",
+                  "description": "The element's ID"
+              },
+              "name": {
+                  "type": "string",
+                  "description": "The element's name."
+              },
+              "summary": {
+                  "type": ["string", "null"],
+                  "description": "The element's summary."
+              },
+              "description": {
+                  "type": ["string", "null"],
+                  "description": "The element's description."
+              },
+              "href": {
+                  "type": "string",
+                  "format": "uri",
+                  "description": "The element's Postman URL."
+              },
+              "parentFolderId": {
+                  "type": "null",
+                  "description": "This property is deprecated."
+              }
+          }
+      }
+order: 1000

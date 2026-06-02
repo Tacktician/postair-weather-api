@@ -1,0 +1,74 @@
+$kind: http-request
+description: |-
+  Creates a mock server in a collection.
+
+  **Note:**
+
+  - You cannot create mocks for collections added to an API definition.
+      
+  - If you do not include the `workspaceId` query parameter, the system creates the mock server in the oldest personal Internal workspace you own.
+url: "{{baseUrl}}/mocks?workspace="
+method: POST
+queryParams:
+  - key: workspace
+    value: ""
+    description: |-
+      A workspace ID in which to create the mock server.
+
+      If you do not include this query parameter, the system creates the mock server in the oldest personal Internal workspace you own.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "uniqueItems": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+body:
+  type: json
+  content: |-
+    {
+    	"mock": {
+            "name": "{{mockName}}",
+    		"collection": "{{collectionId}}",
+    		"environment": "{{environmentId}}",
+            "private": true
+    	}
+    }
+  $type: |-
+    {
+        "type": "object",
+        "properties": {
+            "mock": {
+                "type": "object",
+                "required": ["collection"],
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "The mock server's name."
+                    },
+                    "collection": {
+                        "type": "string",
+                        "description": "The unique ID of the mock's associated collection."
+                    },
+                    "environment": {
+                        "type": "string",
+                        "description": "The unique ID of the mock's associated environment."
+                    },
+                    "private": {
+                        "type": "boolean",
+                        "default": true,
+                        "description": "If true, the mock server is set private. By default, mock servers are public and can receive requests from anyone and anywhere."
+                    }
+                }
+            }
+        }
+    }
+examples: ./.resources/Create a mock server.resources/examples
+order: 4000

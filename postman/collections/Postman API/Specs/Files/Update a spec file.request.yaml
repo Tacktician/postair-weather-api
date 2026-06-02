@@ -1,0 +1,83 @@
+$kind: http-request
+description: |-
+  Updates an API specification's file.
+
+  **Note:**
+
+  - This endpoint does not accept an empty request body. You must pass one of the accepted values.
+      
+  - This endpoint does not accept multiple request body properties in a single call. For example, you cannot pass both the `content` and `type` property at the same time.
+      
+  - Multi-file specifications can only have one root file.
+      
+  - When updating a file type to `ROOT`, the previous root file is updated to the `DEFAULT` file type.
+      
+  - Files cannot exceed a maximum of 10 MB in size.
+url: "{{baseUrl}}/specs/:specId/files/:filePath"
+method: PATCH
+pathVariables:
+  - key: specId
+    value: ""
+    description: The spec's ID.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "uniqueItems": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+  - key: filePath
+    value: ""
+    description: The path to the file.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "uniqueItems": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+body:
+  type: json
+  content: |-
+    {
+        "content": "{{fileContent}}",
+        "name": "{{fileName}}",
+        "type": "{{fileType}}"
+    }
+  $type: |-
+    {
+        "type": "object",
+        "description": "You must pass one of the accepted values in this request body. Also, this request body does not accept multiple properties in a single call. For example, you cannot pass both the `content` and `type` property at the same time.",
+        "properties": {
+            "content": {
+                "type": "string",
+                "description": "The specification's stringified contents."
+            },
+            "name": {
+                "type": "string",
+                "description": "The file's name."
+            },
+            "type": {
+                "type": "string",
+                "default": "DEFAULT",
+                "enum": ["DEFAULT", "ROOT"],
+                "description": "The type of file:\n- `ROOT` — The file containing the full OpenAPI structure. This serves as the entry point for the API spec and references other (`DEFAULT`) spec files. Multi-file specs can only have one root file. \n- `DEFAULT` — A file referenced by the `ROOT` file.\n"
+            }
+        }
+    }
+examples: ./.resources/Update a spec file.resources/examples
+order: 4000

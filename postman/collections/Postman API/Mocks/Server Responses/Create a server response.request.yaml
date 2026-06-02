@@ -1,0 +1,82 @@
+$kind: http-request
+description: |-
+  Creates a server response. Server responses let you simulate 5xx server-level responses, such as 500 or 503.
+
+  Server-level responses are agnostic to application-level logic. Server responses let you simulate this behavior on a mock server. You do not need to define each error for all exposed paths on the mock server.
+
+  If you set a server response as active, then all the calls to the mock server return with that active server response.
+
+  **Note:**
+
+  You can create multiple server responses for a mock server, but only one mock server can be set as active.
+url: "{{baseUrl}}/mocks/:mockId/server-responses"
+method: POST
+pathVariables:
+  - key: mockId
+    value: ""
+    description: The mock's ID.
+body:
+  type: json
+  content: |-
+    {
+        "serverResponse": {
+            "name": "{{serverStubName}}",
+            "statusCode": 500,
+            "headers": [
+                {
+                    "key": "{{headerKey}}",
+                    "value": "{{headerValue}}"
+                }
+            ],
+            "body": "{{serverStubBody}}",
+            "language": "{{languageType}}"
+        }
+    }
+  $type: |-
+    {
+        "type": "object",
+        "properties": {
+            "serverResponse": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "The server response's name."
+                    },
+                    "statusCode": {
+                        "type": "integer",
+                        "description": "The server response's 5xx HTTP response code. This property only accepts [5xx values](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml)."
+                    },
+                    "headers": {
+                        "type": "array",
+                        "description": "The server response's request headers, such as Content-Type, Accept, encoding, and other information.",
+                        "items": {
+                            "type": "object",
+                            "description": "Information about the key-value pair.",
+                            "properties": {
+                                "key": {
+                                    "type": "string",
+                                    "description": "The request header's key value."
+                                },
+                                "value": {
+                                    "type": "string",
+                                    "description": "The request header's value. This value defines the corresponding value for the header key."
+                                }
+                            }
+                        }
+                    },
+                    "body": {
+                        "type": "string",
+                        "description": "The server response's body that returns when you call the mock server."
+                    },
+                    "language": {
+                        "type": "string",
+                        "description": "The server response's body language type.",
+                        "enum": ["text", "javascript", "json", "html", "xml"]
+                    }
+                }
+            }
+        }
+    }
+examples: ./.resources/Create a server response.resources/examples
+order: 3000

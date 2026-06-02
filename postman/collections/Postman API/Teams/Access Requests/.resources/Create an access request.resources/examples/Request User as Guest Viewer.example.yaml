@@ -1,0 +1,76 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/teams/:teamId/access-requests
+  method: POST
+  pathVariables:
+    teamId: "123"
+  body:
+    type: json
+    content: |-
+      {
+          "entityList": [
+              {
+                  "entityType": "user",
+                  "entityId": "87654321"
+              }
+          ],
+          "role": "TEAM_GUEST_VIEWER",
+          "reason": "",
+          "requestType": "REQUEST_TO_ADD_MEMBERS"
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "result": [
+              {
+                  "entityType": "user",
+                  "entityId": 87654321,
+                  "role": "TEAM_GUEST_VIEWER",
+                  "previousRole": null,
+                  "status": "Accepted"
+              }
+          ]
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "result": {
+                  "type": "array",
+                  "items": {
+                      "type": "object",
+                      "properties": {
+                          "entityType": {
+                              "type": "string",
+                              "description": "The entity type."
+                          },
+                          "entityId": {
+                              "type": ["string", "integer"],
+                              "description": "The entity's ID."
+                          },
+                          "previousRole": {
+                              "type": ["string", "null"],
+                              "description": "The previously assigned role, if one existed."
+                          },
+                          "role": {
+                              "type": "string",
+                              "description": "The requested team role."
+                          },
+                          "status": {
+                              "type": "string",
+                              "description": "The access request's status."
+                          },
+                          "reason": {
+                              "type": "string",
+                              "description": "The reason the access request was created."
+                          }
+                      }
+                  }
+              }
+          }
+      }
+order: 2000

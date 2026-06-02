@@ -1,0 +1,87 @@
+$kind: http-request
+description: Gets information about a folder in a collection.
+url: "{{baseUrl}}/collections/:collectionId/folders/:folderId"
+method: GET
+queryParams:
+  - key: ids
+    value: "true"
+    disabled: true
+    description: If true, returns only the folder properties that contain ID values.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean",
+            "deprecated": false,
+            "uniqueItems": false
+          }
+        }
+      }
+  - key: uid
+    value: "true"
+    disabled: true
+    description: If true, returns all IDs in UID format (`userId`-`id`).
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean",
+            "deprecated": false,
+            "uniqueItems": false
+          }
+        }
+      }
+  - key: populate
+    value: "true"
+    disabled: true
+    description: If true, returns all of a folder's contents.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean",
+            "deprecated": false,
+            "uniqueItems": false
+          }
+        }
+      }
+pathVariables:
+  - key: collectionId
+    value: ""
+    description: The collection's ID.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "uniqueItems": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+  - key: folderId
+    value: ""
+    description: The folder's ID.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "uniqueItems": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+examples: ./.resources/Get a folder.resources/examples
+order: 2000

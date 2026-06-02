@@ -1,0 +1,290 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/collections/:collectionId/requests/:requestId
+  method: GET
+  pathVariables:
+    collectionId: 12ece9e1-2abf-4edc-8e34-de66e74114d2
+    requestId: e12d2aa6-85c8-4e6c-aad0-1adcfe05c958
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "model_id": "c82dd02c-4870-4907-8fcb-593a876cf05b",
+          "meta": {
+              "model": "request",
+              "populate": false,
+              "changeset": false,
+              "action": "find"
+          },
+          "data": {
+              "owner": "12345678",
+              "lastUpdatedBy": "12345678",
+              "lastRevision": 24994863800,
+              "folder": null,
+              "collection": "12ece9e1-2abf-4edc-8e34-de66e74114d2",
+              "id": "c82dd02c-4870-4907-8fcb-593a876cf05b",
+              "name": "Example POST request",
+              "dataMode": "params",
+              "data": [
+                  {
+                      "enabled": true,
+                      "value": "3f14c9c7-e71c-4094-b90e-ac9edb232c2e",
+                      "type": "text",
+                      "key": "id"
+                  },
+                  {
+                      "enabled": true,
+                      "value": "12ece9e1-2abf-4edc-8e34-de66e74114d2",
+                      "type": "text",
+                      "key": "collection"
+                  }
+              ],
+              "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                      {
+                          "key": "token",
+                          "value": "xxx",
+                          "type": "string"
+                      }
+                  ]
+              },
+              "events": [
+                  {
+                      "listen": "test",
+                      "script": {
+                          "type": "text/javascript",
+                          "exec": [
+                              "var data = JSON.parse(responseBody);"
+                          ]
+                      }
+                  }
+              ],
+              "rawModeData": null,
+              "descriptionFormat": null,
+              "description": "This is an example POST request.",
+              "variables": null,
+              "headers": "",
+              "method": "POST",
+              "pathVariables": {},
+              "url": "https://api.getpostman.com/v1/request",
+              "preRequestScript": null,
+              "tests": "var data = JSON.parse(responseBody);",
+              "currentHelper": "bearerAuth",
+              "helperAttributes": "{\"id\":\"bearer\",\"token\":\"xxx\"}",
+              "queryParams": [],
+              "headerData": [],
+              "pathVariableData": [],
+              "protocolProfileBehavior": null,
+              "dataDisabled": null,
+              "responses_order": [],
+              "createdAt": "2022-08-29T16:49:19.964Z",
+              "updatedAt": "2022-08-29T16:49:19.964Z",
+              "dataOptions": {
+                  "params": null
+              }
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "model_id": {
+                  "type": "string",
+                  "description": "The request's ID."
+              },
+              "meta": {
+                  "type": "object",
+                  "description": "A Postman-specific response that contains information about the internal performed operation.",
+                  "properties": {
+                      "model": {
+                          "type": "string"
+                      },
+                      "populate": {
+                          "type": "boolean"
+                      },
+                      "changeset": {
+                          "type": "boolean"
+                      },
+                      "action": {
+                          "type": "string"
+                      }
+                  }
+              },
+              "data": {
+                  "type": "object",
+                  "description": "Information about the updated request. For a complete list of properties, refer to the **Request** entry in the [Postman Collection Format documentation](https://schema.postman.com/collection/json/v2.1.0/draft-07/docs/index.html).",
+                  "properties": {
+                      "owner": {
+                          "type": "string"
+                      },
+                      "lastUpdatedBy": {
+                          "type": "string"
+                      },
+                      "lastRevision": {
+                          "type": "integer"
+                      },
+                      "folder": {
+                          "type": "null"
+                      },
+                      "collection": {
+                          "type": "string"
+                      },
+                      "id": {
+                          "type": "string"
+                      },
+                      "name": {
+                          "type": "string"
+                      },
+                      "dataMode": {
+                          "type": "string"
+                      },
+                      "data": {
+                          "type": "array",
+                          "items": {
+                              "type": "object",
+                              "properties": {
+                                  "enabled": {
+                                      "type": "boolean"
+                                  },
+                                  "value": {
+                                      "type": "string"
+                                  },
+                                  "type": {
+                                      "type": "string"
+                                  },
+                                  "key": {
+                                      "type": "string"
+                                  }
+                              }
+                          }
+                      },
+                      "auth": {
+                          "type": "object",
+                          "properties": {
+                              "type": {
+                                  "type": "string"
+                              },
+                              "bearer": {
+                                  "type": "array",
+                                  "items": {
+                                      "type": "object",
+                                      "properties": {
+                                          "key": {
+                                              "type": "string"
+                                          },
+                                          "value": {
+                                              "type": "string"
+                                          },
+                                          "type": {
+                                              "type": "string"
+                                          }
+                                      }
+                                  }
+                              }
+                          }
+                      },
+                      "events": {
+                          "type": "array",
+                          "items": {
+                              "type": "object",
+                              "properties": {
+                                  "listen": {
+                                      "type": "string"
+                                  },
+                                  "script": {
+                                      "type": "object",
+                                      "properties": {
+                                          "type": {
+                                              "type": "string"
+                                          },
+                                          "exec": {
+                                              "type": "array",
+                                              "items": {
+                                                  "type": "string"
+                                              }
+                                          }
+                                      }
+                                  }
+                              }
+                          }
+                      },
+                      "rawModeData": {
+                          "type": "null"
+                      },
+                      "descriptionFormat": {
+                          "type": "null"
+                      },
+                      "description": {
+                          "type": "string"
+                      },
+                      "variables": {
+                          "type": "null"
+                      },
+                      "headers": {
+                          "type": "string"
+                      },
+                      "method": {
+                          "type": "string"
+                      },
+                      "pathVariables": {
+                          "type": "object"
+                      },
+                      "url": {
+                          "type": "string",
+                          "format": "uri"
+                      },
+                      "preRequestScript": {
+                          "type": "null"
+                      },
+                      "tests": {
+                          "type": "string"
+                      },
+                      "currentHelper": {
+                          "type": "string"
+                      },
+                      "helperAttributes": {
+                          "type": "string"
+                      },
+                      "queryParams": {
+                          "type": "array"
+                      },
+                      "headerData": {
+                          "type": "array"
+                      },
+                      "pathVariableData": {
+                          "type": "array"
+                      },
+                      "protocolProfileBehavior": {
+                          "type": "null"
+                      },
+                      "dataDisabled": {
+                          "type": "null"
+                      },
+                      "responses_order": {
+                          "type": "array"
+                      },
+                      "createdAt": {
+                          "type": "string",
+                          "format": "date-time"
+                      },
+                      "updatedAt": {
+                          "type": "string",
+                          "format": "date-time"
+                      },
+                      "dataOptions": {
+                          "type": "object",
+                          "properties": {
+                              "params": {
+                                  "type": "null"
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+order: 3000

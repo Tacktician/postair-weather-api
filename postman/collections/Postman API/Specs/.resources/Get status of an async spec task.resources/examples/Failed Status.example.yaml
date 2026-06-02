@@ -1,0 +1,52 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/:elementType/:elementId/tasks/:taskId
+  method: GET
+  pathVariables:
+    elementType: collections
+    elementId: 12345678-12ece9e1-2abf-4edc-8e34-de66e74114d2
+    taskId: 66ae9950-0869-4e65-96b0-1e0e47e771af
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "details": "Failed to generate collection from specification",
+          "meta": {
+              "model": "collection",
+              "action": "generation"
+          },
+          "status": "failed"
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "details": {
+                  "type": "string",
+                  "description": "Details about the generation error."
+              },
+              "meta": {
+                  "type": "object",
+                  "description": "The response's non-standard meta information.",
+                  "properties": {
+                      "model": {
+                          "type": "string",
+                          "enum": ["collection", "spec"],
+                          "description": "The model for which the task is performing the operation."
+                      },
+                      "action": {
+                          "type": "string",
+                          "description": "The task's action."
+                      }
+                  }
+              },
+              "status": {
+                  "type": "string",
+                  "description": "The task's current status."
+              }
+          }
+      }
+order: 3000

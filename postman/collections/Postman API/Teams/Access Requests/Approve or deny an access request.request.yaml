@@ -1,0 +1,79 @@
+$kind: http-request
+description: Approve or deny a team's access request.
+url: "{{baseUrl}}/teams/:teamId/access-requests/:requestId"
+method: POST
+headers:
+  - key: identifierType
+    value: scim
+    disabled: true
+    description: Use SCIM user and group IDs instead of Postman user IDs.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "enum": [
+              "scim"
+            ]
+          }
+        }
+      }
+pathVariables:
+  - key: teamId
+    value: ""
+    description: The team's ID.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer",
+            "deprecated": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+  - key: requestId
+    value: ""
+    description: The access request's ID.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer",
+            "deprecated": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+body:
+  type: json
+  content: |-
+    {
+        "action": "{{approvalAction}}"
+    }
+  $type: |-
+    {
+        "type": "object",
+        "required": [
+            "action"
+        ],
+        "properties": {
+            "action": {
+                "type": "string",
+                "enum": [
+                    "approve",
+                    "deny"
+                ],
+                "description": "Whether to approve or deny the access request."
+            }
+        }
+    }
+examples: ./.resources/Approve or deny an access request.resources/examples
+order: 2000

@@ -1,0 +1,12 @@
+$kind: collection
+description: This collection will provision test suite setup needs i.e. infrastructure as code for Postman
+variables:
+  workspaceId: ""
+  collectionId: ""
+auth:
+  - id: d162a90d-a02e-48ac-add0-1591f8f95591
+    type: apikey
+    name: apikey auth
+    credentials:
+      key: X-API-Key
+      value: "{{postman-api-key}}"

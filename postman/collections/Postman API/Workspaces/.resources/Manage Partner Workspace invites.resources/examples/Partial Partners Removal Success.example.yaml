@@ -1,0 +1,90 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/invitations
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+          "action": "remove_partner",
+          "targetEntity": "workspace",
+          "targetEntityId": "1f0df51a-8658-4ee8-a2a1-d2567dfa09a9",
+          "target": {
+              "userIds": [
+                  "56781234",
+                  "12348765",
+                  "34567812"
+              ]
+          }
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "action": "remove_partner",
+          "targetEntity": "workspace",
+          "targetEntityId": "1f0df51a-8658-4ee8-a2a1-d2567dfa09a9",
+          "results": [
+              {
+                  "userId": "56781234",
+                  "status": "REMOVED"
+              },
+              {
+                  "userId": "12348765",
+                  "status": "FAILED",
+                  "message": "Failed to remove partner from all workspaces"
+              },
+              {
+                  "userId": "34567812",
+                  "status": "FAILED",
+                  "error": "Partner information not found"
+              }
+          ]
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "targetEntity": {
+                  "type": "string",
+                  "description": "The target entity."
+              },
+              "targetEntityId": {
+                  "type": "string",
+                  "description": "The target entity's ID."
+              },
+              "action": {
+                  "type": "string",
+                  "description": "The action peformed."
+              },
+              "results": {
+                  "type": "array",
+                  "description": "A list of the action results.",
+                  "items": {
+                      "type": "object",
+                      "properties": {
+                          "userId": {
+                              "type": "string",
+                              "description": "The user ID."
+                          },
+                          "status": {
+                              "type": "string",
+                              "description": "The removal status:\n- `REMOVED` — The partner was successfully removed.\n- `FAILED` — The partner's removal failed."
+                          },
+                          "message": {
+                              "type": "string",
+                              "description": "A response message."
+                          },
+                          "error": {
+                              "type": "string",
+                              "description": "If the endpoint returns the `FAILED` status, the error message detailing the error."
+                          }
+                      }
+                  }
+              }
+          }
+      }
+order: 5000

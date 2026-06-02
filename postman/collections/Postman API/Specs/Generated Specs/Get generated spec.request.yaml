@@ -1,0 +1,42 @@
+$kind: http-request
+description: Gets the API specification generated for the given collection.
+url: "{{baseUrl}}/collections/:collectionUid/generations/:elementType"
+method: GET
+pathVariables:
+  - key: collectionUid
+    value: ""
+    description: The collection's unique ID.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+  - key: elementType
+    value: spec
+    description: The `spec` value.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "enum": [
+              "spec"
+            ]
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+examples: ./.resources/Get generated spec.resources/examples
+order: 2000

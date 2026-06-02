@@ -1,0 +1,72 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/apis/:apiId/comments
+  method: POST
+  pathVariables:
+    apiId: 5360b75f-447e-467c-9299-12fd6c92450d
+  body:
+    type: json
+    content: |-
+      {
+      	"body": "This is an example."
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  body:
+    type: json
+    content: |-
+      {
+          "data": {
+              "id": 46814,
+              "threadId": 12345,
+              "status": "Open",
+              "createdBy": 12345678,
+              "createdAt": "2024-01-18T11:30:40.000Z",
+              "updatedAt": "2024-01-18T11:30:40.000Z",
+              "body": "This is an example."
+          }
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "data": {
+                  "type": "object",
+                  "properties": {
+                      "id": {
+                          "type": "integer",
+                          "description": "The comment's ID."
+                      },
+                      "threadId": {
+                          "type": "integer",
+                          "description": "The comment's thread ID."
+                      },
+                      "status": {
+                          "type": "string",
+                          "enum": ["Open", "Resolved"],
+                          "description": "The comment's current status."
+                      },
+                      "createdBy": {
+                          "type": "integer",
+                          "description": "The user ID of the user who created the comment."
+                      },
+                      "createdAt": {
+                          "type": "string",
+                          "format": "date-time",
+                          "description": "The date and time at which the comment was created."
+                      },
+                      "updatedAt": {
+                          "type": "string",
+                          "format": "date-time",
+                          "description": "The date and time when the comment was last updated."
+                      },
+                      "body": {
+                          "type": "string",
+                          "description": "The contents of the comment."
+                      }
+                  }
+              }
+          }
+      }
+order: 1000

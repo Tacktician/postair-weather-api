@@ -1,0 +1,74 @@
+$kind: http-request
+description: Updates an API.
+url: "{{baseUrl}}/apis/:apiId"
+method: PUT
+headers:
+  - key: Accept
+    value: application/vnd.api.v10+json
+    description: The request header required to use the endpoint.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "enum": [
+              "application/vnd.api.v10+json"
+            ],
+            "uniqueItems": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+pathVariables:
+  - key: apiId
+    value: "{{apiId}}"
+    description: The API's ID.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "uniqueItems": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+body:
+  type: json
+  content: |-
+    {
+        "name": "{{apiName}}",
+        "summary": "{{apiSummary}}",
+        "description": "{{apiDescription}}"
+    }
+  $type: |-
+    {
+        "type": "object",
+        "required": [
+            "name"
+        ],
+        "properties": {
+            "name": {
+                "type": "string",
+                "description": "The API's name."
+            },
+            "summary": {
+                "type": "string",
+                "description": "The API's short summary."
+            },
+            "description": {
+                "type": "string",
+                "description": "The API's description. This supports Markdown formatting."
+            }
+        }
+    }
+examples: ./.resources/Update an API.resources/examples
+order: 9000

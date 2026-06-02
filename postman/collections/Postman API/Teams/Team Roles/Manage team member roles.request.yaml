@@ -1,0 +1,296 @@
+$kind: http-request
+description: |-
+  Adds or removes roles in groups, teams, organizations, as well as individual users' roles.
+
+  **Note:**
+
+  If you remove a role from a group or team, then all members lose the that role's permissions.
+url: "{{baseUrl}}/teams/:teamId/bulk-members"
+method: POST
+headers:
+  - key: identifierType
+    value: scim
+    disabled: true
+    description: Use SCIM user and group IDs instead of Postman user IDs.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "enum": [
+              "scim"
+            ]
+          }
+        }
+      }
+pathVariables:
+  - key: teamId
+    value: ""
+    description: The team's ID.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer",
+            "deprecated": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+body:
+  type: json
+  content: |-
+    {
+        "add": {
+            "users": {
+                "{{userId}}": [
+                    "{{roleName}}"
+                ]
+            },
+            "groups": {
+                "{{userGroupId}}": [
+                    "{{roleName}}"
+                ]
+            },
+            "orgs": {
+                "{{orgId}}": [
+                    "{{roleName}}"
+                ]
+            },
+            "teams": {
+                "{{teamId}}": [
+                    "{{roleName}}"
+                ]
+            }
+        },
+        "remove": {
+            "users": {
+                "{{userId}}": [
+                    "{{roleName}}"
+                ]
+            },
+            "groups": {
+                "{{userGroupId}}": [
+                    "{{roleName}}"
+                ]
+            },
+            "orgs": {
+                "{{orgId}}": [
+                    "{{roleName}}"
+                ]
+            },
+            "teams": {
+                "{{teamId}}": [
+                    "{{roleName}}"
+                ]
+            }
+        }
+    }
+  $type: |-
+    {
+        "type": "object",
+        "properties": {
+            "add": {
+                "type": "object",
+                "description": "Information about the bulk `add` operation.",
+                "properties": {
+                    "users": {
+                        "type": "object",
+                        "properties": {
+                            "{{userId}}": {
+                                "type": "array",
+                                "description": "A list of the user's roles. The array's name is the user's ID.",
+                                "items": {
+                                    "type": "string",
+                                    "enum": [
+                                        "TEAM_MANAGER",
+                                        "TEAM_DEVELOPER",
+                                        "TEAM_GUEST_DEVELOPER",
+                                        "TEAM_GUEST_VIEWER",
+                                        "TEAM_PARTNER_MANAGER",
+                                        "TEAM_PARTNER_LEAD",
+                                        "TEAM_GUEST",
+                                        "TEAM_PARTNER",
+                                        "TEAM_COMMUNITY_MANAGER"
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "groups": {
+                        "type": "object",
+                        "properties": {
+                            "{{userGroupId}}": {
+                                "type": "array",
+                                "description": "A list of the user group's roles. The array's name is the group's ID.",
+                                "items": {
+                                    "type": "string",
+                                    "enum": [
+                                        "TEAM_MANAGER",
+                                        "TEAM_DEVELOPER",
+                                        "TEAM_GUEST_DEVELOPER",
+                                        "TEAM_GUEST_VIEWER",
+                                        "TEAM_PARTNER_MANAGER",
+                                        "TEAM_PARTNER_LEAD",
+                                        "TEAM_GUEST",
+                                        "TEAM_PARTNER",
+                                        "TEAM_COMMUNITY_MANAGER"
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "orgs": {
+                        "type": "object",
+                        "properties": {
+                            "{{orgId}}": {
+                                "type": "array",
+                                "description": "A list of the organization's roles. The array's name is the organization's ID.",
+                                "items": {
+                                    "type": "string",
+                                    "enum": [
+                                        "TEAM_MANAGER",
+                                        "TEAM_DEVELOPER",
+                                        "TEAM_GUEST_DEVELOPER",
+                                        "TEAM_GUEST_VIEWER",
+                                        "TEAM_PARTNER_MANAGER",
+                                        "TEAM_PARTNER_LEAD",
+                                        "TEAM_GUEST",
+                                        "TEAM_PARTNER",
+                                        "TEAM_COMMUNITY_MANAGER"
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "teams": {
+                        "type": "object",
+                        "properties": {
+                            "{{teamId}}": {
+                                "type": "array",
+                                "description": "A list of the team's roles. The array's name is the team's ID.",
+                                "items": {
+                                    "type": "string",
+                                    "enum": [
+                                        "TEAM_MANAGER",
+                                        "TEAM_DEVELOPER",
+                                        "TEAM_GUEST_DEVELOPER",
+                                        "TEAM_GUEST_VIEWER",
+                                        "TEAM_PARTNER_MANAGER",
+                                        "TEAM_PARTNER_LEAD",
+                                        "TEAM_GUEST",
+                                        "TEAM_PARTNER",
+                                        "TEAM_COMMUNITY_MANAGER"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "remove": {
+                "type": "object",
+                "description": "Information about the bulk `remove` operation.",
+                "properties": {
+                    "users": {
+                        "type": "object",
+                        "properties": {
+                            "{{userId}}": {
+                                "type": "array",
+                                "description": "A list of the user's roles. The array's name is the user's ID.",
+                                "items": {
+                                    "type": "string",
+                                    "enum": [
+                                        "TEAM_MANAGER",
+                                        "TEAM_DEVELOPER",
+                                        "TEAM_GUEST_DEVELOPER",
+                                        "TEAM_GUEST_VIEWER",
+                                        "TEAM_PARTNER_MANAGER",
+                                        "TEAM_PARTNER_LEAD",
+                                        "TEAM_GUEST",
+                                        "TEAM_PARTNER",
+                                        "TEAM_COMMUNITY_MANAGER"
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "groups": {
+                        "type": "object",
+                        "properties": {
+                            "{{userGroupId}}": {
+                                "type": "array",
+                                "description": "A list of the user group's roles. The array's name is the group's ID.",
+                                "items": {
+                                    "type": "string",
+                                    "enum": [
+                                        "TEAM_MANAGER",
+                                        "TEAM_DEVELOPER",
+                                        "TEAM_GUEST_DEVELOPER",
+                                        "TEAM_GUEST_VIEWER",
+                                        "TEAM_PARTNER_MANAGER",
+                                        "TEAM_PARTNER_LEAD",
+                                        "TEAM_GUEST",
+                                        "TEAM_PARTNER",
+                                        "TEAM_COMMUNITY_MANAGER"
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "orgs": {
+                        "type": "object",
+                        "properties": {
+                            "{{orgId}}": {
+                                "type": "array",
+                                "description": "A list of the organization's roles. The array's name is the organization's ID.",
+                                "items": {
+                                    "type": "string",
+                                    "enum": [
+                                        "TEAM_MANAGER",
+                                        "TEAM_DEVELOPER",
+                                        "TEAM_GUEST_DEVELOPER",
+                                        "TEAM_GUEST_VIEWER",
+                                        "TEAM_PARTNER_MANAGER",
+                                        "TEAM_PARTNER_LEAD",
+                                        "TEAM_GUEST",
+                                        "TEAM_PARTNER",
+                                        "TEAM_COMMUNITY_MANAGER"
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "teams": {
+                        "type": "object",
+                        "properties": {
+                            "{{teamId}}": {
+                                "type": "array",
+                                "description": "A list of the team's roles. The array's name is the team's ID.",
+                                "items": {
+                                    "type": "string",
+                                    "enum": [
+                                        "TEAM_MANAGER",
+                                        "TEAM_DEVELOPER",
+                                        "TEAM_GUEST_DEVELOPER",
+                                        "TEAM_GUEST_VIEWER",
+                                        "TEAM_PARTNER_MANAGER",
+                                        "TEAM_PARTNER_LEAD",
+                                        "TEAM_GUEST",
+                                        "TEAM_PARTNER",
+                                        "TEAM_COMMUNITY_MANAGER"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+examples: ./.resources/Manage team member roles.resources/examples
+order: 1000

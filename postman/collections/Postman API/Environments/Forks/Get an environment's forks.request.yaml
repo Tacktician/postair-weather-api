@@ -1,0 +1,93 @@
+$kind: http-request
+description: Gets all of an environment's forked environments.
+url: "{{baseUrl}}/environments/:environmentUid/forks"
+method: GET
+queryParams:
+  - key: cursor
+    value: ""
+    disabled: true
+    description: The pointer to the first record of the set of paginated results.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "uniqueItems": false
+          }
+        }
+      }
+  - key: direction
+    value: ""
+    disabled: true
+    description: Sort results in ascending (`asc`) or descending (`desc`) order.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "uniqueItems": false
+          }
+        }
+      }
+  - key: limit
+    value: ""
+    disabled: true
+    description: The maximum number of rows to return in the response. This value defaults to 10.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer",
+            "deprecated": false,
+            "default": "10",
+            "uniqueItems": false
+          }
+        }
+      }
+  - key: sort
+    value: createdAt
+    disabled: true
+    description: Sort the results by the date and time of creation.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "enum": [
+              "createdAt"
+            ],
+            "uniqueItems": false
+          }
+        }
+      }
+pathVariables:
+  - key: environmentUid
+    value: ""
+    description: The environment's unique ID.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "uniqueItems": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+examples: ./.resources/Get an environment's forks.resources/examples
+order: 1000

@@ -1,0 +1,117 @@
+$kind: http-example
+request:
+  url: https://api.getpostman.com/collections/:collectionId/folders
+  method: POST
+  pathVariables:
+    collectionId: 12ece9e1-2abf-4edc-8e34-de66e74114d2
+  body:
+    type: json
+    content: |-
+      {
+          "name": "Child Folder",
+          "description": "This is a child folder of Test Folder.",
+          "folder": "12345678-65a99e60-8e0a-4b6e-b79c-7d8264cc5caa"
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+          "model_id": "65a99e60-8e0a-4b6e-b79c-7d8264cc5caa",
+          "meta": {
+              "model": "folder",
+              "action": "import"
+          },
+          "data": {
+              "name": "Child Folder",
+              "collection": "12ece9e1-2abf-4edc-8e34-de66e74114d2",
+              "description": "This is a child folder of Test Folder.",
+              "folder": "4249383d-2af6-4ac6-9a2b-0930e8f639e3",
+              "order": [],
+              "folders_order": [],
+              "id": "65a99e60-8e0a-4b6e-b79c-7d8264cc5caa",
+              "owner": "12345678",
+              "lastUpdatedBy": "12345678",
+              "createdAt": "2023-08-16T13:47:47.474Z",
+              "updatedAt": "2023-08-16T13:47:47.474Z",
+              "requests": [],
+              "folders": []
+          },
+          "revision": 32117045490
+      }
+    $type: |-
+      {
+          "type": "object",
+          "properties": {
+              "model_id": {
+                  "type": "string",
+                  "description": "The folder's ID."
+              },
+              "meta": {
+                  "type": "object",
+                  "description": "A Postman-specific response that contains information about the internal performed operation.",
+                  "properties": {
+                      "model": {
+                          "type": "string"
+                      },
+                      "action": {
+                          "type": "string"
+                      }
+                  }
+              },
+              "data": {
+                  "type": "object",
+                  "description": "The folder's information.",
+                  "properties": {
+                      "name": {
+                          "type": "string"
+                      },
+                      "collection": {
+                          "type": "string"
+                      },
+                      "description": {
+                          "type": "string"
+                      },
+                      "folder": {
+                          "type": "string"
+                      },
+                      "order": {
+                          "type": "array"
+                      },
+                      "folders_order": {
+                          "type": "array"
+                      },
+                      "id": {
+                          "type": "string"
+                      },
+                      "owner": {
+                          "type": "string"
+                      },
+                      "lastUpdatedBy": {
+                          "type": "string"
+                      },
+                      "createdAt": {
+                          "type": "string",
+                          "format": "date-time"
+                      },
+                      "updatedAt": {
+                          "type": "string",
+                          "format": "date-time"
+                      },
+                      "requests": {
+                          "type": "array"
+                      },
+                      "folders": {
+                          "type": "array"
+                      }
+                  }
+              },
+              "revision": {
+                  "type": "integer",
+                  "description": "An internal revision ID. Its value increments each time the resource changes. You can use this ID to track whether there were changes since the last time you fetched the resource."
+              }
+          }
+      }
+order: 2000

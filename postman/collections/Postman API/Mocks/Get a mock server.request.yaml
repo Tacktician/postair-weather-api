@@ -1,0 +1,24 @@
+$kind: http-request
+description: Gets information about a mock server.
+url: "{{baseUrl}}/mocks/:mockId"
+method: GET
+pathVariables:
+  - key: mockId
+    value: ""
+    description: The mock's ID.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "uniqueItems": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+examples: ./.resources/Get a mock server.resources/examples
+order: 3000
