@@ -1,0 +1,425 @@
+{
+  "run": {
+    "meta": {
+      "collectionId": "5dc2d69d-4ddf-44a5-8782-bd5fd822ab48",
+      "collectionName": "PostAir Weather API",
+      "started": 1780333790049,
+      "duration": null
+    },
+    "summary": {
+      "iterations": {
+        "executed": 1,
+        "errors": 0
+      },
+      "executedRequests": {
+        "executed": 1,
+        "errors": 0
+      },
+      "prerequestScripts": {
+        "executed": 0,
+        "errors": 0
+      },
+      "postresponseScripts": {
+        "executed": 1,
+        "errors": 0
+      },
+      "tests": {
+        "executed": 9,
+        "failed": 0,
+        "passed": 9,
+        "skipped": 0
+      },
+      "timeStats": {
+        "responseAverage": 310,
+        "responseMin": 310,
+        "responseMax": 310,
+        "responseStandardDeviation": 0
+      }
+    },
+    "executions": [
+      {
+        "iterationCount": 0,
+        "requestExecuted": {
+          "id": "f4268583-3467-4bd5-b1c0-3814b3c25fb6",
+          "name": "Retrieve airport codes",
+          "description": {
+            "content": "Returns a list of airport codes",
+            "type": "text/plain"
+          },
+          "url": {
+            "protocol": "https",
+            "path": [
+              "v1",
+              "weather",
+              "airports"
+            ],
+            "host": [
+              "education",
+              "postmanlabs",
+              "com"
+            ],
+            "query": [
+              {
+                "key": "countryName",
+                "value": "United%20States"
+              },
+              {
+                "key": "airportCode",
+                "value": "ATL"
+              }
+            ],
+            "variable": []
+          },
+          "headers": [
+            {
+              "key": "Accept",
+              "value": "application/json"
+            },
+            {
+              "key": "x-api-key",
+              "value": "1234",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.52.0",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "0f720650-31e3-4b93-b338-e09dd1a752f1",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "education.postmanlabs.com",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            }
+          ],
+          "method": "GET",
+          "auth": {
+            "type": "apikey",
+            "apikey": [
+              {
+                "type": "string",
+                "value": "x-api-key",
+                "key": "key"
+              },
+              {
+                "type": "string",
+                "value": "1234",
+                "key": "value"
+              },
+              {
+                "type": "string",
+                "value": "header",
+                "key": "in"
+              }
+            ]
+          }
+        },
+        "response": {
+          "id": "89021a88-aedb-4fd9-8c6c-df1a4ab31a9e",
+          "_details": {
+            "name": "OK",
+            "detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action.",
+            "code": 200,
+            "standardName": "OK"
+          },
+          "status": "OK",
+          "code": 200,
+          "headers": [
+            {
+              "key": "Date",
+              "value": "Mon, 01 Jun 2026 17:09:50 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "172"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "x-amzn-RequestId",
+              "value": "74bce1b1-2677-4802-a3e2-b28c47b1aa6e"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "x-amzn-Remapped-Content-Length",
+              "value": "172"
+            },
+            {
+              "key": "x-amzn-Remapped-Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "x-amz-apigw-id",
+              "value": "eSpyzGwbIAMEv3w="
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"ac-0a2QaUZ8L/0j4NnGLkViqMjH2kc\""
+            },
+            {
+              "key": "x-correlation-id",
+              "value": "9b795329-b4fc-4e66-9aee-39d733ee3111"
+            },
+            {
+              "key": "x-amzn-Remapped-Date",
+              "value": "Mon, 01 Jun 2026 17:09:50 GMT"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              91,
+              123,
+              34,
+              99,
+              111,
+              117,
+              110,
+              116,
+              114,
+              121,
+              34,
+              58,
+              34,
+              85,
+              110,
+              105,
+              116,
+              101,
+              100,
+              32,
+              83,
+              116,
+              97,
+              116,
+              101,
+              115,
+              34,
+              44,
+              34,
+              97,
+              105,
+              114,
+              112,
+              111,
+              114,
+              116,
+              115,
+              34,
+              58,
+              91,
+              123,
+              34,
+              99,
+              111,
+              100,
+              101,
+              34,
+              58,
+              34,
+              65,
+              84,
+              76,
+              34,
+              44,
+              34,
+              99,
+              105,
+              116,
+              121,
+              34,
+              58,
+              34,
+              65,
+              116,
+              108,
+              97,
+              110,
+              116,
+              97,
+              34,
+              44,
+              34,
+              110,
+              97,
+              109,
+              101,
+              34,
+              58,
+              34,
+              72,
+              97,
+              114,
+              116,
+              115,
+              102,
+              105,
+              101,
+              108,
+              100,
+              45,
+              74,
+              97,
+              99,
+              107,
+              115,
+              111,
+              110,
+              32,
+              65,
+              116,
+              108,
+              97,
+              110,
+              116,
+              97,
+              32,
+              73,
+              110,
+              116,
+              101,
+              114,
+              110,
+              97,
+              116,
+              105,
+              111,
+              110,
+              97,
+              108,
+              32,
+              65,
+              105,
+              114,
+              112,
+              111,
+              114,
+              116,
+              34,
+              44,
+              34,
+              108,
+              97,
+              116,
+              105,
+              116,
+              117,
+              100,
+              101,
+              34,
+              58,
+              51,
+              51,
+              46,
+              54,
+              52,
+              48,
+              55,
+              44,
+              34,
+              108,
+              111,
+              110,
+              103,
+              105,
+              116,
+              117,
+              100,
+              101,
+              34,
+              58,
+              45,
+              56,
+              52,
+              46,
+              52,
+              50,
+              55,
+              55,
+              125,
+              93,
+              125,
+              93
+            ]
+          },
+          "cookies": [],
+          "responseTime": 310,
+          "responseSize": 172,
+          "downloadedBytes": 172
+        },
+        "tests": [
+          {
+            "name": "Status code is 200",
+            "status": "passed"
+          },
+          {
+            "name": "Has required fields",
+            "status": "passed"
+          },
+          {
+            "name": "Airport code matches IATA format",
+            "status": "passed"
+          },
+          {
+            "name": "Airport code matches expected",
+            "status": "passed"
+          },
+          {
+            "name": "Coordinates are numbers",
+            "status": "passed"
+          },
+          {
+            "name": "Coordinates are in valid range",
+            "status": "passed"
+          },
+          {
+            "name": "Response is grouped by country",
+            "status": "passed"
+          },
+          {
+            "name": "Content-Type is present",
+            "status": "passed"
+          },
+          {
+            "name": "Response time is less than 2000ms",
+            "status": "passed"
+          }
+        ],
+        "errors": []
+      }
+    ],
+    "runError": null
+  }
+}

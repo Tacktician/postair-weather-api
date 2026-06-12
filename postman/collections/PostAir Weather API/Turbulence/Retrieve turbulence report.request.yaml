@@ -1,0 +1,32 @@
+$kind: http-request
+description: Returns a list of turbulence reports
+url: "{{baseUrl}}/turbulence?airportCode=ATL"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: airportCode
+    value: ATL
+    description: airport code
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "default": "ATL",
+            "minLength": 3,
+            "maxLength": 4,
+            "pattern": "^[A-Z]{3,4}$"
+          }
+        }
+      }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("Status code is 200", function () {
+          pm.response.to.have.status(200);
+      });
+    language: text/javascript
+examples: ./.resources/Retrieve turbulence report.resources/examples
+order: 1000

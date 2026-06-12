@@ -1,0 +1,122 @@
+$kind: http-request
+name: Retrieve airport codes
+description: Returns a list of airport codes
+url: "{{baseUrl}}/airports?countryName=United States&airportCode={{airportCode}}"
+method: GET     
+headers:
+  Accept: application/json
+queryParams:
+  - key: countryName
+    value: United States
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "default": "United States"
+          }
+        }
+      }
+  - key: airportCode
+    value: "{{airportCode}}"
+    description: airport code
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "default": "ATL",
+            "minLength": 3,
+            "maxLength": 4,
+            "pattern": "^[A-Z]{3,4}$"
+          }
+        }
+      }
+auth:
+  type: apikey
+  credentials:
+    key: x-api-key
+    value: "{{apiKey}}"
+    in: header
+scripts:
+  - type: afterResponse
+    code: |-
+      const status = pm.response.status;
+      const data = pm.response.json();
+
+      if (pm.response.code === 200) {
+          pm.test("Status code is 200", () => {
+              pm.response.to.have.status(200);
+          });
+          pm.test("Has required fields", () => {
+              const airport = data[0].airports[0];
+              pm.expect(airport).to.have.all.keys(
+                  "code", "city", "name",
+                  "latitude", "longitude"
+              );
+          });
+          pm.test("Airport code matches IATA format", () => {
+              const code = data[0].airports[0].code;
+              pm.expect(code).to.match(/^[A-Z]{3}$/);
+          });
+
+          // pm.test("Airport code matches ATL", () => {
+          //     const code = data[0].airports[0].code;
+          //     pm.expect(code).to.equal("ATL");
+          // });
+          
+          pm.test("Airport code matches expected", () => {
+              const code = data[0].airports[0].code;
+              const expected = pm.environment.get("airportCode") || pm.variables.get("airportCode");
+              pm.expect(code).to.equal(expected);
+      });
+          pm.test("Coordinates are numbers", () => {
+              const airport = data[0].airports[0];
+              pm.expect(airport.latitude).to.be.a("number");
+              pm.expect(airport.longitude).to.be.a("number");
+          });
+          pm.test("Coordinates are in valid range", () => {
+              const airport = data[0].airports[0];
+              pm.expect(airport.latitude).to.be.within(-90, 90);
+              pm.expect(airport.longitude).to.be.within(-180, 180);
+          });
+          pm.test("Response is grouped by country", () => {
+              pm.expect(data).to.be.an("array");
+              pm.expect(data[0]).to.have.property("country");
+              pm.expect(data[0].airports).to.be.an("array");
+      });
+      } else if (pm.response.code === 404) {
+          pm.test("Status code is 404", () => {
+              pm.response.to.have.status(404);
+          });
+          pm.test("Content-Type is problem+json", () => {
+              const ct = pm.response.headers.get("Content-Type");
+              pm.expect(ct).to.include("application/problem+json");
+          });
+          pm.test("Body follows problemDetail schema", () => {
+              pm.expect(data).to.have.all.keys(
+                  "type", "title", "status",
+                  "detail", "instance", "correlationId"
+              );
+              pm.expect(data.status).to.equal(404);
+              pm.expect(data.title).to.equal("Not Found");
+          });
+          pm.test("detail is descriptive", () => {
+              pm.expect(data.detail).to.equal(
+                  "No airport data found for the specified criteria"
+              );
+          });
+      }
+
+      // These tests run for ALL responses
+      pm.test("Content-Type is present", () => {
+          pm.response.to.have.header("Content-Type");
+      });
+      pm.test("Response time is less than 2000ms", () => {
+          pm.expect(pm.response.responseTime).to.be.below(2000);
+      });
+    language: text/javascript
+examples: ./.resources/Retrieve airport codes.resources/examples
+order: 1000

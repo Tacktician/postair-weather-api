@@ -1,0 +1,23 @@
+$kind: collection
+description: |-
+  The **PostAir Weather API** collection provides aviation-focused weather data endpoints, organized into four folders:
+
+  - **Airports** — Look up airport codes, filterable by country name and airport code (e.g. ATL).
+      
+  - **Turbulence** — Retrieve turbulence reports for a given airport.
+      
+  - **Forecast** — Fetch weather forecasts by city.
+      
+  - **Metars** — Retrieve [METAR](https://en.wikipedia.org/wiki/METAR) reports, which are standardized aviation weather observations, for a specified airport.
+      
+
+  All four requests are GET endpoints that use a shared `{{baseUrl}}` variable, and the collection is secured with an API key (`x-api-key` header) sourced from the `{{apiKey}}` environment variable.
+variables:
+  baseUrl: /
+auth:
+  - id: 74cd44c9-65cd-42f3-aa2e-81ed8c5a5507
+    type: apikey
+    name: apikey auth
+    credentials:
+      value: "{{apiKey}}"
+      key: x-api-key

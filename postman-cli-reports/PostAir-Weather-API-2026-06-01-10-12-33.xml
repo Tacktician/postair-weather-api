@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="PostAir Weather API" tests="1" time="0.335">
+  <testsuite name="Airports / Retrieve airport codes" id="f4268583-3467-4bd5-b1c0-3814b3c25fb6" timestamp="2026-06-01T17:12:33.565Z" tests="9" failures="0" errors="0" time="0.335">
+    <testcase name="Status code is 200" time="0.335" classname="AirportsRetrieveAirportCodes"/>
+    <testcase name="Has required fields" time="0.335" classname="AirportsRetrieveAirportCodes"/>
+    <testcase name="Airport code matches IATA format" time="0.335" classname="AirportsRetrieveAirportCodes"/>
+    <testcase name="Airport code matches expected" time="0.335" classname="AirportsRetrieveAirportCodes"/>
+    <testcase name="Coordinates are numbers" time="0.335" classname="AirportsRetrieveAirportCodes"/>
+    <testcase name="Coordinates are in valid range" time="0.335" classname="AirportsRetrieveAirportCodes"/>
+    <testcase name="Response is grouped by country" time="0.335" classname="AirportsRetrieveAirportCodes"/>
+    <testcase name="Content-Type is present" time="0.335" classname="AirportsRetrieveAirportCodes"/>
+    <testcase name="Response time is less than 2000ms" time="0.335" classname="AirportsRetrieveAirportCodes"/>
+  </testsuite>
+</testsuites>

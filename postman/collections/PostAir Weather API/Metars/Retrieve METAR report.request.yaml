@@ -1,0 +1,70 @@
+$kind: http-request
+description: Returns a list of METAR reports
+url: "{{baseUrl}}/metars?airportCode=ATL"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: airportCode
+    value: ATL
+    description: airport code
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "default": "ATL",
+            "minLength": 3,
+            "maxLength": 4,
+            "pattern": "^[A-Z]{3,4}$"
+          }
+        }
+      }
+scripts:
+  - type: afterResponse
+    code: |+
+      const metarFormatPkg = pm.require('@field-services-v12-demo/metar-format-pkg');
+
+      const json = pm.response.json();
+
+      const result = metarFormatPkg.validateMetar(json);
+
+      pm.test("METAR data is in valid standard format", function () {
+          pm.expect(result.valid).to.be.true;
+          if (!result.valid) {
+              console.log(result.error);
+          }
+      });
+
+      pm.test("Status code is 200", function () {
+          pm.response.to.have.status(200);
+      });
+
+      const time = pm.response.responseTime;
+      const name = pm.info.requestName;
+
+      console.log(`[PERF] ${name}: ${time}ms`);
+
+      if (time > 400) {
+          console.warn(
+              `[SLOW] ${name}: ${time}ms exceeds soft limit`
+          );
+      }
+
+      pm.test("Response time is under 500ms", () => {
+          pm.expect(pm.response.responseTime)
+              .to.be.below(500);
+      });
+
+      pm.test("Response size is under 10KB", () => {
+          const sizeKB = pm.response.responseSize / 1024;
+          pm.expect(sizeKB).to.be.below(10);
+      });
+
+    language: text/javascript
+    packages:
+      "@field-services-v12-demo/metar-format-pkg":
+        id: 019d4f70-a401-76b8-b23e-ae917efce3d7
+examples: ./.resources/Retrieve METAR report.resources/examples
+order: 1000
