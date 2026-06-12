@@ -1,5 +1,0 @@
-$kind: http-request
-name: WHOAMI?
-url: https://api.getpostman.com/me
-method: GET
-order: 4000

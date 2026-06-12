@@ -2,7 +2,7 @@ $kind: http-request
 name: Retrieve airport codes
 description: Returns a list of airport codes
 url: "{{baseUrl}}/airports?countryName=United States&airportCode={{airportCode}}"
-method: GET
+method: GET     
 headers:
   Accept: application/json
 queryParams:

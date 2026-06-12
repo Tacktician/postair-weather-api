@@ -1,3 +1,0 @@
-$kind: collection
-description: These endpoints manage runner instances. Instances are runner executions that share the same runner ID and key.
-order: 1000
