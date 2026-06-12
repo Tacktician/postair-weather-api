@@ -1,5 +1,9 @@
 name: Postman - Smoke Tests
-on: [push]
+on:
+  push:
+    branches-ignore:
+      - main
+  pull_request:
 
 jobs:
   postman-tests:
