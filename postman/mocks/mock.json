@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+  "id": "019edba7-4908-73dc-a2c9-5c5b4a838a6d",
+  "name": "PostAir Weather API - Local Mock",
+  "protocol": "http",
+  "port": 4010,
+  "mockSrc": "./mock.js",
+  "autoRestartOnChange": true,
+  "logging": {
+    "level": "info",
+    "showRequestBody": true,
+    "showResponseBody": true
+  },
+  "routes": [
+    { "method": "GET", "path": "/airports" },
+    { "method": "GET", "path": "/forecast" },
+    { "method": "GET", "path": "/metars" },
+    { "method": "GET", "path": "/turbulence" }
+  ]
+}

@@ -3,16 +3,15 @@ request:
   url: "{{baseUrl}}/airports?countryName=United States&airportCode=ATL"
   method: GET
   headers:
-    - key: Accept
-      value: application/json
-    - key: x-api-key
-      value: <API Key>
-      description: "Added as a part of security scheme: apikey"
+    Accept: application/json
   queryParams:
     - key: countryName
       value: United States
+      disabled: false
+      description: ""
     - key: airportCode
       value: ATL
+      disabled: false
       description: airport code
 response:
   statusCode: 200
@@ -24,44 +23,18 @@ response:
     type: json
     content: |-
       [
-        {
-          "country": "United States",
-          "airports": [
-            {
-              "code": "ATL",
-              "city": "Atlanta",
-              "name": "Hartsfield-Jackson Atlanta International Airport",
-              "latitude": 33.6407,
-              "longitude": -84.4277
-            },
-            {
-              "code": "LAX",
-              "city": "Los Angeles",
-              "name": "Los Angeles International Airport",
-              "latitude": 33.9416,
-              "longitude": -118.4085
-            }
-          ]
-        },
-        {
-          "country": "Spain",
-          "airports": [
-            {
-              "code": "BCN",
-              "city": "Barcelona",
-              "name": "Josep Tarradellas Barcelona–El Prat Airport",
-              "latitude": 41.2974,
-              "longitude": 2.0833
-            },
-            {
-              "code": "MAD",
-              "city": "Madrid",
-              "name": "Adolfo Suárez Madrid–Barajas Airport",
-              "latitude": 40.4893,
-              "longitude": -3.6827
-            }
-          ]
-        }
+          {
+              "country": "United States",
+              "airports": [
+                  {
+                      "code": "ATL",
+                      "city": "Atlanta",
+                      "name": "Hartsfield-Jackson Atlanta International Airport",
+                      "latitude": 33.6407,
+                      "longitude": -84.4277
+                  }
+              ]
+          }
       ]
     $type: |-
       {

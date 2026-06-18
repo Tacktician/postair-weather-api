@@ -1,39 +1,10 @@
 $kind: http-request
 name: Retrieve airport codes
 description: Returns a list of airport codes
-url: "{{baseUrl}}/airports?countryName=United States&airportCode={{airportCode}}"
-method: GET     
+url: "{{baseUrl}}/airports"
+method: GET
 headers:
   Accept: application/json
-queryParams:
-  - key: countryName
-    value: United States
-    $type: |-
-      {
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string",
-            "default": "United States"
-          }
-        }
-      }
-  - key: airportCode
-    value: "{{airportCode}}"
-    description: airport code
-    $type: |-
-      {
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string",
-            "default": "ATL",
-            "minLength": 3,
-            "maxLength": 4,
-            "pattern": "^[A-Z]{3,4}$"
-          }
-        }
-      }
 auth:
   type: apikey
   credentials:
