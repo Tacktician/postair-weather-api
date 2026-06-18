@@ -1,15 +1,11 @@
 $kind: http-example
 request:
-  url: "{{baseUrl}}/forecast?forecastCity=string"
+  url: "{{baseUrl}}/forecast?forecastCity=Atlanta"
   method: GET
   headers:
-    - key: Accept
-      value: application/json
-    - key: x-api-key
-      value: <API Key>
-      description: "Added as a part of security scheme: apikey"
+    Accept: application/json
   queryParams:
-    forecastCity: string
+    forecastCity: Atlanta
 response:
   statusCode: 200
   statusText: OK
@@ -20,31 +16,31 @@ response:
     type: json
     content: |-
       [
-        {
-          "id": "d07bdab9-637e-4d2e-a962-12683c5d768f",
-          "city": "Ocala",
-          "country": "United States",
-          "humidity": 84.6,
-          "windSpeed": [
-            {
-              "Speed": 40,
-              "unit": "mph",
-              "direction": "SE"
-            }
-          ],
-          "weatherCondition": "Fog",
-          "sunriseTime": "11:57 AM",
-          "sunseTtime": "1:56 PM",
-          "visibility": 4.84,
-          "airPressure": 1028.22,
-          "temperature": [
-            {
-              "temperature": 0.7,
-              "temperatureUnit": "F"
-            }
-          ],
-          "turbulenceLevel": "Medium(M)"
-        }
+          {
+              "id": "49a1c232-2124-41c1-8c2e-83262ae7fb21",
+              "city": "Atlanta",
+              "country": "United States",
+              "humidity": 80.3,
+              "windSpeed": [
+                  {
+                      "Speed": 22,
+                      "unit": "mph",
+                      "direction": "N"
+                  }
+              ],
+              "weatherCondition": "Partially Cloudy",
+              "sunriseTime": "7:44 AM",
+              "sunsetTime": "8:46 PM",
+              "visibility": 3.44,
+              "airPressure": 1082.38,
+              "temperature": [
+                  {
+                      "temperature": 27,
+                      "temperatureUnit": "F"
+                  }
+              ],
+              "turbulenceLevel": "Light(L)"
+          }
       ]
     $type: |-
       {

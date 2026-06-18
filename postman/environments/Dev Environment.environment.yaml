@@ -1,12 +1,6 @@
-owner: "52316556"
-team: "13347347"
-lastUpdatedBy: "52316556"
-lastRevision: 1779923387000
 name: Dev Environment
-color: null
 values:
   - key: apiKey
-    enabled: true
     secret: true
     source:
       provider: postman
@@ -15,10 +9,9 @@ values:
         secretId: bc4e14d9-0011-4637-b916-b3a059580df3
         vaultId: b8895514-4510-4423-bf28-91f5f1c2b083
   - key: baseUrl
-    value: https://education.postmanlabs.com/v1/weather
-    enabled: true
+    value: 'http://localhost:4500'
   - key: airportCode
     value: ATL
-    enabled: true
-createdAt: 2026-03-26T00:14:18.000Z
-updatedAt: 2026-05-27T23:09:47.000Z
+  - key: cloudURL
+    value: 'https://education.postmanlabs.com/v1/weather'
+color: 0

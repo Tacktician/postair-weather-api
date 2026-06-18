@@ -3,11 +3,8 @@ request:
   url: "{{baseUrl}}/airports?countryName=United States&airportCode=ATL"
   method: GET
   headers:
-    - key: Accept
-      value: application/problem+json
-    - key: x-api-key
-      value: <API Key>
-      description: "Added as a part of security scheme: apikey"
+    Accept: application/problem+json
+    x-api-key: <API KEY>
   queryParams:
     - key: countryName
       value: United States

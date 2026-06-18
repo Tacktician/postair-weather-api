@@ -1,30 +1,13 @@
 $kind: http-request
 description: Returns a list of METAR reports
-url: "{{baseUrl}}/metars?airportCode=ATL"
+url: "{{baseUrl}}/metars"
 method: GET
 headers:
   Accept: application/json
-queryParams:
-  - key: airportCode
-    value: ATL
-    description: airport code
-    $type: |-
-      {
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string",
-            "default": "ATL",
-            "minLength": 3,
-            "maxLength": 4,
-            "pattern": "^[A-Z]{3,4}$"
-          }
-        }
-      }
 scripts:
   - type: afterResponse
     code: |+
-      const metarFormatPkg = pm.require('@field-services-v12-demo/metar-format-pkg');
+      const metarFormatPkg = pm.require('@field-services-v12-demo/metar-validators');
 
       const json = pm.response.json();
 
@@ -64,7 +47,7 @@ scripts:
 
     language: text/javascript
     packages:
-      "@field-services-v12-demo/metar-format-pkg":
-        id: 019d4f70-a401-76b8-b23e-ae917efce3d7
-examples: ./.resources/Retrieve METAR report.resources/examples
+      "@field-services-v12-demo/metar-validators":
+        id: 019d540e-d5c5-7e0d-afc1-1fd7b7f4c53c
+examples: .resources/Retrieve METAR report.resources/examples
 order: 1000
