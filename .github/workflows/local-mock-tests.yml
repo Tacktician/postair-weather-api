@@ -17,7 +17,7 @@ jobs:
         with:
           api-key: ${{ secrets.POSTMAN_API_KEY }}
           command: >-
-            collection run ${{ vars.COLLECTION_ID }}
+            collection run ${{ vars.COLLECTION_PATH }}
             --environment ./postman/environments/dev.environment.yaml
             --mock ./postman/mocks/mock.js
             --verbose
@@ -44,7 +44,7 @@ jobs:
         with:
           api-key: ${{ secrets.POSTMAN_API_KEY }}
           command: >-
-            collection run ${{ vars.COLLECTION_ID }}
+            collection run ${{ vars.COLLECTION_PATH }}
             --environment ./postman/environments/dev.environment.yaml
             --verbose
 
