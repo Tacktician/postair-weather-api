@@ -16,7 +16,7 @@ jobs:
           api-key: ${{ secrets.POSTMAN_API_KEY }}
           command: >-
             collection run ${{ vars.COLLECTION_ID }}
-            -e ${{ vars.ENV_ID }}
+            -e ./postman/environments/test.environment.yaml
             -i ${{ vars.SMOKE_TEST_FOLDER }}
             --reporters junit,cli
 
