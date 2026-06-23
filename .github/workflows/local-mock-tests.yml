@@ -18,7 +18,7 @@ jobs:
           api-key: ${{ secrets.POSTMAN_API_KEY }}
           command: >-
             collection run ./postman/collections/PostAir\ Weather API
-            --environment ./postman/environments/Dev\ Environment.environment.yaml
+            --environment ./postman/environments/dev.environment.yaml
             --mock ./postman/mocks/mock.js
             --verbose
 
