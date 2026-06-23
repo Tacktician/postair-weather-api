@@ -7,7 +7,7 @@ localResources:
   docs:
     - ../README.md
   collections:
-    - ../postman/collections/PostAir Weather API
+    - ../postman/collections/postair-weather-api
   environments:
     - ../postman/environments/Postman API Enviroment.environment.yaml
     - ../postman/environments/dev.environment.yaml
@@ -16,7 +16,7 @@ localResources:
 
 cloudResources:
   collections:
-    ../postman/collections/PostAir Weather API: 52316556-5dc2d69d-4ddf-44a5-8782-bd5fd822ab48
+    ../postman/collections/postair-weather-api: 52316556-5dc2d69d-4ddf-44a5-8782-bd5fd822ab48
   environments:
     ../postman/environments/Postman API Enviroment.environment.yaml: 52316556-0b8101dc-2de6-4613-b250-d7da4a225a1e
     ../postman/environments/dev.environment.yaml: 52316556-0dc04fcf-8db0-4bbb-b3d5-eb0c0a67d129
