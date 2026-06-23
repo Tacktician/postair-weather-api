@@ -1,5 +1,4 @@
 $kind: http-example
-description: Returns a list of airport codes
 request:
   url: "{{baseUrl}}/airports"
   method: GET
@@ -7,7 +6,7 @@ request:
     Accept: application/json
 response:
   statusCode: 200
-  statusText: ""
+  statusText: OK
   body:
     type: json
     content: |-
@@ -676,4 +675,4 @@ response:
               ]
           }
       ]
-order: 319
+order: 1000

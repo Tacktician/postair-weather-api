@@ -11,5 +11,5 @@ scripts:
           pm.response.to.have.status(200);
       });
     language: text/javascript
-examples: .resources/Retrieve turbulence report.resources/examples
+examples: ./.resources/Retrieve turbulence report.resources/examples
 order: 1000

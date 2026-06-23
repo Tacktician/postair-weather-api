@@ -15,7 +15,7 @@ description: |-
 variables:
   baseUrl: /
 auth:
-  - id: 74cd44c9-65cd-42f3-aa2e-81ed8c5a5507
+  - id: bcdc97c4-9621-48a1-8fda-d515549add5f
     type: apikey
     name: apikey auth
     credentials:

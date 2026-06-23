@@ -1,5 +1,4 @@
 $kind: http-example
-description: Returns a list of forecasts
 request:
   url: "{{baseUrl}}/forecast"
   method: GET
@@ -7,7 +6,7 @@ request:
     Accept: application/json
 response:
   statusCode: 200
-  statusText: ""
+  statusText: OK
   body:
     type: json
     content: |-
@@ -2638,4 +2637,4 @@ response:
               "turbulenceLevel": "Super(S)"
           }
       ]
-order: 640
+order: 1000

@@ -1,5 +1,4 @@
 $kind: http-request
-name: Retrieve airport codes
 description: Returns a list of airport codes
 url: "{{baseUrl}}/airports"
 method: GET

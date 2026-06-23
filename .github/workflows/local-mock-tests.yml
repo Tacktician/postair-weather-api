@@ -1,0 +1,53 @@
+name: API Tests (mock-backed)
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  mock-backed-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      # Pattern 1: inline --mock flag
+      - name: Run collection against the local mock (inline --mock flag)
+        uses: postmanlabs/postman-cli-action@v1
+        with:
+          api-key: ${{ secrets.POSTMAN_API_KEY }}
+          command: >-
+            collection run "./postman/collections/PostAir Weather API"
+            --environment "./postman/environments/Dev Environment.environment.yaml"
+            --mock "./postman/mocks/mock.js"
+            --verbose
+
+      # Pattern 2: lifecycle (start → test → stop)
+      - name: Start the local mock
+        run: |
+          postman mock run "./postman/mocks/mock.js" &
+          echo $! > mock.pid
+
+      - name: Wait for the mock to be ready
+        run: |
+          for i in $(seq 1 30); do
+            if curl -s -o /dev/null "http://localhost:4500"; then
+              echo "Mock is up"; exit 0
+            fi
+            sleep 1
+          done
+          echo "Mock did not become ready in time" >&2
+          exit 1
+
+      - name: Run collection against the local mock (lifecycle pattern)
+        uses: postmanlabs/postman-cli-action@v1
+        with:
+          api-key: ${{ secrets.POSTMAN_API_KEY }}
+          command: >-
+            collection run "./postman/collections/PostAir Weather API"
+            --environment "./postman/environments/Dev Environment.environment.yaml"
+            --verbose
+
+      - name: Stop the local mock
+        if: always()
+        run: kill "$(cat mock.pid)" || true

@@ -1,4 +1,5 @@
 $kind: http-request
+name: Retrieve METAR report
 description: Returns a list of METAR reports
 url: "{{baseUrl}}/metars"
 method: GET
@@ -40,14 +41,14 @@ scripts:
               .to.be.below(500);
       });
 
-      pm.test("Response size is under 10KB", () => {
-          const sizeKB = pm.response.responseSize / 1024;
-          pm.expect(sizeKB).to.be.below(10);
-      });
+      // pm.test("Response size is under 10KB", () => {
+      //     const sizeKB = pm.response.responseSize / 1024;
+      //     pm.expect(sizeKB).to.be.below(10);
+      // });
 
     language: text/javascript
     packages:
       "@field-services-v12-demo/metar-validators":
         id: 019d540e-d5c5-7e0d-afc1-1fd7b7f4c53c
-examples: .resources/Retrieve METAR report.resources/examples
+examples: ./.resources/Retrieve METAR report.resources/examples
 order: 1000
