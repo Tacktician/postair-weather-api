@@ -19,7 +19,7 @@ jobs:
           command: >-
             collection run "./postman/collections/PostAir Weather API"
             --environment "./postman/environments/Dev Environment.environment.yaml"
-            --mock "./postman/mocks/mock.js"
+            --mock ./postman/mocks/mock.js
             --verbose
 
       # Pattern 2: lifecycle (start → test → stop)
