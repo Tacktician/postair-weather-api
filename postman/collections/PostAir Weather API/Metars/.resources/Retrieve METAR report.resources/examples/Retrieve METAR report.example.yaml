@@ -1,5 +1,4 @@
 $kind: http-example
-description: Returns a list of METAR reports
 request:
   url: "{{baseUrl}}/metars"
   method: GET
@@ -7,7 +6,7 @@ request:
     Accept: application/json
 response:
   statusCode: 200
-  statusText: ""
+  statusText: OK
   body:
     type: json
     content: |-
@@ -594,4 +593,4 @@ response:
               }
           }
       ]
-order: 7
+order: 1000

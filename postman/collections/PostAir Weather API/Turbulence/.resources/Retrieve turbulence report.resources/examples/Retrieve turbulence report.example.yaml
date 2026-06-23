@@ -1,5 +1,4 @@
 $kind: http-example
-description: Returns a list of turbulence reports
 request:
   url: "{{baseUrl}}/turbulence"
   method: GET
@@ -7,7 +6,7 @@ request:
     Accept: application/json
 response:
   statusCode: 200
-  statusText: ""
+  statusText: OK
   body:
     type: json
     content: |-
@@ -3113,4 +3112,4 @@ response:
               }
           }
       ]
-order: 445
+order: 1000

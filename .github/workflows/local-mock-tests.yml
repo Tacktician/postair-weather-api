@@ -1,0 +1,57 @@
+name: API Tests (mock-backed)
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  mock-backed-run:
+    runs-on: ubuntu-latest
+    env:
+      COLLECTION_PATH: "./postman/collections/PostAir Weather API"
+      ENV_PATH: "./postman/environments/Dev Environment.environment.yaml"
+      MOCK_PATH: "./postman/mocks/mock.js"
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Install Postman CLI
+        run: curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
+
+      - name: Authenticate Postman CLI
+        run: postman login --with-api-key "${{ secrets.POSTMAN_API_KEY }}"
+
+      # Pattern 1: inline --mock flag
+      - name: Run collection against the local mock (inline --mock flag)
+        run: |
+          postman collection run "$COLLECTION_PATH" \
+            --environment "$ENV_PATH" \
+            --mock "$MOCK_PATH" \
+            --verbose
+
+      # Pattern 2: lifecycle (start → test → stop)
+      - name: Start the local mock
+        run: |
+          postman mock run "$MOCK_PATH" &
+          echo $! > mock.pid
+
+      - name: Wait for the mock to be ready
+        run: |
+          for i in $(seq 1 30); do
+            if curl -s -o /dev/null "http://localhost:4500"; then
+              echo "Mock is up"; exit 0
+            fi
+            sleep 1
+          done
+          echo "Mock did not become ready in time" >&2
+          exit 1
+
+      - name: Run collection against the local mock (lifecycle pattern)
+        run: |
+          postman collection run "$COLLECTION_PATH" \
+            --environment "$ENV_PATH" \
+            --verbose
+
+      - name: Stop the local mock
+        if: always()
+        run: kill "$(cat mock.pid)" || true
