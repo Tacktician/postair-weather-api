@@ -1,5 +1,5 @@
 $kind: collection
-name: postair-weather-api
+name: PostAir Weather API
 description: |-
   The **PostAir Weather API** collection provides aviation-focused weather data endpoints, organized into four folders:
 
