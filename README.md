@@ -1,5 +1,6 @@
 # PostAir Weather API (standalone demo)
-[![API Tests (mock-backed)](https://img.shields.io/github/actions/workflow/status/Tacktician/postair-weather-api/local-mock-tests.yml?logo=postman&logoColor=white&label=API%20Tests%20(mock-backed)&color=FF6C37)](https://github.com/Tacktician/postair-weather-api/actions/workflows/local-mock-tests.yml)
+[![API Tests (mock-backed)](https://img.shields.io/github/actions/workflow/status/Tacktician/postair-weather-api/local-mock-tests.yml?logo=postman&logoColor=white&label=API%20Tests%20(mock-backed))](https://github.com/Tacktician/postair-weather-api/actions/workflows/local-mock-tests.yml)
+[![Postman Workspace Sync](https://img.shields.io/github/actions/workflow/status/Tacktician/postair-weather-api/postman-workspace-sync.yml?logo=postman&logoColor=white&label=Postman%20Workspace%20Sync)](https://github.com/Tacktician/postair-weather-api/actions/workflows/postman-workspace-sync.yml)
 
 This repository is a **standalone demo HTTP API** intended for use with the <a href="https://academy.postman.com/path/api-testing-path" target="_blank" rel="noopener noreferrer"><strong>API Testing learning path</strong></a> on Postman Academy (Postman’s API Testing courses). It is **designed to run on your machine** so you can send requests, write tests in Postman, and practice workflows without depending on a shared hosted environment.
 
