@@ -3,6 +3,10 @@ name: Postman Workspace Sync
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - '**.md'
+      - '.gitignore'
+      - 'docs/**'
 
 jobs:
   sync:
