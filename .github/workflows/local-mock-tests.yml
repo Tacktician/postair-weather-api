@@ -3,6 +3,10 @@ name: API Tests (mock-backed)
 on:
   pull_request:
     branches: [ main ]
+    paths-ignore:
+      - '**.md'
+      - '.gitignore'
+      - 'docs/**'
 
 jobs:
   mock-backed-run:
