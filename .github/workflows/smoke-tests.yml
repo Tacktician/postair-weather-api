@@ -7,8 +7,6 @@ on:
 jobs:
   postman-tests:
     runs-on: ubuntu-latest
-    env:
-      ENV_PATH: "./postman/environments/Test Environment.environment.yaml"
     steps:
       - uses: actions/checkout@v4
 
@@ -21,7 +19,7 @@ jobs:
       - name: Run Postman collection Smoke Test
         run: |
           postman collection run ${{ vars.COLLECTION_ID }} \
-            -e "$ENV_PATH" \
+            -e ${{vars.ENV_ID }} \
             -i ${{ vars.SMOKE_TEST_FOLDER }} \
             --reporters junit,cli
 
