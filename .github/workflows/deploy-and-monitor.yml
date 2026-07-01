@@ -1,0 +1,29 @@
+name: Deploy and monitor
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy-and-monitor:
+    runs-on: ubuntu-latest
+    env:
+      POSTMAN_API_KEY: ${{ secrets.POSTMAN_API_KEY }}
+      MONITOR_ID: ${{ vars.MONITOR_ID }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Used when we have an actual deploy stage
+      #- name: Deploy service
+      #  run: ./scripts/deploy.sh
+
+      - name: Install Postman CLI
+        run: curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
+
+      - name: Authenticate Postman CLI
+        run: postman login --with-api-key "$POSTMAN_API_KEY"
+
+      # Post-deploy gate -- triggers the cloud monitor and waits for the result
+      - name: Trigger Postman monitor
+        run: postman monitor run "$MONITOR_ID" --timeout 60000
