@@ -2,6 +2,8 @@
 .DS_Store
 .idea
 # Logs
+.claude/settings.local.json
+.claude/.settings-security-marker
 logs
 *.log
 npm-debug.log*
