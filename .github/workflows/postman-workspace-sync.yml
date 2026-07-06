@@ -22,13 +22,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Install the Postman CLI directly rather than via postmanlabs/postman-cli-action:
-      # the action pins an older CLI whose push strategy lacks the mockService needed to
-      # push script-based (mockSrc) local mocks, which fails with
-      # "Mock push is not configured: pass mockService to CompositePushStrategy".
-      # The install script always fetches the current CLI, which supports mock pushes.
-      - name: Install Postman CLI
-        run: curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
+      # Pin the Postman CLI to 1.38.1. Starting in 1.41.0 the sync-planner attempts to
+      # push local (script-based) mocks, but the mockService backing that isn't GA yet,
+      # so the push fails with:
+      #   "Mock push is not configured: pass mockService to CompositePushStrategy".
+      # 1.38.1 predates that change and skips the local mock cleanly. Revert to the
+      # unpinned latest install once mock push GAs upstream:
+      #   run: curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
+      - name: Install Postman CLI (pinned 1.38.1)
+        run: |
+          curl -sSL "https://dl-cli.pstmn.io/install/linux64.sh" \
+            | sed 's#/download/latest/#/download/version/1.38.1/#' | sh
+          postman --version
 
       - name: Authenticate Postman CLI
         run: postman login --with-api-key "$POSTMAN_API_KEY"
