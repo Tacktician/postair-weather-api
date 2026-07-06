@@ -2,6 +2,8 @@
 .DS_Store
 .idea
 # Logs
+.claude/settings.local.json
+.claude/.settings-security-marker
 logs
 *.log
 npm-debug.log*
@@ -99,7 +101,6 @@ dist
 
 # vuepress v2.x temp and cache directory
 .temp
-.cache
 
 # Sveltekit cache directory
 .svelte-kit/
