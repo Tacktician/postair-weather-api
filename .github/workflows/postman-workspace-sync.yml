@@ -8,21 +8,33 @@ on:
       - '.gitignore'
       - 'docs/**'
 
+# A push to the cloud workspace is not safe to run concurrently with itself;
+# let an in-flight sync finish before the next merge's sync starts.
+concurrency:
+  group: postman-workspace-sync
+  cancel-in-progress: false
+
 jobs:
   sync:
     runs-on: ubuntu-latest
-
+    env:
+      POSTMAN_API_KEY: ${{ secrets.POSTMAN_API_KEY }}
     steps:
       - uses: actions/checkout@v4
 
+      # Install the Postman CLI directly rather than via postmanlabs/postman-cli-action:
+      # the action pins an older CLI whose push strategy lacks the mockService needed to
+      # push script-based (mockSrc) local mocks, which fails with
+      # "Mock push is not configured: pass mockService to CompositePushStrategy".
+      # The install script always fetches the current CLI, which supports mock pushes.
+      - name: Install Postman CLI
+        run: curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
+
+      - name: Authenticate Postman CLI
+        run: postman login --with-api-key "$POSTMAN_API_KEY"
+
       - name: Validate workspace
-        uses: postmanlabs/postman-cli-action@v1
-        with:
-          api-key: ${{ secrets.POSTMAN_API_KEY }}
-          command: workspace prepare
+        run: postman workspace prepare
 
       - name: Publish to Postman Cloud
-        uses: postmanlabs/postman-cli-action@v1
-        with:
-          api-key: ${{ secrets.POSTMAN_API_KEY }}
-          command: workspace push -y
+        run: postman workspace push -y
