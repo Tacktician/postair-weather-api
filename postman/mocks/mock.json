@@ -1,5 +1,5 @@
 {
-  "version": "1.0",
+  "version": 1,
   "id": "019edba7-4908-73dc-a2c9-5c5b4a838a6d",
   "name": "PostAir Weather API - Local Mock",
   "protocol": "http",
