@@ -1,0 +1,25 @@
+jobs:
+  performance:
+    runs-on: ubuntu-latest
+    env:
+      POSTMAN_API_KEY: ${{ secrets.POSTMAN_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Postman CLI
+        run: curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
+
+      - name: Authenticate Postman CLI
+        run: postman login --with-api-key "$POSTMAN_API_KEY"
+
+      - name: Write perf data file from secret
+        run: printf '[{"apiKey":"%s"}]' "${{ secrets.WEATHER_API_KEY }}" > perf-data.json
+
+      - name: Run performance test
+        run: |
+          postman performance run "${{ vars.COLLECTION_ID }}" \
+            --environment "${{ vars.ENV_ID }}" \
+            --data-file ./perf-data.json \
+            --vu-count 20 --duration 10 \
+            --load-profile spike \
+            --pass-if "less_than(p90, 500)"
