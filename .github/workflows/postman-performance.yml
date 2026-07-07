@@ -1,3 +1,6 @@
+name: Postman - Performance Tests
+on: workflow_dispatch
+
 jobs:
   performance:
     runs-on: ubuntu-latest
