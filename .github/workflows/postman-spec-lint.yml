@@ -1,0 +1,44 @@
+name: Postman - Spec Lint (governance gate)
+
+# Write gate: block a PR (and post-merge push to main) whenever the OpenAPI spec
+# fails governance/syntax linting. This runs the SAME command developers run
+# locally — `postman spec lint <spec> --fail-severity warning` — so local, CI,
+# and cloud all enforce one ruleset. `spec lint` authenticates and pulls the
+# workspace governance rulesets, hence the POSTMAN_API_KEY below.
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'postman/specs/**'
+      - '.github/workflows/postman-spec-lint.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'postman/specs/**'
+      - '.github/workflows/postman-spec-lint.yml'
+
+jobs:
+  spec-lint:
+    runs-on: ubuntu-latest
+    env:
+      POSTMAN_API_KEY: ${{ secrets.POSTMAN_API_KEY }}
+      SPEC_PATH: postman/specs/postair-weather-api/v1/postair-openapi.yaml
+    steps:
+      - uses: actions/checkout@v4
+
+      # Pin to 1.38.1 for parity with the workspace-sync job and with the version
+      # developers run locally, so governance results are reproducible across all
+      # three. Bump in lockstep with postman-workspace-sync.yml.
+      - name: Install Postman CLI (pinned 1.38.1)
+        run: |
+          curl -sSL "https://dl-cli.pstmn.io/install/linux64.sh" \
+            | sed 's#/download/latest/#/download/version/1.38.1/#' | sh
+          postman --version
+
+      - name: Authenticate Postman CLI
+        run: postman login --with-api-key "$POSTMAN_API_KEY"
+
+      # --fail-severity warning => warnings and errors both fail the job (exit
+      # non-zero), so the spec must be fully clean to merge.
+      - name: Lint OpenAPI spec
+        run: postman spec lint "$SPEC_PATH" --fail-severity warning
