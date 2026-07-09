@@ -1,9 +1,36 @@
+# PostAir Weather API — corrected spec (governance + syntax clean).
+#
+# Fixes applied vs the previous (pre-governance-fix) revision in git history:
+#   SYNTAX (was blocking full governance analysis):
+#     - Quoted every HTTP status-code key ("200", "404", ...). Unquoted numeric
+#       keys parse as numbers; OpenAPI requires Responses Object keys to be
+#       strings. This also cleared the cascading content/media-range errors.
+#   GOVERNANCE (spectral:oas recommended, surfaced once syntax was clean):
+#     - info-contact          -> added info.contact
+#     - oas3-api-servers      -> added a servers entry
+#     - operation-operationId -> added lower-hyphen-case operationId per operation
+#   GOVERNANCE (schema $ref rule) + array-items:
+#     - Extracted inline header/parameter schemas into components.schemas and
+#       referenced them with $ref.
+#     - Gave components.schemas.airportCodes a sibling `items`.
+#   TIDY (non-lint): corrected two copy-paste example keys (403/500 responses).
+#   CONTENT TYPES: standardized every response body on `application/json`. Error
+#     payloads keep the RFC 9457 / 7807 Problem Details *schema* shape
+#     (see components.schemas.problemDetail); only the media-type label is
+#     unified, so error and success responses share one content type.
 openapi: 3.1.0
 info:
   title: 'postair-weather-api'
   description: 'PostAir Weather API'
   version: 1.0.0
+  contact:
+    name: 'PostAir API Team'
+    email: api@postair.example
+    url: 'https://postair.example/support'
 
+servers:
+  - url: 'https://api.postair.example/v1'
+    description: 'Production'
 
 tags:
   - name: Airports
@@ -11,11 +38,12 @@ tags:
   - name: Forecast
   - name: Metars
     description: |
-      [METAR](https://en.wikipedia.org/wiki/METAR) reports 
+      [METAR](https://en.wikipedia.org/wiki/METAR) reports
 
 paths:
   /airports:
     get:
+      operationId: get-airports
       security:
         - apiKey: []
       tags:
@@ -27,7 +55,7 @@ paths:
       summary: 'Retrieve airport codes'
       description: 'Returns a list of airport codes'
       responses:
-        200:
+        "200":
           description: 'A list of airports'
           headers:
             x-correlation-id:
@@ -39,49 +67,50 @@ paths:
               examples:
                 airportListExample:
                   $ref: '#/components/examples/airportListExample'
-        404:
+        "404":
           description: 'Not found'
           content:
-            application/problem+json:
+            application/json:
               schema:
                 $ref: '#/components/schemas/problemDetail'
               examples:
                 notFoundExample:
                   $ref: '#/components/examples/notFoundExample'
-        401:
+        "401":
           description: 'Unauthorized'
           content:
-            application/problem+json:
+            application/json:
               schema:
                 $ref: '#/components/schemas/problemDetail'
               examples:
                 401httpExample:
                   $ref: '#/components/examples/401http'
 
-        403:
+        "403":
           description: 'Forbidden'
           content:
-            application/problem+json:
+            application/json:
               schema:
                 $ref: '#/components/schemas/problemDetail'
               examples:
-                401httpExample:
+                403httpExample:
                   $ref: '#/components/examples/403http'
 
-        500:
+        "500":
           description: 'Internal Server Error'
           headers:
             Content-Type:
               $ref: '#/components/headers/problemDetailHeader'
           content:
-            application/problem+json:
+            application/json:
               schema:
                 $ref: '#/components/schemas/problemDetail'
               examples:
-                505httpExample:
+                500httpExample:
                   $ref: '#/components/examples/500http'
   /turbulence:
     get:
+      operationId: get-turbulence
       tags:
         - Turbulence
       parameters:
@@ -89,7 +118,7 @@ paths:
       summary: 'Retrieve turbulence report'
       description: 'Returns a list of turbulence reports'
       responses:
-        200:
+        "200":
           description: 'Retrieve a turbulence report'
           headers:
             x-correlation-id:
@@ -98,49 +127,50 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/TurbulenceReportList'
-        404:
+        "404":
           description: 'Not found'
           content:
-            application/problem+json:
+            application/json:
               schema:
                 $ref: '#/components/schemas/problemDetail'
               examples:
                 notFoundExample:
                   $ref: '#/components/examples/notFoundExample'
-        401:
+        "401":
           description: 'Unauthorized'
           content:
-            application/problem+json:
+            application/json:
               schema:
                 $ref: '#/components/schemas/problemDetail'
               examples:
                 401httpExample:
                   $ref: '#/components/examples/401http'
 
-        403:
+        "403":
           description: 'Forbidden'
           content:
-            application/problem+json:
+            application/json:
               schema:
                 $ref: '#/components/schemas/problemDetail'
               examples:
-                401httpExample:
+                403httpExample:
                   $ref: '#/components/examples/403http'
 
-        500:
+        "500":
           description: 'Internal Server Error'
           headers:
             Content-Type:
               $ref: '#/components/headers/problemDetailHeader'
           content:
-            application/problem+json:
+            application/json:
               schema:
                 $ref: '#/components/schemas/problemDetail'
               examples:
-                505httpExample:
+                500httpExample:
                   $ref: '#/components/examples/500http'
   /forecast:
     get:
+      operationId: get-forecast
       tags:
         - Forecast
       parameters:
@@ -148,7 +178,7 @@ paths:
       summary: 'Retrieve forecast'
       description: 'Returns a list of forecasts'
       responses:
-        200:
+        "200":
           description: 'Retrieve a forecast report'
           headers:
             x-correlation-id:
@@ -160,50 +190,51 @@ paths:
               examples:
                 forecastListExample:
                   $ref: '#/components/examples/forecastListExample'
-        404:
+        "404":
           description: 'Not found'
           content:
-            application/problem+json:
+            application/json:
               schema:
                 $ref: '#/components/schemas/problemDetail'
               examples:
                 notFoundExample:
                   $ref: '#/components/examples/notFoundExample'
-        401:
+        "401":
           description: 'Unauthorized'
           content:
-            application/problem+json:
+            application/json:
               schema:
                 $ref: '#/components/schemas/problemDetail'
               examples:
                 401httpExample:
                   $ref: '#/components/examples/401http'
 
-        403:
+        "403":
           description: 'Forbidden'
           content:
-            application/problem+json:
+            application/json:
               schema:
                 $ref: '#/components/schemas/problemDetail'
               examples:
-                401httpExample:
+                403httpExample:
                   $ref: '#/components/examples/403http'
 
-        500:
+        "500":
           description: 'Internal Server Error'
           headers:
             Content-Type:
               $ref: '#/components/headers/problemDetailHeader'
           content:
-            application/problem+json:
+            application/json:
               schema:
                 $ref: '#/components/schemas/problemDetail'
               examples:
-                505httpExample:
+                500httpExample:
                   $ref: '#/components/examples/500http'
 
   /metars:
     get:
+      operationId: get-metars
       tags:
         - Metars
       parameters:
@@ -211,7 +242,7 @@ paths:
       summary: 'Retrieve METAR report'
       description: 'Returns a list of METAR reports'
       responses:
-        200:
+        "200":
           description: 'Retrieve METAR reports'
           headers:
             x-correlation-id:
@@ -223,60 +254,59 @@ paths:
               examples:
                 metarListExample:
                   $ref: '#/components/examples/metarListExample'
-        404:
+        "404":
           description: 'Not found'
           content:
-            application/problem+json:
+            application/json:
               schema:
                 $ref: '#/components/schemas/problemDetail'
               examples:
                 notFoundExample:
                   $ref: '#/components/examples/notFoundExample'
-        401:
+        "401":
           description: 'Unauthorized'
           content:
-            application/problem+json:
+            application/json:
               schema:
                 $ref: '#/components/schemas/problemDetail'
               examples:
                 401httpExample:
                   $ref: '#/components/examples/401http'
 
-        403:
+        "403":
           description: 'Forbidden'
           content:
-            application/problem+json:
+            application/json:
               schema:
                 $ref: '#/components/schemas/problemDetail'
               examples:
-                401httpExample:
+                403httpExample:
                   $ref: '#/components/examples/403http'
 
-        500:
+        "500":
           description: 'Internal Server Error'
           headers:
             Content-Type:
               $ref: '#/components/headers/problemDetailHeader'
           content:
-            application/problem+json:
+            application/json:
               schema:
                 $ref: '#/components/schemas/problemDetail'
               examples:
-                505httpExample:
+                500httpExample:
                   $ref: '#/components/examples/500http'
 components:
 
   headers:
     problemDetailHeader:
-      description: application/problem+json
+      description: application/json
       schema:
-        type: string
-        default: application/problem+json
+        $ref: '#/components/schemas/ContentTypeString'
 
     CorrelationId:
       description: "A unique identifier for the request, used for debugging purposes"
       schema:
-        type: string
+        $ref: '#/components/schemas/CorrelationIdString'
 
   parameters:
     countryNameParam:
@@ -284,30 +314,51 @@ components:
       in: query
       required: false
       schema:
-        type: string
-        default: United States
+        $ref: '#/components/schemas/CountryName'
 
     airportCodeParam:
       name: airportCode
       description: airport code
       in: query
       schema:
-        type: string
-        default: ATL
-        minLength: 3   # IATA codes are 3 letters
-        maxLength: 4  # ICAO codes are 4 letters
-        pattern: "^[A-Z]{3,4}$"  # Only uppercase letters
-
+        $ref: '#/components/schemas/AirportCodeQuery'
 
     forecastCity:
       name: forecastCity
       in: query
       required: false
       schema:
-        type: string
+        $ref: '#/components/schemas/ForecastCity'
 
 
   schemas:
+
+    # ── Extracted leaf schemas (referenced by headers/parameters above) ──────
+    ContentTypeString:
+      type: string
+      default: application/json
+      description: Media type of the response body.
+
+    CorrelationIdString:
+      type: string
+      description: A unique identifier for the request, used for debugging purposes.
+
+    CountryName:
+      type: string
+      default: United States
+      description: Name of the country to filter airports by.
+
+    AirportCodeQuery:
+      type: string
+      default: ATL
+      minLength: 3   # IATA codes are 3 letters
+      maxLength: 4   # ICAO codes are 4 letters
+      pattern: "^[A-Z]{3,4}$"  # Only uppercase letters
+      description: IATA (3) or ICAO (4) airport code, uppercase.
+
+    ForecastCity:
+      type: string
+      description: City to retrieve a forecast for.
 
     Airport:
       type: object
@@ -348,11 +399,8 @@ components:
 
     airportCodes:
       type: array
-      properties:
-        list:
-          type: array
-          items:
-            $ref: '#/components/schemas/airportList'
+      items:
+        $ref: '#/components/schemas/airportList'
 
     airportCode:
       type: object
@@ -485,7 +533,7 @@ components:
         sunriseTime:
           type: string
           format: time
-        sunsetTime:  # Note the typo in your sample data
+        sunsetTime:
           type: string
           format: time
         visibility:
@@ -644,7 +692,7 @@ components:
         type: "https://en.wikipedia.org/wiki/HTTP_403"
         title: "Forbidden"
         status: 403
-        detail: "Missing persmissions to access this resource"
+        detail: "Missing permissions to access this resource"
         instance: "urn:api:request:example-403"
         correlationId: "example-correlation-id"
 
@@ -698,7 +746,7 @@ components:
               direction: SE
           weatherCondition: Fog
           sunriseTime: "11:57 AM"
-          sunseTtime: "1:56 PM"
+          sunsetTime: "1:56 PM"
           visibility: 4.84
           airPressure: 1028.22
           temperature:
