@@ -1,10 +1,5 @@
 name: Postman - Spec Lint (governance gate)
 
-# Write gate: block a PR (and post-merge push to main) whenever the OpenAPI spec
-# fails governance/syntax linting. This runs the SAME command developers run
-# locally — `postman spec lint <spec> --fail-severity warning` — so local, CI,
-# and cloud all enforce one ruleset. `spec lint` authenticates and pulls the
-# workspace governance rulesets, hence the POSTMAN_API_KEY below.
 on:
   pull_request:
     branches: [main]
