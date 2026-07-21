@@ -1,0 +1,140 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/forecast?forecastCity=string"
+  method: GET
+  headers:
+    - key: Accept
+      value: application/json
+    - key: x-api-key
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+  queryParams:
+    forecastCity: string
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+    x-correlation-id: ""
+  body:
+    type: json
+    content: |-
+      [
+        {
+          "id": "d07bdab9-637e-4d2e-a962-12683c5d768f",
+          "city": "Ocala",
+          "country": "United States",
+          "humidity": 84.6,
+          "windSpeed": [
+            {
+              "Speed": 40,
+              "unit": "mph",
+              "direction": "SE"
+            }
+          ],
+          "weatherCondition": "Fog",
+          "sunriseTime": "11:57 AM",
+          "sunsetTime": "1:56 PM",
+          "visibility": 4.84,
+          "airPressure": 1028.22,
+          "temperature": [
+            {
+              "temperature": 0.7,
+              "temperatureUnit": "F"
+            }
+          ],
+          "turbulenceLevel": "Medium(M)"
+        }
+      ]
+    $type: |-
+      {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "city": {
+              "type": "string"
+            },
+            "country": {
+              "type": "string"
+            },
+            "humidity": {
+              "type": "number",
+              "format": "float"
+            },
+            "windSpeed": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "Speed": {
+                    "type": "number",
+                    "format": "float"
+                  },
+                  "unit": {
+                    "type": "string",
+                    "enum": [
+                      "mph",
+                      "km/h",
+                      "m/s"
+                    ]
+                  },
+                  "direction": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "weatherCondition": {
+              "type": "string"
+            },
+            "sunriseTime": {
+              "type": "string",
+              "format": "time"
+            },
+            "sunsetTime": {
+              "type": "string",
+              "format": "time"
+            },
+            "visibility": {
+              "type": "number",
+              "format": "float"
+            },
+            "airPressure": {
+              "type": "number",
+              "format": "float"
+            },
+            "temperature": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "temperature": {
+                    "type": "number",
+                    "format": "float"
+                  },
+                  "temperatureUnit": {
+                    "type": "string",
+                    "enum": [
+                      "F",
+                      "C",
+                      "K"
+                    ]
+                  }
+                }
+              }
+            },
+            "turbulenceLevel": {
+              "type": "string"
+            }
+          }
+        }
+      }
+order: 1000

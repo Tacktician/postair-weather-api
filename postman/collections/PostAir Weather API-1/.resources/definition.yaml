@@ -14,11 +14,12 @@ description: |-
 
   All four requests are GET endpoints that use a shared `{{baseUrl}}` variable, and the collection is secured with an API key (`x-api-key` header) sourced from the `{{apiKey}}` environment variable.
 variables:
-  baseUrl: /
+  baseUrl: http://localhost:4500
 auth:
-  - id: bcdc97c4-9621-48a1-8fda-d515549add5f
+  - id: e9058e39-cd1e-4d0e-a044-f58e581cda58
     type: apikey
     name: apikey auth
     credentials:
-      value: "{{apiKey}}"
       key: x-api-key
+      value: "{{apiKey}}"
+      in: header

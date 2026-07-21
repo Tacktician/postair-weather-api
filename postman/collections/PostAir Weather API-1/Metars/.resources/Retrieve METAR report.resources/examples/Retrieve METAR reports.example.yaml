@@ -1,0 +1,127 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/metars?airportCode=ATL"
+  method: GET
+  headers:
+    - key: Accept
+      value: application/json
+    - key: x-api-key
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+  queryParams:
+    - key: airportCode
+      value: ATL
+      disabled: false
+      description: airport code
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+    x-correlation-id: ""
+  body:
+    type: json
+    content: |-
+      [
+        {
+          "code": "ATL",
+          "name": "Hartsfield-Jackson Atlanta International Airport",
+          "metar": {
+            "raw": "KATL 251800Z 31006KT 8SM BKN025 22/14 A2998 RMK AO2 SLP145",
+            "time": "251800Z",
+            "wind": {
+              "direction": 310,
+              "speed": 6
+            },
+            "visibility": "8SM",
+            "clouds": [
+              {
+                "type": "BKN",
+                "height": 2500
+              }
+            ],
+            "temperature": 22,
+            "dewpoint": 14,
+            "altimeter": 29.98
+          }
+        }
+      ]
+    $type: |-
+      {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "code": {
+              "type": "string",
+              "description": "Airport code (IATA)"
+            },
+            "name": {
+              "type": "string",
+              "description": "Airport name"
+            },
+            "metar": {
+              "type": "object",
+              "properties": {
+                "raw": {
+                  "type": "string",
+                  "description": "Raw METAR string"
+                },
+                "time": {
+                  "type": "string",
+                  "description": "Observation time (UTC)"
+                },
+                "wind": {
+                  "type": "object",
+                  "properties": {
+                    "direction": {
+                      "type": "integer",
+                      "description": "Wind direction in degrees"
+                    },
+                    "speed": {
+                      "type": "integer",
+                      "description": "Wind speed in knots"
+                    }
+                  }
+                },
+                "visibility": {
+                  "type": "string",
+                  "description": "Visibility in statute miles (SM)"
+                },
+                "clouds": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "description": "Cloud type (e.g., BKN)"
+                      },
+                      "height": {
+                        "type": "integer",
+                        "description": "Cloud base height in feet above ground level (AGL)"
+                      }
+                    }
+                  }
+                },
+                "temperature": {
+                  "type": "integer",
+                  "description": "Temperature in Celsius"
+                },
+                "dewpoint": {
+                  "type": "integer",
+                  "description": "Dewpoint in Celsius"
+                },
+                "altimeter": {
+                  "type": "number",
+                  "description": "Altimeter setting in inches of Mercury (inHg)"
+                }
+              }
+            }
+          }
+        }
+      }
+order: 1000

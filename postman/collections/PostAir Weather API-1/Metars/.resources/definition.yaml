@@ -1,0 +1,4 @@
+$kind: collection
+description: |
+  [METAR](https://en.wikipedia.org/wiki/METAR) reports
+order: 4000

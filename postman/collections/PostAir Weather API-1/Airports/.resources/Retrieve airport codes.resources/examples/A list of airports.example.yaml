@@ -1,0 +1,114 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/airports?countryName=United States&airportCode=ATL"
+  method: GET
+  headers:
+    - key: Accept
+      value: application/json
+    - key: x-api-key
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+  queryParams:
+    - key: countryName
+      value: United States
+      disabled: false
+    - key: airportCode
+      value: ATL
+      disabled: false
+      description: airport code
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+    x-correlation-id: ""
+  body:
+    type: json
+    content: |-
+      [
+        {
+          "country": "United States",
+          "airports": [
+            {
+              "code": "ATL",
+              "city": "Atlanta",
+              "name": "Hartsfield-Jackson Atlanta International Airport",
+              "latitude": 33.6407,
+              "longitude": -84.4277
+            },
+            {
+              "code": "LAX",
+              "city": "Los Angeles",
+              "name": "Los Angeles International Airport",
+              "latitude": 33.9416,
+              "longitude": -118.4085
+            }
+          ]
+        },
+        {
+          "country": "Spain",
+          "airports": [
+            {
+              "code": "BCN",
+              "city": "Barcelona",
+              "name": "Josep Tarradellas Barcelona–El Prat Airport",
+              "latitude": 41.2974,
+              "longitude": 2.0833
+            },
+            {
+              "code": "MAD",
+              "city": "Madrid",
+              "name": "Adolfo Suárez Madrid–Barajas Airport",
+              "latitude": 40.4893,
+              "longitude": -3.6827
+            }
+          ]
+        }
+      ]
+    $type: |-
+      {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "country": {
+              "type": "string",
+              "description": "Name of country"
+            },
+            "airports": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "code": {
+                    "type": "string",
+                    "description": "Airport IATA code (e.g., \"ATL\", \"LAX\")"
+                  },
+                  "city": {
+                    "type": "string",
+                    "description": "City where the airport is located"
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "Full name of the airport"
+                  },
+                  "latitude": {
+                    "type": "number",
+                    "description": "Geographic latitude of the airport",
+                    "format": "float"
+                  },
+                  "longitude": {
+                    "type": "number",
+                    "description": "Geographic longitude of the airport",
+                    "format": "float"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+order: 1000

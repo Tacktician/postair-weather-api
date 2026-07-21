@@ -1,0 +1,188 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/turbulence?airportCode=ATL"
+  method: GET
+  headers:
+    - key: Accept
+      value: application/json
+    - key: x-api-key
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+  queryParams:
+    - key: airportCode
+      value: ATL
+      disabled: false
+      description: airport code
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+    x-correlation-id: ""
+  body:
+    type: json
+    content: |-
+      [
+        {
+          "airport": {
+            "code": "string"
+          },
+          "turbulenceReport": {
+            "timestamp": "2001-06-07T21:44:09.323Z",
+            "severity": "light",
+            "altitude": {
+              "feet": 6652,
+              "meters": 8213
+            },
+            "durationMinutes": 5451,
+            "affectedArea": {
+              "radiusNm": 8472,
+              "center": {
+                "latitude": 229.52890040374373,
+                "longitude": 1091.363195709193
+              }
+            },
+            "windSpeed": {
+              "knots": 4418,
+              "mph": 9023.55166594277
+            },
+            "pilotReport": "string",
+            "weatherConditions": {
+              "temperatureCelsius": 4866,
+              "visibilityKm": 3212.413690968476,
+              "cloudCover": "string"
+            }
+          }
+        },
+        {
+          "airport": {
+            "code": "string"
+          },
+          "turbulenceReport": {
+            "timestamp": "1968-03-25T14:15:06.427Z",
+            "severity": "moderate",
+            "altitude": {
+              "feet": 1207,
+              "meters": 9621
+            },
+            "durationMinutes": 1657,
+            "affectedArea": {
+              "radiusNm": 8378,
+              "center": {
+                "latitude": 7490.89788372127,
+                "longitude": 9189.520812554167
+              }
+            },
+            "windSpeed": {
+              "knots": 5372,
+              "mph": 7891.12291546218
+            },
+            "pilotReport": "string",
+            "weatherConditions": {
+              "temperatureCelsius": 4954,
+              "visibilityKm": 3950.855788123847,
+              "cloudCover": "string"
+            }
+          }
+        }
+      ]
+    $type: |-
+      {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "airport": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "type": "string"
+                }
+              }
+            },
+            "turbulenceReport": {
+              "type": "object",
+              "properties": {
+                "timestamp": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "severity": {
+                  "type": "string",
+                  "enum": [
+                    "light",
+                    "moderate",
+                    "severe",
+                    "extreme"
+                  ]
+                },
+                "altitude": {
+                  "type": "object",
+                  "properties": {
+                    "feet": {
+                      "type": "integer"
+                    },
+                    "meters": {
+                      "type": "integer"
+                    }
+                  }
+                },
+                "durationMinutes": {
+                  "type": "integer"
+                },
+                "affectedArea": {
+                  "type": "object",
+                  "properties": {
+                    "radiusNm": {
+                      "type": "integer"
+                    },
+                    "center": {
+                      "type": "object",
+                      "properties": {
+                        "latitude": {
+                          "type": "number"
+                        },
+                        "longitude": {
+                          "type": "number"
+                        }
+                      }
+                    }
+                  }
+                },
+                "windSpeed": {
+                  "type": "object",
+                  "properties": {
+                    "knots": {
+                      "type": "integer"
+                    },
+                    "mph": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "pilotReport": {
+                  "type": "string"
+                },
+                "weatherConditions": {
+                  "type": "object",
+                  "properties": {
+                    "temperatureCelsius": {
+                      "type": "integer"
+                    },
+                    "visibilityKm": {
+                      "type": "number"
+                    },
+                    "cloudCover": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+order: 1000

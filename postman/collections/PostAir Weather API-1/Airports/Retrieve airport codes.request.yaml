@@ -1,0 +1,50 @@
+$kind: http-request
+description: Returns a list of airport codes
+url: "{{baseUrl}}/airports?countryName=United States&airportCode=ATL"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: countryName
+    value: United States
+    disabled: false
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "description": "Name of the country to filter airports by.",
+            "type": "string",
+            "default": "United States"
+          }
+        }
+      }
+  - key: airportCode
+    value: ATL
+    disabled: false
+    description: airport code
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "description": "IATA (3) or ICAO (4) airport code, uppercase.",
+            "type": "string",
+            "default": "ATL",
+            "minLength": 3,
+            "maxLength": 4,
+            "pattern": "^[A-Z]{3,4}$"
+          }
+        }
+      }
+body:
+  type: text
+  content: ""
+auth:
+  type: apikey
+  credentials:
+    key: x-api-key
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Retrieve airport codes.resources/examples
+order: 1000

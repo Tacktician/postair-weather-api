@@ -7,7 +7,7 @@ localResources:
   docs:
     - ../README.md
   collections:
-    - ../postman/collections/PostAir Weather API
+    - ../postman/collections/PostAir Weather API [SMOKE TESTS]
   environments:
     - ../postman/environments/Dev Environment.environment.yaml
 
@@ -15,7 +15,7 @@ localResources:
 
 cloudResources:
   collections:
-    ../postman/collections/PostAir Weather API: 52316556-5dc2d69d-4ddf-44a5-8782-bd5fd822ab48
+    ../postman/collections/PostAir Weather API [SMOKE TESTS]: 52316556-5dc2d69d-4ddf-44a5-8782-bd5fd822ab48
   environments:
     ../postman/environments/Dev Environment.environment.yaml: 52316556-0dc04fcf-8db0-4bbb-b3d5-eb0c0a67d129
     ../postman/environments/Test Environment.environment.yaml: 52316556-c7f752cf-964f-4feb-a523-d0c06b6f1fe2

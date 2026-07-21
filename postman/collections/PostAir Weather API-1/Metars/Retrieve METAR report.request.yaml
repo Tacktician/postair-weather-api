@@ -1,0 +1,30 @@
+$kind: http-request
+description: Returns a list of METAR reports
+url: "{{baseUrl}}/metars?airportCode=ATL"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: airportCode
+    value: ATL
+    disabled: false
+    description: airport code
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "description": "IATA (3) or ICAO (4) airport code, uppercase.",
+            "type": "string",
+            "default": "ATL",
+            "minLength": 3,
+            "maxLength": 4,
+            "pattern": "^[A-Z]{3,4}$"
+          }
+        }
+      }
+body:
+  type: text
+  content: ""
+examples: ./.resources/Retrieve METAR report.resources/examples
+order: 1000
