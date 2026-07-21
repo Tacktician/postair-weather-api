@@ -29,7 +29,9 @@ info:
     url: 'https://postair.example/support'
 
 servers:
-  - url: 'https://api.postair.example/v1'
+  - url: 'http://localhost:4500'
+    description: 'Dev'
+  - url: 'https://education.postmanlabs.com/v1/weather'
     description: 'Production'
 
 tags:
