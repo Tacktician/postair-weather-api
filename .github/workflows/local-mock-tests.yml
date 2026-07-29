@@ -31,6 +31,7 @@ jobs:
           postman collection run "$COLLECTION_PATH" \
             --environment "$ENV_PATH" \
             --mock "$MOCK_PATH" \
+            --report-events \
             --verbose
 
       # Pattern 2: lifecycle (start → test → stop)

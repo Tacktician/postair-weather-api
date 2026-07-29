@@ -36,4 +36,4 @@ jobs:
       # --fail-severity warning => warnings and errors both fail the job (exit
       # non-zero), so the spec must be fully clean to merge.
       - name: Lint OpenAPI spec
-        run: postman spec lint "$SPEC_PATH" --fail-severity warning
+        run: postman spec lint "$SPEC_PATH" --fail-severity warning --report-events
