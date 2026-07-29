@@ -25,7 +25,8 @@ jobs:
           postman collection run ${{ vars.COLLECTION_ID }} \
             -e ${{vars.ENV_ID }} \
             -i ${{ vars.SMOKE_TEST_FOLDER }} \
-            --reporters junit,cli
+            --reporters junit,cli \
+            --report-events
 
       - name: Upload JUnit report
         if: always()
