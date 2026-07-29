@@ -25,5 +25,4 @@ jobs:
             --data-file ./perf-data.json \
             --vu-count 20 --duration 10 \
             --load-profile spike \
-            --pass-if "less_than(p90, 500)" \
-            --report-events
+            --pass-if "less_than(p90, 500)"
