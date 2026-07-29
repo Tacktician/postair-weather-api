@@ -42,4 +42,4 @@ jobs:
         run: postman workspace prepare
 
       - name: Publish to Postman Cloud
-        run: postman workspace push -y
+        run: postman workspace push -y --report-events
