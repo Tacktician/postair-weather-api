@@ -26,4 +26,4 @@ jobs:
 
       # Post-deploy gate -- triggers the cloud monitor and waits for the result
       - name: Trigger Postman monitor
-        run: postman monitor run "$MONITOR_ID" --timeout 60000 --report-events
+        run: postman monitor run "$MONITOR_ID" --timeout 60000
