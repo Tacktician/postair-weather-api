@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postair-weather-api
+  namespace: postair
+  labels:
+    app.kubernetes.io/name: postair-weather-api
+    app.kubernetes.io/part-of: postair-weather-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: postair-weather-api
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: postair-weather-api
+        app.kubernetes.io/part-of: postair-weather-api
+    spec:
+      containers:
+        - name: postair-weather-api
+          # Replaced by scripts/deploy.sh with the ECR image ref (repo:tag).
+          image: __IMAGE__
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 3000
+          env:
+            - name: PORT
+              value: "3000"
+            - name: NODE_ENV
+              value: "production"
+            - name: WEATHER_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: weather-api-secret
+                  key: WEATHER_API_KEY
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 15
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 256Mi

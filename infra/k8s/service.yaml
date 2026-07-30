@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: postair-weather-api
+  namespace: postair
+  labels:
+    app.kubernetes.io/name: postair-weather-api
+    app.kubernetes.io/part-of: postair-weather-api
+spec:
+  # LoadBalancer provisions an AWS ELB, giving the demo a public endpoint
+  # for generating traffic that the Insights agent observes.
+  type: LoadBalancer
+  selector:
+    app.kubernetes.io/name: postair-weather-api
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+      protocol: TCP

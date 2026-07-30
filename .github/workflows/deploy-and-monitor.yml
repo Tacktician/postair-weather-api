@@ -14,9 +14,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Used when we have an actual deploy stage
-      #- name: Deploy service
-      #  run: ./scripts/deploy.sh
+      # Deploy runs locally, not in CI: `WEATHER_API_KEY=... ./scripts/deploy.sh`
+      # (builds/pushes to ECR and applies infra/k8s to the EKS cluster stood up
+      # by infra/terraform). See docs/DEPLOY-EKS.md. This job only runs the
+      # post-deploy Postman monitor gate below.
 
       - name: Install Postman CLI
         run: curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh

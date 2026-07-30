@@ -146,4 +146,21 @@ dist
 
 # Vite logs files
 vite.config.js.timestamp-*
+
+# --- Infra / deploy (EKS demo) ---
+# Terraform local state, working dir, and crash logs (.terraform.lock.hcl is committed)
+infra/terraform/.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+# Terraform variable overrides may contain sensitive values; keep only the example
+*.tfvars
+*.tfvars.json
+!*.tfvars.example
+# Real Kubernetes secret (only secret.example.yaml is committed)
+infra/k8s/secret.yaml
+# Local kubeconfig copies
+kubeconfig
+kubeconfig-*.yaml
 vite.config.ts.timestamp-*
