@@ -1,5 +1,6 @@
 workspace:
   id: fce449ac-694a-4741-a66f-72ac535b3a8d
+
 localResources:
   specs:
     - ../postman/specs/postair-weather-api/v1/postair-openapi.yaml
@@ -9,11 +10,14 @@ localResources:
     - ../postman/collections/PostAir Weather API
   environments:
     - ../postman/environments/Dev Environment.environment.yaml
+
+# Each entry here maps a local resource to one or more corresponding objects in Postman Cloud
+
 cloudResources:
   collections:
     ../postman/collections/PostAir Weather API: 52316556-5dc2d69d-4ddf-44a5-8782-bd5fd822ab48
   environments:
     ../postman/environments/Dev Environment.environment.yaml: 52316556-0dc04fcf-8db0-4bbb-b3d5-eb0c0a67d129
-    ../postman/environments/Test Environment.environment.yaml: 52316556-c7f752cf-964f-4feb-a523-d0c06b6f1fe2
+    ../postman/environments/Production Environment.environment.yaml: 52316556-c7f752cf-964f-4feb-a523-d0c06b6f1fe2
   specs:
     ../postman/specs/postair-weather-api/v1/postair-openapi.yaml: 6557d6f2-5906-4abb-aa5b-b6c2d0c8ef34

@@ -1,12 +1,6 @@
-owner: "52316556"
-team: "13347347"
-lastUpdatedBy: "52316556"
-lastRevision: 1785279023000
 name: Production Environment
-color: 0
 values:
   - key: apiKey
-    enabled: true
     secret: true
     source:
       provider: postman
@@ -15,10 +9,7 @@ values:
         secretId: bc4e14d9-0011-4637-b916-b3a059580df3
         vaultId: b8895514-4510-4423-bf28-91f5f1c2b083
   - key: baseUrl
-    value: https://education.postmanlabs.com/v1/weather
-    enabled: true
+    value: 'http://a3bd15ea000fd4c1a92d1d283befc6e6-1352033357.us-east-1.elb.amazonaws.com/v1/weather'
   - key: airportCode
     value: ATL
-    enabled: true
-createdAt: 2026-06-23T22:51:51.000Z
-updatedAt: 2026-07-28T22:50:23.000Z
+color: 0
