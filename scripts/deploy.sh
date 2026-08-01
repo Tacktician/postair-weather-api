@@ -10,6 +10,9 @@
 #   CLUSTER_NAME      EKS cluster name           (default: terraform output cluster_name)
 #   ECR_REPO          ECR repository URL         (default: terraform output ecr_repository_url)
 #   IMAGE_TAG         image tag to build/deploy  (default: current git short SHA, else "latest")
+#   POSTMAN_INSIGHTS_API_KEY  Postman API key (write access to the target workspace).
+#                     When set, also creates the agent secret and applies the Insights
+#                     DaemonSet (workspace mode). When unset, the agent step is skipped.
 #
 set -euo pipefail
 
@@ -59,6 +62,25 @@ kubectl -n postair create secret generic weather-api-secret \
 echo ">> Deploying service and workload"
 kubectl apply -f "$K8S_DIR/service.yaml"
 sed "s|__IMAGE__|$IMAGE|g" "$K8S_DIR/deployment.yaml" | kubectl apply -f -
+
+# Postman Insights agent (workspace mode) — only when an agent key is provided.
+# The DaemonSet manifest already carries the workspace + system-env IDs; here we just
+# create the API key secret it references and apply the DaemonSet.
+if [ -n "${POSTMAN_INSIGHTS_API_KEY:-}" ]; then
+  echo ">> Ensuring postman-insights-namespace exists"
+  kubectl create namespace postman-insights-namespace \
+    --dry-run=client -o yaml | kubectl apply -f -
+
+  echo ">> Creating/updating postman-agent-secrets"
+  kubectl -n postman-insights-namespace create secret generic postman-agent-secrets \
+    --from-literal=postman-api-key="$POSTMAN_INSIGHTS_API_KEY" \
+    --dry-run=client -o yaml | kubectl apply -f -
+
+  echo ">> Applying Postman Insights DaemonSet"
+  kubectl apply -f "$K8S_DIR/postman-insights-agent-daemonset.yaml"
+else
+  echo ">> POSTMAN_INSIGHTS_API_KEY not set — skipping Insights agent (see docs/DEPLOY-EKS.md)"
+fi
 
 echo ">> Waiting for rollout"
 kubectl -n postair rollout status deployment/postair-weather-api --timeout=180s
