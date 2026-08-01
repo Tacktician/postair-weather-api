@@ -1,11 +1,32 @@
 name: Postman - Performance Tests
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: >-
+          Which environment's baseUrl the load hits. 'production' targets the EKS
+          ELB (so the Insights agent captures the traffic); 'dev' targets localhost
+          and never leaves the runner.
+        type: choice
+        default: production
+        options:
+          - production
+          - dev
 
 jobs:
   performance:
     runs-on: ubuntu-latest
     env:
       POSTMAN_API_KEY: ${{ secrets.POSTMAN_API_KEY }}
+      # UIDs from .postman/resources.yaml. There is only one collection, so it's
+      # pinned here rather than read from a repo variable that could drift.
+      COLLECTION_ID: 52316556-5dc2d69d-4ddf-44a5-8782-bd5fd822ab48
+      # Map the dispatch choice to the environment UID (from .postman/resources.yaml).
+      # Defaults to the Production environment (EKS ELB) for any value but 'dev'.
+      ENV_ID: >-
+        ${{ inputs.environment == 'dev'
+            && '52316556-0dc04fcf-8db0-4bbb-b3d5-eb0c0a67d129'
+            || '52316556-c7f752cf-964f-4feb-a523-d0c06b6f1fe2' }}
     steps:
       - uses: actions/checkout@v4
 
@@ -20,8 +41,8 @@ jobs:
 
       - name: Run performance test
         run: |
-          postman performance run "${{ vars.COLLECTION_ID }}" \
-            --environment "${{ vars.ENV_ID }}" \
+          postman performance run "$COLLECTION_ID" \
+            --environment "$ENV_ID" \
             --data-file ./perf-data.json \
             --vu-count 20 --duration 10 \
             --load-profile spike \

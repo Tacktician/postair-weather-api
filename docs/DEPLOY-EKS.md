@@ -24,7 +24,8 @@ steps run **locally**; nothing is deployed by CI.
 
 - AWS CLI configured with credentials that can create VPC/EKS/ECR (`aws sts get-caller-identity` works)
 - `terraform` (>= 1.3), `kubectl`, `docker`
-- A Postman API key and an API Catalog project (for the Insights step at the end)
+- A Postman API key belonging to a user with **write access** (workspace Admin or Super Admin) to the target workspace
+- An existing (git-linked) Postman workspace and an API Catalog **system environment** in it (for the Insights step at the end)
 
 ## 1. Provision infrastructure
 
@@ -58,29 +59,55 @@ curl http://<elb-host>/health                                   # {"status":"ok"
 curl -H "x-api-key: 1234" http://<elb-host>/v1/weather/airports  # data
 ```
 
-## 3. Attach the Postman Insights agent (via API Catalog)
+## 3. Attach the Postman Insights agent (DaemonSet, workspace mode)
 
-In Postman, open your API Catalog project and follow the **Connect → Insights Agent →
-Kubernetes** flow. It generates an inject command with your project id, e.g.:
+The agent runs as a **DaemonSet** (`infra/k8s/postman-insights-agent-daemonset.yaml`) —
+one pod per node — configured in **workspace mode**. Workspace mode binds the agent to a
+workspace and system environment you already have in Postman, rather than **discovery
+mode**, which auto-creates new services from Kubernetes metadata. Because our workspace is
+already git-linked, workspace mode is what keeps the observed traffic attached to the
+existing service instead of spawning duplicates.
+
+> **Workspace mode vs. discovery mode:** exactly one of `--discovery-mode`,
+> `--workspace-id`, or `--project` (legacy) may be set. This manifest uses
+> `--workspace-id` + `--system-env`, sourced from the `POSTMAN_INSIGHTS_WORKSPACE_ID` and
+> `POSTMAN_INSIGHTS_SYSTEM_ENV` env vars.
+
+**a. Get the IDs from Postman.** In the git-linked workspace, create (or select) an API
+Catalog **system environment**, then copy both the **workspace ID** and **system
+environment ID** from **API Catalog → Integrated Services**. Both are UUIDs. Set them in
+the manifest's `env` block (`POSTMAN_INSIGHTS_WORKSPACE_ID`, `POSTMAN_INSIGHTS_SYSTEM_ENV`).
+
+**b. Deploy the agent via `deploy.sh`.** When you set `POSTMAN_INSIGHTS_API_KEY`, the same
+`scripts/deploy.sh` from step 2 also creates the `postman-agent-secrets` secret and applies
+the DaemonSet (workspace mode). You can pass it alongside `WEATHER_API_KEY`:
 
 ```bash
-kubectl -n postair get deployment/postair-weather-api -o yaml \
-  | POSTMAN_API_KEY=<your-key> postman-insights-agent kube inject \
-      --project <projectId> --repro-mode -s=true -f - \
-  | kubectl apply -f -
+POSTMAN_INSIGHTS_API_KEY=<your-key> WEATHER_API_KEY=1234 ./scripts/deploy.sh
 ```
 
-This adds the agent as a **sidecar** to the pods (the committed Deployment is left plain
-so it can be injected here). Docs:
-- https://learning.postman.com/docs/insights/get-started/kubernetes/sidecar/
+If `POSTMAN_INSIGHTS_API_KEY` is unset, the script skips the agent entirely and only the
+API workload is deployed. The key must have **write access** to the workspace (see
+prerequisites).
+
+**c. Verify the agent came up:**
+
+```bash
+kubectl -n postman-insights-namespace get pods
+kubectl -n postman-insights-namespace logs -l name=postman-insights-agent
+```
+
+The DaemonSet requires EC2 nodes (for the `NET_RAW` capability) and mounts the host
+containerd socket — see the "Why EC2 nodes" note above. Docs:
+- https://learning.postman.com/docs/insights/reference/agent/api-catalog#get-started-with-workspace-mode
 - https://learning.postman.com/docs/api-catalog/connect/insights
 
 ## 4. Generate traffic and observe
 
 Send traffic to the ELB URL so the agent has something to see — e.g. point the existing
 Postman collection/monitor's base URL at `http://<elb-host>` and run it, or loop the
-`curl` calls above. After ~5–8 minutes, the discovered endpoints appear in the service
-detail **production** tab in the API Catalog.
+`curl` calls above. After ~5–8 minutes, the observed endpoints appear in the service
+detail **production** tab of the git-linked workspace in the API Catalog.
 
 ## 5. Tear down
 

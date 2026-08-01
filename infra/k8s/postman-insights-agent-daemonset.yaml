@@ -57,10 +57,14 @@ spec:
       - args:
         - kube
         - run
-        - --discovery-mode
+        # Workspace mode is selected via the POSTMAN_INSIGHTS_WORKSPACE_ID /
+        # POSTMAN_INSIGHTS_SYSTEM_ENV env vars below. This agent image's `kube run`
+        # has no --workspace-id/--system-env flags (see `kube run --help`).
         env:
-        - name: POSTMAN_INSIGHTS_CLUSTER_NAME
-          value: "postair-weather-api"
+        - name: POSTMAN_INSIGHTS_WORKSPACE_ID
+          value: "fce449ac-694a-4741-a66f-72ac535b3a8d"
+        - name: POSTMAN_INSIGHTS_SYSTEM_ENV
+          value: "482ed6eb-8c76-4e77-adba-d51b44ee31d5"
         - name: POSTMAN_INSIGHTS_API_KEY
           valueFrom:
             secretKeyRef:
