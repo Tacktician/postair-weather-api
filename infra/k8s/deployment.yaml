@@ -42,6 +42,16 @@ spec:
               value: "fce449ac-694a-4741-a66f-72ac535b3a8d"
             - name: POSTMAN_INSIGHTS_SYSTEM_ENV
               value: "482ed6eb-8c76-4e77-adba-d51b44ee31d5"
+            # The agent also requires the Postman API key on each target pod to authenticate
+            # that pod's data. optional:true so the workload still starts when the agent is
+            # not in use (secret absent). Created by deploy.sh when POSTMAN_INSIGHTS_API_KEY
+            # is set.
+            - name: POSTMAN_INSIGHTS_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: postman-agent-secrets
+                  key: postman-api-key
+                  optional: true
           readinessProbe:
             httpGet:
               path: /health

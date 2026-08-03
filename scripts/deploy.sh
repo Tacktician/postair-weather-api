@@ -61,6 +61,16 @@ kubectl -n postair create secret generic weather-api-secret \
   --from-literal=WEATHER_API_KEY="$WEATHER_API_KEY" \
   --dry-run=client -o yaml | kubectl apply -f -
 
+# When an agent key is provided, also create it in the app namespace so the workload pods
+# can expose POSTMAN_INSIGHTS_API_KEY — the DaemonSet reads it (plus the workspace/system-env
+# vars) from each target pod. Must exist before the workload is applied.
+if [ -n "${POSTMAN_INSIGHTS_API_KEY:-}" ]; then
+  echo ">> Creating/updating postman-agent-secrets (postair)"
+  kubectl -n postair create secret generic postman-agent-secrets \
+    --from-literal=postman-api-key="$POSTMAN_INSIGHTS_API_KEY" \
+    --dry-run=client -o yaml | kubectl apply -f -
+fi
+
 echo ">> Deploying service and workload"
 kubectl apply -f "$K8S_DIR/service.yaml"
 sed "s|__IMAGE__|$IMAGE|g" "$K8S_DIR/deployment.yaml" | kubectl apply -f -
