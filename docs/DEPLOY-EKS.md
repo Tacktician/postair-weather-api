@@ -61,45 +61,50 @@ curl -H "x-api-key: 1234" http://<elb-host>/v1/weather/airports  # data
 
 ## 3. Attach the Postman Insights agent (DaemonSet, workspace mode)
 
-The agent runs as a **DaemonSet** (`infra/k8s/postman-insights-agent-daemonset.yaml`) —
-one pod per node — configured in **workspace mode**. Workspace mode binds the agent to a
-workspace and system environment you already have in Postman, rather than **discovery
-mode**, which auto-creates new services from Kubernetes metadata. Because our workspace is
-already git-linked, workspace mode is what keeps the observed traffic attached to the
-existing service instead of spawning duplicates.
+The agent runs as a **DaemonSet** (`infra/k8s/postman-insights-agent-daemonset.yaml`) — one
+pod per node — in **workspace mode**. Workspace mode links captured traffic to a workspace
+and system environment you already have in Postman, rather than **discovery mode**, which
+auto-creates new services from Kubernetes metadata (spawning duplicate services). Because our
+workspace is git-linked, workspace mode keeps the observed traffic attached to the existing
+service.
 
-> **Workspace mode vs. discovery mode:** exactly one of `--discovery-mode`,
-> `--workspace-id`, or `--project` (legacy) may be set. This manifest uses
-> `--workspace-id` + `--system-env`, sourced from the `POSTMAN_INSIGHTS_WORKSPACE_ID` and
-> `POSTMAN_INSIGHTS_SYSTEM_ENV` env vars.
+> **How the DaemonSet knows the workspace.** `kube run` takes no `--workspace-id` /
+> `--system-env` flags — those are `kube inject` (sidecar) flags. In DaemonSet workspace
+> mode, the agent instead reads `POSTMAN_INSIGHTS_WORKSPACE_ID` and
+> `POSTMAN_INSIGHTS_SYSTEM_ENV` from **each observed application pod's** environment and
+> routes that pod's traffic to the matching workspace. So those vars live on the app
+> Deployment, **not** on the agent DaemonSet. (Setting them on the agent pod does nothing.)
 
 **a. Get the IDs from Postman.** In the git-linked workspace, create (or select) an API
-Catalog **system environment**, then copy both the **workspace ID** and **system
-environment ID** from **API Catalog → Integrated Services**. Both are UUIDs. Set them in
-the manifest's `env` block (`POSTMAN_INSIGHTS_WORKSPACE_ID`, `POSTMAN_INSIGHTS_SYSTEM_ENV`).
+Catalog **system environment**, then copy both the **workspace ID** and **system environment
+ID** from **API Catalog → Integrated Services**. Both are UUIDs.
 
-**b. Deploy the agent via `deploy.sh`.** When you set `POSTMAN_INSIGHTS_API_KEY`, the same
+**b. Put the IDs on the app Deployment.** `infra/k8s/deployment.yaml` sets
+`POSTMAN_INSIGHTS_WORKSPACE_ID` and `POSTMAN_INSIGHTS_SYSTEM_ENV` in the container `env`
+(this demo's values are already there). Update them if your workspace/system-env differ.
+
+**c. Deploy via `deploy.sh`.** When you set `POSTMAN_INSIGHTS_API_KEY`, the same
 `scripts/deploy.sh` from step 2 also creates the `postman-agent-secrets` secret and applies
-the DaemonSet (workspace mode). You can pass it alongside `WEATHER_API_KEY`:
+the DaemonSet. Pass it alongside `WEATHER_API_KEY`:
 
 ```bash
 POSTMAN_INSIGHTS_API_KEY=<your-key> WEATHER_API_KEY=1234 ./scripts/deploy.sh
 ```
 
-If `POSTMAN_INSIGHTS_API_KEY` is unset, the script skips the agent entirely and only the
-API workload is deployed. The key must have **write access** to the workspace (see
-prerequisites).
+The key must have **write access** to the workspace (see prerequisites). If
+`POSTMAN_INSIGHTS_API_KEY` is unset, the script skips the agent and only the API workload is
+deployed. No local `postman-insights-agent` CLI is needed — the DaemonSet is a plain manifest.
 
-**c. Verify the agent came up:**
+**d. Verify the agent came up:**
 
 ```bash
-kubectl -n postman-insights-namespace get pods
-kubectl -n postman-insights-namespace logs -l name=postman-insights-agent
+kubectl -n postman-insights-namespace get pods    # one Running pod per node
+kubectl -n postman-insights-namespace logs -l name=postman-insights-agent --tail=20
 ```
 
 The DaemonSet requires EC2 nodes (for the `NET_RAW` capability) and mounts the host
 containerd socket — see the "Why EC2 nodes" note above. Docs:
-- https://learning.postman.com/docs/insights/reference/agent/api-catalog#get-started-with-workspace-mode
+- https://learning.postman.com/docs/insights/reference/agent/api-catalog#onboarding-approaches
 - https://learning.postman.com/docs/api-catalog/connect/insights
 
 ## 4. Generate traffic and observe
