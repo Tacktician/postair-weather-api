@@ -61,45 +61,55 @@ curl -H "x-api-key: 1234" http://<elb-host>/v1/weather/airports  # data
 
 ## 3. Attach the Postman Insights agent (DaemonSet, workspace mode)
 
-The agent runs as a **DaemonSet** (`infra/k8s/postman-insights-agent-daemonset.yaml`) —
-one pod per node — configured in **workspace mode**. Workspace mode binds the agent to a
-workspace and system environment you already have in Postman, rather than **discovery
-mode**, which auto-creates new services from Kubernetes metadata. Because our workspace is
-already git-linked, workspace mode is what keeps the observed traffic attached to the
-existing service instead of spawning duplicates.
+The agent runs as a **DaemonSet** (`infra/k8s/postman-insights-agent-daemonset.yaml`) — one
+pod per node — in **workspace mode**. Workspace mode links captured traffic to a workspace
+and system environment you already have in Postman, rather than **discovery mode**, which
+auto-creates new services from Kubernetes metadata (spawning duplicate services). Because our
+workspace is git-linked, workspace mode keeps the observed traffic attached to the existing
+service.
 
-> **Workspace mode vs. discovery mode:** exactly one of `--discovery-mode`,
-> `--workspace-id`, or `--project` (legacy) may be set. This manifest uses
-> `--workspace-id` + `--system-env`, sourced from the `POSTMAN_INSIGHTS_WORKSPACE_ID` and
-> `POSTMAN_INSIGHTS_SYSTEM_ENV` env vars.
+> **How the DaemonSet knows the workspace.** `kube run` takes no `--workspace-id` /
+> `--system-env` flags — those are `kube inject` (sidecar) flags. In DaemonSet workspace
+> mode, the agent instead reads three vars from **each observed application pod's**
+> environment — `POSTMAN_INSIGHTS_WORKSPACE_ID`, `POSTMAN_INSIGHTS_SYSTEM_ENV`, and
+> `POSTMAN_INSIGHTS_API_KEY` — and routes that pod's traffic to the matching workspace. So
+> those vars live on the app Deployment, **not** on the agent DaemonSet. (Setting them on
+> the agent pod does nothing; the agent logs `Missing env vars: [...]` for any pod that
+> lacks them.)
 
 **a. Get the IDs from Postman.** In the git-linked workspace, create (or select) an API
-Catalog **system environment**, then copy both the **workspace ID** and **system
-environment ID** from **API Catalog → Integrated Services**. Both are UUIDs. Set them in
-the manifest's `env` block (`POSTMAN_INSIGHTS_WORKSPACE_ID`, `POSTMAN_INSIGHTS_SYSTEM_ENV`).
+Catalog **system environment**, then copy both the **workspace ID** and **system environment
+ID** from **API Catalog → Integrated Services**. Both are UUIDs.
 
-**b. Deploy the agent via `deploy.sh`.** When you set `POSTMAN_INSIGHTS_API_KEY`, the same
+**b. Put the config on the app Deployment.** `infra/k8s/deployment.yaml` sets
+`POSTMAN_INSIGHTS_WORKSPACE_ID` and `POSTMAN_INSIGHTS_SYSTEM_ENV` in the container `env`
+(this demo's values are already there — update them if your workspace/system-env differ),
+plus `POSTMAN_INSIGHTS_API_KEY` from the `postman-agent-secrets` secret (`optional: true`,
+so the workload still starts when the agent isn't in use). `deploy.sh` creates that secret
+in the `postair` namespace when `POSTMAN_INSIGHTS_API_KEY` is set.
+
+**c. Deploy via `deploy.sh`.** When you set `POSTMAN_INSIGHTS_API_KEY`, the same
 `scripts/deploy.sh` from step 2 also creates the `postman-agent-secrets` secret and applies
-the DaemonSet (workspace mode). You can pass it alongside `WEATHER_API_KEY`:
+the DaemonSet. Pass it alongside `WEATHER_API_KEY`:
 
 ```bash
 POSTMAN_INSIGHTS_API_KEY=<your-key> WEATHER_API_KEY=1234 ./scripts/deploy.sh
 ```
 
-If `POSTMAN_INSIGHTS_API_KEY` is unset, the script skips the agent entirely and only the
-API workload is deployed. The key must have **write access** to the workspace (see
-prerequisites).
+The key must have **write access** to the workspace (see prerequisites). If
+`POSTMAN_INSIGHTS_API_KEY` is unset, the script skips the agent and only the API workload is
+deployed. No local `postman-insights-agent` CLI is needed — the DaemonSet is a plain manifest.
 
-**c. Verify the agent came up:**
+**d. Verify the agent came up:**
 
 ```bash
-kubectl -n postman-insights-namespace get pods
-kubectl -n postman-insights-namespace logs -l name=postman-insights-agent
+kubectl -n postman-insights-namespace get pods    # one Running pod per node
+kubectl -n postman-insights-namespace logs -l name=postman-insights-agent --tail=20
 ```
 
 The DaemonSet requires EC2 nodes (for the `NET_RAW` capability) and mounts the host
 containerd socket — see the "Why EC2 nodes" note above. Docs:
-- https://learning.postman.com/docs/insights/reference/agent/api-catalog#get-started-with-workspace-mode
+- https://learning.postman.com/docs/insights/reference/agent/api-catalog#onboarding-approaches
 - https://learning.postman.com/docs/api-catalog/connect/insights
 
 ## 4. Generate traffic and observe
@@ -117,3 +127,83 @@ terraform destroy
 ```
 
 `force_delete` is set on the ECR repo so pushed images don't block destroy.
+
+## Key concepts & common pitfalls
+
+The steps above are the happy path. This section explains the decisions behind them and the
+mistakes that are easy to make — most of them cost real debugging time to figure out.
+
+### Pick the mode first: discovery vs. workspace
+
+> **Already have a git-linked workspace? Use workspace mode.**
+
+- **Discovery mode** auto-creates services from Kubernetes metadata. Good for greenfield, but
+  if you *already* have a workspace/service, it spawns **duplicate** services alongside the
+  existing ones — you end up with two copies and traffic split across them.
+- **Workspace mode** binds captured traffic to a workspace + system environment you already
+  have, keeping everything attached to the existing (git-linked) service.
+
+This demo uses workspace mode for exactly that reason. Exactly one selection applies at a
+time (`--discovery-mode`, workspace mode, or legacy `--project`).
+
+### `kube run` and `kube inject` configure workspace mode in *different places*
+
+Both the DaemonSet (`kube run`) and the sidecar (`kube inject`) support workspace mode, but
+you configure them differently — this is the single biggest trap:
+
+| Deployment model | Where workspace config lives |
+| --- | --- |
+| Sidecar (`kube inject`) | CLI **flags** at inject time: `--workspace-id`, `--system-env` |
+| DaemonSet (`kube run`) | **env vars on the target app pods** — the agent reads them per-pod |
+
+The trap: `kube run` has **no** `--workspace-id` flag, so it's tempting to conclude the
+DaemonSet can't do workspace mode. It can — the config just lives on the observed pods, not
+on the agent. Setting those vars on the agent DaemonSet itself does nothing.
+
+### The DaemonSet needs *three* env vars on each observed pod
+
+In DaemonSet workspace mode, every application pod the agent should capture must expose all
+three (see `infra/k8s/deployment.yaml`):
+
+```yaml
+- name: POSTMAN_INSIGHTS_WORKSPACE_ID   # which workspace
+- name: POSTMAN_INSIGHTS_SYSTEM_ENV     # which system environment
+- name: POSTMAN_INSIGHTS_API_KEY        # authenticates that pod's data
+```
+
+Miss any one and the agent logs `Missing env vars: [...]` for that pod and captures nothing
+for it.
+
+### Security: the deployment model decides where your API key lives
+
+Workspace mode authenticates **per observed pod**, so the Postman API key ends up outside the
+agent itself:
+
+- **DaemonSet** → the (write-access) key is an env var on **every observed application pod**.
+- **Sidecar** → the key rides in the injected sidecar container.
+
+Either way, treat this deliberately: use a **dedicated key scoped to just this workspace**,
+source it from a Kubernetes Secret (never inline in a manifest), and rotate it. "The agent
+needs org write access" is a real decision, not a default to wave through.
+
+### Troubleshooting: read the agent logs
+
+```bash
+kubectl -n postman-insights-namespace logs -l name=postman-insights-agent --tail=50
+```
+
+| Log signal | Meaning |
+| --- | --- |
+| `Missing env vars: [POSTMAN_INSIGHTS_API_KEY]` | Target pod is under-configured — add the missing var(s) to the app Deployment |
+| `Created new trace on Postman Cloud: akita://[<env>] <service>:trace:...` | Working — and it names the workspace/env, so you can confirm it's the *right* one |
+| `The cluster name is missing. Telemetry will not be sent...` | Harmless in workspace mode — only affects the agent's own telemetry/cluster listing |
+| Agent Running, but Production tab empty | Almost always "no traffic yet" — the tab is populated only by observed requests. Generate load (step 4). |
+
+Two more that save time:
+
+- **`--help` from the running binary beats the published docs.** Flags differ by agent version
+  and subcommand; the docs can conflate `kube run` and `kube inject`. Check the source of
+  truth: `kubectl -n postman-insights-namespace exec <agent-pod> -- \
+  postman-insights-agent kube run --help`.
+- **EC2 nodes, not Fargate.** The agent captures packets and needs the `NET_RAW` capability,
+  which Fargate disallows — see the "Why EC2 nodes" note near the top.

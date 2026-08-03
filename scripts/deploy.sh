@@ -11,8 +11,10 @@
 #   ECR_REPO          ECR repository URL         (default: terraform output ecr_repository_url)
 #   IMAGE_TAG         image tag to build/deploy  (default: current git short SHA, else "latest")
 #   POSTMAN_INSIGHTS_API_KEY  Postman API key (write access to the target workspace).
-#                     When set, also creates the agent secret and applies the Insights
-#                     DaemonSet (workspace mode). When unset, the agent step is skipped.
+#                     When set, creates the agent secret and applies the Insights
+#                     DaemonSet. Workspace routing is configured by env vars on the app
+#                     Deployment (infra/k8s/deployment.yaml), which the DaemonSet reads
+#                     per-pod — not here. When unset, the agent step is skipped.
 #
 set -euo pipefail
 
@@ -59,13 +61,25 @@ kubectl -n postair create secret generic weather-api-secret \
   --from-literal=WEATHER_API_KEY="$WEATHER_API_KEY" \
   --dry-run=client -o yaml | kubectl apply -f -
 
+# When an agent key is provided, also create it in the app namespace so the workload pods
+# can expose POSTMAN_INSIGHTS_API_KEY — the DaemonSet reads it (plus the workspace/system-env
+# vars) from each target pod. Must exist before the workload is applied.
+if [ -n "${POSTMAN_INSIGHTS_API_KEY:-}" ]; then
+  echo ">> Creating/updating postman-agent-secrets (postair)"
+  kubectl -n postair create secret generic postman-agent-secrets \
+    --from-literal=postman-api-key="$POSTMAN_INSIGHTS_API_KEY" \
+    --dry-run=client -o yaml | kubectl apply -f -
+fi
+
 echo ">> Deploying service and workload"
 kubectl apply -f "$K8S_DIR/service.yaml"
 sed "s|__IMAGE__|$IMAGE|g" "$K8S_DIR/deployment.yaml" | kubectl apply -f -
 
 # Postman Insights agent (workspace mode) — only when an agent key is provided.
-# The DaemonSet manifest already carries the workspace + system-env IDs; here we just
-# create the API key secret it references and apply the DaemonSet.
+# The DaemonSet runs `kube run` and reads POSTMAN_INSIGHTS_WORKSPACE_ID /
+# POSTMAN_INSIGHTS_SYSTEM_ENV from each target app pod (set in deployment.yaml above) to
+# route captured traffic to the right workspace. Here we just create the API key secret
+# the DaemonSet references and apply the DaemonSet.
 if [ -n "${POSTMAN_INSIGHTS_API_KEY:-}" ]; then
   echo ">> Ensuring postman-insights-namespace exists"
   kubectl create namespace postman-insights-namespace \

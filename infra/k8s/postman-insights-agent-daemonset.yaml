@@ -57,14 +57,12 @@ spec:
       - args:
         - kube
         - run
-        # Workspace mode is selected via the POSTMAN_INSIGHTS_WORKSPACE_ID /
-        # POSTMAN_INSIGHTS_SYSTEM_ENV env vars below. This agent image's `kube run`
-        # has no --workspace-id/--system-env flags (see `kube run --help`).
+        # Workspace mode: `kube run` takes no --workspace-id/--system-env flags. Instead the
+        # DaemonSet reads POSTMAN_INSIGHTS_WORKSPACE_ID / POSTMAN_INSIGHTS_SYSTEM_ENV from
+        # each *target application pod's* env (set on the app Deployment, not here) and
+        # routes that pod's captured traffic to the matching workspace. Do not set those
+        # vars on this agent pod — they're meaningless here.
         env:
-        - name: POSTMAN_INSIGHTS_WORKSPACE_ID
-          value: "fce449ac-694a-4741-a66f-72ac535b3a8d"
-        - name: POSTMAN_INSIGHTS_SYSTEM_ENV
-          value: "482ed6eb-8c76-4e77-adba-d51b44ee31d5"
         - name: POSTMAN_INSIGHTS_API_KEY
           valueFrom:
             secretKeyRef:
