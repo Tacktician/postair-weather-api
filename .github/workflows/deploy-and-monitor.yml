@@ -1,6 +1,7 @@
 name: Deploy and monitor
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
 

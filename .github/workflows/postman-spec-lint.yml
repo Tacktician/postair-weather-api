@@ -1,6 +1,7 @@
 name: Postman - Spec Lint (governance gate)
 
 on:
+  workflow_dispatch:
   pull_request:
     branches: [main]
     paths:
