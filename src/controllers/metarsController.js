@@ -21,8 +21,6 @@ exports.getMetars = async (req, res, next) => {
             return sendErrorResponse(res, StatusCodes.NOT_FOUND, "No METAR data found for the specified criteria");
         }
 
-        const correlationId = uuidv4();
-        res.setHeader('x-correlation-id', correlationId); // Set custom header
         res.status(StatusCodes.OK).json(metarsData);
     } catch (error) {
         demoLogger.error(error);

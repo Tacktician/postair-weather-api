@@ -28,8 +28,6 @@ exports.getTurbulence = async (req, res, next) => {
             return sendErrorResponse(res, StatusCodes.NOT_FOUND, "No turbulence data found for the specified criteria");
         }
 
-        const correlationId = uuidv4();
-        res.setHeader('x-correlation-id', correlationId); // Set custom header
         res.status(StatusCodes.OK).json(turbulenceData);
     } catch (error) {
         sendErrorResponse(res, StatusCodes.INTERNAL_SERVER_ERROR, "An unexpected error occurred");

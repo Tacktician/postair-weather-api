@@ -68,8 +68,6 @@ exports.getAirports = async (req, res, next) => {
             return sendErrorResponse(res, StatusCodes.NOT_FOUND, "No airport data found for the specified criteria");
         }
 
-        const correlationId = uuidv4();
-        res.setHeader('x-correlation-id', correlationId); // Set custom header
         res.status(StatusCodes.OK).json(filteredAirports);
     } catch (error) {
         const status = error instanceof SyntaxError ? StatusCodes.BAD_REQUEST : StatusCodes.INTERNAL_SERVER_ERROR;

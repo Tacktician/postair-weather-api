@@ -71,6 +71,9 @@ paths:
                   $ref: '#/components/examples/airportListExample'
         "404":
           description: 'Not found'
+          headers:
+            x-correlation-id:
+              $ref: '#/components/headers/CorrelationId'
           content:
             application/json:
               schema:
@@ -80,6 +83,9 @@ paths:
                   $ref: '#/components/examples/notFoundExample'
         "401":
           description: 'Unauthorized'
+          headers:
+            x-correlation-id:
+              $ref: '#/components/headers/CorrelationId'
           content:
             application/json:
               schema:
@@ -90,6 +96,9 @@ paths:
 
         "403":
           description: 'Forbidden'
+          headers:
+            x-correlation-id:
+              $ref: '#/components/headers/CorrelationId'
           content:
             application/json:
               schema:
@@ -101,8 +110,8 @@ paths:
         "500":
           description: 'Internal Server Error'
           headers:
-            Content-Type:
-              $ref: '#/components/headers/problemDetailHeader'
+            x-correlation-id:
+              $ref: '#/components/headers/CorrelationId'
           content:
             application/json:
               schema:
@@ -131,6 +140,9 @@ paths:
                 $ref: '#/components/schemas/TurbulenceReportList'
         "404":
           description: 'Not found'
+          headers:
+            x-correlation-id:
+              $ref: '#/components/headers/CorrelationId'
           content:
             application/json:
               schema:
@@ -140,6 +152,9 @@ paths:
                   $ref: '#/components/examples/notFoundExample'
         "401":
           description: 'Unauthorized'
+          headers:
+            x-correlation-id:
+              $ref: '#/components/headers/CorrelationId'
           content:
             application/json:
               schema:
@@ -150,6 +165,9 @@ paths:
 
         "403":
           description: 'Forbidden'
+          headers:
+            x-correlation-id:
+              $ref: '#/components/headers/CorrelationId'
           content:
             application/json:
               schema:
@@ -161,8 +179,8 @@ paths:
         "500":
           description: 'Internal Server Error'
           headers:
-            Content-Type:
-              $ref: '#/components/headers/problemDetailHeader'
+            x-correlation-id:
+              $ref: '#/components/headers/CorrelationId'
           content:
             application/json:
               schema:
@@ -194,6 +212,9 @@ paths:
                   $ref: '#/components/examples/forecastListExample'
         "404":
           description: 'Not found'
+          headers:
+            x-correlation-id:
+              $ref: '#/components/headers/CorrelationId'
           content:
             application/json:
               schema:
@@ -203,6 +224,9 @@ paths:
                   $ref: '#/components/examples/notFoundExample'
         "401":
           description: 'Unauthorized'
+          headers:
+            x-correlation-id:
+              $ref: '#/components/headers/CorrelationId'
           content:
             application/json:
               schema:
@@ -213,6 +237,9 @@ paths:
 
         "403":
           description: 'Forbidden'
+          headers:
+            x-correlation-id:
+              $ref: '#/components/headers/CorrelationId'
           content:
             application/json:
               schema:
@@ -224,8 +251,8 @@ paths:
         "500":
           description: 'Internal Server Error'
           headers:
-            Content-Type:
-              $ref: '#/components/headers/problemDetailHeader'
+            x-correlation-id:
+              $ref: '#/components/headers/CorrelationId'
           content:
             application/json:
               schema:
@@ -258,6 +285,9 @@ paths:
                   $ref: '#/components/examples/metarListExample'
         "404":
           description: 'Not found'
+          headers:
+            x-correlation-id:
+              $ref: '#/components/headers/CorrelationId'
           content:
             application/json:
               schema:
@@ -267,6 +297,9 @@ paths:
                   $ref: '#/components/examples/notFoundExample'
         "401":
           description: 'Unauthorized'
+          headers:
+            x-correlation-id:
+              $ref: '#/components/headers/CorrelationId'
           content:
             application/json:
               schema:
@@ -277,6 +310,9 @@ paths:
 
         "403":
           description: 'Forbidden'
+          headers:
+            x-correlation-id:
+              $ref: '#/components/headers/CorrelationId'
           content:
             application/json:
               schema:
@@ -288,8 +324,8 @@ paths:
         "500":
           description: 'Internal Server Error'
           headers:
-            Content-Type:
-              $ref: '#/components/headers/problemDetailHeader'
+            x-correlation-id:
+              $ref: '#/components/headers/CorrelationId'
           content:
             application/json:
               schema:
@@ -300,11 +336,6 @@ paths:
 components:
 
   headers:
-    problemDetailHeader:
-      description: application/json
-      schema:
-        $ref: '#/components/schemas/ContentTypeString'
-
     CorrelationId:
       description: "A unique identifier for the request, used for debugging purposes"
       schema:
@@ -336,11 +367,6 @@ components:
   schemas:
 
     # ── Extracted leaf schemas (referenced by headers/parameters above) ──────
-    ContentTypeString:
-      type: string
-      default: application/json
-      description: Media type of the response body.
-
     CorrelationIdString:
       type: string
       description: A unique identifier for the request, used for debugging purposes.
