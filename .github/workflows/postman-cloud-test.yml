@@ -1,0 +1,33 @@
+name: Postman Cloud Test
+
+on:
+  pull_request:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+  run-postman-tests:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install Postman CLI
+        run: |
+          curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
+
+      - name: Authenticate Postman CLI
+        run: |
+          postman login --with-api-key "${{ secrets.POSTMAN_KEY }}"
+
+      - name: Execute Collection
+        run: |
+          postman collection run \
+          59072204-0294c127-ac19-40a8-91f5-042c3205f4fb \
+          -e 59072204-f1c43a02-e6b9-4fb8-88e3-ac87c1f8d269 \
+          --reporters cli
